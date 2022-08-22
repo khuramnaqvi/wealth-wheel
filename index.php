@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Wealth Wheels - Index</title>
+  <title>Wealth Wheel - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -45,12 +45,12 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
+          <li><a class="nav-link scrollto" href="product-dtl.php">Products</a></li>
           <li><a class="nav-link scrollto" href="about.php">About</a></li>
-          <!-- <li><a class="nav-link scrollto " href="">Products</a></li> -->
-          <li class="dropdown"><a href="#"><span>Other Pages</span> <i class="bi bi-chevron-down"></i></a>
+          <!-- <li class="dropdown"><a href="#"><span>Other Pages</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="faq.php">FAQ's</a></li>
-              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
                   <li><a href="#">Deep Drop Down 2</a></li>
@@ -58,14 +58,15 @@
                   <li><a href="#">Deep Drop Down 4</a></li>
                   <li><a href="#">Deep Drop Down 5</a></li>
                 </ul>
-              </li> -->
-              <!-- <li><a href="#">Drop Down 2</a></li>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
               <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li> -->
+              <li><a href="#">Drop Down 4</a></li>
             </ul>
-          </li>
+          </li> -->
+          <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li>
           <li><a class="nav-link scrollto" href="contac.php">Contact</a></li>
-          <li class="nav-link ww-register"><a class="nav-link" href="#">Signup</a></li>
+          <li class="nav-link ww-register"><a class="nav-link" href="signup.php">Signup</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -88,8 +89,8 @@
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
           <div class="d-flex">
-            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
-            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth</a>
+            <a href="login.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
+            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
           </div>
         </div>
       </div>
@@ -101,7 +102,7 @@
           <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
           <div class="d-flex">
             <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
-            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth</a>
+            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
           </div>
         </div>
       </div>
@@ -113,7 +114,7 @@
           <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
           <div class="d-flex">
             <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
-            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth</a>
+            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
           </div>
         </div>
       </div>
@@ -154,38 +155,67 @@
           <h2>Products</h2>
           <p>What we have done</p>
         </div>
-        <div class="container container-slider" data-aos="fade-up">
-        <div class="button" onclick="shiftLeft()"><img src="https://image.ibb.co/mRsEb7/left_arrow.png" alt=""></div>
-        <div class="cards-wrapper">
-            <div class="cards__container">
-                <div class="box" style="">
-                  <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
+         <div class="testimonials-slider product-slider swiper" id="product-slider" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/ww-pic.png" class="testimonial-img" alt="">
+                <div class="testimonial-item-info">
+                  <h3>Product One</h3>
+                  <h4 class="product-price">$320</h4>
+                  <a href="product-dtl.php"  class="pro-dtl-btn">View Detail</a>
                 </div>
-                <div class="box">
-                  <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                </div>
-                <div class="box">
-                  <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                </div>
-                <div class="box">
-                  <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                </div>
-                <div class="box">
-                  <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                </div>
-                <div class="box box--hide">
-                  <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                </div>
-                <div class="box box--hide">
-                  <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                </div>
+              </div>
             </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/ww-pic.png" class="testimonial-img" alt="">
+                <div class="testimonial-item-info">
+                  <h3>Product Two</h3>
+                  <h4 class="product-price">$320</h4>
+                  <a href="product-dtl.php" class="pro-dtl-btn">View Detail</a>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/ww-pic.png" class="testimonial-img" alt="">
+                <div class="testimonial-item-info">
+                  <h3>Product Three</h3>
+                  <h4 class="product-price">$320</h4>
+                  <a href="product-dtl.php" class="pro-dtl-btn">View Detail</a>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/ww-pic.png" class="testimonial-img" alt="">
+                <div class="testimonial-item-info">
+                  <h3>Product Four</h3>
+                  <h4 class="product-price">$320</h4>
+                  <a href="product-dtl.php" class="pro-dtl-btn">View Detail</a>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/ww-pic.png" class="testimonial-img" alt="">
+                <div class="testimonial-item-info">
+                  <h3>Product Five</h3>
+                  <h4 class="product-price">$320</h4>
+                  <a href="product-dtl.php" class="pro-dtl-btn">View Detail</a>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
-        <div class="button" onclick="shiftRight()"><img src="https://image.ibb.co/dfPSw7/right_arrow.png" alt=""></div>
-      </div>
-        <div class="product-details mt-5" style="text-align: center;">
-            <a href="product-dtl.php">Product Details</a>
-        </div>  
       </div>
     </section>
     <!-- End product slider Section -->
@@ -237,7 +267,7 @@
             <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Registration</a>
+            <a class="cta-btn align-middle" href="signup.php">Registration</a>
           </div>
         </div>
 
@@ -288,32 +318,38 @@
       <div class="container">
         <div class="section-title" data-aos="zoom-out">
           <h2>How we work</h2>
-          <p>We work whith the following steps</p>
+          <p>Wealth Wheels work in the following simple steps:</p>
         </div>
         <div class="row portfolio-container" data-aos="fade-up">
-          <div class="col-lg-4 col-md-4 px-lg-0">
+          <div class="col-lg-3 col-md-3 px-lg-0">
             <div class="we-wrok-steps">
-              <h3>Generate Account</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+              <h3>Create An Account</h3>
+              <p>Wealth Wheel is open to anybody to create an account, immediately join any 
+                wheels or create wheels of their own, view/track any cogs that have been 
+                purchased, and withdraw your profits</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 px-lg-0">
+          <div class="col-lg-3 col-md-3 px-lg-0">
+            <div class="we-wrok-steps">
+              <h3>Create A Wealth Wheel</h3>
+              <p>For somebody to create a Wealth Wheel, after setting the Cog Price it is 
+                immediately available for anybody to join.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 px-lg-0">
             <div class="we-wrok-steps">
               <h3>Purchase Cogs</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+              <p>There is no limit to how many cogs you can purchase, and any Wealth Wheel is 
+                avaialbe to join and receive profit from.</p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-4 px-lg-0">
+          <div class="col-lg-3 col-md-3 px-lg-0">
             <div class="we-wrok-steps">
               <h3>Invite Others</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+              <p>Whether you’re a Wealth Wheel owner or have joined a wheel, invite others to 
+                join your wheels and also generate profits with you. The more cogs that join a 
+                wheel, the quicker the wheel spins, and the faster profits are generated.</p>
             </div>
           </div>
         </div>
@@ -408,8 +444,30 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>Wealth Wheel</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <div class="row">
+        <div class="col-lg-4 col-md-4">
+          <img src="assets/img/logo.png" class="footer-img" alt="">
+        </div>
+        <div class="col-lg-4 col-md-4"> 
+          <h3>FEATURES</h3>
+          <div class="footer-links">
+            <a href="about.php">About us</a>
+            <a href="howItWork.php">how it works</a>
+            <a href="availableWealthWheel.php">available wealth wheel</a>
+            <a href="contac.php">Contact us</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h3>DETAILS</h3>
+          <div class="footer-links">
+            <a href="teramsAndConditions.php">terms and conditions</a>
+            <a href="privacyPolicy.php">privacy policy</a>
+          </div>
+        </div>
+        </div>
+      </div>
+      <!-- <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> -->
+      
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -418,10 +476,7 @@
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
       <div class="copyright">
-        &copy; Copyright <strong><span>Wealth Wheels</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Designed by <a href="#">wealth wheels</a>
+        &copy; Copyright <strong><span>Wealth Wheel</span></strong>. All Rights Reserved.
       </div>
     </div>
   </footer>
@@ -440,7 +495,6 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 </body>
 
 </html>

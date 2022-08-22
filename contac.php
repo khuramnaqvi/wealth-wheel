@@ -46,28 +46,12 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.php">Home</a></li>
+          <li><a class="nav-link scrollto" href="product-dtl.php">Products</a></li>
           <li><a class="nav-link scrollto" href="about.php">About</a></li>
-          <!-- <li><a class="nav-link scrollto " href="">Products</a></li> -->
-          <li class="dropdown"><a href="#"><span>Other Pages</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="faq.php">FAQ's</a></li>
-              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li> -->
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="contac.php">Contact</a></li>
-          <li class="ww-register"><a class="nav-link" href="#">Signup</a></li>
+          <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li>
+          <li><a class="nav-link scrollto active" href="contac.php">Contact</a></li>
+          <li class="ww-register"><a class="nav-link" href="Signup.php">Signup</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -89,44 +73,11 @@
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
           <div class="d-flex">
-            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
-            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth</a>
+            <a href="login.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
+            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
           </div>
         </div>
       </div>
-
-      <!-- Slide 2 -->
-     <!--  <div class="carousel-item">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <div class="d-flex">
-            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
-            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth</a>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Slide 3 -->
-      <!-- <div class="carousel-item">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <div class="d-flex">
-            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
-            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth</a>
-          </div>
-        </div>
-      </div> -->
-
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
-      </a>
-
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
-      </a>
-
     </div>
 
     <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
@@ -144,7 +95,8 @@
       </g>
     </svg>
 
-  </section><!-- End Hero -->
+  </section>
+  <!-- End Hero -->
 
   <main id="main">
 
@@ -170,7 +122,7 @@
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>hello@wealth-wheel.com</p>
               </div>
 
               <div class="phone">
@@ -220,8 +172,30 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>Wealth Wheel</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <div class="row">
+        <div class="col-lg-4 col-md-4">
+          <img src="assets/img/logo.png" class="footer-img" alt="">
+        </div>
+        <div class="col-lg-4 col-md-4"> 
+          <h3>FEATURES</h3>
+          <div class="footer-links">
+            <a href="about.php">About us</a>
+            <a href="howItWork.php">how it works</a>
+            <a href="availableWealthWheel.php">available wealth wheel</a>
+            <a href="contac.php">Contact us</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h3>DETAILS</h3>
+          <div class="footer-links">
+            <a href="teramsAndConditions.php">terms and conditions</a>
+            <a href="privacyPolicy.php">privacy policy</a>
+          </div>
+        </div>
+        </div>
+      </div>
+      <!-- <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> -->
+      
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -230,17 +204,11 @@
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
       <div class="copyright">
-        &copy; Copyright <strong><span>Wealth Wheels</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/selecao-bootstrap-template/ -->
-        Designed by <a href="#">wealth wheels</a>
+        &copy; Copyright <strong><span>Wealth Wheel</span></strong>. All Rights Reserved.
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
+  <!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
