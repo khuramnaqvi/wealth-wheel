@@ -1,4 +1,4 @@
-/**
+*
 * Template Name: Selecao - v4.8.0
 * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
 * Author: BootstrapMade.com
@@ -72,6 +72,21 @@ h6 {
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
+  }
+  .portfolio-main .portfolio-img {
+    margin-top: unset !important;
+  }
+  .avl-wealthWheel .ww-pro-filter-main {
+   margin-top: unset !important; 
+  }
+  .ww-form-main .ww-form-wrp {
+    width: 100% !important;
+  }
+  .ww-thumbnails {
+    display: none !important;
+  }
+  .ww-product-dtl .ww-pro-description {
+    margin-top: 30px;
   }
 }
 
@@ -1175,12 +1190,32 @@ section {
 /*--------------------------------------------------------------
 # available wealth wheel
 --------------------------------------------------------------*/
-.avl-wealthWheel {}
 .avl-wealthWheel .card-body {}
 .avl-wealthWheel .card-body .pro-price {
   font-size: 20px;
   font-weight: bold;
   color: #2b60d8;
+}
+.avl-wealthWheel .ww-pro-filter-main {
+    /*height: 100vh;*/
+    margin-top: -100px;
+    padding: 30px 10px;
+    border: 1px solid #d2d2d2;
+    border-radius: 8px;
+}
+.avl-wealthWheel .ww-pro-filter-main h4 {
+
+}
+.avl-wealthWheel .ww-pro-filter-main .ww-pro-filter-wrp h6 {
+}
+.avl-wealthWheel .ww-pro-filter-main .ww-pro-filter-wrp input {
+  background-image: url("../img/search.png");
+    background-repeat: no-repeat;
+    background-position: right 5px top 6px;
+    background-size: 25px;
+    height: 40px;
+    border: 1px solid #d2d2d2;
+    border-radius: 8px;
 }
 /*--------------------------------------------------------------
 # product details
@@ -1412,33 +1447,3 @@ section {
 
 /*----------media queries----------*/
 /*----------media queries----------*/
-/*@media screen and (max-width: 480px) {
-  .ww-form-main .ww-form-wrp {
-    width: 94%;
-    margin: auto;
-  }
-  #footer h3,
-  #footer .footer-links a {
-    text-align: center;
-  }
-}
-@media screen and (min-width: 481px) and (max-width: 576px) {
-  .ww-form-main .ww-form-wrp {
-    width: 90%;
-    margin: auto;
-  }
-  #footer h3,
-  #footer .footer-links a {
-    text-align: center;
-  }
-}
-@media screen and (min-width: 577px) and (max-width: 767px) {
-  .ww-form-main .ww-form-wrp {
-    width: 90%;
-    margin: auto;
-  }
-  #footer h3,
-  #footer .footer-links a {
-    text-align: center;
-  }
-}*/

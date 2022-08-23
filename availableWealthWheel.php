@@ -45,7 +45,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="product-dtl.php">Products</a></li>
+          <li><a class="nav-link scrollto" href="availableWealthWheel.php">Products</a></li>
           <li><a class="nav-link scrollto" href="about.php">About</a></li>
           <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li>
           <li><a class="nav-link scrollto" href="contac.php">Contact</a></li>
@@ -112,7 +112,7 @@
                 <div class="card">
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
+                    <h5 class="card-title">Ear Buds</h5>
                     <p class="card-text">This is a longer card with supporting text below.</p>
                     <div class="pro-price">
                       <span>RS.$10</span>
@@ -125,7 +125,7 @@
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
                   <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
+                    <h5 class="card-title">Hands Free</h5>
                     <p class="card-text">This is a longer card with supporting text below.</p>
                     <div class="pro-price">
                       <span>RS.$10</span>
@@ -138,7 +138,7 @@
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
                   <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
+                    <h5 class="card-title">Head Phones</h5>
                     <p class="card-text">This is a longer card with supporting text below.</p>
                     <div class="pro-price">
                       <span>RS.$10</span>
@@ -151,7 +151,7 @@
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
                   <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
+                    <h5 class="card-title">Mobile Stands</h5>
                     <p class="card-text">This is a longer card with supporting text below.</p>
                     <div class="pro-price">
                       <span>RS.$10</span>
@@ -214,7 +214,27 @@
             </div>
           </div>
           <div class="col-lg-3">
-            <h4>filter section</h4>
+            <div class="ww-pro-filter-main">
+              <h4 class="fw-bold mb-4">Apply Filter</h4>
+              <div class="ww-pro-filter-wrp mb-5">
+                <h6 class="pb-1">Search Product by Name</h6>
+                <div>
+                  <input type="text" name="ww-pro-name" class="w-100 ps-2" placeholder="enter name">
+                </div>
+              </div>
+              <div class="ww-pro-filter-wrp mb-5">
+                <h6 class="pb-1">Search Product by Category</h6>
+                <div>
+                  <input type="text" name="ww-pro-category" class="w-100 ps-2" placeholder="enter category">
+                </div>
+              </div>
+              <div class="ww-pro-filter-wrp mb-5">
+                <h6 class="pb-1">Search Product by Price</h6>
+                <div>
+                  <input type="text" name="ww-pro-price" class="w-100 ps-2" placeholder="enter price">
+                </div>
+              </div>  
+            </div>
           </div>
         </div>
       </div>

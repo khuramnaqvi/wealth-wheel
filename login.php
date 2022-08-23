@@ -46,7 +46,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="product-dtl.php">Products</a></li>
+          <li><a class="nav-link scrollto" href="availableWealthWheel.php">Products</a></li>
           <li><a class="nav-link scrollto" href="about.php">About</a></li>
           <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li>
           <li><a class="nav-link scrollto" href="contac.php">Contact</a></li>

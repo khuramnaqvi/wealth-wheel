@@ -46,7 +46,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="product-dtl.php">Products</a></li>
+          <li><a class="nav-link scrollto" href="availableWealthWheel.php">Products</a></li>
           <li><a class="nav-link scrollto active" href="about.php">About</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Other Pages</span> <i class="bi bi-chevron-down"></i></a>
             <ul>

@@ -47,7 +47,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="product-dtl.php">Products</a></li>
+          <li><a class="nav-link scrollto" href="availableWealthWheel.php">Products</a></li>
           <li><a class="nav-link scrollto" href="about.php">About</a></li>
           <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li>
           <li><a class="nav-link scrollto" href="contac.php">Contact</a></li>
@@ -224,7 +224,7 @@
           <p>Wealth Wheels work in the following simple steps</p>
         </div>
         <div class="row portfolio-container weWork-child" data-aos="fade-up">
-          <div class="col-lg-3 col-md-3 px-lg-0">
+          <div class="col-lg-3 col-md-6 px-lg-0">
             <div class="we-wrok-steps">
               <h3>Create An Account</h3>
               <p>Wealth Wheel is open to anybody to create an account, immediately join any 
@@ -232,21 +232,21 @@
                 purchased, and withdraw your profits</p>
             </div>
           </div>
-          <div class="col-lg-3 col-md-3 px-lg-0">
+          <div class="col-lg-3 col-md-6 px-lg-0">
             <div class="we-wrok-steps">
               <h3>Create A Wealth Wheel</h3>
               <p>For somebody to create a Wealth Wheel, after setting the Cog Price it is 
                 immediately available for anybody to join.</p>
             </div>
           </div>
-          <div class="col-lg-3 col-md-3 px-lg-0">
+          <div class="col-lg-3 col-md-6 px-lg-0">
             <div class="we-wrok-steps">
               <h3>Purchase Cogs</h3>
               <p>There is no limit to how many cogs you can purchase, and any Wealth Wheel is 
                 avaialbe to join and receive profit from.</p>
             </div>
           </div>
-          <div class="col-lg-3 col-md-3 px-lg-0">
+          <div class="col-lg-3 col-md-6 px-lg-0">
             <div class="we-wrok-steps">
               <h3>Invite Others</h3>
               <p>Whether you’re a Wealth Wheel owner or have joined a wheel, invite others to 
