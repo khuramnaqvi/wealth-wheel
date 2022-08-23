@@ -22,8 +22,7 @@
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-i
-  cons.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
@@ -31,6 +30,54 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <style type="">
+    .ww-wrapper {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .ww-image-gallery {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .primary,
+    .ww-thumbnails {
+      display: table-cell;
+    }
+
+    .ww-thumbnails {
+      width: 100%;display: flex;
+
+
+    }
+    .primary {
+      height: 400px;
+      background-color: #cccccc;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      border: 2px solid #11def9;
+      border-radius: 35px;
+    }
+
+    .thumbnail:hover .thumbnail-image, .selected .thumbnail-image {
+      border: 2px solid #11def9;
+    }
+
+    .thumbnail-image {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin: 20px auto;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      border: 4px solid #fff;
+    }
+  </style>
 </head>
 
 <body>
@@ -46,7 +93,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto active" href="product-dtl.php">Products</a></li>
+          <li><a class="nav-link scrollto" href="product-dtl.php">Products</a></li>
           <li><a class="nav-link scrollto" href="about.php">About</a></li>
           <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li>
           <li><a class="nav-link scrollto" href="contac.php">Contact</a></li>
@@ -66,7 +113,7 @@
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Our Products</span></h2>
+          <h2 class="animate__animated animate__fadeInDown">Products Details</span></h2>
           <p class="animate__animated fanimate__adeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
           <div class="d-flex">
@@ -98,88 +145,62 @@
 
 
   
-  <section id="our-products" class="our-products">
+  <section id="our-products" class="our-products avl-wealthWheel ww-product-dtl">
       <div class="container">
 
         <div class="section-title" data-aos="zoom-out">
-          <h2>Products</h2>
-          <p>Here you can see our products</p>
+          <h2>Product details</h2>
+          <p>Here you can see the product details</p>
         </div>
 
         <div class="row content" data-aos="fade-up">
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col-md-3">
-              <div class="card">
-                <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title">Product Name</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card">
-                <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title">Product Name</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card">
-                <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title">Product Name</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card">
-                <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title">Product Name</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="ww-wrapper">
+              <div class="ww-image-gallery">
+                <aside class="ww-thumbnails">
+                  <div href="#" class="selected thumbnail" data-big="assets/img/ww-pic.png">
+                    <div class="thumbnail-image" style="background-image: url(assets/img/ww-pic.png)"></div>
+                  </div>
+                  <div href="#" class="thumbnail" data-big="assets/img/testimonials/testimonials-1.jpg">
+                    <div class="thumbnail-image" style="background-image: url(assets/img/testimonials/testimonials-1.jpg)"></div>
+                  </div>
+                  <div href="#" class="thumbnail" data-big="assets/img/testimonials/testimonials-4.jpg">
+                    <div class="thumbnail-image" style="background-image: url(assets/img/testimonials/testimonials-4.jpg)"></div>
+                  </div>
+                  <div href="#" class="thumbnail" data-big="assets/img/testimonials/testimonials-4.jpg">
+                    <div class="thumbnail-image" style="background-image: url(assets/img/testimonials/testimonials-4.jpg)"></div>
+                  </div>
+                  <div href="#" class="thumbnail" data-big="assets/img/testimonials/testimonials-4.jpg">
+                    <div class="thumbnail-image" style="background-image: url(assets/img/testimonials/testimonials-4.jpg)"></div>
+                  </div>
+                </aside>
+
+                <main class="primary" style="background-image: url(assets/img/ww-pic.png)"></main>
               </div>
             </div>
           </div>
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col-md-3">
-              <div class="card">
-                <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title">Product Name</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="ww-pro-description">
+              <div class="ww-pro-name">
+                <h2>product name</h2>
+                <p class="ww-pro-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
               </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card">
-                <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title">Product Name</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
+              <div class="ww-pro-price my-4">
+                <h4>RS.3000</h4>
               </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card">
-                <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title">Product Name</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p>
-                </div>
+              <div class="ww-pro-quantity my-4">
+                  <div id="ww-quantity">
+                      <span>Quantity</span>
+                      <button type="button" id="sub" class="sub ww-plus-minus">-</button>
+                      <input type="number" id="1" value="1" min="1" max="100" class="ww-quantity-input" />
+                      <button type="button" id="add" class="add ww-plus-minus">+</button>
+                  </div>
               </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card">
-                <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title">Product Name</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
+              <div class="ww-pro-action my-2">
+                <button type="button" class="btn py-3 text-white ww-pro-action-btn">Buy Now</button>
+                <button type="button" class="btn py-3 text-white ww-pro-action-btn">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -244,5 +265,29 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="">
+    $('.thumbnail').on('click', function() {
+      var clicked = $(this);
+      var newSelection = clicked.data('big');
+      var $img = $('.primary').css("background-image","url(" + newSelection + ")");
+      clicked.parent().find('.thumbnail').removeClass('selected');
+      clicked.addClass('selected');
+      $('.primary').empty().append($img.hide().fadeIn('slow'));
+    });
+
+
+    // quantity button
+    $('.add').click(function () {
+        if ($(this).prev().val() < 100) {
+          $(this).prev().val(+$(this).prev().val() + 1);
+        }
+    });
+    $('.sub').click(function () {
+        if ($(this).next().val() > 1) {
+          if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
+        }
+    });
+  </script>
 </body>
 </html>

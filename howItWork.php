@@ -49,26 +49,9 @@
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="product-dtl.php">Products</a></li>
           <li><a class="nav-link scrollto" href="about.php">About</a></li>
-          <!-- <li class="dropdown"><a href="#"><span>Other Pages</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="faq.php" class="">FAQ's</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> -->
           <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li>
           <li><a class="nav-link scrollto" href="contac.php">Contact</a></li>
-          <li class="ww-register"><a class="nav-link active" href="Signup.php">Signup</a></li>
+          <li class="ww-register"><a class="nav-link" href="Signup.php">Signup</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -114,22 +97,164 @@
       </g>
     </svg>
 
-  </section><!-- End Hero -->
+  </section>
+  <!-- End Hero -->
 
   <main id="main">
 
-    <!-- ======= F.A.Q Section ======= -->
-    <section id="terms" class="faq ww-terams">
+
+    <!-- ======= cogs payouts Section ======= -->
+    <section id="cogs" class="we-wrok-cogs">
       <div class="container">
-
         <div class="section-title" data-aos="zoom-out">
-          <h2>How it Work</h2>
-          <p>Wealth wheel work through the folowing steps</p>
+          <h2>Cogs payouts</h2>
+          <p>Below is how the Wealth Wheel cog payouts work</p>
         </div>
-        <div class="ww-terams-cnt" data-aos="fade-right">
-            
+        <div class="row portfolio-container weWork-child" data-aos="fade-up"> 
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"  class="table-active">Cogs Number Purchased</th>
+                <th scope="col"  class="table-active">Cogs Number Payouts</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cogs 6</td>
+                <td>Cogs 1</td>
+              </tr>
+              <tr>
+                <td>Cogs 7</td>
+                <td>Cogs 2</td>
+              </tr>
+              <tr>
+                <td>Cogs 8</td>
+                <td>Cogs 3</td>
+              </tr>
+              <tr>
+                <td>Cogs 9</td>
+                <td>Cogs 4</td>
+              </tr>
+              <tr>
+                <td>Cogs 10</td>
+                <td>Cogs 5</td>
+              </tr>
+              <tr>
+                <td>Cogs 11</td>
+                <td class="table-active"></td>
+              </tr>
+              <tr>
+                <td>Cogs 12</td>
+                <td>Cogs 6</td>
+              </tr>
+              <tr>
+                <td>Cogs 13</td>
+                <td>Cogs 7</td>
+              </tr>
+              <tr>
+                <td>Cogs 14</td>
+                <td>Cogs 8</td>
+              </tr>
+              <tr>
+                <td>Cogs 15</td>
+                <td>Cogs 9</td>
+              </tr>
+              <tr>
+                <td>Cogs 16</td>
+                <td>Cogs 10</td>
+              </tr>
+              <tr>
+                <td>Cogs 17</td>
+                <td class="table-active"></td>
+              </tr>
+              <tr>
+                <td>Cogs 18</td>
+                <td>Cogs 11</td>
+              </tr>
+              <tr>
+                <td>Cogs 19</td>
+                <td>Cogs 12</td>
+              </tr>
+              <tr>
+                <td>Cogs 20</td>
+                <td>Cogs 13</td>
+              </tr>
+              <tr>
+                <td>Cogs 21</td>
+                <td>Cogs 14</td>
+              </tr>
+              <tr>
+                <td>Cogs 22</td>
+                <td>Cogs 15</td>
+              </tr>
+              <tr>
+                <td>Cogs 23</td>
+                <td class="table-active"></td>
+              </tr>
+              <tr>
+                <td>Cogs 24</td>
+                <td>Cogs 16</td>
+              </tr>
+              <tr>
+                <td>Cogs 25</td>
+                <td>Cogs 17</td>
+              </tr>
+              <tr>
+                <td>Cogs 26</td>
+                <td>Cogs 18</td>
+              </tr>
+              <tr>
+                <td>Cogs 27</td>
+                <td>Cogs 19</td>
+              </tr>
+              <tr>
+                <td>Cogs 28</td>
+                <td>Cogs 20</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-
+      </div>
+    </section>
+    <!-- ======= how we work Section ======= -->
+    <section id="weWork" class="we-wrok weWork-child-wrp mb-5">
+      <div class="container">
+        <div class="section-title" data-aos="zoom-out">
+          <h2>How we work</h2>
+          <p>Wealth Wheels work in the following simple steps</p>
+        </div>
+        <div class="row portfolio-container weWork-child" data-aos="fade-up">
+          <div class="col-lg-3 col-md-3 px-lg-0">
+            <div class="we-wrok-steps">
+              <h3>Create An Account</h3>
+              <p>Wealth Wheel is open to anybody to create an account, immediately join any 
+                wheels or create wheels of their own, view/track any cogs that have been 
+                purchased, and withdraw your profits</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 px-lg-0">
+            <div class="we-wrok-steps">
+              <h3>Create A Wealth Wheel</h3>
+              <p>For somebody to create a Wealth Wheel, after setting the Cog Price it is 
+                immediately available for anybody to join.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 px-lg-0">
+            <div class="we-wrok-steps">
+              <h3>Purchase Cogs</h3>
+              <p>There is no limit to how many cogs you can purchase, and any Wealth Wheel is 
+                avaialbe to join and receive profit from.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 px-lg-0">
+            <div class="we-wrok-steps">
+              <h3>Invite Others</h3>
+              <p>Whether you’re a Wealth Wheel owner or have joined a wheel, invite others to 
+                join your wheels and also generate profits with you. The more cogs that join a 
+                wheel, the quicker the wheel spins, and the faster profits are generated.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
