@@ -39,19 +39,19 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <!-- <h1><a href="index.php">Selecao</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
          <a href="index.php"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
       </div>
-
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="availableWealthWheel.php">Products</a></li>
-          <li><a class="nav-link scrollto" href="about.php">About</a></li>
+          <li><a class="nav-link scrollto" href="howItWork.php">How it Works</a></li>
+          <li><a class="nav-link scrollto" href="availableWealthWheel.php">Available Wealth Wheels</a></li>
+          <!-- <li><a class="nav-link scrollto" href="availableWealthWheel.php">Products</a></li> -->
+          <!-- <li><a class="nav-link scrollto" href="about.php">About</a></li> -->
           <!-- <li class="dropdown"><a href="#"><span>Other Pages</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="faq.php" class="">FAQ's</a></li>
+              <li><a href="faq.php">FAQ's</a></li>
               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
@@ -66,9 +66,9 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li> -->
-          <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li>
+          <!-- <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li> -->
           <li><a class="nav-link scrollto" href="contac.php">Contact</a></li>
-          <li class="ww-register"><a class="nav-link active" href="#">Signup</a></li>
+          <!-- <li class="nav-link ww-register"><a class="nav-link" href="signup.php">Signup</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -90,7 +90,8 @@
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-          <div class="d-flex">
+          <div class="d-flex ww-banner-btn">
+            <a href="signup.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
             <a href="login.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
             <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
           </div>
@@ -130,7 +131,7 @@
             <form action="" method="">
             <div class="form-group">
               <label for="userName">User name</label>
-              <input type="email" class="form-control" id="userName" aria-describedby="userName" placeholder="Enter name">
+              <input type="text" class="form-control" id="userName" aria-describedby="userName" placeholder="Enter name">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
@@ -151,14 +152,14 @@
   </main>
   <!-- End #main -->
 
-  <!-- ======= Footer ======= -->
- <footer id="footer">
+<!-- ======= Footer ======= -->
+  <footer id="footer">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 col-md-4">
+        <div class="col-lg-3 col-md-3">
           <img src="assets/img/logo.png" class="footer-img" alt="">
         </div>
-        <div class="col-lg-4 col-md-4"> 
+        <div class="col-lg-3 col-md-3"> 
           <h3>FEATURES</h3>
           <div class="footer-links">
             <a href="about.php">About us</a>
@@ -167,25 +168,25 @@
             <a href="contac.php">Contact us</a>
           </div>
         </div>
-        <div class="col-lg-4 col-md-4">
+        <div class="col-lg-3 col-md-3">
           <h3>DETAILS</h3>
           <div class="footer-links">
-            <a href="teramsAndConditions.php">terms and conditions</a>
+            <a href="teramsAndConditions.php">terms & conditions</a>
             <a href="privacyPolicy.php">privacy policy</a>
+            <a href="faq.php">FAQs</a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3">
+          <h3>FOLLOW US</h3>
+          <div class="social-links my-4">
+            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
           </div>
         </div>
         </div>
       </div>
-      <!-- <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> -->
-      
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-      <div class="copyright">
+      <div class="copyright mt-5">
         &copy; Copyright <strong><span>Wealth Wheel</span></strong>. All Rights Reserved.
       </div>
     </div>

@@ -88,6 +88,9 @@ h6 {
   .ww-product-dtl .ww-pro-description {
     margin-top: 30px;
   }
+  .ww-banner-btn {
+    flex-direction: column;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -457,7 +460,7 @@ h6 {
 
 @media (max-width: 768px) {
   #hero .carousel-container {
-    height: 90vh;
+    /*height: 90vh;*/
   }
 
   #hero h2 {
@@ -659,9 +662,10 @@ section {
 .about .content p:last-child {
   margin-bottom: 0;
 }
-
+.avl-wealthWheel .card-body .pro-dtl-btn {}
 .about .content .btn-learn-more,
-.testimonials.product-slider .testimonial-item .pro-dtl-btn {
+.testimonials.product-slider .testimonial-item .pro-dtl-btn,
+.avl-wealthWheel .card-body .pro-dtl-btn {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -679,7 +683,8 @@ section {
 }
 
 .about .content .btn-learn-more:hover,
-.testimonials.product-slider .testimonial-item .pro-dtl-btn:hover {
+.testimonials.product-slider .testimonial-item .pro-dtl-btn:hover,
+.avl-wealthWheel .card-body .pro-dtl-btn:hover {
   background: #11def9;
   color: #fff;
   text-decoration: none;
@@ -1190,11 +1195,33 @@ section {
 /*--------------------------------------------------------------
 # available wealth wheel
 --------------------------------------------------------------*/
-.avl-wealthWheel .card-body {}
+.avl-wealthWheel .card-body {
+  text-align: center;
+}
+.avl-wealthWheel .ww-avl-card .card {
+  overflow: hidden;
+}
+.avl-wealthWheel .ww-avl-card {
+  position: relative;
+}
+.avl-wealthWheel .ww-avl-card .ww-card-tag {
+  position: absolute;
+  top: 15px;
+  left: -28px;
+  z-index: 999;
+  transform: rotate(-45deg);
+}
+.avl-wealthWheel .ww-avl-card .ww-card-tag span {
+  /*background-color: #13d6f7;*/
+  background: linear-gradient(-180deg, rgb(45 210 235) 0%, rgb(113 146 239) 100%);
+  color: #fff;
+  padding: 3px 30px;
+  font-size: 12px 
+}
 .avl-wealthWheel .card-body .pro-price {
   font-size: 20px;
   font-weight: bold;
-  color: #2b60d8;
+  color: #11def9;
 }
 .avl-wealthWheel .ww-pro-filter-main {
     /*height: 100vh;*/
@@ -1409,7 +1436,8 @@ section {
   color: #2b5be0;
 }
 #footer .social-links {
-  margin: 40px 0;
+  /*margin: 40px 0;*/
+  text-align: left;
 }
 
 #footer .social-links a {

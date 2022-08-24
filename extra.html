@@ -31,23 +31,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
- <style>
-        .blink {
-            animation: blinker 1.5s linear infinite;
-            color: #2963e2;
-            font-size: 45px;
-            font-style: oblique;
-            text-shadow: 2px 4px 8px rgba(0,0,0,0.6);
-            font-weight: bold;
-            line-height: 75px;
-            font-family: sans-serif;
-        }
-        @keyframes blinker {
-            50% {
-                opacity: 0;
-            }
-        }
-    </style>
 
 <body>
 
@@ -97,14 +80,16 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
-    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="">
+    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Wealth Wheels</span></h2>
-            <p class="animate__animated fanimate__adeInUp">Wealth Wheel is a the continuous income-generator platform providing people 
-            with 10% profits on their entries, giving them the simplest way of generating 
-            additional income ever.</p>
+          <p class="animate__animated fanimate__adeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
           <div class="d-flex ww-banner-btn">
             <a href="signup.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
             <a href="login.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
@@ -112,6 +97,39 @@
           </div>
         </div>
       </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
+          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+          <div class="d-flex">
+            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
+            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
+          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+          <div class="d-flex">
+            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
+            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
+          </div>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+      </a>
+
     </div>
 
     <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
@@ -239,20 +257,12 @@
     </section> -->
     <!-- End About Section -->
 
-    <!-- ======= Marquee Section ======= -->
-    <section id="marquee" class="ww-marquee">
-      <div class="container">
-        <div class="row">
-          <marquee class="blink">Join Wealth Wheel, the revolution in global income generation!</marquee>
-        </div>
-      </div>
-    </section>
-
     
 
     <!-- ======= Cta Section ======= -->
     <section id="cta" class="cta">
       <div class="container">
+
         <div class="row" data-aos="zoom-out">
           <div class="col-lg-9 text-center text-lg-start">
             <h3>Call To Action</h3>
@@ -267,19 +277,6 @@
     </section>
     <!-- End Cta Section -->
 
-
-    <!-- ======= Marquee Section ======= -->
-    <section id="ww-homeInfo" class="ww-home-info">
-      <div class="container">
-        <div class="row">
-          <div data-aos="fade-up">
-            <p>By simply purchaseing a ‘Cog’ withn any chosen Wealth Wheel, as more Cogs 
-              are purchased, the earlier users receive 110% of the wheel’s cog value, ie they 
-              receive their initial cog payment back PLUS an additional 10%.</p>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- ======= Portfolio Section ======= -->
     <!-- <section id="portfolio" class="portfolio">
       <div class="container">
@@ -319,13 +316,13 @@
 
 
     <!-- ======= how we work Section ======= -->
-    <section id="weWork" class="we-wrok">
+    <!-- <section id="weWork" class="we-wrok">
       <div class="container">
         <div class="section-title" data-aos="zoom-out">
           <h2>How we work</h2>
           <p>Wealth Wheels work in the following simple steps:</p>
         </div>
-        <div class="row portfolio-container weWork-child" data-aos="fade-up">
+        <div class="row portfolio-container" data-aos="fade-up">
           <div class="col-lg-3 col-md-6 px-lg-0">
             <div class="we-wrok-steps">
               <h3>Create An Account</h3>
@@ -359,20 +356,7 @@
           </div>
         </div>
       </div>
-    </section>
-
-     <!-- ======= Marquee Section ======= -->
-    <section id="ww-homeInfo" class="ww-home-info">
-      <div class="container">
-        <div class="row">
-          <div data-aos="fade-up">
-            <p>In these challenging global economic times, there has never been a simpler, 
-              effortless model of fincnace generation available to anyone, and at any level 
-              they choose, from small to large profits.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    </section> -->
     <!-- ======= Testimonials Section ======= -->
     <!-- <section id="testimonials" class="testimonials">
       <div class="container">
