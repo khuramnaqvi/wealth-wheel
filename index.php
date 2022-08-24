@@ -64,28 +64,7 @@
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="howItWork.php">How it Works</a></li>
           <li><a class="nav-link scrollto" href="availableWealthWheel.php">Available Wealth Wheels</a></li>
-          <!-- <li><a class="nav-link scrollto" href="availableWealthWheel.php">Products</a></li> -->
-          <!-- <li><a class="nav-link scrollto" href="about.php">About</a></li> -->
-          <!-- <li class="dropdown"><a href="#"><span>Other Pages</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="faq.php">FAQ's</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> -->
-          <!-- <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li> -->
           <li><a class="nav-link scrollto" href="contac.php">Contact</a></li>
-          <!-- <li class="nav-link ww-register"><a class="nav-link" href="signup.php">Signup</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -133,111 +112,6 @@
   <!-- End Hero -->
 
   <main id="main">
-    <!-- ======= Product slider ======= -->
-    <!-- <section id="product-slider" class="product-slider testimonials">
-      <div class="container">
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Products</h2>
-          <p>What we have done</p>
-        </div>
-         <div class="testimonials-slider product-slider swiper" id="product-slider" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/ww-pic.png" class="testimonial-img" alt="">
-                <div class="testimonial-item-info">
-                  <h3>Product One</h3>
-                  <h4 class="product-price">$320</h4>
-                  <a href="product-dtl.php"  class="pro-dtl-btn">View Detail</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/ww-pic.png" class="testimonial-img" alt="">
-                <div class="testimonial-item-info">
-                  <h3>Product Two</h3>
-                  <h4 class="product-price">$320</h4>
-                  <a href="product-dtl.php" class="pro-dtl-btn">View Detail</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/ww-pic.png" class="testimonial-img" alt="">
-                <div class="testimonial-item-info">
-                  <h3>Product Three</h3>
-                  <h4 class="product-price">$320</h4>
-                  <a href="product-dtl.php" class="pro-dtl-btn">View Detail</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/ww-pic.png" class="testimonial-img" alt="">
-                <div class="testimonial-item-info">
-                  <h3>Product Four</h3>
-                  <h4 class="product-price">$320</h4>
-                  <a href="product-dtl.php" class="pro-dtl-btn">View Detail</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/ww-pic.png" class="testimonial-img" alt="">
-                <div class="testimonial-item-info">
-                  <h3>Product Five</h3>
-                  <h4 class="product-price">$320</h4>
-                  <a href="product-dtl.php" class="pro-dtl-btn">View Detail</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section> -->
-    <!-- End product slider Section -->
-
-    <!-- ======= About Section ======= -->
-    <!-- <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>About</h2>
-          <p>Who we are</p>
-        </div>
-
-        <div class="row content" data-aos="fade-up">
-          <div class="col-lg-6">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <a href="about.php" class="btn-learn-more">Learn More</a>
-          </div>
-        </div>
-
-      </div>
-    </section> -->
-    <!-- End About Section -->
 
     <!-- ======= Marquee Section ======= -->
     <section id="marquee" class="ww-marquee">
@@ -280,49 +154,12 @@
         </div>
       </div>
     </section>
-    <!-- ======= Portfolio Section ======= -->
-    <!-- <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Portfolio</h2>
-          <p>How you can earn</p>
-        </div>
-
-        <div class="row portfolio-container portfolio-main" data-aos="fade-up">
-          <div class="col-lg-6 col-md-6 portfolio-item filter-web portfolio-info">
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 portfolio-item filter-web portfolio-img">
-            <img src="assets/img/ww-pic.png" alt="" class="rotate-in-center img-fluid">
-          </div>
-        </div>
-
-      </div>
-    </section> -->
-    <!-- End Portfolio Section -->
 
 
     <!-- ======= how we work Section ======= -->
     <section id="weWork" class="we-wrok">
       <div class="container">
         <div class="section-title" data-aos="zoom-out">
-          <!-- <h2>How we work</h2> -->
           <p>Wealth Wheels work in the following simple steps:</p>
         </div>
         <div class="row portfolio-container weWork-child" data-aos="fade-up">
@@ -373,89 +210,6 @@
         </div>
       </div>
     </section>
-    <!-- ======= Testimonials Section ======= -->
-    <!-- <section id="testimonials" class="testimonials">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Testimonials</h2>
-          <p>What they are saying about us</p>
-        </div>
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-            </div>
-            
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section> -->
-    <!-- End Testimonials Section -->
   </main>
   <!-- End #main -->
 

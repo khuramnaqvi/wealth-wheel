@@ -1212,7 +1212,6 @@ section {
   transform: rotate(-45deg);
 }
 .avl-wealthWheel .ww-avl-card .ww-card-tag span {
-  /*background-color: #13d6f7;*/
   background: linear-gradient(-180deg, rgb(45 210 235) 0%, rgb(113 146 239) 100%);
   color: #fff;
   padding: 3px 30px;
@@ -1224,7 +1223,6 @@ section {
   color: #11def9;
 }
 .avl-wealthWheel .ww-pro-filter-main {
-    /*height: 100vh;*/
     margin-top: -100px;
     padding: 30px 10px;
     border: 1px solid #d2d2d2;
@@ -1414,15 +1412,6 @@ section {
   text-align: left; 
 }
 
-/*#footer p {
-  font-size: 15;
-  font-style: italic;
-  padding: 0;
-  margin: 0 0 40px 0;
-}*/
-#footer .footer-links {
-  /*padding: 20px;*/
-}
 #footer .footer-links a {
   text-align: left;
   color: #fff;
@@ -1436,7 +1425,6 @@ section {
   color: #2b5be0;
 }
 #footer .social-links {
-  /*margin: 40px 0;*/
   text-align: left;
 }
 
@@ -1465,12 +1453,6 @@ section {
     border-top: 1px solid #11def9;
     padding: 15px;
 }}
-
-
-
-
-
-/*animation*/
 
 
 /*----------media queries----------*/
