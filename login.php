@@ -130,8 +130,8 @@
         <div class="ww-form-wrp" data-aos="fade-right">
             <form action="" method="">
             <div class="form-group">
-              <label for="log-userName">User name</label>
-              <input type="email" class="form-control" id="log-userName" aria-describedby="log-userName" placeholder="Enter name">
+              <label for="log-email">Email</label>
+              <input type="email" class="form-control" id="log-email" aria-describedby="log-email" placeholder="Email">
             </div>
             <div class="form-group">
               <label for="log-exampleInputPassword1">Password</label>

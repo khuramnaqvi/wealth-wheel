@@ -322,7 +322,7 @@
     <section id="weWork" class="we-wrok">
       <div class="container">
         <div class="section-title" data-aos="zoom-out">
-          <h2>How we work</h2>
+          <!-- <h2>How we work</h2> -->
           <p>Wealth Wheels work in the following simple steps:</p>
         </div>
         <div class="row portfolio-container weWork-child" data-aos="fade-up">
