@@ -135,12 +135,12 @@
                   </div>
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   <div class="card-body">
-                    <h5 class="card-title">Ear Buds</h5>
-                    <p class="card-text">This is a longer card with supporting text below.</p>
+                    <h5 class="card-title">Wheel #45</h5>
+                    <p class="card-text">Cog Number : 12</p>
                     <div class="pro-price">
-                      <span>RS.$10</span>
-                    </div>
-                    <a href="product-dtl.php"  class="pro-dtl-btn">View Detail</a>
+                      <h4>Cog Price : <span>$10</span></h4>
+                    </div> 
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -152,12 +152,12 @@
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
                   <div class="card-body">
-                    <h5 class="card-title">Hands Free</h5>
-                    <p class="card-text">This is a longer card with supporting text below.</p>
+                    <h5 class="card-title">Wheel #45</h5>
+                    <p class="card-text">Cog Number : 12</p>
                     <div class="pro-price">
-                      <span>RS.$10</span>
-                    </div>
-                    <a href="product-dtl.php"  class="pro-dtl-btn">View Detail</a>
+                      <h4>Cog Price : <span>$10</span></h4>
+                    </div> 
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -169,12 +169,12 @@
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
                   <div class="card-body">
-                    <h5 class="card-title">Head Phones</h5>
-                    <p class="card-text">This is a longer card with supporting text below.</p>
+                    <h5 class="card-title">Wheel #45</h5>
+                    <p class="card-text">Cog Number : 12</p>
                     <div class="pro-price">
-                      <span>RS.$10</span>
-                    </div>
-                    <a href="product-dtl.php"  class="pro-dtl-btn">View Detail</a>
+                      <h4>Cog Price : <span>$10</span></h4>
+                    </div> 
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -186,12 +186,12 @@
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
                   <div class="card-body">
-                    <h5 class="card-title">Mobile Stands</h5>
-                    <p class="card-text">This is a longer card with supporting text below.</p>
+                    <h5 class="card-title">Wheel #45</h5>
+                    <p class="card-text">Cog Number : 12</p>
                     <div class="pro-price">
-                      <span>RS.$10</span>
-                    </div>
-                    <a href="product-dtl.php"  class="pro-dtl-btn">View Detail</a>
+                      <h4>Cog Price : <span>$10</span></h4>
+                    </div> 
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -203,12 +203,12 @@
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
                   <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
-                    <p class="card-text">This is a longer card with supporting text below.</p>
+                    <h5 class="card-title">Wheel #45</h5>
+                    <p class="card-text">Cog Number : 12</p>
                     <div class="pro-price">
-                      <span>RS.$10</span>
-                    </div>
-                    <a href="product-dtl.php"  class="pro-dtl-btn">View Detail</a>
+                      <h4>Cog Price : <span>$10</span></h4>
+                    </div> 
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -220,12 +220,12 @@
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
                   <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
-                    <p class="card-text">This is a longer card with supporting text below.</p>
+                    <h5 class="card-title">Wheel #45</h5>
+                    <p class="card-text">Cog Number : 12</p>
                     <div class="pro-price">
-                      <span>RS.$10</span>
-                    </div>
-                    <a href="product-dtl.php"  class="pro-dtl-btn">View Detail</a>
+                      <h4>Cog Price : <span>$10</span></h4>
+                    </div> 
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -237,12 +237,12 @@
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
                   <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
-                    <p class="card-text">This is a longer card with supporting text below.</p>
+                    <h5 class="card-title">Wheel #45</h5>
+                    <p class="card-text">Cog Number : 12</p>
                     <div class="pro-price">
-                      <span>RS.$10</span>
-                    </div>
-                    <a href="product-dtl.php"  class="pro-dtl-btn">View Detail</a>
+                      <h4>Cog Price : <span>$10</span></h4>
+                    </div> 
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -254,12 +254,12 @@
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
                   <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
-                    <p class="card-text">This is a longer card with supporting text below.</p>
+                    <h5 class="card-title">Wheel #45</h5>
+                    <p class="card-text">Cog Number : 12</p>
                     <div class="pro-price">
-                      <span>RS.$10</span>
-                    </div>
-                    <a href="product-dtl.php"  class="pro-dtl-btn">View Detail</a>
+                      <h4>Cog Price : <span>$10</span></h4>
+                    </div> 
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
                   </div>
                 </div>
               </div>

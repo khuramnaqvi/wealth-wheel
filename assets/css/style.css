@@ -1220,9 +1220,11 @@ section {
   padding: 3px 30px;
   font-size: 12px 
 }
-.avl-wealthWheel .card-body .pro-price {
+.avl-wealthWheel .card-body .pro-price h4 {
   font-size: 20px;
   font-weight: bold;
+}
+.avl-wealthWheel .card-body .pro-price h4 span {
   color: #11def9;
 }
 .avl-wealthWheel .ww-pro-filter-main {
@@ -1230,6 +1232,10 @@ section {
     padding: 30px 10px;
     border: 1px solid #d2d2d2;
     border-radius: 8px;
+    background: linear-gradient(0deg, rgb(113 146 239) 0%, rgb(45 210 235) 100%);
+    box-shadow: -2px 2px 20px -2px #2676e5;
+    border: 1px solid #2676e5;
+    color: #fff;
 }
 .avl-wealthWheel .ww-pro-filter-main h4 {
 
