@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Wealth Wheel - Index</title>
+  <title>create wealth wheel - Wealth Wheel</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -30,23 +30,26 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 </head>
- <style>
-    .blink {
-        animation: blinker 1.5s linear infinite;
-        color: #2963e2;
-        font-size: 45px;
-        font-style: oblique;
-        text-shadow: 2px 4px 8px rgba(0,0,0,0.6);
-        font-weight: bold;
-        line-height: 75px;
-        font-family: sans-serif;
-    }
-    @keyframes blinker {
-        50% {
-            opacity: 0;
-        }
-    }
+<style type="">
+
+button {
+  background: cornflowerblue;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: 'Lato';
+  margin: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background: orange;
+}
 </style>
 
 <body>
@@ -65,7 +68,7 @@
           <li><a class="nav-link scrollto" href="howItWork.php">How it Works</a></li>
           <li><a class="nav-link scrollto" href="availableWealthWheel.php">Available Wealth Wheels</a></li>
           <li><a class="nav-link scrollto" href="contac.php">Contact Us</a></li>
-        </ul> 
+        </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->
@@ -77,23 +80,15 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
     <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="">
+
       <!-- Slide 1 -->
       <div class="carousel-item active">
-        <div class="carousel-container carousel-container-home">
-          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Wealth Wheel</span></h2>
-            <p class="animate__animated fanimate__adeInUp">Wealth Wheel is a the continuous income-generator platform providing people 
-            with 10% profits on their entries, giving them the simplest way of generating 
-            additional income ever.</p>
-            <p>
-              By simply purchasing a ‘Cog’ within any chosen Wealth Wheel, as more Cogs are 
-              purchased, the earlier users receive 110% of the wheel’s cog value (ie they 
-              receive their initial cog payment back PLUS an additional 10%).
-            </p>
-            <p>
-              In these challenging global economic times, there has never been a simpler, 
-              effortless model of finance generation available to anyone, and at any level they 
-              choose, from small to large profits.
-            </p>
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Create Wealth Wheel</span></h2>
+          <p class="animate__animated fanimate__adeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
           <div class="d-flex ww-banner-btn">
             <a href="signup.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
             <a href="login.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
@@ -101,6 +96,7 @@
           </div>
         </div>
       </div>
+
     </div>
 
     <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
@@ -118,81 +114,63 @@
       </g>
     </svg>
 
-  </section>
-  <!-- End Hero -->
+  </section><!-- End Hero -->
 
   <main id="main">
 
-    <!-- ======= Marquee Section ======= -->
-    <section id="marquee" class="ww-marquee">
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="Signup" class="faq signup ww-form-main">
       <div class="container">
-        <div class="row">
-          <marquee class="blink">Join Wealth Wheel, the revolution in global income generation!</marquee>
-        </div>
-      </div>
-    </section>
 
-
-    <!-- ======= description Section ======= -->
-    <section id="ww-homeInfo" class="ww-home-info" style="padding-top: unset;display: none;">
-      <div class="container">
-        <div class="row">
-          <div data-aos="fade-up">
-            <p>By simply purchaseing a ‘Cog’ withn any chosen Wealth Wheel, as more Cogs 
-              are purchased, the earlier users receive 110% of the wheel’s cog value, ie they 
-              receive their initial cog payment back PLUS an additional 10%.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ======= how we work Section ======= -->
-    <section id="weWork" class="we-wrok">
-      <div class="container">
         <div class="section-title" data-aos="zoom-out">
-          <p>Wealth Wheels work in the following simple steps:</p>
+          <h2>Create Wealth Wheel</h2>
+          <p>Please enter the details</p>
         </div>
-        <div class="row portfolio-container weWork-child" data-aos="fade-up">
-          <div class="col-lg-3 col-md-6 px-lg-0">
-            <div class="we-wrok-steps">
-              <h3>Create An Account</h3>
-              <p>Wealth Wheel is open to anybody to create an account, immediately join any 
-                wheels or create wheels of their own, view/track any cogs that have been 
-                purchased, and withdraw your profits.</p>
+        <div class="ww-form-wrp" data-aos="fade-right">
+            <form action="" method="">
+            <div class="form-group">
+              <label for="wheel-number">Wheel Number</label>
+              <input type="Number" disabled="" class="form-control" id="wheel-number" aria-describedby="wheel-number" placeholder="1 2 3">
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 px-lg-0">
-            <div class="we-wrok-steps">
-              <h3>Create A Wealth Wheel</h3>
-              <p>To create a Wealth Wheel, after setting the Cog Price it is immediately available 
-                  for anybody to join.</p>
+            <div class="form-group">
+              <label for="wheel-name">Wheel Name</label>
+              <input type="text" class="form-control" id="wheel-name" placeholder="wheel name">
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 px-lg-0">
-            <div class="we-wrok-steps">
-              <h3>Purchase Cogs</h3>
-              <p>There is no limit to how many cogs you can purchase, and any Wealth Wheel is 
-                Availablee to join and receive profit from.</p>
+            <div class="form-group">
+              <label for="cog-price">Cog Price</label>
+              <input type="number" class="form-control" id="cog-price" placeholder="cog price">
             </div>
-          </div>
+            <div class="form-group">
+              <label for="">Image</label>
+              <input type="file" class="form-control" accept="image/*" />
+            </div>
+            <button type="button" class="btn btn-primary confirmation-message first">Save</button>
+          </form>
+        </div>
 
-          <div class="col-lg-3 col-md-6 px-lg-0">
-            <div class="we-wrok-steps">
-              <h3>Invite Others</h3>
-              <p>Whether you’re a Wealth Wheel owner or have joined a wheel, invite others to 
-                join your wheels and also generate profits with you. The more cogs that join a 
-                wheel, the quicker the wheel spins, and the faster profits are generated.</p>
-            </div>
-          </div>
+      </div>
+      <div class="toast">
+        <div class="toast-header">
+          Toast Header
+        </div>
+        <div class="toast-body">
+          Some text inside the toast body
         </div>
       </div>
     </section>
+
+
+
+
+    <!-- <button class="first1">Title Only</button>
+    <button class="second">Title and Text</button>
+    <button class="third">Title, Text and Icon</button> -->
+
   </main>
   <!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="mt-5">
+<!-- ======= Footer ======= -->
+  <footer id="footer">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-3">
@@ -244,7 +222,27 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="">
+    $(document).ready(function () {
+        document.querySelector(".first").addEventListener('click', function(){
+          Swal.fire("Our First Alert");
+        });
+
+        // document.querySelector(".second").addEventListener('click', function(){
+        //   Swal.fire("Our First Alert", "With some body text!");
+        // });
+
+        // document.querySelector(".third").addEventListener('click', function(){
+        //   Swal.fire("Our First Alert", "With some body text and success icon!", "success");
+        // });
+        $(".first").click(function(){
+          $('.toast').toast('show');
+        });
+    });
+  </script>
+
 </body>
 
 </html>

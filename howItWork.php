@@ -64,28 +64,7 @@
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto active" href="howItWork.php">How it Works</a></li>
           <li><a class="nav-link scrollto" href="availableWealthWheel.php">Available Wealth Wheels</a></li>
-          <!-- <li><a class="nav-link scrollto" href="availableWealthWheel.php">Products</a></li> -->
-          <!-- <li><a class="nav-link scrollto" href="about.php">About</a></li> -->
-          <!-- <li class="dropdown"><a href="#"><span>Other Pages</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="faq.php">FAQ's</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> -->
-          <!-- <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li> -->
           <li><a class="nav-link scrollto" href="contac.php">Contact Us</a></li>
-          <!-- <li class="nav-link ww-register"><a class="nav-link" href="signup.php">Signup</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -108,10 +87,18 @@
             Picture a wheel and the cogs that make up the wheel, spinning as the wheel 
             rotates. That is the concept of a Wealth Wheel.
           </p>
+          <p>
+            Each cog purchased becomes part of wheel, and as more and more cogs are 
+              purchased, the wheel returns the cog payment made to the earlier cog 
+              purchasers, with an additional 10%.
+              For example, if you purchase a Wealth Wheel Cog for $100, the wheel will return 
+              you $110.
+
+          </p>
           <div class="d-flex ww-banner-btn">
             <a href="signup.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
             <a href="login.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
-            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
+            <a href="createWealthWheel.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
           </div>
         </div>
       </div>
@@ -258,63 +245,6 @@
       <div class="container">
         <div class="row">
           <marquee class="blink">The Wealth Wheel continues to return these cog user profit payouts.</marquee>
-        </div>
-      </div>
-    </section>
-    <!-- ======= how we work Section ======= -->
-    <!-- <section id="weWork" class="we-wrok weWork-child-wrp mb-5">
-      <div class="container">
-        <div class="section-title" data-aos="zoom-out">
-          <h2>How we work</h2>
-          <p>Wealth Wheels work in the following simple steps</p>
-        </div>
-        <div class="row portfolio-container weWork-child" data-aos="fade-up">
-          <div class="col-lg-3 col-md-6 px-lg-0">
-            <div class="we-wrok-steps">
-              <h3>Create An Account</h3>
-              <p>Wealth Wheel is open to anybody to create an account, immediately join any 
-                wheels or create wheels of their own, view/track any cogs that have been 
-                purchased, and withdraw your profits</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 px-lg-0">
-            <div class="we-wrok-steps">
-              <h3>Create A Wealth Wheel</h3>
-              <p>For somebody to create a Wealth Wheel, after setting the Cog Price it is 
-                immediately available for anybody to join.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 px-lg-0">
-            <div class="we-wrok-steps">
-              <h3>Purchase Cogs</h3>
-              <p>There is no limit to how many cogs you can purchase, and any Wealth Wheel is 
-                avaialbe to join and receive profit from.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 px-lg-0">
-            <div class="we-wrok-steps">
-              <h3>Invite Others</h3>
-              <p>Whether you’re a Wealth Wheel owner or have joined a wheel, invite others to 
-                join your wheels and also generate profits with you. The more cogs that join a 
-                wheel, the quicker the wheel spins, and the faster profits are generated.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-
-    <!-- ======= description Section ======= -->
-    <section id="ww-homeInfo" class="ww-home-info ww-howitwork-info" style="padding-top: unset;">
-      <div class="container">
-        <div class="row">
-          <div data-aos="fade-up">
-            <p>Each cog purchased becomes part of wheel, and as more and more cogs are 
-              purchased, the wheel returns the cog payment made to the earlier cog 
-              purchasers, with an additional 10%.
-              For example, if you purchase a Wealth Wheel Cog for $100, the wheel will return 
-              you $110.</p>
-          </div>
         </div>
       </div>
     </section>

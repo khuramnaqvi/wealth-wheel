@@ -94,28 +94,7 @@
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="howItWork.php">How it Works</a></li>
           <li><a class="nav-link scrollto" href="availableWealthWheel.php">Available Wealth Wheels</a></li>
-          <!-- <li><a class="nav-link scrollto" href="availableWealthWheel.php">Products</a></li> -->
-          <!-- <li><a class="nav-link scrollto" href="about.php">About</a></li> -->
-          <!-- <li class="dropdown"><a href="#"><span>Other Pages</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="faq.php">FAQ's</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> -->
-          <!-- <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li> -->
-          <li><a class="nav-link scrollto" href="contac.php">Contact</a></li>
-          <!-- <li class="nav-link ww-register"><a class="nav-link" href="signup.php">Signup</a></li> -->
+          <li><a class="nav-link scrollto" href="contac.php">Contact Us</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -137,7 +116,7 @@
           <div class="d-flex ww-banner-btn">
             <a href="signup.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
             <a href="login.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
-            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
+            <a href="createWealthWheel.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
           </div>
         </div>
       </div>
