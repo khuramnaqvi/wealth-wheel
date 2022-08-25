@@ -1393,8 +1393,8 @@ section {
 
   }
   #hero .carousel-container {
-    padding-top: 0px;
-    height: 65vh;
+    padding-top: 50px;
+    height: 100vh;
   }
 }
 /*--------------------------------------------------------------
