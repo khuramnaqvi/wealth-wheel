@@ -125,109 +125,109 @@
     <section id="cogs" class="we-wrok-cogs">
       <div class="container">
         <div class="section-title" data-aos="zoom-out">
-          <h2>Cogs payouts</h2>
+          <h2>Cog payouts</h2>
           <p>Below is how the Wealth Wheel cog payouts work</p>
         </div>
         <div class="row portfolio-container weWork-child" data-aos="fade-up"> 
           <table class="table">
             <thead>
               <tr>
-                <th scope="col"  class="table-active">Cogs Number Purchased</th>
-                <th scope="col"  class="table-active">Cogs Number Payouts</th>
+                <th scope="col"  class="table-active">Cog Number Purchased</th>
+                <th scope="col"  class="table-active">Cog Number Payouts</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Cogs 6</td>
-                <td>Cogs 1</td>
+                <td>Cog 6</td>
+                <td>Cog 1</td>
               </tr>
               <tr>
-                <td>Cogs 7</td>
-                <td>Cogs 2</td>
+                <td>Cog 7</td>
+                <td>Cog 2</td>
               </tr>
               <tr>
-                <td>Cogs 8</td>
-                <td>Cogs 3</td>
+                <td>Cog 8</td>
+                <td>Cog 3</td>
               </tr>
               <tr>
-                <td>Cogs 9</td>
-                <td>Cogs 4</td>
+                <td>Cog 9</td>
+                <td>Cog 4</td>
               </tr>
               <tr>
-                <td>Cogs 10</td>
-                <td>Cogs 5</td>
+                <td>Cog 10</td>
+                <td>Cog 5</td>
               </tr>
               <tr>
-                <td>Cogs 11</td>
+                <td>Cog 11</td>
                 <td class="table-active"></td>
               </tr>
               <tr>
-                <td>Cogs 12</td>
-                <td>Cogs 6</td>
+                <td>Cog 12</td>
+                <td>Cog 6</td>
               </tr>
               <tr>
-                <td>Cogs 13</td>
-                <td>Cogs 7</td>
+                <td>Cog 13</td>
+                <td>Cog 7</td>
               </tr>
               <tr>
-                <td>Cogs 14</td>
-                <td>Cogs 8</td>
+                <td>Cog 14</td>
+                <td>Cog 8</td>
               </tr>
               <tr>
-                <td>Cogs 15</td>
-                <td>Cogs 9</td>
+                <td>Cog 15</td>
+                <td>Cog 9</td>
               </tr>
               <tr>
-                <td>Cogs 16</td>
-                <td>Cogs 10</td>
+                <td>Cog 16</td>
+                <td>Cog 10</td>
               </tr>
               <tr>
-                <td>Cogs 17</td>
+                <td>Cog 17</td>
                 <td class="table-active"></td>
               </tr>
               <tr>
-                <td>Cogs 18</td>
-                <td>Cogs 11</td>
+                <td>Cog 18</td>
+                <td>Cog 11</td>
               </tr>
               <tr>
-                <td>Cogs 19</td>
-                <td>Cogs 12</td>
+                <td>Cog 19</td>
+                <td>Cog 12</td>
               </tr>
               <tr>
-                <td>Cogs 20</td>
-                <td>Cogs 13</td>
+                <td>Cog 20</td>
+                <td>Cog 13</td>
               </tr>
               <tr>
-                <td>Cogs 21</td>
-                <td>Cogs 14</td>
+                <td>Cog 21</td>
+                <td>Cog 14</td>
               </tr>
               <tr>
-                <td>Cogs 22</td>
-                <td>Cogs 15</td>
+                <td>Cog 22</td>
+                <td>Cog 15</td>
               </tr>
               <tr>
-                <td>Cogs 23</td>
+                <td>Cog 23</td>
                 <td class="table-active"></td>
               </tr>
               <tr>
-                <td>Cogs 24</td>
-                <td>Cogs 16</td>
+                <td>Cog 24</td>
+                <td>Cog 16</td>
               </tr>
               <tr>
-                <td>Cogs 25</td>
-                <td>Cogs 17</td>
+                <td>Cog 25</td>
+                <td>Cog 17</td>
               </tr>
               <tr>
-                <td>Cogs 26</td>
-                <td>Cogs 18</td>
+                <td>Cog 26</td>
+                <td>Cog 18</td>
               </tr>
               <tr>
-                <td>Cogs 27</td>
-                <td>Cogs 19</td>
+                <td>Cog 27</td>
+                <td>Cog 19</td>
               </tr>
               <tr>
-                <td>Cogs 28</td>
-                <td>Cogs 20</td>
+                <td>Cog 28</td>
+                <td>Cog 20</td>
               </tr>
             </tbody>
           </table>
