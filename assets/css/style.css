@@ -97,7 +97,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  height: 90px;
+  height: 120px;
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
@@ -131,7 +131,7 @@ h6 {
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 90px;
+  max-height: 150px;
 }
 
 /*--------------------------------------------------------------
@@ -386,8 +386,11 @@ h6 {
   flex-direction: column;
   text-align: center;
   position: relative;
-  height: 70vh;
+  height: 80vh;
   padding-top: 60px;
+}
+#hero .carousel-container.carousel-container-home {
+  height: 100vh;
 }
 
 #hero h2 {
@@ -1228,7 +1231,7 @@ section {
   color: #11def9;
 }
 .avl-wealthWheel .ww-pro-filter-main {
-    margin-top: -100px;
+    margin-top: 8px;
     padding: 30px 10px;
     border: 1px solid #d2d2d2;
     border-radius: 8px;

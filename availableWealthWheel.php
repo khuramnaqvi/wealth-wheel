@@ -66,7 +66,7 @@
             </ul>
           </li> -->
           <!-- <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li> -->
-          <li><a class="nav-link scrollto" href="contac.php">Contact</a></li>
+          <li><a class="nav-link scrollto" href="contac.php">Contact Us</a></li>
           <!-- <li class="nav-link ww-register"><a class="nav-link" href="signup.php">Signup</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -84,7 +84,7 @@
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Available Wealth Wheel</span></h2>
+          <h2 class="animate__animated animate__fadeInDown">Available Wealth Wheels</span></h2>
           <p class="animate__animated fanimate__adeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
           <div class="d-flex ww-banner-btn">
@@ -120,10 +120,10 @@
   <section id="our-products" class="our-products avl-wealthWheel">
       <div class="container">
 
-        <div class="section-title" data-aos="zoom-out">
+        <!-- <div class="section-title" data-aos="zoom-out">
           <h2>Products</h2>
           <p>Here you can see our products</p>
-        </div>
+        </div> -->
 
         <div class="row content" data-aos="fade-up">
           <div class="col-lg-9">
@@ -140,7 +140,7 @@
                     <div class="pro-price">
                       <h4>Cog Price : <span>$10</span></h4>
                     </div> 
-                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Join Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -157,7 +157,7 @@
                     <div class="pro-price">
                       <h4>Cog Price : <span>$10</span></h4>
                     </div> 
-                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Join Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -174,7 +174,7 @@
                     <div class="pro-price">
                       <h4>Cog Price : <span>$10</span></h4>
                     </div> 
-                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Join Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -191,7 +191,7 @@
                     <div class="pro-price">
                       <h4>Cog Price : <span>$10</span></h4>
                     </div> 
-                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Join Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -208,7 +208,7 @@
                     <div class="pro-price">
                       <h4>Cog Price : <span>$10</span></h4>
                     </div> 
-                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Join Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -225,7 +225,7 @@
                     <div class="pro-price">
                       <h4>Cog Price : <span>$10</span></h4>
                     </div> 
-                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Join Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -242,7 +242,7 @@
                     <div class="pro-price">
                       <h4>Cog Price : <span>$10</span></h4>
                     </div> 
-                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Join Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -259,7 +259,7 @@
                     <div class="pro-price">
                       <h4>Cog Price : <span>$10</span></h4>
                     </div> 
-                    <a href="product-dtl.php"  class="pro-dtl-btn">Enter Wealth Wheel</a>
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Join Wealth Wheel</a>
                   </div>
                 </div>
               </div>
@@ -269,12 +269,12 @@
             <div class="ww-pro-filter-main">
               <h4 class="fw-bold mb-4">Apply Filter</h4>
               <div class="ww-pro-filter-wrp mb-5">
-                <h6 class="pb-1">Search Product by Name</h6>
+                <h6 class="pb-1">Find Wealth Wheel Number</h6>
                 <div>
-                  <input type="text" name="ww-pro-name" class="w-100 ps-2" placeholder="enter name">
+                  <input type="text" name="ww-pro-name" class="w-100 ps-2" placeholder="enter wheel number">
                 </div>
               </div>
-              <div class="ww-pro-filter-wrp mb-5">
+              <!-- <div class="ww-pro-filter-wrp mb-5">
                 <h6 class="pb-1">Search Product by Category</h6>
                 <div>
                   <input type="text" name="ww-pro-category" class="w-100 ps-2" placeholder="enter category">
@@ -285,7 +285,7 @@
                 <div>
                   <input type="text" name="ww-pro-price" class="w-100 ps-2" placeholder="enter price">
                 </div>
-              </div>  
+              </div> -->  
             </div>
           </div>
         </div>
@@ -308,9 +308,9 @@
         <div class="col-lg-3 col-md-3"> 
           <h3>FEATURES</h3>
           <div class="footer-links">
-            <a href="about.php">About us</a>
+            <!-- <a href="about.php">About us</a> -->
             <a href="howItWork.php">how it works</a>
-            <a href="availableWealthWheel.php">available wealth wheel</a>
+            <a href="availableWealthWheel.php">available wealth wheels</a>
             <a href="contac.php">Contact us</a>
           </div>
         </div>

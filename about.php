@@ -324,7 +324,7 @@
         <div class="col-lg-3 col-md-3"> 
           <h3>FEATURES</h3>
           <div class="footer-links">
-            <a href="about.php">About us</a>
+            <!-- <a href="about.php">About us</a> -->
             <a href="howItWork.php">how it works</a>
             <a href="availableWealthWheel.php">available wealth wheel</a>
             <a href="contac.php">Contact us</a>

@@ -84,7 +84,7 @@
             </ul>
           </li> -->
           <!-- <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li> -->
-          <li><a class="nav-link scrollto" href="contac.php">Contact</a></li>
+          <li><a class="nav-link scrollto" href="contac.php">Contact Us</a></li>
           <!-- <li class="nav-link ww-register"><a class="nav-link" href="signup.php">Signup</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -102,7 +102,7 @@
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">How it Work</h2>
+          <h2 class="animate__animated animate__fadeInDown">How it Works</h2>
           <p class="animate__animated fanimate__adeInUp">
             Wealth Wheels are a continuous generation of individual profit.
             Picture a wheel and the cogs that make up the wheel, spinning as the wheel 
@@ -262,7 +262,7 @@
       </div>
     </section>
     <!-- ======= how we work Section ======= -->
-    <section id="weWork" class="we-wrok weWork-child-wrp mb-5">
+    <!-- <section id="weWork" class="we-wrok weWork-child-wrp mb-5">
       <div class="container">
         <div class="section-title" data-aos="zoom-out">
           <h2>How we work</h2>
@@ -301,11 +301,11 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
 
     <!-- ======= description Section ======= -->
-    <section id="ww-homeInfo" class="ww-home-info ww-howitwork-info">
+    <section id="ww-homeInfo" class="ww-home-info ww-howitwork-info" style="padding-top: unset;">
       <div class="container">
         <div class="row">
           <div data-aos="fade-up">
@@ -332,9 +332,9 @@
         <div class="col-lg-3 col-md-3"> 
           <h3>FEATURES</h3>
           <div class="footer-links">
-            <a href="about.php">About us</a>
+            <!-- <a href="about.php">About us</a> -->
             <a href="howItWork.php">how it works</a>
-            <a href="availableWealthWheel.php">available wealth wheel</a>
+            <a href="availableWealthWheel.php">available wealth wheels</a>
             <a href="contac.php">Contact us</a>
           </div>
         </div>

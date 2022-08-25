@@ -64,8 +64,8 @@
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="howItWork.php">How it Works</a></li>
           <li><a class="nav-link scrollto" href="availableWealthWheel.php">Available Wealth Wheels</a></li>
-          <li><a class="nav-link scrollto" href="contac.php">Contact</a></li>
-        </ul>
+          <li><a class="nav-link scrollto" href="contac.php">Contact Us</a></li>
+        </ul> 
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->
@@ -79,11 +79,21 @@
     <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="">
       <!-- Slide 1 -->
       <div class="carousel-item active">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Wealth Wheels</span></h2>
+        <div class="carousel-container carousel-container-home">
+          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Wealth Wheel</span></h2>
             <p class="animate__animated fanimate__adeInUp">Wealth Wheel is a the continuous income-generator platform providing people 
             with 10% profits on their entries, giving them the simplest way of generating 
             additional income ever.</p>
+            <p>
+              By simply purchasing a ‘Cog’ within any chosen Wealth Wheel, as more Cogs are 
+              purchased, the earlier users receive 110% of the wheel’s cog value (ie they 
+              receive their initial cog payment back PLUS an additional 10%).
+            </p>
+            <p>
+              In these challenging global economic times, there has never been a simpler, 
+              effortless model of finance generation available to anyone, and at any level they 
+              choose, from small to large profits.
+            </p>
           <div class="d-flex ww-banner-btn">
             <a href="signup.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
             <a href="login.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
@@ -125,7 +135,7 @@
     
 
     <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
+   <!--  <section id="cta" class="cta">
       <div class="container">
         <div class="row" data-aos="zoom-out">
           <div class="col-lg-9 text-center text-lg-start">
@@ -138,12 +148,12 @@
         </div>
 
       </div>
-    </section>
+    </section> -->
     <!-- End Cta Section -->
 
 
     <!-- ======= description Section ======= -->
-    <section id="ww-homeInfo" class="ww-home-info">
+    <section id="ww-homeInfo" class="ww-home-info" style="padding-top: unset;">
       <div class="container">
         <div class="row">
           <div data-aos="fade-up">
@@ -168,21 +178,21 @@
               <h3>Create An Account</h3>
               <p>Wealth Wheel is open to anybody to create an account, immediately join any 
                 wheels or create wheels of their own, view/track any cogs that have been 
-                purchased, and withdraw your profits</p>
+                purchased, and withdraw your profits.</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 px-lg-0">
             <div class="we-wrok-steps">
               <h3>Create A Wealth Wheel</h3>
-              <p>For somebody to create a Wealth Wheel, after setting the Cog Price it is 
-                immediately available for anybody to join.</p>
+              <p>To create a Wealth Wheel, after setting the Cog Price it is immediately available 
+                  for anybody to join.</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 px-lg-0">
             <div class="we-wrok-steps">
               <h3>Purchase Cogs</h3>
               <p>There is no limit to how many cogs you can purchase, and any Wealth Wheel is 
-                avaialbe to join and receive profit from.</p>
+                Availablee to join and receive profit from.</p>
             </div>
           </div>
 
@@ -223,9 +233,9 @@
         <div class="col-lg-3 col-md-3"> 
           <h3>FEATURES</h3>
           <div class="footer-links">
-            <a href="about.php">About us</a>
+            <!-- <a href="about.php">About us</a> -->
             <a href="howItWork.php">how it works</a>
-            <a href="availableWealthWheel.php">available wealth wheel</a>
+            <a href="availableWealthWheel.php">available wealth wheels</a>
             <a href="contac.php">Contact us</a>
           </div>
         </div>

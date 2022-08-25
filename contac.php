@@ -67,7 +67,7 @@
             </ul>
           </li> -->
           <!-- <li><a class="nav-link scrollto" href="faq.php">FAQ's</a></li> -->
-          <li><a class="nav-link scrollto active" href="contac.php">Contact</a></li>
+          <li><a class="nav-link scrollto active" href="contac.php">Contact Us</a></li>
           <!-- <li class="nav-link ww-register"><a class="nav-link" href="signup.php">Signup</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -86,10 +86,9 @@
       <div class="carousel-item active">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Contact Us</span></h2>
-          <p class="animate__animated fanimate__adeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+          <p class="animate__animated fanimate__adeInUp">
+            For any enquiries, complete the below contact form or email us at hello@wealth-wheel.com.
+          </p>
           <div class="d-flex ww-banner-btn">
             <a href="signup.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
             <a href="login.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
@@ -132,11 +131,11 @@
 
           <div class="col-lg-4" data-aos="fade-right">
             <div class="info">
-              <div class="address">
+              <!-- <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
                 <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
+              </div> -->
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
@@ -144,11 +143,11 @@
                 <p>hello@wealth-wheel.com</p>
               </div>
 
-              <div class="phone">
+              <!-- <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
                 <p>+1 5589 55488 55s</p>
-              </div>
+              </div> -->
 
             </div>
 
@@ -198,9 +197,9 @@
         <div class="col-lg-3 col-md-3"> 
           <h3>FEATURES</h3>
           <div class="footer-links">
-            <a href="about.php">About us</a>
+            <!-- <a href="about.php">About us</a> -->
             <a href="howItWork.php">how it works</a>
-            <a href="availableWealthWheel.php">available wealth wheel</a>
+            <a href="availableWealthWheel.php">available wealth wheels</a>
             <a href="contac.php">Contact us</a>
           </div>
         </div>
