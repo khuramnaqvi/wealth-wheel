@@ -855,6 +855,9 @@ section {
   background-attachment: fixed;
   padding: 100px 0;
 }
+.ww-howitwork {
+  padding-top: unset;
+}
 .we-wrok::before {
     position: absolute;
     content: "";
@@ -1385,7 +1388,15 @@ section {
     display: inline-block;
   }
 }
+@media (max-width: 480px) {
+  #header.header-scrolled {
 
+  }
+  #hero .carousel-container {
+    padding-top: 100px;
+    height: 90vh;
+  }
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

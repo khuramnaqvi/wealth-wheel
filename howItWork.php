@@ -30,6 +30,23 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    .blink {
+        animation: blinker 1.5s linear infinite;
+        color: #2963e2;
+        font-size: 45px;
+        font-style: oblique;
+        text-shadow: 2px 4px 8px rgba(0,0,0,0.6);
+        font-weight: bold;
+        line-height: 75px;
+        font-family: sans-serif;
+    }
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
+    }
+</style>
 </head>
 
 <body>
@@ -86,10 +103,11 @@
       <div class="carousel-item active">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">How it Work</h2>
-          <p class="animate__animated fanimate__adeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+          <p class="animate__animated fanimate__adeInUp">
+            Wealth Wheels are a continuous generation of individual profit.
+            Picture a wheel and the cogs that make up the wheel, spinning as the wheel 
+            rotates. That is the concept of a Wealth Wheel.
+          </p>
           <div class="d-flex ww-banner-btn">
             <a href="signup.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
             <a href="login.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
@@ -234,6 +252,15 @@
         </div>
       </div>
     </section>
+
+    <!-- ======= Marquee Section ======= -->
+    <section id="marquee" class="ww-marquee ww-howitwork marquee">
+      <div class="container">
+        <div class="row">
+          <marquee class="blink">The Wealth Wheel continues to return these cog user profit payouts.</marquee>
+        </div>
+      </div>
+    </section>
     <!-- ======= how we work Section ======= -->
     <section id="weWork" class="we-wrok weWork-child-wrp mb-5">
       <div class="container">
@@ -271,6 +298,22 @@
                 join your wheels and also generate profits with you. The more cogs that join a 
                 wheel, the quicker the wheel spins, and the faster profits are generated.</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ======= description Section ======= -->
+    <section id="ww-homeInfo" class="ww-home-info ww-howitwork-info">
+      <div class="container">
+        <div class="row">
+          <div data-aos="fade-up">
+            <p>Each cog purchased becomes part of wheel, and as more and more cogs are 
+              purchased, the wheel returns the cog payment made to the earlier cog 
+              purchasers, with an additional 10%.
+              For example, if you purchase a Wealth Wheel Cog for $100, the wheel will return 
+              you $110.</p>
           </div>
         </div>
       </div>

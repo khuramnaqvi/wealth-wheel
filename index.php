@@ -32,22 +32,22 @@
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
  <style>
-        .blink {
-            animation: blinker 1.5s linear infinite;
-            color: #2963e2;
-            font-size: 45px;
-            font-style: oblique;
-            text-shadow: 2px 4px 8px rgba(0,0,0,0.6);
-            font-weight: bold;
-            line-height: 75px;
-            font-family: sans-serif;
+    .blink {
+        animation: blinker 1.5s linear infinite;
+        color: #2963e2;
+        font-size: 45px;
+        font-style: oblique;
+        text-shadow: 2px 4px 8px rgba(0,0,0,0.6);
+        font-weight: bold;
+        line-height: 75px;
+        font-family: sans-serif;
+    }
+    @keyframes blinker {
+        50% {
+            opacity: 0;
         }
-        @keyframes blinker {
-            50% {
-                opacity: 0;
-            }
-        }
-    </style>
+    }
+</style>
 
 <body>
 
@@ -142,7 +142,7 @@
     <!-- End Cta Section -->
 
 
-    <!-- ======= Marquee Section ======= -->
+    <!-- ======= description Section ======= -->
     <section id="ww-homeInfo" class="ww-home-info">
       <div class="container">
         <div class="row">
@@ -198,7 +198,7 @@
       </div>
     </section>
 
-     <!-- ======= Marquee Section ======= -->
+     <!-- ======= description Section ======= -->
     <section id="ww-homeInfo" class="ww-home-info">
       <div class="container">
         <div class="row">
