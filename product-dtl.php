@@ -187,7 +187,7 @@
                 </p>
               </div>
               <div class="ww-pro-price my-4">
-                <h4>Cog Price : 3000</h4>
+                <h4>Cog Price : $3000</h4>
               </div>
               <!-- <div class="ww-pro-quantity my-4">
                   <div id="ww-quantity">
