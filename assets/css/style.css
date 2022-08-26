@@ -1203,8 +1203,8 @@ section {
 
   }
   #hero .carousel-container {
-    padding-top: 50px;
-    height: 85vh;
+    padding: 120px 0 0;
+    height: unset;
   }
   .carousel-home {
 
