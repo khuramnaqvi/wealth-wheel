@@ -1073,6 +1073,10 @@ section {
   font-weight: bold;
   color: #2a2c39;
 }
+.ww-product-dtl .ww-pro-description .ww-pro-number {
+  font-size: 22px;
+  font-weight: 500;
+}
 .ww-product-dtl .ww-pro-description .ww-pro-action button {
   width: calc(100% / 2 - 20px);
   margin: 8px;

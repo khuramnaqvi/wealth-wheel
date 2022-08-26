@@ -182,6 +182,9 @@
             <div class="ww-pro-description">
               <div class="ww-pro-name">
                 <h2>Wealth Wheel Number</h2>
+                <p class="ww-pro-number">
+                  <span>1 2 3 4</span>
+                </p>
               </div>
               <div class="ww-pro-price my-4">
                 <h4>Cog Price : 3000</h4>
