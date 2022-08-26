@@ -75,7 +75,7 @@
   <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+  <section id="hero" class="d-flex flex-column justify-content-end align-items-center carousel-home">
     <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="">
       <!-- Slide 1 -->
       <div class="carousel-item active">
@@ -173,7 +173,7 @@
             <div class="we-wrok-steps">
               <h3>Purchase Cogs</h3>
               <p>There is no limit to how many cogs you can purchase, and any Wealth Wheel is 
-                Availablee to join and receive profit from.</p>
+                Available to join and receive profit from.</p>
             </div>
           </div>
 

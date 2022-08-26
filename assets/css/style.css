@@ -377,6 +377,9 @@ h6 {
   height: 80vh;
   padding-top: 60px;
 }
+#hero .carousel-container.carousel-container-detail {
+  height: 50vh;
+}
 #hero .carousel-container.carousel-container-home {
   height: 100vh;
 }
@@ -1021,8 +1024,8 @@ section {
 }
 .avl-wealthWheel .ww-avl-card .ww-card-tag {
   position: absolute;
-  top: 15px;
-  left: -28px;
+  top: 20px;
+  left: -37px;
   z-index: 999;
   transform: rotate(-45deg);
 }
@@ -1093,6 +1096,7 @@ section {
     font-size: 20px;
     color: #2a2c39;
     margin-right: 10px;
+    font-weight: bold;
 }
 .ww-product-dtl .ww-pro-description .ww-pro-quantity .ww-plus-minus {
     background-color: #fff;
@@ -1201,6 +1205,13 @@ section {
   #hero .carousel-container {
     padding-top: 50px;
     height: 85vh;
+  }
+  .carousel-home {
+
+  }
+  #hero .carousel-container.carousel-container-home {
+    height: unset;
+    padding: 120px 0 0px;
   }
 }
 /*--------------------------------------------------------------

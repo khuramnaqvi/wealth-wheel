@@ -104,7 +104,7 @@
               <div class="ww-avl-card col-md-4 my-2">
                 <div class="card">
                   <div  class="ww-card-tag">
-                    <span>Available</span>
+                    <span>Available Now</span>
                   </div>
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   <div class="card-body">
@@ -120,24 +120,7 @@
               <div class="ww-avl-card col-md-4 my-2">
                 <div class="card">
                   <div  class="ww-card-tag">
-                    <span>Available</span>
-                  </div>
-                  <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
-                  
-                  <div class="card-body">
-                    <h5 class="card-title">Wheel #45</h5>
-                    <p class="card-text">Cog Number : 12</p>
-                    <div class="pro-price">
-                      <h4>Cog Price : <span>$10</span></h4>
-                    </div> 
-                    <a href="product-dtl.php"  class="pro-dtl-btn">Join Wealth Wheel</a>
-                  </div>
-                </div>
-              </div>
-              <div class="ww-avl-card col-md-4 my-2">
-                <div class="card">
-                  <div  class="ww-card-tag">
-                    <span>Available</span>
+                    <span>Available Now</span>
                   </div>
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
@@ -154,7 +137,7 @@
               <div class="ww-avl-card col-md-4 my-2">
                 <div class="card">
                   <div  class="ww-card-tag">
-                    <span>Available</span>
+                    <span>Available Now</span>
                   </div>
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
@@ -171,7 +154,7 @@
               <div class="ww-avl-card col-md-4 my-2">
                 <div class="card">
                   <div  class="ww-card-tag">
-                    <span>Available</span>
+                    <span>Available Now</span>
                   </div>
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
@@ -188,7 +171,7 @@
               <div class="ww-avl-card col-md-4 my-2">
                 <div class="card">
                   <div  class="ww-card-tag">
-                    <span>Available</span>
+                    <span>Available Now</span>
                   </div>
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
@@ -205,7 +188,7 @@
               <div class="ww-avl-card col-md-4 my-2">
                 <div class="card">
                   <div  class="ww-card-tag">
-                    <span>Available</span>
+                    <span>Available Now</span>
                   </div>
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
@@ -222,7 +205,24 @@
               <div class="ww-avl-card col-md-4 my-2">
                 <div class="card">
                   <div  class="ww-card-tag">
-                    <span>Available</span>
+                    <span>Available Now</span>
+                  </div>
+                  <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
+                  
+                  <div class="card-body">
+                    <h5 class="card-title">Wheel #45</h5>
+                    <p class="card-text">Cog Number : 12</p>
+                    <div class="pro-price">
+                      <h4>Cog Price : <span>$10</span></h4>
+                    </div> 
+                    <a href="product-dtl.php"  class="pro-dtl-btn">Join Wealth Wheel</a>
+                  </div>
+                </div>
+              </div>
+              <div class="ww-avl-card col-md-4 my-2">
+                <div class="card">
+                  <div  class="ww-card-tag">
+                    <span>Available Now</span>
                   </div>
                   <img src="assets/img/ww-pic.png" alt="" class="img-fluid">
                   
@@ -244,7 +244,7 @@
               <div class="ww-pro-filter-wrp mb-5">
                 <h6 class="pb-1">Find Wealth Wheel Number</h6>
                 <div>
-                  <input type="text" name="ww-pro-name" class="w-100 ps-2" placeholder="enter wheel number">
+                  <input type="text" name="ww-pro-name" class="w-100 ps-2" placeholder="Enter wheel number">
                 </div>
               </div>
             </div>

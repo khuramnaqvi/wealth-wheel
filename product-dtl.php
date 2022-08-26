@@ -55,6 +55,7 @@
     }
     .primary {
       height: 400px;
+      max-width: 450px;
       background-color: #cccccc;
       background-size: cover;
       background-position: center center;
@@ -68,8 +69,8 @@
     }
 
     .thumbnail-image {
-      width: 110px;
-      height: 110px;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
       margin: 20px auto;
       background-size: cover;
@@ -109,15 +110,15 @@
 
       <!-- Slide 1 -->
       <div class="carousel-item active">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Products Details</span></h2>
-          <p class="animate__animated fanimate__adeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-          <div class="d-flex ww-banner-btn">
+        <div class="carousel-container carousel-container-detail">
+          <h2 class="animate__animated animate__fadeInDown">Wealth Wheel Details</span></h2>
+          <!-- <p class="animate__animated fanimate__adeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p> -->
+          <!-- <div class="d-flex ww-banner-btn">
             <a href="signup.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
             <a href="login.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
             <a href="createWealthWheel.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -147,15 +148,15 @@
       <div class="container">
 
         <div class="section-title" data-aos="zoom-out">
-          <h2>Product details</h2>
-          <p>Here you can see the product details</p>
+          <!-- <h2>Product details</h2> -->
+          <!-- <p>Here you can see the wealth wheel details</p> -->
         </div>
 
         <div class="row content" data-aos="fade-up">
           <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="ww-wrapper">
               <div class="ww-image-gallery">
-                <aside class="ww-thumbnails">
+                <!-- <aside class="ww-thumbnails">
                   <div href="#" class="selected thumbnail" data-big="assets/img/ww-pic.png">
                     <div class="thumbnail-image" style="background-image: url(assets/img/ww-pic.png)"></div>
                   </div>
@@ -171,7 +172,7 @@
                   <div href="#" class="thumbnail" data-big="assets/img/testimonials/testimonials-4.jpg">
                     <div class="thumbnail-image" style="background-image: url(assets/img/testimonials/testimonials-4.jpg)"></div>
                   </div>
-                </aside>
+                </aside> -->
 
                 <main class="primary" style="background-image: url(assets/img/ww-pic.png)"></main>
               </div>
@@ -180,25 +181,22 @@
           <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="ww-pro-description">
               <div class="ww-pro-name">
-                <h2>product name</h2>
-                <p class="ww-pro-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                <h2>Wealth Wheel Number</h2>
               </div>
               <div class="ww-pro-price my-4">
-                <h4>RS.3000</h4>
+                <h4>Cog Price : 3000</h4>
               </div>
-              <div class="ww-pro-quantity my-4">
+              <!-- <div class="ww-pro-quantity my-4">
                   <div id="ww-quantity">
                       <span>Quantity</span>
                       <button type="button" id="sub" class="sub ww-plus-minus">-</button>
                       <input type="number" id="1" value="1" min="1" max="100" class="ww-quantity-input" />
                       <button type="button" id="add" class="add ww-plus-minus">+</button>
                   </div>
-              </div>
+              </div> -->
               <div class="ww-pro-action my-2">
                 <button type="button" class="btn py-3 text-white ww-pro-action-btn">Buy Now</button>
-                <button type="button" class="btn py-3 text-white ww-pro-action-btn">Add to Cart</button>
+                <!-- <button type="button" class="btn py-3 text-white ww-pro-action-btn">Add to Cart</button> -->
               </div>
             </div>
           </div>
@@ -265,27 +263,27 @@
   <script src="assets/js/main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script type="">
-    $('.thumbnail').on('click', function() {
-      var clicked = $(this);
-      var newSelection = clicked.data('big');
-      var $img = $('.primary').css("background-image","url(" + newSelection + ")");
-      clicked.parent().find('.thumbnail').removeClass('selected');
-      clicked.addClass('selected');
-      $('.primary').empty().append($img.hide().fadeIn('slow'));
-    });
+    // $('.thumbnail').on('click', function() {
+    //   var clicked = $(this);
+    //   var newSelection = clicked.data('big');
+    //   var $img = $('.primary').css("background-image","url(" + newSelection + ")");
+    //   clicked.parent().find('.thumbnail').removeClass('selected');
+    //   clicked.addClass('selected');
+    //   $('.primary').empty().append($img.hide().fadeIn('slow'));
+    // });
 
 
     // quantity button
-    $('.add').click(function () {
-        if ($(this).prev().val() < 100) {
-          $(this).prev().val(+$(this).prev().val() + 1);
+    // $('.add').click(function () {
+    //     if ($(this).prev().val() < 100) {
+    //       $(this).prev().val(+$(this).prev().val() + 1);
         }
-    });
-    $('.sub').click(function () {
-        if ($(this).next().val() > 1) {
-          if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
-        }
-    });
+    // });
+    // $('.sub').click(function () {
+    //     if ($(this).next().val() > 1) {
+    //       if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
+    //     }
+    // });
   </script>
 </body>
 </html>

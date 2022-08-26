@@ -31,6 +31,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+
 </head>
 <style type="">
 
@@ -130,7 +131,7 @@ button:hover {
             <form action="" method="">
             <div class="form-group">
               <label for="wheel-number">Wheel Number</label>
-              <input type="Number" disabled="" class="form-control" id="wheel-number" aria-describedby="wheel-number" placeholder="1 2 3">
+              <input type="Number" disabled="" class="form-control" id="wheel-number" aria-describedby="wheel-number" placeholder="1 2 3 ...">
             </div>
             <div class="form-group">
               <label for="wheel-name">Wheel Name</label>
@@ -227,7 +228,21 @@ button:hover {
   <script type="">
     $(document).ready(function () {
         document.querySelector(".first").addEventListener('click', function(){
-          Swal.fire("Our First Alert");
+          // Swal.fire("Our First Alert");
+          Swal.fire({
+            title: 'Do you want to save the changes?',
+            showDenyButton: true,
+            showCancelButton: false,
+            confirmButtonText: 'Yes',
+            // denyButtonText: `Don't save`,
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              Swal.fire('Saved!', '', 'success')
+            } else if (result.isDenied) {
+              Swal.fire('Changes are not saved', '', 'info')
+            }
+          });
         });
 
         // document.querySelector(".second").addEventListener('click', function(){
@@ -237,10 +252,15 @@ button:hover {
         // document.querySelector(".third").addEventListener('click', function(){
         //   Swal.fire("Our First Alert", "With some body text and success icon!", "success");
         // });
-        $(".first").click(function(){
-          $('.toast').toast('show');
-        });
+
+
+        // $(".first").click(function(){
+        //   $('.toast').toast('show');
+        // });
+
+
     });
+    
   </script>
 
 </body>
