@@ -45,17 +45,12 @@ Route::get('/wheels', [App\Http\Controllers\Admin\WheelController::class, 'wheel
 
 });
 
-
-
-
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
-
-
 //user routes
-Route::prefix('user')->middleware(['auth', 'user'])->group(function () {
-    Route::get('/wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'wealth_wheel'])->name('wealth_wheel');
 
+Route::group(['middleware' => ['auth', 'user']], function () {
+    Route::get('/wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'wealth_wheel'])->name('wealth_wheel');
 });
 
 
