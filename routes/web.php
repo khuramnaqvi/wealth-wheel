@@ -25,7 +25,6 @@ Route::get('/about', [App\Http\Controllers\UserController::class, 'about'])->nam
 Route::get('/faq', [App\Http\Controllers\UserController::class, 'faq'])->name('faq');
 Route::get('/contact', [App\Http\Controllers\UserController::class, 'contact'])->name('contact');
 //Routes For create_wheel
-Route::get('/wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'wealth_wheel'])->name('wealth_wheel');
 Route::post('/create_wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'create_wealth_wheel'])->name('create_wealth_wheel');
 
 
@@ -45,7 +44,7 @@ Route::get('delete/{user}', [App\Http\Controllers\DashboardController::class, 'd
 Route::get('/wheels', [App\Http\Controllers\Admin\WheelController::class, 'wheels'])->name('wheels');
 
 });
-Route::post('/create_wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'create_wealth_wheel'])->name('create_wealth_wheel');
+
 
 
 
@@ -55,6 +54,8 @@ Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout
 
 //user routes
 Route::prefix('user')->middleware(['auth', 'user'])->group(function () {
+    Route::get('/wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'wealth_wheel'])->name('wealth_wheel');
+
 });
 
 
