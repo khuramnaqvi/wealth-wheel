@@ -14,8 +14,17 @@
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
           <div class="d-flex">
-            <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
-            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
+          @guest
+          @if (Route::has('login'))
+          <a href="{{ route ('register') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
+          @endif
+          @if (Route::has('login'))
+          <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
+          @endif
+          @else
+          <a href="{{ route ('logout') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">logout</a>
+          @endguest
+          <a href="{{ route ('wealth_wheel') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
           </div>
         </div>
       </div>
@@ -63,8 +72,8 @@
         <form method="POST" action="{{ route('login') }}">
                         @csrf
             <div class="form-group">
-              <label for="log-userName">User name</label>
-              <input id="email" name="email" value="{{ old('email') }}" type="email" class="form-control @error('email') is-invalid @enderror"  aria-describedby="log-userName" placeholder="Enter name" required>
+              <label for="log-userName">Email</label>
+              <input id="email" name="email" value="{{ old('email') }}" type="email" class="form-control @error('email') is-invalid @enderror"  aria-describedby="log-userName" placeholder="Enter Email" required>
 
               @error('email')
               <span class="invalid-feedback" role="alert">

@@ -52,9 +52,6 @@
         <form method="POST" action="{{ route('register') }}">
         @csrf
 
-
-
-
             <div class="form-group">
               <label for="userName">User name</label>
               <input name="name"  type="text" class="form-control @error('name') is-invalid @enderror" id="name" aria-describedby="userName" placeholder="Enter name">
@@ -66,7 +63,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input name="email" type="email" class="form-control @error('name') is-invalid @enderror" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+              <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="emailHelp" placeholder="Enter email">
               @error('email')
     <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>
@@ -76,12 +73,17 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>  
-              <input id="password" name="password" type="password" class="form-control @error('name') is-invalid @enderror" id="password" placeholder="Password">
+              <input id="password" name="password" type="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Password">
               @error('password')
     <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>
     </span>
     @enderror
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1"> Confirm Password</label>  
+              <input id="password-confirm" name="password_confirmation" type="password" class="form-control" id="password" placeholder="Confirm Password">
             </div>
             <button type="submit" class="btn btn-primary">Sign Up</button>
           </form>

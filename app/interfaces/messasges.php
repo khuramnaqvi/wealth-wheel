@@ -8,6 +8,8 @@ interface messasges {
     const userDelete='user deleted successfully';
     const userupdate='user updated successfully';
     const wheelCreated='wealth wheel created successfully';
+    const userLogin='User Login successfully';
+
 
 
     const Save='Record Save successfully';

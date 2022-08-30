@@ -1,6 +1,7 @@
 
   @extends('layouts.user')
 @section('content')
+  
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
     <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="">
@@ -9,13 +10,21 @@
       <div class="carousel-item active">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Contact Us</span></h2>
-          <p class="animate__animated fanimate__adeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-          <div class="d-flex">
-            <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
-            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
+          <p class="animate__animated fanimate__adeInUp">
+            For any enquiries, complete the below contact form or email us at hello@wealth-wheel.com.
+          </p>
+          <div class="d-flex ww-banner-btn">
+          @guest
+          @if (Route::has('login')) 
+          <a href="{{ route ('register') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
+          @endif
+          @if (Route::has('login'))
+          <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
+          @endif
+          @else
+          <a href="{{ route ('logout') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">logout</a>
+          @endguest
+          <a href="{{ route ('wealth_wheel') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
           </div>
         </div>
       </div>
@@ -54,26 +63,12 @@
 
           <div class="col-lg-4" data-aos="fade-right">
             <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
-
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
                 <p>hello@wealth-wheel.com</p>
               </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
-              </div>
-
             </div>
-
           </div>
 
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
@@ -107,15 +102,4 @@
 
       </div>
     </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  
-  <!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-
-
   @endsection

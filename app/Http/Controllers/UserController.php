@@ -33,6 +33,22 @@ class UserController extends Controller
     {
         return view('user.contact');
     }
+    public function how_it_works()
+    {
+        return view('user.how_it_works');
+    }
+    public function availabe_wealth_wheel()
+    {
+        $wheels = WealthWheel::all();
+        return view('user.availabe_wealth_wheel', compact('wheels'));
+    }
+   
+
+    public function wheels_details()
+    {
+        return view('user.wheels_details');
+    }
+
     public function signup()
     {
         return view('user.signup');

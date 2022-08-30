@@ -24,6 +24,10 @@ Route::get('/products', [App\Http\Controllers\UserController::class, 'products']
 Route::get('/about', [App\Http\Controllers\UserController::class, 'about'])->name('about');
 Route::get('/faq', [App\Http\Controllers\UserController::class, 'faq'])->name('faq');
 Route::get('/contact', [App\Http\Controllers\UserController::class, 'contact'])->name('contact');
+Route::get('/how_it_works', [App\Http\Controllers\UserController::class, 'how_it_works'])->name('how_it_works');
+Route::get('/availabe_wealth_wheel', [App\Http\Controllers\UserController::class, 'availabe_wealth_wheel'])->name('availabe_wealth_wheel');
+Route::get('/wheels_details', [App\Http\Controllers\UserController::class, 'wheels_details'])->name('wheels_details');
+
 //Routes For create_wheel
 Route::post('/create_wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'create_wealth_wheel'])->name('create_wealth_wheel');
 

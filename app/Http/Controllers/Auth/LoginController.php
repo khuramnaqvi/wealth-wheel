@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use App\Interfaces\messasges;
+
 
 class LoginController extends Controller
 {
@@ -56,8 +58,10 @@ class LoginController extends Controller
         {
             if (auth()->user()->role == "admin") {
                 return redirect()->route('dashboard')->with('success','Admin login successfully');
+                
             }else{
-                return redirect()->route('user_home');
+             
+                return redirect('/')->with('message', 'You are successfully logged in!');
             }
         }else{
 

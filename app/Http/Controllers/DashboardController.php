@@ -12,8 +12,7 @@ class DashboardController extends Controller
     public function users()
     {
 
-        // $users = User::where('is_admin', '0')->get();
-        $users = User::all();
+        $users = User::where('role', 'user')->get();
         return view('dashboard.user.index', compact('users'));
     }
 
