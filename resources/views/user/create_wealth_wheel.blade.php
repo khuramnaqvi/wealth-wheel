@@ -89,7 +89,11 @@ button:hover {
             @csrf
             <div class="form-group">
               <label for="wheel-number">Wheel Number</label>
+              @if(isset($wheel_number))
               <input readonly="readonly" type="Number" name="wheel_number" class="form-control" id="wheel-number" value="{{$wheel_number}}"  aria-describedby="wheel-number" placeholder="">
+            @else
+            <input readonly="readonly" type="Number" name="wheel_number" class="form-control" id="wheel-number" value="1"  aria-describedby="wheel-number" placeholder="">
+            @endif
             </div>
             <div class="form-group">
               <label for="wheel-name">Wheel Name</label>
@@ -101,7 +105,7 @@ button:hover {
             </div>
             <div class="form-group">
               <label for="">Image</label>
-              <input name="image" type="file" class="form-control" accept="image/*" />
+              <input required name="image" type="file" class="form-control" accept="image/*" />
             </div>
             <button type="submit" class="btn btn-primary confirmation-message first">Save</button>
           </form>

@@ -10,7 +10,7 @@ interface messasges {
     const wheelCreated='wealth wheel created successfully';
     const userLogin='User Login successfully';
 
-
+   
 
     const Save='Record Save successfully';
     const Delete='Record deleted successfully';

@@ -11,10 +11,16 @@ use Illuminate\Support\Facades\Auth;
 class WheelController extends Controller
 {
     public function wealth_wheel()
-    {
+    {   
         $wheel_id  = WealthWheel::latest('created_at')->first();
-        $wheel_number = $wheel_id->id + 1;
-        return view('user.create_wealth_wheel', compact('wheel_number'));
+        if($wheel_id == null){
+            return view('user.create_wealth_wheel');
+        }
+        else{
+            $wheel_number = $wheel_id->id + 1;
+            return view('user.create_wealth_wheel', compact('wheel_number'));
+        }
+  
     }
 
 

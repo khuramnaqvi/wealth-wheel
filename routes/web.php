@@ -56,8 +56,13 @@ Route::post('save', [App\Http\Controllers\DashboardController::class, 'save'])->
 Route::get('edit/{user}', [App\Http\Controllers\DashboardController::class, 'edit'])->name('edit');
 Route::post('update/{user}', [App\Http\Controllers\DashboardController::class, 'update'])->name('update');
 Route::get('delete/{user}', [App\Http\Controllers\DashboardController::class, 'delete'])->name('delete'); 
-// Routes for wheels crud
+// Routes for wheel
 Route::get('/wheels', [App\Http\Controllers\Admin\WheelController::class, 'wheels'])->name('wheels');
+Route::get('delete_wheel/{wheel}', [App\Http\Controllers\DashboardController::class, 'delete_wheel']);
+Route::get('edit_wheel/{wheel}', [App\Http\Controllers\DashboardController::class, 'edit_wheel'])->name('edit_wheel');
+Route::post('update_wheel/{wheel}', [App\Http\Controllers\DashboardController::class, 'update_wheel'])->name('update_wheel');
+
+
 
 });
 

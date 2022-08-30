@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\WealthWheel;
+
 use Illuminate\Http\Request;
 use App\Interfaces\messasges;
 
@@ -62,14 +64,17 @@ class DashboardController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'name' => 'required|min:3|unique:users,' . $user->id . '',
+            'name' => 'required|min:3|unique:users,name,' . $user->id . '',
         ]);
+        
 
+    
         $userArray = array(
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
         );
+
         if ($request->password)
             $userArray['password'] = bcrypt($request->password);
 
@@ -98,4 +103,67 @@ class DashboardController extends Controller
 
 
     }
+
+    public function  delete_wheel(WealthWheel $product)
+    {
+        if ($product) {
+            $product->delete();
+            return back()->with('success', messasges::userDelete);
+        } else {
+            return back()->with('error', messasges::error);
+        }
+
+
+    }
+
+
+    public function edit_wheel(WealthWheel $wheel)
+    {
+        
+        return view('dashboard.wheel.edit', compact('wheel'));
+
+    }
+
+
+    public function update_wheel(Request $request, WealthWheel $wheel)
+    {
+        
+
+        $request->validate([
+            'wheel_name' => 'required|min:3|unique:wealth_wheels,wheel_name,' . $wheel->id . '',
+        ]);
+
+        $image = null;
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $image =   $request->image->move(public_path('images'), $imageName);
+            
+        }
+
+        
+
+        $wheelArray = array(
+            'wheel_number' => $request->wheel_number,
+            'wheel_name' => $request->wheel_name,
+            'cog_price' => $request->cog_price,
+            'image' => $imageName,
+
+        );
+
+        $wheel = $wheel->update($wheelArray);
+
+        if ($wheel) {
+            return redirect('wheels')->with('success', messasges::Update);
+        } else {
+            return back()->with('error', messasges::error);
+        }
+
+
+    }
+
+
+
+
+
+   
 }

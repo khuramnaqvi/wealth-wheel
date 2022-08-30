@@ -55,15 +55,15 @@
                                                     <td>{{$wheel->wheel_name}}</td>
                                                     <td>{{$wheel->wheel_number}}</td>
                                                     <td>{{$wheel->cog_price}}</td>
-                                                    <th>Image</th>
+                                                    <td> <img width="100" height="100" src="{{ asset('images/' .$wheel->image) }}" alt="" class="img-fluid"></td>
                                                     <td>{{date($wheel->created_at->format('Y-m-d'))}}</td>
                                                     <td>
 
-                                                        <a href="{{route('edit',['user'=>$wheel->id])}}">
+                                                        <a href="{{route('edit_wheel',['wheel'=>$wheel->id])}}">
                                                             <i style="color: cornflowerblue;font-size: 20px" class="fa fa-edit p-2"></i>
                                                         </a>
 
-                                                        <a class="delete" url="{{route('delete',['user'=>$wheel->id])}}">
+                                                        <a class="delete" url="{{url('delete_wheel/'.$wheel->id)}}">
                                                             <i style="color: red;font-size: 20px" class="fa fa-trash p-2"></i>
                                                         </a>
 
