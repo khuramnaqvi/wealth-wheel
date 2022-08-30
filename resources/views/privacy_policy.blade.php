@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Wealth Wheel - Index</title>
+  <title>privacy policy - Wealth Wheel</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -32,34 +31,16 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
- <style>
-    .blink {
-        animation: blinker 1.5s linear infinite;
-        color: #2963e2;
-        font-size: 45px;
-        font-style: oblique;
-        text-shadow: 2px 4px 8px rgba(0,0,0,0.6);
-        font-weight: bold;
-        line-height: 75px;
-        font-family: sans-serif;
-    }
-    @keyframes blinker {
-        50% {
-            opacity: 0;
-        }
-    }
-</style>
 
 <body>
 
   <!-- ======= Header ======= -->
-   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
         <!-- Uncomment below if you prefer to use an image logo -->
-         <a href="{{route('user_home')}}"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+         <a href="index.php"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
       </div>
       <nav id="navbar" class="navbar">
         <ul>
@@ -76,19 +57,67 @@
   </header>
   <!-- End Header -->
 
-  <!-- End Header -->
-
   <!-- ======= Hero Section ======= -->
-  
-  <!-- End Hero -->
- 
-  @yield('content')
-  
+  <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Privacy Policy</h2>
+          <p class="animate__animated fanimate__adeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+          <div class="d-flex ww-banner-btn">
+            <a href="signup.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
+            <a href="login.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
+            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+      </g>
+    </svg>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="terms" class="faq ww-terams">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Terms and Conditions</h2>
+          <p>Read carefully our tearms and conditions </p>
+        </div>
+        <div class="ww-terams-cnt" data-aos="fade-right">
+            
+        </div>
+
+      </div>
+    </section>
+
+  </main>
   <!-- End #main -->
 
   <!-- ======= Footer ======= -->
-   <!-- ======= Footer ======= -->
-   <footer id="footer" class="mt-5">
+  <footer id="footer" class="mt-5">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-3">
@@ -127,22 +156,20 @@
     </div>
   </footer>
   <!-- End Footer -->
-  <!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  
-  <script src=" {{ asset('assets/vendor/aos/aos.js') }}"></script>
-  <script src=" {{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src=" {{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
-  <script src=" {{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-  <script src=" {{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
-  <script src=" {{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="{{ asset('assets/js/main.js') }}"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>

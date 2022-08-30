@@ -63,7 +63,9 @@
                     <div class="pro-price">
                       <h4>Cog Price : <span>{{$wheel->cog_price}}</span></h4>
                     </div> 
-                    <a href="{{route('wheels_details')}}"  class="pro-dtl-btn">Join Wealth Wheel</a>
+                    <a href="{{url('wheels_details?id=' .$wheel->id) }}" class="pro-dtl-btn">Join Wealth Wheel</a>
+
+                    <!-- <a href="{{route('wheels_details', ['id' =>encrypt($wheel->id)])}}"  class="pro-dtl-btn">Join Wealth Wheel</a> -->
                   </div>
                 </div>
               </div>

@@ -62,7 +62,7 @@ class DashboardController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'username' => 'required|min:3|unique:users,username,' . $user->id . '',
+            'name' => 'required|min:3|unique:users,' . $user->id . '',
         ]);
 
         $userArray = array(
@@ -77,7 +77,7 @@ class DashboardController extends Controller
         $user = $user->update($userArray);
 
         if ($user) {
-            return redirect('admin/users')->with('success', messasges::userupdate);
+            return redirect('users')->with('success', messasges::userupdate);
         } else {
             return back()->with('error', messasges::error);
         }
@@ -91,7 +91,7 @@ class DashboardController extends Controller
 
         if ($user) {
             $user->delete();
-            return redirect('admin/users')->with('success', messasges::userDelete);
+            return redirect('users')->with('success', messasges::userDelete);
         } else {
             return back()->with('error', messasges::error);
         }

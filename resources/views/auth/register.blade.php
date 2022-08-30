@@ -53,7 +53,7 @@
         @csrf
 
             <div class="form-group">
-              <label for="userName">User name</label>
+              <label for="name">User name</label>
               <input name="name"  type="text" class="form-control @error('name') is-invalid @enderror" id="name" aria-describedby="userName" placeholder="Enter name">
               @error('name')
     <span class="invalid-feedback" role="alert">
@@ -71,6 +71,16 @@
     @enderror
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
+            <div class="form-group">
+              <label for="name">Contact</label>
+              <input name="phone"  type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" aria-describedby="phone" placeholder="Enter phone number">
+              @error('phone')
+    <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+    </span>
+@enderror
+            </div>
+
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>  
               <input id="password" name="password" type="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Password">

@@ -18,6 +18,13 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+// Routes for paypal
+Route::get('paypal_form', [App\Http\Controllers\UserController::class, 'paypal_form'])->name('paypal_form');
+
+Route::post('payment', [App\Http\Controllers\PayPalController::class, 'payment'])->name('payment');
+Route::get('cancel', [App\Http\Controllers\PayPalController::class, 'cancel'])->name('payment.cancel');
+Route::get('payment/success', [App\Http\Controllers\PayPalController::class, 'success'])->name('payment.success');
+
 //Routes For User
 Route::get('/', [App\Http\Controllers\UserController::class, 'user'])->name('user_home');
 Route::get('/products', [App\Http\Controllers\UserController::class, 'products'])->name('products');
@@ -25,11 +32,16 @@ Route::get('/about', [App\Http\Controllers\UserController::class, 'about'])->nam
 Route::get('/faq', [App\Http\Controllers\UserController::class, 'faq'])->name('faq');
 Route::get('/contact', [App\Http\Controllers\UserController::class, 'contact'])->name('contact');
 Route::get('/how_it_works', [App\Http\Controllers\UserController::class, 'how_it_works'])->name('how_it_works');
+
+//Term & conditions data Routes
+Route::get('/faq', [App\Http\Controllers\UserController::class, 'faq'])->name('faq');
+Route::get('/privacy_policy', [App\Http\Controllers\UserController::class, 'privacy_policy'])->name('privacy_policy');
+Route::get('/term_and_conditions', [App\Http\Controllers\UserController::class, 'term_and_conditions'])->name('term_and_conditions');
+
+//Routes For wheels
+Route::post('/create_wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'create_wealth_wheel'])->name('create_wealth_wheel');
 Route::get('/availabe_wealth_wheel', [App\Http\Controllers\UserController::class, 'availabe_wealth_wheel'])->name('availabe_wealth_wheel');
 Route::get('/wheels_details', [App\Http\Controllers\UserController::class, 'wheels_details'])->name('wheels_details');
-
-//Routes For create_wheel
-Route::post('/create_wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'create_wealth_wheel'])->name('create_wealth_wheel');
 
 
 //Routes For Admin
@@ -52,7 +64,6 @@ Route::get('/wheels', [App\Http\Controllers\Admin\WheelController::class, 'wheel
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 //user routes
-
 Route::group(['middleware' => ['auth', 'user']], function () {
     Route::get('/wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'wealth_wheel'])->name('wealth_wheel');
 });

@@ -58,7 +58,7 @@
 
       <div class="logo">
         <!-- Uncomment below if you prefer to use an image logo -->
-         <a href="index.php"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+         <a href="{{route('user_home')}}"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
       </div>
       <nav id="navbar" class="navbar">
         <ul>
@@ -105,9 +105,9 @@
         <div class="col-lg-3 col-md-3">
           <h3>DETAILS</h3>
           <div class="footer-links">
-            <a href="teramsAndConditions.php">terms & conditions</a>
-            <a href="privacyPolicy.php">privacy policy</a>
-            <a href="faq.php">FAQs</a>
+            <a href="{{ route('term_and_conditions') }}">terms & conditions</a>
+            <a href="{{ route('privacy_policy') }}">privacy policy</a>
+            <a href="{{ route('faq') }}">FAQs</a>
           </div>
         </div>
         <div class="col-lg-3 col-md-3">

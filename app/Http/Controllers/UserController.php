@@ -46,7 +46,10 @@ class UserController extends Controller
 
     public function wheels_details()
     {
-        return view('user.wheels_details');
+        // $wheel_id = decrypt($id);
+        $wheel_id = $_GET['id'];
+        $wheel_details = WealthWheel::where('id' , $wheel_id )->first();
+        return view('user.wheels_details', compact('wheel_details'));
     }
 
     public function signup()
@@ -56,6 +59,21 @@ class UserController extends Controller
     public function userlogin()
     {
         return view('user.userlogin');
+    }
+
+    public function privacy_policy()
+    {
+        return view('privacy_policy');
+    }
+
+    public function term_and_conditions()
+    {
+        return view('term_and_conditions');
+    }
+
+    public function paypal_form()
+    {
+        return view('paypal');
     }
 
   
