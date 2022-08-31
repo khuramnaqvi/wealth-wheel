@@ -38,7 +38,7 @@ class StripePaymentController extends Controller
             $user_payment = new wallet;
             $user_payment->wheel_id = "1";
             $user_payment->amount = $user_percent;
-            $user_payment->save();
+            $user_payment->save(); 
 
             //for admin
             $ad = 7.5/100;

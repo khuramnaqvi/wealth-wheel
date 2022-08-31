@@ -160,6 +160,18 @@
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12">
+
+            {{-- model --}}
+
+            <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+
+
+ {{-- end --}}
+
+        
             <div class="ww-pro-description">
               <div class="ww-pro-name">
                 <h2>{{$wheel_details->wheel_name}}</h2>
@@ -178,25 +190,52 @@
                       <button type="button" id="add" class="add ww-plus-minus">+</button>
                   </div>
               </div> -->
+
+
+              
+
+
+
               <div class="ww-pro-action my-2">
-              <form method="POST" action="{{ route('charge') }}">
+                <button data-toggle="modal" data-target="#userModal"   type="button" class="btn py-3 text-white ww-pro-action-btn">Buy Now</button>
+              {{-- <form method="POST" action="{{ route('charge') }}">
                         <input type="hidden" value="{{$wheel_details->cog_price}}" name="price">
                         <input type="hidden" value="{{$wheel_details->wheel_number}}" name="wheel_number">
                         <input type="hidden" value="{{$wheel_details->wheel_name}}" name="name">
                         <input type="hidden" value="{{$wheel_details->id}}" name="wheel_id">
 
-                {{-- <button   type="submit" class="btn py-3 text-white ww-pro-action-btn">Buy Now</button> --}}
+                
                 {{ csrf_field() }}
                 <input type="submit" class="btn py-3 text-white ww-pro-action-btn" name="submit" value="Pay Now">
-                </form>
-                 <a style="background-color: blue" href="{{route('stripe')}}" class="btn py-3 text-white ww-pro-action-btn">Card pay</a> 
+                </form> --}}
+                 {{-- <a style="background-color: blue" href="{{route('stripe')}}" class="btn py-3 text-white ww-pro-action-btn">Card pay</a>  --}}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
+
+
+
+
+      <input type="" class="cog_price" value="{{$wheel_details->cog_price}}">
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $(".pasy").click(function(){
+    $("#selectpaymentModal").modal('show');
+    var priv=$(".cog_price").val();
+   
+    $('.append_price').val(priv)
+  
+  });
+ 
+});
+
+</script>
     @endsection
 
 

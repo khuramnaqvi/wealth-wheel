@@ -76,6 +76,12 @@ class UserController extends Controller
         return view('paypal');
     }
 
+    public function add_user_balance(Request $request)
+    {
+        dd($request->all());
+       
+    }
+
   
 
     

@@ -8,7 +8,6 @@
 
 @endsection
 
-
 @section('heading')
     Wheels List
 @endsection

@@ -15,6 +15,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img//favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -65,8 +66,19 @@
           <li><a class="nav-link scrollto active" href="{{('/')}}">Home</a></li>
           <li><a class="nav-link scrollto" href="{{ route('how_it_works') }} ">How it Works</a></li>
           <li><a class="nav-link scrollto" href="{{ route('availabe_wealth_wheel') }}">Available Wealth Wheels</a></li>
-          <li><a class="nav-link scrollto" href="{{ route('contact') }}">Contact Us</a></li>
         </ul> 
+        <ul class="nav navbar-nav float-right">
+
+          <li class="nav-item">
+              <a type="button" data-bs-toggle="modal" class="dropdown-toggle  nav-link dropdown-user-link" href="#" data-toggle="dropdown" data-bs-target="#exampleModal">
+                  <span><img style="border-radius: 50%" class="round" src="{{asset('assets/img_avatar.png')}}" alt="avatar" height="40" width="40"></span>
+              </a>
+            
+              {{-- <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="{{ url('/logout') }}"><i class="feather icon-user"></i>Logout</a>
+              </div> --}}
+          </li>
+      </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->
@@ -77,12 +89,120 @@
 
   
 
+
+
   <!-- ======= Hero Section ======= -->
   
   <!-- End Hero -->
  
   @yield('content')
-  
+    {{-- model --}}
+
+<!-- Button trigger modal -->
+  {{-- model start --}}
+
+            {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >Open modal</button> --}}
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    
+        <form action="{{ route('add_user_balance') }}" method="POST">
+@csrf
+                      <div class="form-group">
+                        <h3>Add Credit</h3>
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">amount:</label>
+                        <input type="number" class="form-control" id="number">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Pay With</label><br>
+                        <input type="radio" id="paypal" value="paypal" name="payment" >
+                      <label for="paypal">Paypal</label>
+                      <input type="radio" id="card" value="card" name="payment" >
+                      <label for="card">card</label>
+                      </div>
+                   
+                  </div>
+                  <div class="modal-footer">
+                    {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+                    <button type="submit" class="btn btn-primary">Save</button>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
+
+            {{-- end --}}
+
+
+            {{-- user modal --}}
+
+            <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Select payment method</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <button  type="button" class="btn btn-primary">Pay from Walet</button>
+                    <button  type="button" class="btn btn-primary m-2 pasy">Direct Payment</button>
+                  </div>
+                  <div class="modal-footer">
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {{-- end modal --}}
+
+             {{-- select payment modal --}}
+
+             <div class="modal fade" id="selectpaymentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Select payment method</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-center">
+                      <form method="POST" action="{{ route('charge') }}">
+                        <input type="hidden" value="100" name="price" class="append_price">
+                        {{-- <input type="hidden" value="{{$wheel_details->wheel_number}}" name="wheel_number">
+                        <input type="hidden" value="{{$wheel_details->wheel_name}}" name="name">
+                        <input type="hidden" value="{{$wheel_details->id}}" name="wheel_id"> --}}
+
+                        {{ csrf_field() }}
+                        <input type="submit" class="btn btn-primary" name="submit" value="Paypal">
+                {{-- <input type="submit" class="btn py-3 text-white ww-pro-action-btn" name="submit" value="Pay Now"> --}}
+                </form>
+
+                    {{-- <button type="button" class="btn btn-primary">Paypal</button> --}}
+                    <a href="{{('stripe')}}" type="button" class="btn btn-primary m-2"> Card</a>
+                  </div>
+                  <div class="modal-footer">
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {{-- end modal --}}
+
   <!-- End #main -->
 
  
@@ -131,6 +251,9 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   
   <script src=" {{ asset('assets/vendor/aos/aos.js') }}"></script>
   <script src=" {{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -142,6 +265,19 @@
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ 
 </body>
+
+{{-- <script>
+  $('#exampleModal').on('show.bs.modal', function (event) {
+var button = $(event.relatedTarget) // Button that triggered the modal
+var recipient = button.data('whatever') // Extract info from data-* attributes
+// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+var modal = $(this)
+modal.find('.modal-title').text('New message to ' + recipient)
+modal.find('.modal-body input').val(recipient)
+})
+</script> --}}
 
 </html>

@@ -18,14 +18,12 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-// Routes for paypal
-Route::post('charge', [App\Http\Controllers\PaymentController::class, 'charge'])->name('charge');
-Route::get('success', [App\Http\Controllers\PaymentController::class, 'success'])->name('success');
-Route::get('error', [App\Http\Controllers\PaymentController::class, 'error'])->name('error');
 
-// Routes for Stripe
-Route::get('stripe', [App\Http\Controllers\StripePaymentController::class, 'stripe'])->name('stripe');
-Route::post('stripe_post', [App\Http\Controllers\StripePaymentController::class, 'stripePost'])->name('stripe_post');
+
+
+
+//add user balance
+
 
 // Route::post('payment', [App\Http\Controllers\PayPalController::class, 'payment'])->name('payment');
 // Route::get('cancel', [App\Http\Controllers\PayPalController::class, 'cancel'])->name('payment.cancel');
@@ -44,10 +42,6 @@ Route::get('/faq', [App\Http\Controllers\UserController::class, 'faq'])->name('f
 Route::get('/privacy_policy', [App\Http\Controllers\UserController::class, 'privacy_policy'])->name('privacy_policy');
 Route::get('/term_and_conditions', [App\Http\Controllers\UserController::class, 'term_and_conditions'])->name('term_and_conditions');
 
-//Routes For wheels
-Route::post('/create_wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'create_wealth_wheel'])->name('create_wealth_wheel');
-Route::get('/availabe_wealth_wheel', [App\Http\Controllers\UserController::class, 'availabe_wealth_wheel'])->name('availabe_wealth_wheel');
-Route::get('/wheels_details', [App\Http\Controllers\UserController::class, 'wheels_details'])->name('wheels_details');
 
 
 //Routes For Admin
@@ -75,8 +69,25 @@ Route::post('update_wheel/{wheel}', [App\Http\Controllers\DashboardController::c
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 //user routes
-Route::group(['middleware' => ['auth', 'user']], function () {
-    Route::get('/wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'wealth_wheel'])->name('wealth_wheel');
+Route::group(['middleware' => ['auth', 'user']], function () {  
+ Route::get('/wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'wealth_wheel'])->name('wealth_wheel');
+Route::post('/add_user_balance', [App\Http\Controllers\UserController::class, 'add_user_balance'])->name('add_user_balance');
+
+// Routes for paypal
+Route::post('charge', [App\Http\Controllers\PaymentController::class, 'charge'])->name('charge');
+Route::get('success', [App\Http\Controllers\PaymentController::class, 'success'])->name('success');
+Route::get('error', [App\Http\Controllers\PaymentController::class, 'error'])->name('error');
+
+//Routes For wheels
+Route::post('/create_wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'create_wealth_wheel'])->name('create_wealth_wheel');
+Route::get('/availabe_wealth_wheel', [App\Http\Controllers\UserController::class, 'availabe_wealth_wheel'])->name('availabe_wealth_wheel');
+Route::get('/wheels_details', [App\Http\Controllers\UserController::class, 'wheels_details'])->name('wheels_details');
+
+// Routes for Stripe
+Route::get('stripe', [App\Http\Controllers\StripePaymentController::class, 'stripe'])->name('stripe');
+Route::post('stripe_post', [App\Http\Controllers\StripePaymentController::class, 'stripePost'])->name('stripe_post');
+
+
 });
 
 
