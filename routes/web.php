@@ -19,11 +19,17 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Routes for paypal
-Route::get('paypal_form', [App\Http\Controllers\UserController::class, 'paypal_form'])->name('paypal_form');
+Route::post('charge', [App\Http\Controllers\PaymentController::class, 'charge'])->name('charge');
+Route::get('success', [App\Http\Controllers\PaymentController::class, 'success'])->name('success');
+Route::get('error', [App\Http\Controllers\PaymentController::class, 'error'])->name('error');
 
-Route::post('payment', [App\Http\Controllers\PayPalController::class, 'payment'])->name('payment');
-Route::get('cancel', [App\Http\Controllers\PayPalController::class, 'cancel'])->name('payment.cancel');
-Route::get('payment/success', [App\Http\Controllers\PayPalController::class, 'success'])->name('payment.success');
+// Routes for Stripe
+Route::get('stripe', [App\Http\Controllers\StripePaymentController::class, 'stripe'])->name('stripe');
+Route::post('stripe_post', [App\Http\Controllers\StripePaymentController::class, 'stripePost'])->name('stripe_post');
+
+// Route::post('payment', [App\Http\Controllers\PayPalController::class, 'payment'])->name('payment');
+// Route::get('cancel', [App\Http\Controllers\PayPalController::class, 'cancel'])->name('payment.cancel');
+// Route::get('payment/success', [App\Http\Controllers\PayPalController::class, 'success'])->name('payment.success');
 
 //Routes For User
 Route::get('/', [App\Http\Controllers\UserController::class, 'user'])->name('user_home');

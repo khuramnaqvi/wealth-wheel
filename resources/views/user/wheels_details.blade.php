@@ -179,14 +179,17 @@
                   </div>
               </div> -->
               <div class="ww-pro-action my-2">
-              <form method="POST" action="{{ route ('payment') }}">
-                        @csrf
+              <form method="POST" action="{{ route('charge') }}">
                         <input type="hidden" value="{{$wheel_details->cog_price}}" name="price">
                         <input type="hidden" value="{{$wheel_details->wheel_number}}" name="wheel_number">
                         <input type="hidden" value="{{$wheel_details->wheel_name}}" name="name">
-                <button   type="submit" class="btn py-3 text-white ww-pro-action-btn">Buy Now</button>
+                        <input type="hidden" value="{{$wheel_details->id}}" name="wheel_id">
+
+                {{-- <button   type="submit" class="btn py-3 text-white ww-pro-action-btn">Buy Now</button> --}}
+                {{ csrf_field() }}
+                <input type="submit" class="btn py-3 text-white ww-pro-action-btn" name="submit" value="Pay Now">
                 </form>
-                <!-- <button type="button" class="btn py-3 text-white ww-pro-action-btn">Add to Cart</button> -->
+                 <a style="background-color: blue" href="{{route('stripe')}}" class="btn py-3 text-white ww-pro-action-btn">Card pay</a> 
               </div>
             </div>
           </div>
