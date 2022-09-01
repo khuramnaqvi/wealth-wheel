@@ -181,6 +181,14 @@
               </div>
               <div class="ww-pro-price my-4">
                 <h4>Cog Price : {{$wheel_details->cog_price}} </h4>
+              
+              <div class="ww-pro-price my-4">
+                @if(count($user_wheels) > 0)
+                @if(isset($user_balance))
+                <h6>Wallet Balance : <b>{{$user_balance}}</b></h6>
+                @endif
+                @endif
+              </div>
               </div>
               <!-- <div class="ww-pro-quantity my-4">
                   <div id="ww-quantity">
@@ -190,12 +198,7 @@
                       <button type="button" id="add" class="add ww-plus-minus">+</button>
                   </div>
               </div> -->
-
-
               
-
-
-
               <div class="ww-pro-action my-2">
                 <button data-toggle="modal" data-target="#userModal"   type="button" class="btn py-3 text-white ww-pro-action-btn">Buy Now</button>
               {{-- <form method="POST" action="{{ route('charge') }}">

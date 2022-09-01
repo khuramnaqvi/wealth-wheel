@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\WealthWheel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -47,9 +48,13 @@ class UserController extends Controller
     public function wheels_details()
     {
         // $wheel_id = decrypt($id);
+        $auth_user = Auth::user()->id;
+        $user_balance = Auth::user()->balance;
+        $user_wheels = WealthWheel::where('user_id', $auth_user)->get();
+        
         $wheel_id = $_GET['id'];
         $wheel_details = WealthWheel::where('id' , $wheel_id )->first();
-        return view('user.wheels_details', compact('wheel_details'));
+        return view('user.wheels_details', compact('wheel_details','user_wheels','user_balance'));
     }
 
     public function signup()
