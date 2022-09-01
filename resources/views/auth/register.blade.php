@@ -90,6 +90,20 @@
     </span>
     @enderror
             </div>
+            <style>
+              h6 {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #000; 
+   line-height: 0.1em;
+   /* margin: 10px 0 20px;  */
+} 
+
+h6 small { 
+    background:#fff; 
+    padding:0 10px; 
+}
+            </style>
 
             <div class="form-group">
               <label for="exampleInputPassword1"> Confirm Password</label>  
@@ -97,6 +111,10 @@
             </div>
             <button type="submit" class="btn btn-primary">Sign Up</button>
           </form>
+          <div class="form-group mt-4">
+            <h6><small>OR/<a href="{{url('login')}}">Login</a></small></h6>
+            {{-- <button onclick="window.location.href='{{url('login')}}';"  type="button" class="btn btn-primary">Login</button>  --}}
+          </div>
         </div>
 
       </div>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Omnipay\Omnipay;
 use App\Models\Payment;
 use App\Models\wallet;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
@@ -90,17 +91,17 @@ class PaymentController extends Controller
                 $up = 92.5/100;
                 $user_percent = $up * $total ;
                 $user_payment = new wallet;
-                $user_payment->wheel_id = "1";
+                $user_payment->wheel_id = Auth::user()->id;
                 $user_payment->amount = $user_percent;
                 $user_payment->save();
 
                 //for admin
                 $ad = 7.5/100;
                 $admin_percent = $ad * $total ;
-                $user_payment = new Adminwallet;
-                $user_payment->wheel_id = "1";
-                $user_payment->amount = $admin_percent;
-                $user_payment->save();
+                $admin_payment = new Adminwallet;
+                $admin_payment->user_id = Auth::user()->id;
+                $admin_payment->amount = $admin_percent;
+                $admin_payment->save();
 
 
                 $payment = new Payment;

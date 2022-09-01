@@ -63,9 +63,16 @@
                   <div  class="ww-card-tag">
                     <span>Available Now</span>
                   </div>
-                  <img src="{{ asset('images/' .$wheel->image) }}" alt="" class="img-fluid">
+                  @if ($wheel->image != "")
+                 
+                  <img src="{{ asset('images/' .$wheel->image) }}" alt="no img" class="img-fluid">
+                  @else
+                  <img  src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
+                  @endif
                   <div class="card-body">
                     <h5 class="card-title">{{$wheel->wheel_name}}</h5>
+                    <h5 class="card-title">{{$wheel->wheel_number}}</h5>
+
                     <p class="card-text">Cog Number : {{$wheel->wheel_number}}</p>
                     <div class="pro-price">
                       <h4>Cog Price : <span>{{$wheel->cog_price}}</span></h4>
@@ -92,6 +99,7 @@
               <div class="ww-pro-filter-wrp mb-5">
                 <h6 class="pb-1">Find Wealth Wheel Number</h6>
                 <div>
+                  
                   <input type="text" name="ww-pro-name" class="w-100 ps-2" placeholder="Enter wheel number">
                 </div>
               </div>

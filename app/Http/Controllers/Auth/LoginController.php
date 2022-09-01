@@ -57,15 +57,18 @@ class LoginController extends Controller
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
             if (auth()->user()->role == "admin") {
-                return redirect()->route('dashboard')->with('success','Admin login successfully');
+                return redirect()->route('dashboard')->with('messege','Admin login successfully');
                 
             }else{
              
-                return redirect('/')->with('message', 'You are successfully logged in!');
+                
+                return redirect()->route('user_home')->with('success','Login Successfull!');
+                // return back()->with('success', 'Success! User created');
             }
         }else{
 
-            return redirect()->route('login')->with('error', 'Email-Address or Password is Wrong!');
+            return redirect()->back()->with('error', 'Email-Address or Password is Wrong!');
+           
         }
 
     }

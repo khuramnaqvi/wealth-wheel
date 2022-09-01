@@ -90,8 +90,33 @@
                                     </span>
                                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Log in</button>
+            
+            <style>
+              h6 {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #000; 
+   line-height: 0.1em;
+   /* margin: 10px 0 20px;  */
+} 
+
+h6 small { 
+    background:#fff; 
+    padding:0 10px; 
+}
+            </style>
+
+          
+
+            <button type="submit" class="btn btn-primary">Log in</button>     
           </form>
+         
+            <span class="float-right">Forgot <a href="#">password?</a></span>
+          
+            <div class="form-group mt-4">
+              <h6><small>OR</small></h6>
+              <button onclick="window.location.href='{{url('register')}}';"  type="button" class="btn btn-primary">Register</button> 
+            </div>
         </div>
 
       </div>

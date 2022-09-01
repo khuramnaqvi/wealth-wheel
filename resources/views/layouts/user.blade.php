@@ -17,6 +17,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -66,19 +67,19 @@
           <li><a class="nav-link scrollto active" href="{{('/')}}">Home</a></li>
           <li><a class="nav-link scrollto" href="{{ route('how_it_works') }} ">How it Works</a></li>
           <li><a class="nav-link scrollto" href="{{ route('availabe_wealth_wheel') }}">Available Wealth Wheels</a></li>
-        </ul> 
-        <ul class="nav navbar-nav float-right">
+        </ul>
+        {{-- <ul class="nav navbar-nav float-right"> --}}
 
-          <li class="nav-item">
-              <a type="button" data-bs-toggle="modal" class="dropdown-toggle  nav-link dropdown-user-link" href="#" data-toggle="dropdown" data-bs-target="#exampleModal">
+         
+              <a type="button" data-bs-toggle="modal" class="" href="#"  data-bs-target="#exampleModal">
                   <span><img style="border-radius: 50%" class="round" src="{{asset('assets/img_avatar.png')}}" alt="avatar" height="40" width="40"></span>
               </a>
             
               {{-- <div class="dropdown-menu dropdown-menu-right">
                   <a class="dropdown-item" href="{{ url('/logout') }}"><i class="feather icon-user"></i>Logout</a>
               </div> --}}
-          </li>
-      </ul>
+         
+      {{-- </ul> --}}
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->
@@ -111,15 +112,16 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
+                  <div  class="form-group  text-center" >
+                    <h3>Add Credit</h3>
+                  </div>
                   <div class="modal-body">
-                    
+
         <form action="{{ route('add_user_balance') }}" method="POST">
 @csrf
+                     
                       <div class="form-group">
-                        <h3>Add Credit</h3>
-                      </div>
-                      <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">amount:</label>
+                        <label for="recipient-name" class="col-form-label">Amount:</label>
                         <input type="number" class="form-control" id="number">
                       </div>
 
@@ -128,7 +130,7 @@
                         <input type="radio" id="paypal" value="paypal" name="payment" >
                       <label for="paypal">Paypal</label>
                       <input type="radio" id="card" value="card" name="payment" >
-                      <label for="card">card</label>
+                      <label for="card">Card</label>
                       </div>
                    
                   </div>
@@ -188,6 +190,7 @@
 
                         {{ csrf_field() }}
                         <input type="submit" class="btn btn-primary" name="submit" value="Paypal">
+                        {{-- <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/pp-acceptance-medium.png" alt="Buy now with PayPal" /> --}}
                 {{-- <input type="submit" class="btn py-3 text-white ww-pro-action-btn" name="submit" value="Pay Now"> --}}
                 </form>
 
@@ -267,7 +270,18 @@
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+@if(Session::has('success'))
+    toastr.success('{{ Session::get('success') }}');
+@elseif(Session::has('error'))
+    toastr.error('{{ Session::get('error') }}');
+@endif
+</script>
  
+
+  @yield('js')
 </body>
 
 

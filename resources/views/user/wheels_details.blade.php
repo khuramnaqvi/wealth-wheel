@@ -154,7 +154,9 @@
                   </div>
                 </aside> -->
 
-                <main class="primary" style="background-image: url(assets/img/ww-pic.png)"></main>
+                {{-- <main class="primary" style="background-image: url({{images$wheel_details->image}})"></main> --}}
+                <main class="primary" style="background-image:  {{url('images/'.$wheel_details->image)}}"></main>
+
                 
               </div>
             </div>
@@ -176,16 +178,16 @@
               <div class="ww-pro-name">
                 <h2>{{$wheel_details->wheel_name}}</h2>
                 <p class="ww-pro-number">
-                  <span>{{$wheel_details->wheel_number}}</span>
+                  <span>Wheel Number :{{$wheel_details->wheel_number}}</span>
                 </p>
               </div>
               <div class="ww-pro-price my-4">
-                <h4>Cog Price : {{$wheel_details->cog_price}} </h4>
+                <h4>Cog Price :${{$wheel_details->cog_price}} </h4>
               
               <div class="ww-pro-price my-4">
                 @if(count($user_wheels) > 0)
                 @if(isset($user_balance))
-                <h6>Wallet Balance : <b>{{$user_balance}}</b></h6>
+                <h6>Wallet Balance : <b>${{$user_balance}}</b></h6>
                 @endif
                 @endif
               </div>
@@ -200,7 +202,13 @@
               </div> -->
               
               <div class="ww-pro-action my-2">
-                <button data-toggle="modal" data-target="#userModal"   type="button" class="btn py-3 text-white ww-pro-action-btn">Buy Now</button>
+                @if(count($user_wheels) > 0)
+                <button disabled data-toggle="modal" data-target="#userModal"   type="button" class="btn py-3 text-white ww-pro-action-btn">Buy Now</button>
+                @else
+                <button  data-toggle="modal" data-target="#userModal"   type="button" class="btn py-3 text-white ww-pro-action-btn">Buy Now</button>
+
+                @endif
+
               {{-- <form method="POST" action="{{ route('charge') }}">
                         <input type="hidden" value="{{$wheel_details->cog_price}}" name="price">
                         <input type="hidden" value="{{$wheel_details->wheel_number}}" name="wheel_number">

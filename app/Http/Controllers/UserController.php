@@ -84,6 +84,14 @@ class UserController extends Controller
     public function add_user_balance(Request $request)
     {
         dd($request->all());
+        if($request->payment == "paypal"){
+
+        }
+        
+        else{
+            
+
+        }
        
     }
 

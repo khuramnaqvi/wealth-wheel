@@ -105,7 +105,8 @@ button:hover {
             </div>
             <div class="form-group">
               <label for="">Image</label>
-              <input required name="image" type="file" class="form-control" accept="image/*" />
+              <input name="image" type="file" class="form-control" accept="image/*" />
+              {{-- <small style="color: gray">please enter the correct image size</small> --}}
             </div>
             <button type="submit" class="btn btn-primary confirmation-message first">Save</button>
           </form>
