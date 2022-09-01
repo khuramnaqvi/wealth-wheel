@@ -11,9 +11,10 @@ use Stripe;
 
 class StripePaymentController extends Controller
 {
-    public function stripe()
+    public function stripe($amount)
     {
-        return view('stripe');
+
+        return view('stripe',compact('amount'));
     }
   
     /**
@@ -23,10 +24,13 @@ class StripePaymentController extends Controller
      */
     public function stripePost(Request $request)
     {
+       $amount = $request->amount;
+       $final_amount = $amount * 100;
+       
         
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET', 'sk_test_51Kh9uAFBFsCMdULhVtPQxp0NOArxMFzdQ6qroS5jZFettctGfyVPc5WPmT6b1hGimRW09adqa3lndHnywhsbBqYW00K8eyxFsu'));
         Stripe\Charge::create ([
-                "amount" => 100 * 100,
+                "amount" => $final_amount,
                 "currency" => "usd",
                 "source" => $request->stripeToken,
                 "description" => "Test payment" 
@@ -34,7 +38,7 @@ class StripePaymentController extends Controller
 
             //for user 
             $up = 92.5/100;
-            $user_percent = $up * 100 ;
+            $user_percent = $up * $amount ;
             $user_payment = new wallet;
             $user_payment->wheel_id = "1";
             $user_payment->amount = $user_percent;
@@ -42,7 +46,7 @@ class StripePaymentController extends Controller
 
             //for admin
             $ad = 7.5/100;
-            $admin_percent = $ad * 100 ;
+            $admin_percent = $ad * $amount ;
             $user_payment = new Adminwallet;
             $user_payment->wheel_id = "1";
             $user_payment->amount = $admin_percent;

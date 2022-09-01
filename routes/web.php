@@ -84,7 +84,7 @@ Route::get('/availabe_wealth_wheel', [App\Http\Controllers\UserController::class
 Route::get('/wheels_details', [App\Http\Controllers\UserController::class, 'wheels_details'])->name('wheels_details');
 
 // Routes for Stripe
-Route::get('stripe', [App\Http\Controllers\StripePaymentController::class, 'stripe'])->name('stripe');
+Route::get('stripe/{amount}', [App\Http\Controllers\StripePaymentController::class, 'stripe'])->name('stripe');
 Route::post('stripe_post', [App\Http\Controllers\StripePaymentController::class, 'stripePost'])->name('stripe_post');
 
 

@@ -181,7 +181,7 @@
                   </div>
                   <div class="modal-body text-center">
                       <form method="POST" action="{{ route('charge') }}">
-                        <input type="hidden" value="100" name="price" class="append_price">
+                        <input type="hidden"  name="price" class="append_price">
                         {{-- <input type="hidden" value="{{$wheel_details->wheel_number}}" name="wheel_number">
                         <input type="hidden" value="{{$wheel_details->wheel_name}}" name="name">
                         <input type="hidden" value="{{$wheel_details->id}}" name="wheel_id"> --}}
@@ -192,7 +192,9 @@
                 </form>
 
                     {{-- <button type="button" class="btn btn-primary">Paypal</button> --}}
-                    <a href="{{('stripe')}}" type="button" class="btn btn-primary m-2"> Card</a>
+                   @if(isset($wheel_details->cog_price))
+                    <a href="{{url('stripe/'.$wheel_details->cog_price)}}"  type="button" class="btn btn-primary m-2 "> Card</a>
+                @endif
                   </div>
                   <div class="modal-footer">
                   
@@ -268,16 +270,6 @@
  
 </body>
 
-{{-- <script>
-  $('#exampleModal').on('show.bs.modal', function (event) {
-var button = $(event.relatedTarget) // Button that triggered the modal
-var recipient = button.data('whatever') // Extract info from data-* attributes
-// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-var modal = $(this)
-modal.find('.modal-title').text('New message to ' + recipient)
-modal.find('.modal-body input').val(recipient)
-})
-</script> --}}
+
 
 </html>

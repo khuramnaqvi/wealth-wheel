@@ -57,11 +57,15 @@
                             data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
                             id="payment-form">
                         @csrf
+
+                        @if(isset($amount))
+                        <input hidden type="number" name="amount" value="{{$amount}}">
+                        @endif
   
                         <div class='form-row row'>
                             <div class='col-xs-12 form-group required'>
-                                <label class='control-label'>Name on Card</label> <input
-                                    class='form-control' size='4' type='text'>
+                                <label class='control-label'>Name on Card</label> 
+                                <input class='form-control' size='4' type='text'>
                             </div>
                         </div>
   
@@ -100,7 +104,9 @@
   
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now ($100)</button>
+                                @if(isset($amount))
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now (${{$amount}})</button>
+                                @endif
                             </div>
                         </div>
                           
@@ -163,7 +169,6 @@ $(function() {
         } else {
             /* token contains id, last4, and card type */
             var token = response['id'];
-               
             $form.find('input[type=text]').empty();
             $form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
             $form.get(0).submit();

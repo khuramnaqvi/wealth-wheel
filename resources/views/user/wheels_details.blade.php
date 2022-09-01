@@ -219,7 +219,7 @@
 
 
 
-      <input type="" class="cog_price" value="{{$wheel_details->cog_price}}">
+      <input hidden class="cog_price" value="{{$wheel_details->cog_price}}" >
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
