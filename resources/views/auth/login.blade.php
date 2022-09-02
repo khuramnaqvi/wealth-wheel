@@ -111,7 +111,7 @@ h6 small {
             <button type="submit" class="btn btn-primary">Log in</button>     
           </form>
          
-            <span class="float-right">Forgot <a href="#">password?</a></span>
+            <span class="float-right"> <a href="#">Forgot password?</a></span>
           
             <div class="form-group mt-4">
               <h6><small>OR</small></h6>

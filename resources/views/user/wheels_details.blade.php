@@ -155,7 +155,7 @@
                 </aside> -->
 
                 {{-- <main class="primary" style="background-image: url({{images$wheel_details->image}})"></main> --}}
-                <main class="primary" style="background-image:  {{url('images/'.$wheel_details->image)}}"></main>
+                <main class="primary" style="background-image:  url('images/{{$wheel_details->image}}')"></main>
 
                 
               </div>
