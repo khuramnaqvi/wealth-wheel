@@ -42,7 +42,7 @@ Route::get('/faq', [App\Http\Controllers\UserController::class, 'faq'])->name('f
 Route::get('/privacy_policy', [App\Http\Controllers\UserController::class, 'privacy_policy'])->name('privacy_policy');
 Route::get('/term_and_conditions', [App\Http\Controllers\UserController::class, 'term_and_conditions'])->name('term_and_conditions');
 
-
+Route::get('/availabe_wealth_wheel', [App\Http\Controllers\UserController::class, 'availabe_wealth_wheel'])->name('availabe_wealth_wheel');
 
 //Routes For Admin
 
@@ -80,8 +80,9 @@ Route::get('error', [App\Http\Controllers\PaymentController::class, 'error'])->n
 
 //Routes For wheels
 Route::post('/create_wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'create_wealth_wheel'])->name('create_wealth_wheel');
-Route::get('/availabe_wealth_wheel', [App\Http\Controllers\UserController::class, 'availabe_wealth_wheel'])->name('availabe_wealth_wheel');
 Route::get('/wheels_details', [App\Http\Controllers\UserController::class, 'wheels_details'])->name('wheels_details');
+
+
 
 // Routes for Stripe
 Route::get('stripe/{amount}', [App\Http\Controllers\StripePaymentController::class, 'stripe'])->name('stripe');

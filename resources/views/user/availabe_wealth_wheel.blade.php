@@ -65,9 +65,9 @@
                   </div>
                   @if ($wheel->image != "")
                  
-                  <img src="{{ asset('images/' .$wheel->image) }}" alt="no img" class="img-fluid">
+                  <img style="height: 250px; width:310px" src="{{ asset('images/' .$wheel->image) }}" alt="no img" class="img-fluid">
                   @else
-                  <img  src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
+                  <img style="height: 250px; width:310px"  src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
                   @endif
                   <div class="card-body">
                     <h5 class="card-title">{{$wheel->wheel_name}}</h5>

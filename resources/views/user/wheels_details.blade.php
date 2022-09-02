@@ -155,7 +155,7 @@
                 </aside> -->
 
                 {{-- <main class="primary" style="background-image: url({{images$wheel_details->image}})"></main> --}}
-                <main class="primary" style="background-image:  {{url('images/'.$wheel_details->image)}}"></main>
+                <main class="primary" style="background-image:  url('images/{{$wheel_details->image}}')"></main>
 
                 
               </div>
@@ -205,7 +205,7 @@
                 @if(count($user_wheels) > 0)
                 <button disabled data-toggle="modal" data-target="#userModal"   type="button" class="btn py-3 text-white ww-pro-action-btn">Buy Now</button>
                 @else
-                <button  data-toggle="modal" data-target="#userModal"   type="button" class="btn py-3 text-white ww-pro-action-btn">Buy Now</button>
+                <button  data-toggle="modal" data-target="#userModal"   type="button" class="btn py-3 text-white ww-pro-action-btn pasy">Buy Now</button>
 
                 @endif
 
