@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\WealthWheel;
 use Illuminate\Http\Request;
+use DB;
+use Stripe;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -94,7 +96,33 @@ class UserController extends Controller
         }
        
     }
+    // 
+    public function deposit_balance(Request $request)
+    {
+        // dd('dd');
+        $amount = $request->amount;
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+                $stripee = Stripe\Charge::create ([
+                        "amount" => $amount * 100,
+                        "currency" => "usd",
+                        "source" => $request->stripeToken,
+                        "description" => "Your payment is success." 
+                ]);
 
+        $affected = DB::table('users')
+        ->where('id', auth()->user()->id)
+        ->update(['balance' => auth()->user()->balance + $amount]);
+        return back()->with('success', 'Payment Successfull');
+    }
+
+    public function my_wheels()
+    {
+        $wheels = WealthWheel::all();
+        $my_whells = DB::table('wealth_wheels')
+        ->where('user_id', auth()->user()->id)->get();
+        return view('user.my_wheels', compact('wheels', 'my_whells'));
+
+    }
   
 
     

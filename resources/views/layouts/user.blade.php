@@ -115,6 +115,8 @@
           <li><a class="nav-link scrollto active" href="{{('/')}}">Home</a></li>
           <li><a class="nav-link scrollto" href="{{ route('how_it_works') }} ">How it Works</a></li>
           <li><a class="nav-link scrollto" href="{{ route('availabe_wealth_wheel') }}">Available Wealth Wheels</a></li>
+          @auth
+          <li><a class="nav-link scrollto" href="{{ url('my_wheels') }}">My Wheels</a></li>
           <li><a class="nav-link scrollto">${{auth()->user()->balance}}</a></li>
           <div class="dropdown">
             <li><i class="fa fa-angle-down dropbtn" style="font-size:26px"></i></li>
@@ -125,7 +127,7 @@
               <a href="{{ route ('logout') }}"  onclick="return confirm('Are you sure you want to logout?');">Logout</a>
             </div>
           </div>
-
+          @endauth
         </ul>
         {{-- <ul class="nav navbar-nav float-right"> --}}
 
@@ -184,9 +186,6 @@
             </div> --}}
 
             <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="selectpaymentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -342,12 +341,13 @@
     </div>
   </footer>
   <!-- End Footer -->
+
   <!-- deposit model -->
 
   <div class="modal fade" id="paymentmodel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content" style="border-radius: 45px;">
+        <div class="modal-content" style="border-radius: 45px; margin-top: 123px;">
             <div class="site_colr" style=" border-radius: 42px 42px 0px 0px;">
                 <h5 class="modal-title" id="staticBackdropLabel"style="text-align: center;padding-top: 15px;padding-bottom: 15px;">Payment</h5>
                 
@@ -356,9 +356,9 @@
                     <div class="row" style="justify-content:  center;">
 
                         <div class="col-6"  style="text-align: center; margin-bottom:10px;">
-                            <div class="form-group">
-                              <label for="">Enter Amount</label>
-                            <input type="number" name="" placeholde="Enter Amount To Deposit" class=" form-control checkamount" onkeyup="this.value=this.value.replace(/[^0-9]/g)">
+                            <div class="form-group" style="text-align: left;">
+                              <label for="">Enter Amount:</label>
+                            <input type="number" name="" placeholder="Enter Amount To Deposit" class=" form-control checkamount" onkeyup="this.value=this.value.replace(/[^0-9]/g)" style="border-radius: 30px;">
                         </div>
                             <input type="radio" name="pay" id="vcard" value="1" class="paymentmode"><label for="vcard" style="margin-right: 33px;">Pay with card</label>
                             <input type="radio" name="pay" id="payypal"  value="2" class="paymentmode"><label for="payypal">Pay with Paypal</label>
@@ -367,13 +367,13 @@
                         <div class="col-md-10 col-md-offset-3 stripe_div d-none">
                             <div class="panel panel-default credit-card-box">
                                 <div class="panel-body">
-                                    <form role="form" action="{{url('/give_vote')}}" method="post"
+                                    <form role="form" action="{{url('/deposit_balance')}}" method="post"
                                         class="require-validation" data-cc-on-file="false"
                                         data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
                                         @csrf
 
-                                        <input type="hidden" name="amount" class="amount" >
-                                        <input type="hidden" name="contestentid" value="">
+                                        <input type="hidden" name="amount" class="amount">
+
                                         <div class='form-row row mt-2'>
                                             <div class='col-xs-12 form-group required'>
                                                 <label class='control-label'>Name on Card</label> <input
@@ -428,10 +428,8 @@
                         </div>
                         <div class="paypal_div d-none">
 
-                            <form action="{{ url('/paypalcharge') }}" method="post">
+                            <form action="{{ url('/paypal_deposit_balance') }}" method="post">
                                 <input type="hidden" class="amount" name="amount" />
-                                <input type="hidden" name="contestentid" value="">
-
                                 {{ csrf_field() }}
                                 <div class="row" style="justify-content: center;">
                                   <div class="col-md-10 col-md-offset-3">
@@ -478,8 +476,16 @@
 <script>
 
 @if(Session::has('success'))
+    toastr.options = {
+      "closeButton": true,
+      "progressBar": true
+    }
     toastr.success('{{ Session::get('success') }}');
 @elseif(Session::has('error'))
+    toastr.options = {
+      "closeButton": true,
+      "progressBar": true
+    }
     toastr.error('{{ Session::get('error') }}');
 @endif
 
@@ -493,8 +499,11 @@ $(document).ready(function() {
   });
 
   $(document).on("click", ".paymentmode", function () {
-    if($('.checkamount').val() != '')
+    var checkamount = $('.checkamount').val();
+
+    if(checkamount != '')
     {
+      $('.amount').val(checkamount)
     
       var a = $('.paymentmode:checked').val();
       if(a ==1)
@@ -506,6 +515,10 @@ $(document).ready(function() {
           $('.stripe_div').addClass('d-none');
       }
     }else{
+      toastr.options = {
+        "closeButton": true,
+        "progressBar": true
+      }
       toastr.error('Please Enter Amoun first');
     }
 
