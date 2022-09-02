@@ -223,7 +223,8 @@
              
 
 <div class="col">
-  <a href="{{url('stripe/'.$wheel_details->cog_price)}}">
+  {{-- {{url('stripe/'.$wheel_details->cog_price)}} --}}
+  <a href="">
   <img alt="Qries" src="{{URL::asset('/assets/img/card.jpg')}}"
   width="75" height="70">
 </a>
