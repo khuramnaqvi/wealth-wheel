@@ -67,7 +67,6 @@ Route::post('update_wheel/{wheel}', [App\Http\Controllers\DashboardController::c
 });
 
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
-
 //user routes
 Route::group(['middleware' => ['auth', 'user']], function () {  
  Route::get('/wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'wealth_wheel'])->name('wealth_wheel');

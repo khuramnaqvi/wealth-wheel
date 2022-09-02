@@ -50,13 +50,7 @@
         <div class="row content" data-aos="fade-up">
           <div class="col-lg-9">
             <div class="row">
-              @if (\Session::has('success'))
-    <div class="alert alert-success">
-        <ul>
-            <li>{!! \Session::get('success') !!}</li>
-        </ul>
-    </div>
-@endif
+
             @foreach($wheels as $wheel)
               <div class="ww-avl-card col-md-4 my-2">
                 <div class="card">

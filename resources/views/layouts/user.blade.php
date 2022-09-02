@@ -115,7 +115,7 @@
           <li><a class="nav-link scrollto active" href="{{('/')}}">Home</a></li>
           <li><a class="nav-link scrollto" href="{{ route('how_it_works') }} ">How it Works</a></li>
           <li><a class="nav-link scrollto" href="{{ route('availabe_wealth_wheel') }}">Available Wealth Wheels</a></li>
-          <li><a class="nav-link scrollto">${{auth()->user()->balance}}</a></li>
+          {{-- <li><a class="nav-link scrollto">${{auth()->user()->balance}}</a></li> --}}
           <div class="dropdown">
             <li><i class="fa fa-angle-down dropbtn" style="font-size:26px"></i></li>
 
@@ -205,12 +205,15 @@
           <div class="col-5">
             <div class="row col-8">
             {{-- <button  type="button" class="btn btn-primary">Pay from Walet</button> --}}
-            <a class="cardpay">
+            <a class="payment_from_wallet" >
               <img alt="Qries" src="{{URL::asset('/assets/img/wallet.png')}}"
               width="100" height="70">
            </a>
             
             </div>
+            <div class="row">
+              <div class="col"><b style="margin-left: 15px" >Pay Now</b></div>
+              </div>
           </div>
 
           <style>
@@ -225,97 +228,33 @@
             <div class="row">
             
 <div class="col">
-  <form method="POST" action="{{ route('charge') }}">
+  <form id="paypal_form" method="POST" action="{{ route('charge') }}">
     <input type="hidden"  name="price" class="append_price">
     {{ csrf_field() }}
     {{-- <input type="submit" class="btn btn-primary" name="submit" value="Paypal"> --}}
-  <a type="submit">
+  <a class="paypal_form" type="submit">
   <img alt="Qries" src="{{URL::asset('/assets/img/paypal.jpg')}}"
   width="70" height="70">
 </a>
  </form>
 </div>
+
              
 
 <div class="col">
   {{-- {{url('stripe/'.$wheel_details->cog_price)}} --}}
   {{-- {{dd($wheel_details)}} --}}
-  <a href="">
+  <a class="cardpay">
   <img alt="Qries" src="{{URL::asset('/assets/img/card.jpg')}}"
   width="75" height="70">
 </a>
 </div>
             
             </div>
-            {{-- <button  type="button" class="btn btn-primary pasy">Direct Payment</button> --}}
-          </div>
-      </div>
-      </div>
-    </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
-      </div>
-    </div>
-  </div>
-</div>
-
-
-{{-- modal for wallet --}}
-
-<!-- Modal -->
-<div class="modal fade" id="walletpaymentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5  class="modal-title" id="exampleModalCenterTitle">Payment From wallet</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-<div class="container">
-      <div class="modal-body">
-        
-        <div class="row">
-          <div class="col-5">
-            <div class="row col-8">
-            {{-- <button  type="button" class="btn btn-primary">Pay from Walet</button> --}}
-            <form method="POST" action="{{ route('charge') }}">
-              <input type="hidden"  name="price" class="append_price">
-              {{ csrf_field() }}
-              {{-- <input type="submit" class="btn btn-primary" name="submit" value="Paypal"> --}}
-            <a class="cardpay" type="submit">
-            <img alt="Qries" src="{{URL::asset('/assets/img/paypal.jpg')}}"
-            width="90" height="90">
-          </a>
-           </form>
-            
-            </div>
-          </div>
-
-          <style>
-            .vl {
-              border-left: 3px solid #0D6EFD;
-              height: 90px;
-            }
-            </style>
-        
-          <div class="vl col-1"></div>
-          <div class="col-5">
             <div class="row">
-            
-{{-- <div class="col">
- 
-</div> --}}
-<div class="col-6">
-  {{-- {{url('stripe/'.$wheel_details->cog_price)}} --}}
-  {{-- {{dd($wheel_details)}} --}}
-  <a href="">
-  <img alt="Qries" src="{{URL::asset('/assets/img/card.jpg')}}"
-  width="90" height="90">
-</a>
-</div>
-            
+<div class="col"><b>Paypal</b></div>
+<div class="col"><b style="margin-left:8px;">Card </b> </div>
+
             </div>
             {{-- <button  type="button" class="btn btn-primary pasy">Direct Payment</button> --}}
           </div>
@@ -329,8 +268,171 @@
     </div>
   </div>
 </div>
+
+
+{{-- modal for card --}}
+
+
+<div class="modal fade" id="walletpaymentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+    <div class="modal-content" style="border-radius: 45px;">
+        <div class="site_colr" style=" border-radius: 42px 42px 0px 0px;">
+            <h5 class="modal-title" id="staticBackdropLabel"style="text-align: center;padding-top: 15px;padding-bottom: 15px;">Payment</h5>
+            
+        </div>
+        <div class="modal-body">
+                <div class="row" style="justify-content:  center;">
+
+                    <div class="col-6"  style="text-align: center; margin-bottom:10px;">
+                        <div class="form-group">
+                          <label for=""> Amount</label>
+                        <input readonly="readonly"  name="amount"  class=" form-control checkamount append_price">
+                    </div>
+                        <input type="radio" name="pay" id="vcard" value="1" class="paymentmode"><label for="vcard" style="margin-right: 33px;">Pay with card</label>
+                       
+                    </div>
+
+                    <div class="col-md-10 col-md-offset-3 stripe_div d-none">
+                        <div class="panel panel-default credit-card-box">
+                            <div class="panel-body">
+                                <form role="form" action="{{url('stripe_post')}}" method="post"
+                                    class="require-validation" data-cc-on-file="false"
+                                    data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
+                                    @csrf
+
+                                    <input class="append_price" type="hidden" name="amount" >
+                                    <div class='form-row row mt-2'>
+                                        <div class='col-xs-12 form-group required'>
+                                            <label class='control-label'>Name on Card</label> <input
+                                                class='form-control' size='4' type='text'>
+                                        </div>
+                                    </div>
+
+                                    <div class='form-row row mt-2'>
+                                        <div class='col-xs-12 form-group required'>
+                                            <label class='control-label'>Card Number</label> <input
+                                                autocomplete='off' class='form-control card-number' size='20'
+                                                type='text'>
+                                        </div>
+                                    </div>
+
+                                    <div class='form-row row mt-2'>
+                                        <div class='col-xs-12 col-md-4 form-group cvc required'>
+                                            <label class='control-label'>CVC</label> <input autocomplete='off'
+                                                class='form-control card-cvc' placeholder='ex. 311' size='4'
+                                                type='text'>
+                                        </div>
+                                        <div class='col-xs-12 col-md-4 form-group expiration required'>
+                                            <label class='control-label'>Expiration Month</label> <input
+                                                class='form-control card-expiry-month' placeholder='MM' size='2'
+                                                type='text'>
+                                        </div>
+                                        <div class='col-xs-12 col-md-4 form-group expiration required'>
+                                            <label class='control-label'>Expiration Year</label> <input
+                                                class='form-control card-expiry-year' placeholder='YYYY' size='4'
+                                                type='text'>
+                                        </div>
+                                    </div>
+
+                                    <div class='form-row row mt-2'>
+                                        <div class='col-md-12 error form-group hide'>
+                                            <div class='alert-danger alert'>Please correct the errors and try
+                                                again.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-4">
+                                        <div class="col-12 d-flex" style="justify-content: space-between;">
+                                            <button class="col-5 btn btn-primary site_colr" type="submit">Pay Now
+                                                </button>
+                                            <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                 
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!--  -->
 
             {{-- end wallet modal --}}
+
+
+            {{-- modal for card --}}
+
+
+<div class="modal fade" id="payment_from_wallet_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+    <div class="modal-content" style="border-radius: 45px;">
+        <div class="site_colr" style=" border-radius: 42px 42px 0px 0px;">
+            <h5 class="modal-title" id="staticBackdropLabel"style="text-align: center;padding-top: 15px;padding-bottom: 15px;">Payment</h5>
+            
+        </div>
+        <div class="modal-body">
+                <div class="row" style="justify-content:  center;">
+
+                    <div class="col-6"  style="text-align: center; margin-bottom:10px;">
+                        <div class="form-group">
+                          <label for=""> Amount</label>
+                        <input readonly="readonly"  name="amount"  class=" form-control checkamount append_price">
+                    </div>
+                        <input type="radio" name="pay" id="vcard" value="1" class="paymentmode"><label for="vcard" style="margin-right: 33px;">Pay From Wallet</label>
+                       
+                    </div>
+
+                    <div class="col-md-10 col-md-offset-3 stripe_div d-none">
+                        <div class="panel panel-default credit-card-box">
+                            <div class="panel-body">
+                                <form role="form" action="{{url('pay_from_wallet')}}" method="post"
+                                    class="require-validation" data-cc-on-file="false"
+                                    data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
+                                    @csrf
+
+                                    <input class="append_price" type="hidden" name="amount" >
+                                    {{-- <div class='form-row row mt-2'>
+                                        <div class='col-xs-12 form-group required'>
+                                            <label class='control-label'>Name on Card</label> <input
+                                                class='form-control' size='4' type='text'>
+                                        </div>
+                                    </div> --}}
+
+                                    <div class='form-row row mt-2'>
+                                        <div class='col-md-12 error form-group hide'>
+                                            <div class='alert-danger alert'>Please correct the errors and try
+                                                again.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-4">
+                                        <div class="col-12 d-flex" style="justify-content: space-between;">
+                                            <button class="col-5 btn btn-primary site_colr" type="submit">Pay Now
+                                                </button>
+                                            <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                 
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
 
              {{-- select payment modal --}}
 
@@ -631,10 +733,7 @@ $(document).ready(function() {
   }
   initPayPalButton();
 </script>
- 
 
-  @yield('js')
-</body>
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   
 <script type="text/javascript">
@@ -684,7 +783,6 @@ $(function() {
         } else {
             /* token contains id, last4, and card type */
             var token = response['id'];
-               
             $form.find('input[type=text]').empty();
             $form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
             $form.get(0).submit();
@@ -693,7 +791,9 @@ $(function() {
    
 });
 </script>
+ 
 
-
+  @yield('js')
+</body>
 
 </html>

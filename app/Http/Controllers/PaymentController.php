@@ -36,11 +36,9 @@ class PaymentController extends Controller
      */
     public function charge(Request $request)
     {
+      
         
         
-       
-        if($request->input('submit'))
-        {
             try {
                
                 $response = $this->gateway->purchase(array(
@@ -60,7 +58,7 @@ class PaymentController extends Controller
                
                 return $e->getMessage();
             }
-        }
+        
     }
    
     /**
