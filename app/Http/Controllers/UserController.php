@@ -104,8 +104,26 @@ class UserController extends Controller
                         "description" => "Your payment is success." 
                 ]);
 
-<<<<<<< HEAD
-=======
+
+        $affected = DB::table('users')
+        ->where('id', auth()->user()->id)
+        ->update(['balance' => auth()->user()->balance + $amount]);
+        return back()->with('success', 'Payment Successfull');
+    }
+    // 
+    public function deposit_balance(Request $request)
+    {
+        // dd('dd');
+        $amount = $request->amount;
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+                $stripee = Stripe\Charge::create ([
+                        "amount" => $amount * 100,
+                        "currency" => "usd",
+                        "source" => $request->stripeToken,
+                        "description" => "Your payment is success." 
+                ]);
+
+
         $affected = DB::table('users')
         ->where('id', auth()->user()->id)
         ->update(['balance' => auth()->user()->balance + $amount]);
@@ -119,9 +137,13 @@ class UserController extends Controller
         ->where('user_id', auth()->user()->id)->get();
         return view('user.my_wheels', compact('wheels', 'my_whells'));
 
+
+    
+        
+  
+
     }
   
->>>>>>> cd0aa79c623b8345542c8855d542a2d7f1e769dc
 
 
     public function pay_from_wallet(Request $request)
