@@ -62,12 +62,9 @@ Route::get('delete_wheel/{wheel}', [App\Http\Controllers\DashboardController::cl
 Route::get('edit_wheel/{wheel}', [App\Http\Controllers\DashboardController::class, 'edit_wheel'])->name('edit_wheel');
 Route::post('update_wheel/{wheel}', [App\Http\Controllers\DashboardController::class, 'update_wheel'])->name('update_wheel');
 
-
-
 });
 
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
-
 //user routes
 Route::group(['middleware' => ['auth', 'user']], function () {  
  Route::get('/wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'wealth_wheel'])->name('wealth_wheel');

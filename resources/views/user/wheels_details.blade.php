@@ -236,13 +236,43 @@
 
 <script>
 $(document).ready(function(){
-  $(".pasy").click(function(){
+$(".pasy").click(function(){   
     $("#selectpaymentModal").modal('show');
     var priv=$(".cog_price").val();
    
     $('.append_price').val(priv)
   
   });
+
+  $(".cardpay").click(function(){
+    $("#selectpaymentModal").modal('hide');
+    $("#walletpaymentModal").modal('show');
+    var priv=$(".cog_price").val();
+   
+    $('.append_price').val(priv)
+  
+  });
+  
+  $(".payment_from_wallet").click(function(){
+    $("#selectpaymentModal").modal('hide');
+
+    $("#payment_from_wallet_modal").modal('show');
+    var priv=$(".cog_price").val();
+   
+    $('.append_price').val(priv)
+  
+  });
+
+  $(".close").click(function(){
+    $("#selectpaymentModal").modal('hide');
+    $("#walletpaymentModal").modal('hide');
+  });
+
+  $(".paypal_form").click(function(){
+    $("#paypal_form").submit();
+  });
+  
+
  
 });
 

@@ -25,6 +25,7 @@ class StripePaymentController extends Controller
      */
     public function stripePost(Request $request)
     {
+      
        $amount = $request->amount;
        $final_amount = $amount * 100;
        
