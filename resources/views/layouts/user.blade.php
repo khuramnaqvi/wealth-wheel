@@ -148,11 +148,11 @@
 
             {{-- user modal --}}
 
-            <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            {{-- <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Select payment method</h5>
+                    <h5 class="modal-title text-center" id="exampleModalLabel">Chose Payment Options</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -166,7 +166,82 @@
                   </div>
                 </div>
               </div>
+            </div> --}}
+
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="selectpaymentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5  class="modal-title" id="exampleModalCenterTitle">Chose Payment Method</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+<div class="container">
+      <div class="modal-body">
+        
+        <div class="row">
+          <div class="col-5">
+            <div class="row col-8">
+            {{-- <button  type="button" class="btn btn-primary">Pay from Walet</button> --}}
+            <a href="https://www.qries.com/">
+              <img alt="Qries" src="{{URL::asset('/assets/img/wallet.png')}}"
+              width="100" height="70">
+           </a>
+            
             </div>
+          </div>
+
+          <style>
+            .vl {
+              border-left: 3px solid #0D6EFD;
+              height: 90px;
+            }
+            </style>
+        
+          <div class="vl col-1"></div>
+          <div class="col-5">
+            <div class="row">
+            
+<div class="col">
+  <form method="POST" action="{{ route('charge') }}">
+    <input type="hidden"  name="price" class="append_price">
+    {{ csrf_field() }}
+    {{-- <input type="submit" class="btn btn-primary" name="submit" value="Paypal"> --}}
+  <a type="submit">
+  <img alt="Qries" src="{{URL::asset('/assets/img/paypal.jpg')}}"
+  width="70" height="70">
+</a>
+ </form>
+</div>
+             
+
+<div class="col">
+  <a href="{{url('stripe/'.$wheel_details->cog_price)}}">
+  <img alt="Qries" src="{{URL::asset('/assets/img/card.jpg')}}"
+  width="75" height="70">
+</a>
+</div>
+            
+            </div>
+            {{-- <button  type="button" class="btn btn-primary pasy">Direct Payment</button> --}}
+          </div>
+      </div>
+      </div>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+      </div>
+    </div>
+  </div>
+</div>
 
             {{-- end modal --}}
 
@@ -190,7 +265,7 @@
 
                         {{ csrf_field() }}
                         <input type="submit" class="btn btn-primary" name="submit" value="Paypal">
-                        {{-- <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/pp-acceptance-medium.png" alt="Buy now with PayPal" /> --}}
+                      
                 {{-- <input type="submit" class="btn py-3 text-white ww-pro-action-btn" name="submit" value="Pay Now"> --}}
                 </form>
 
@@ -273,11 +348,53 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+<script>
 @if(Session::has('success'))
     toastr.success('{{ Session::get('success') }}');
 @elseif(Session::has('error'))
     toastr.error('{{ Session::get('error') }}');
 @endif
+</script>
+<script>
+   function initPayPalButton() {
+    paypal.Buttons({
+      style: {
+        shape: 'pill',
+        color: 'blue',
+        layout: 'horizontal',
+        label: 'paypal',
+        
+      },
+
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{"amount":{"currency_code":"USD","value":1}}]
+        });
+      },
+
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(orderData) {
+          
+          // Full available details
+          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+          // Show a success message within this page, e.g.
+          const element = document.getElementById('paypal-button-container');
+          element.innerHTML = '';
+          element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+          // Or go to another URL:  actions.redirect('thank_you.html');
+          
+        });
+      },
+
+      onError: function(err) {
+        console.log(err);
+      }
+    }).render('#paypal-button-container');
+  }
+  initPayPalButton();
 </script>
  
 
