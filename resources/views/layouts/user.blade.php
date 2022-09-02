@@ -169,9 +169,9 @@
             </div> --}}
 
             <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+{{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   Launch demo modal
-</button>
+</button> --}}
 
 <!-- Modal -->
 <div class="modal fade" id="selectpaymentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -190,7 +190,7 @@
           <div class="col-5">
             <div class="row col-8">
             {{-- <button  type="button" class="btn btn-primary">Pay from Walet</button> --}}
-            <a href="https://www.qries.com/">
+            <a class="cardpay">
               <img alt="Qries" src="{{URL::asset('/assets/img/wallet.png')}}"
               width="100" height="70">
            </a>
@@ -224,6 +224,7 @@
 
 <div class="col">
   {{-- {{url('stripe/'.$wheel_details->cog_price)}} --}}
+  {{-- {{dd($wheel_details)}} --}}
   <a href="">
   <img alt="Qries" src="{{URL::asset('/assets/img/card.jpg')}}"
   width="75" height="70">
@@ -244,7 +245,77 @@
   </div>
 </div>
 
-            {{-- end modal --}}
+
+{{-- modal for wallet --}}
+
+<!-- Modal -->
+<div class="modal fade" id="walletpaymentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5  class="modal-title" id="exampleModalCenterTitle">Payment From wallet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+<div class="container">
+      <div class="modal-body">
+        
+        <div class="row">
+          <div class="col-5">
+            <div class="row col-8">
+            {{-- <button  type="button" class="btn btn-primary">Pay from Walet</button> --}}
+            <form method="POST" action="{{ route('charge') }}">
+              <input type="hidden"  name="price" class="append_price">
+              {{ csrf_field() }}
+              {{-- <input type="submit" class="btn btn-primary" name="submit" value="Paypal"> --}}
+            <a class="cardpay" type="submit">
+            <img alt="Qries" src="{{URL::asset('/assets/img/paypal.jpg')}}"
+            width="90" height="90">
+          </a>
+           </form>
+            
+            </div>
+          </div>
+
+          <style>
+            .vl {
+              border-left: 3px solid #0D6EFD;
+              height: 90px;
+            }
+            </style>
+        
+          <div class="vl col-1"></div>
+          <div class="col-5">
+            <div class="row">
+            
+{{-- <div class="col">
+ 
+</div> --}}
+<div class="col-6">
+  {{-- {{url('stripe/'.$wheel_details->cog_price)}} --}}
+  {{-- {{dd($wheel_details)}} --}}
+  <a href="">
+  <img alt="Qries" src="{{URL::asset('/assets/img/card.jpg')}}"
+  width="90" height="90">
+</a>
+</div>
+            
+            </div>
+            {{-- <button  type="button" class="btn btn-primary pasy">Direct Payment</button> --}}
+          </div>
+      </div>
+      </div>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+      </div>
+    </div>
+  </div>
+</div>
+
+            {{-- end wallet modal --}}
 
              {{-- select payment modal --}}
 
