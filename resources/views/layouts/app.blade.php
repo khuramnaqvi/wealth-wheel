@@ -51,6 +51,14 @@
             opacity: 0;
         }
     }
+    .toast-success{
+        background-color:green !important;
+    }
+    .toast-error
+    {
+        background-color:brown !important;
+
+    }
 </style>
 
 <body>
@@ -148,11 +156,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-@if(Session::has('success'))
-    toastr.success('{{ Session::get('success') }}');
-@elseif(Session::has('error'))
-    toastr.error('{{ Session::get('error') }}');
-@endif
+  @if(Session::has('success'))
+      toastr.success('{{ Session::get('success') }}');
+  @elseif(Session::has('error'))
+      toastr.error('{{ Session::get('error') }}');
+  @endif
 </script>
   @yield('js')
 </body>
