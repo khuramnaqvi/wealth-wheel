@@ -42,7 +42,7 @@ Route::get('/faq', [App\Http\Controllers\UserController::class, 'faq'])->name('f
 Route::get('/privacy_policy', [App\Http\Controllers\UserController::class, 'privacy_policy'])->name('privacy_policy');
 Route::get('/term_and_conditions', [App\Http\Controllers\UserController::class, 'term_and_conditions'])->name('term_and_conditions');
 
-Route::get('/availabe_wealth_wheel', [App\Http\Controllers\UserController::class, 'availabe_wealth_wheel'])->name('availabe_wealth_wheel');
+
 
 //Routes For Admin
 
@@ -77,14 +77,31 @@ Route::get('error', [App\Http\Controllers\PaymentController::class, 'error'])->n
 
 //Routes For wheels
 Route::post('/create_wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'create_wealth_wheel'])->name('create_wealth_wheel');
+Route::get('/availabe_wealth_wheel', [App\Http\Controllers\UserController::class, 'availabe_wealth_wheel'])->name('availabe_wealth_wheel');
 Route::get('/wheels_details', [App\Http\Controllers\UserController::class, 'wheels_details'])->name('wheels_details');
-
-
+<<<<<<< HEAD
+=======
+Route::get('/my_wheels', [App\Http\Controllers\UserController::class, 'my_wheels']);
+>>>>>>> cd0aa79c623b8345542c8855d542a2d7f1e769dc
 
 // Routes for Stripe
 Route::get('stripe/{amount}', [App\Http\Controllers\StripePaymentController::class, 'stripe'])->name('stripe');
 Route::post('stripe_post', [App\Http\Controllers\StripePaymentController::class, 'stripePost'])->name('stripe_post');
 
+<<<<<<< HEAD
+// Routes for payment from wallet
+Route::post('/pay_from_wallet', [App\Http\Controllers\UserController::class, 'pay_from_wallet'])->name('pay_from_wallet');
+=======
+// deposite balance 
+Route::post('deposit_balance', [App\Http\Controllers\UserController::class, 'deposit_balance']);
+
+
+Route::post('paypal_deposit_balance', [App\Http\Controllers\PaymentController::class, 'paypal_deposit_balance'])->name('paypal_deposit_balance');
+Route::get('paypal_success', [App\Http\Controllers\PaymentController::class, 'paypal_success'])->name('paypal_success');
+
+
+
+>>>>>>> cd0aa79c623b8345542c8855d542a2d7f1e769dc
 
 });
 
