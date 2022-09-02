@@ -1064,6 +1064,9 @@ section {
 /*--------------------------------------------------------------
 # product details
 --------------------------------------------------------------*/
+.site_colr{
+  background: linear-gradient(0deg, rgb(113 146 239) 0%, rgb(45 210 235) 100%);
+}
 .ww-product-dtl .ww-pro-description h2 {
     text-transform: capitalize;
     color: #2a2c39;

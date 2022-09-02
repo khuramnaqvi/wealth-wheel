@@ -21,6 +21,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -50,6 +51,53 @@
             opacity: 0;
         }
     }
+    .hide {
+      display:none;
+    }
+    .toast-success{
+        background-color:green !important;
+    }
+    .toast-error
+    {
+        background-color:brown !important;
+
+    }
+
+    /*  */
+/* .dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+} */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right:-38px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
 </style>
 
 <body>
@@ -67,13 +115,24 @@
           <li><a class="nav-link scrollto active" href="{{('/')}}">Home</a></li>
           <li><a class="nav-link scrollto" href="{{ route('how_it_works') }} ">How it Works</a></li>
           <li><a class="nav-link scrollto" href="{{ route('availabe_wealth_wheel') }}">Available Wealth Wheels</a></li>
+          <li><a class="nav-link scrollto">${{auth()->user()->balance}}</a></li>
+          <div class="dropdown">
+            <li><i class="fa fa-angle-down dropbtn" style="font-size:26px"></i></li>
+
+            <div class="dropdown-content" style="padding-top: 13px;padding-bottom: 13px;">
+              <a href="#" class="deposit_modelbtn">Deposit</a>
+              <a href="#">Withdraw</a>
+              <a href="{{ route ('logout') }}"  onclick="return confirm('Are you sure you want to logout?');">Logout</a>
+            </div>
+          </div>
+
         </ul>
         {{-- <ul class="nav navbar-nav float-right"> --}}
 
          
-              <a type="button" data-bs-toggle="modal" class="" href="#"  data-bs-target="#exampleModal">
+              <!-- <a type="button" data-bs-toggle="modal" class="" href="#"  data-bs-target="#exampleModal">
                   <span><img style="border-radius: 50%" class="round" src="{{asset('assets/img_avatar.png')}}" alt="avatar" height="40" width="40"></span>
-              </a>
+              </a> -->
             
               {{-- <div class="dropdown-menu dropdown-menu-right">
                   <a class="dropdown-item" href="{{ url('/logout') }}"><i class="feather icon-user"></i>Logout</a>
@@ -101,50 +160,6 @@
 
 <!-- Button trigger modal -->
   {{-- model start --}}
-
-            {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >Open modal</button> --}}
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div  class="form-group  text-center" >
-                    <h3>Add Credit</h3>
-                  </div>
-                  <div class="modal-body">
-
-        <form action="{{ route('add_user_balance') }}" method="POST">
-@csrf
-                     
-                      <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Amount:</label>
-                        <input type="number" class="form-control" id="number">
-                      </div>
-
-                      <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Pay With</label><br>
-                        <input type="radio" id="paypal" value="paypal" name="payment" >
-                      <label for="paypal">Paypal</label>
-                      <input type="radio" id="card" value="card" name="payment" >
-                      <label for="card">Card</label>
-                      </div>
-                   
-                  </div>
-                  <div class="modal-footer">
-                    {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
-                    <button type="submit" class="btn btn-primary">Save</button>
-                  </div>
-                </form>
-                </div>
-              </div>
-            </div>
-
-            {{-- end --}}
-
 
             {{-- user modal --}}
 
@@ -398,6 +413,117 @@
     </div>
   </footer>
   <!-- End Footer -->
+  <!-- deposit model -->
+
+  <div class="modal fade" id="paymentmodel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="border-radius: 45px;">
+            <div class="site_colr" style=" border-radius: 42px 42px 0px 0px;">
+                <h5 class="modal-title" id="staticBackdropLabel"style="text-align: center;padding-top: 15px;padding-bottom: 15px;">Payment</h5>
+                
+            </div>
+            <div class="modal-body">
+                    <div class="row" style="justify-content:  center;">
+
+                        <div class="col-6"  style="text-align: center; margin-bottom:10px;">
+                            <div class="form-group">
+                              <label for="">Enter Amount</label>
+                            <input type="number" name="" placeholde="Enter Amount To Deposit" class=" form-control checkamount" onkeyup="this.value=this.value.replace(/[^0-9]/g)">
+                        </div>
+                            <input type="radio" name="pay" id="vcard" value="1" class="paymentmode"><label for="vcard" style="margin-right: 33px;">Pay with card</label>
+                            <input type="radio" name="pay" id="payypal"  value="2" class="paymentmode"><label for="payypal">Pay with Paypal</label>
+                        </div>
+
+                        <div class="col-md-10 col-md-offset-3 stripe_div d-none">
+                            <div class="panel panel-default credit-card-box">
+                                <div class="panel-body">
+                                    <form role="form" action="{{url('/give_vote')}}" method="post"
+                                        class="require-validation" data-cc-on-file="false"
+                                        data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
+                                        @csrf
+
+                                        <input type="hidden" name="amount" class="amount" >
+                                        <input type="hidden" name="contestentid" value="">
+                                        <div class='form-row row mt-2'>
+                                            <div class='col-xs-12 form-group required'>
+                                                <label class='control-label'>Name on Card</label> <input
+                                                    class='form-control' size='4' type='text'>
+                                            </div>
+                                        </div>
+
+                                        <div class='form-row row mt-2'>
+                                            <div class='col-xs-12 form-group required'>
+                                                <label class='control-label'>Card Number</label> <input
+                                                    autocomplete='off' class='form-control card-number' size='20'
+                                                    type='text'>
+                                            </div>
+                                        </div>
+
+                                        <div class='form-row row mt-2'>
+                                            <div class='col-xs-12 col-md-4 form-group cvc required'>
+                                                <label class='control-label'>CVC</label> <input autocomplete='off'
+                                                    class='form-control card-cvc' placeholder='ex. 311' size='4'
+                                                    type='text'>
+                                            </div>
+                                            <div class='col-xs-12 col-md-4 form-group expiration required'>
+                                                <label class='control-label'>Expiration Month</label> <input
+                                                    class='form-control card-expiry-month' placeholder='MM' size='2'
+                                                    type='text'>
+                                            </div>
+                                            <div class='col-xs-12 col-md-4 form-group expiration required'>
+                                                <label class='control-label'>Expiration Year</label> <input
+                                                    class='form-control card-expiry-year' placeholder='YYYY' size='4'
+                                                    type='text'>
+                                            </div>
+                                        </div>
+
+                                        <div class='form-row row mt-2'>
+                                            <div class='col-md-12 error form-group hide'>
+                                                <div class='alert-danger alert'>Please correct the errors and try
+                                                    again.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-4">
+                                            <div class="col-12 d-flex" style="justify-content: space-between;">
+                                                <button class="col-5 btn btn-primary site_colr" type="submit">Pay Now
+                                                    </button>
+                                                <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paypal_div d-none">
+
+                            <form action="{{ url('/paypalcharge') }}" method="post">
+                                <input type="hidden" class="amount" name="amount" />
+                                <input type="hidden" name="contestentid" value="">
+
+                                {{ csrf_field() }}
+                                <div class="row" style="justify-content: center;">
+                                  <div class="col-md-10 col-md-offset-3">
+                                    <div class="row mt-4">
+                                      <div class="col-12 d-flex" style="justify-content: space-between;">
+                                        <input type="submit" name="submit" class=" col-5 btn btn-primary site_colr" value="Pay Now">
+                                        <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <!--  -->
  
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -419,14 +545,51 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
   <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
 <script>
+
 @if(Session::has('success'))
     toastr.success('{{ Session::get('success') }}');
 @elseif(Session::has('error'))
     toastr.error('{{ Session::get('error') }}');
 @endif
+
+
+
+$(document).ready(function() {
+
+  $(document).on("click", ".deposit_modelbtn", function() {
+      $('#paymentmodel').modal('show');
+
+  });
+
+  $(document).on("click", ".paymentmode", function () {
+    if($('.checkamount').val() != '')
+    {
+    
+      var a = $('.paymentmode:checked').val();
+      if(a ==1)
+      {
+          $('.stripe_div').removeClass('d-none');
+          $('.paypal_div').addClass('d-none');
+      }else{
+          $('.paypal_div').removeClass('d-none');
+          $('.stripe_div').addClass('d-none');
+      }
+    }else{
+      toastr.error('Please Enter Amoun first');
+    }
+
+  });
+
+  $('.checkamount').keypress(function(evt) {
+        if (evt.which == "0".charCodeAt(0) && $(this).val().trim() == "") {
+        return false;
+        }
+    });
+
+});
+
 </script>
 <script>
    function initPayPalButton() {
@@ -472,6 +635,64 @@
 
   @yield('js')
 </body>
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  
+<script type="text/javascript">
+$(function() {
+   
+    var $form         = $(".require-validation");
+   
+    $('form.require-validation').bind('submit', function(e) {
+        var $form         = $(".require-validation"),
+        inputSelector = ['input[type=email]', 'input[type=password]',
+                         'input[type=text]', 'input[type=file]',
+                         'textarea'].join(', '),
+        $inputs       = $form.find('.required').find(inputSelector),
+        $errorMessage = $form.find('div.error'),
+        valid         = true;
+        $errorMessage.addClass('hide');
+  
+        $('.has-error').removeClass('has-error');
+        $inputs.each(function(i, el) {
+          var $input = $(el);
+          if ($input.val() === '') {
+            $input.parent().addClass('has-error');
+            $errorMessage.removeClass('hide');
+            e.preventDefault();
+          }
+        });
+   
+        if (!$form.data('cc-on-file')) {
+          e.preventDefault();
+          Stripe.setPublishableKey($form.data('stripe-publishable-key'));
+          Stripe.createToken({
+            number: $('.card-number').val(),
+            cvc: $('.card-cvc').val(),
+            exp_month: $('.card-expiry-month').val(),
+            exp_year: $('.card-expiry-year').val()
+          }, stripeResponseHandler);
+        }
+  
+  });
+  
+  function stripeResponseHandler(status, response) {
+        if (response.error) {
+            $('.error')
+                .removeClass('hide')
+                .find('.alert')
+                .text(response.error.message);
+        } else {
+            /* token contains id, last4, and card type */
+            var token = response['id'];
+               
+            $form.find('input[type=text]').empty();
+            $form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
+            $form.get(0).submit();
+        }
+    }
+   
+});
+</script>
 
 
 
