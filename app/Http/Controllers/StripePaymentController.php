@@ -30,7 +30,6 @@ class StripePaymentController extends Controller
        $amount = $request->amount;
        $final_amount = $amount * 100;
        
-        
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET', 'sk_test_51Kh9uAFBFsCMdULhVtPQxp0NOArxMFzdQ6qroS5jZFettctGfyVPc5WPmT6b1hGimRW09adqa3lndHnywhsbBqYW00K8eyxFsu'));
         Stripe\Charge::create ([
                 "amount" => $final_amount,

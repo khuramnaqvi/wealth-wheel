@@ -137,11 +137,6 @@ class UserController extends Controller
         ->where('user_id', auth()->user()->id)->get();
         return view('user.my_wheels', compact('wheels', 'my_whells'));
 
-
-    
-        
-  
-
     }
   
 
