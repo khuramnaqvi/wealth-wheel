@@ -275,105 +275,6 @@
 </div>
 
 
-{{-- modal for card --}}
-
-
-<div class="modal fade" id="walletpaymentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-aria-labelledby="staticBackdropLabel" aria-hidden="true">
-<div class="modal-dialog modal-lg">
-    <div class="modal-content" style="border-radius: 45px;">
-        <div class="site_colr" style=" border-radius: 42px 42px 0px 0px;">
-            <h5 class="modal-title" id="staticBackdropLabel"style="text-align: center;padding-top: 15px;padding-bottom: 15px;">Payment</h5>
-            
-        </div>
-        <div class="modal-body">
-                <div class="row" style="justify-content:  center;">
-
-                    <div class="col-6"  style="text-align: center; margin-bottom:10px;">
-                        <div class="form-group">
-                          <label for=""> Amount</label>
-                        <input readonly="readonly"  name="amount"  class=" form-control checkamount append_price">
-                    </div>
-                        <input type="radio" name="pay" id="vcard" value="1" class="paymentmode"><label for="vcard" style="margin-right: 33px;">Pay with card</label>
-                       
-                    </div>
-
-                    <div class="col-md-10 col-md-offset-3 stripe_div d-none">
-                        <div class="panel panel-default credit-card-box">
-                            <div class="panel-body">
-                                <form role="form" action="{{url('stripe_post')}}" method="post"
-                                    class="require-validation" data-cc-on-file="false"
-                                    data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
-                                    @csrf
-
-                                    <input class="append_price" type="hidden" name="amount" >
-                                    <div class='form-row row mt-2'>
-                                        <div class='col-xs-12 form-group required'>
-                                            <label class='control-label'>Name on Card</label> <input
-                                                class='form-control' size='4' type='text'>
-                                        </div>
-                                    </div>
-
-                                    <div class='form-row row mt-2'>
-                                        <div class='col-xs-12 form-group required'>
-                                            <label class='control-label'>Card Number</label> <input
-                                                autocomplete='off' class='form-control card-number' size='20'
-                                                type='text'>
-                                        </div>
-                                    </div>
-
-                                    <div class='form-row row mt-2'>
-                                        <div class='col-xs-12 col-md-4 form-group cvc required'>
-                                            <label class='control-label'>CVC</label> <input autocomplete='off'
-                                                class='form-control card-cvc' placeholder='ex. 311' size='4'
-                                                type='text'>
-                                        </div>
-                                        <div class='col-xs-12 col-md-4 form-group expiration required'>
-                                            <label class='control-label'>Expiration Month</label> <input
-                                                class='form-control card-expiry-month' placeholder='MM' size='2'
-                                                type='text'>
-                                        </div>
-                                        <div class='col-xs-12 col-md-4 form-group expiration required'>
-                                            <label class='control-label'>Expiration Year</label> <input
-                                                class='form-control card-expiry-year' placeholder='YYYY' size='4'
-                                                type='text'>
-                                        </div>
-                                    </div>
-
-                                    <div class='form-row row mt-2'>
-                                        <div class='col-md-12 error form-group hide'>
-                                            <div class='alert-danger alert'>Please correct the errors and try
-                                                again.</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-4">
-                                        <div class="col-12 d-flex" style="justify-content: space-between;">
-                                            <button class="col-5 btn btn-primary site_colr" type="submit">Pay Now
-                                                </button>
-                                            <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
-                                        </div>
-                                    </div>
-
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                 
-                </div>
-        </div>
-    </div>
-</div>
-</div>
-
-
-<!--  -->
-
-            {{-- end wallet modal --}}
-
-
-            {{-- modal for card --}}
-
 
 <div class="modal fade" id="payment_from_wallet_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -527,7 +428,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="col-6"  style="text-align: center; margin-bottom:10px;">
                             <div class="form-group" style="text-align: left;">
                               <label for="">Enter Amount:</label>
-                            <input type="number" name="" placeholder="Enter Amount To Deposit" class=" form-control checkamount" onkeyup="this.value=this.value.replace(/[^0-9]/g)" style="border-radius: 30px;">
+                            <input type="number" name="amount" placeholder="Enter Amount To Deposit" class=" form-control checkamount" onkeyup="this.value=this.value.replace(/[^0-9]/g)" style="border-radius: 30px;">
                         </div>
                             <input type="radio" name="pay" id="vcard" value="1" class="paymentmode"><label for="vcard" style="margin-right: 33px;">Pay with card</label>
                             <input type="radio" name="pay" id="payypal"  value="2" class="paymentmode"><label for="payypal">Pay with Paypal</label>
@@ -670,8 +571,8 @@ $(document).ready(function() {
   $(document).on("click", ".paymentmode", function () {
     var checkamount = $('.checkamount').val();
 
-    if(checkamount != '')
-    {
+    // if(checkamount != '')
+    // {
       $('.amount').val(checkamount)
     
       var a = $('.paymentmode:checked').val();
@@ -683,13 +584,13 @@ $(document).ready(function() {
           $('.paypal_div').removeClass('d-none');
           $('.stripe_div').addClass('d-none');
       }
-    }else{
-      toastr.options = {
-        "closeButton": true,
-        "progressBar": true
-      }
-      toastr.error('Please Enter Amoun first');
-    }
+    // }else{
+    //   toastr.options = {
+    //     "closeButton": true,
+    //     "progressBar": true
+    //   }
+    //   toastr.error('Please Enter Amoun first');
+    // }
 
   });
 

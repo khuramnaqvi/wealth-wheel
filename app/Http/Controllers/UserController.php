@@ -111,24 +111,24 @@ class UserController extends Controller
         return back()->with('success', 'Payment Successfull');
     }
     // 
-    public function deposit_balance(Request $request)
-    {
-        // dd('dd');
-        $amount = $request->amount;
-        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
-                $stripee = Stripe\Charge::create ([
-                        "amount" => $amount * 100,
-                        "currency" => "usd",
-                        "source" => $request->stripeToken,
-                        "description" => "Your payment is success." 
-                ]);
+    // public function deposit_balance(Request $request)
+    // {
+    //     // dd('dd');
+    //     $amount = $request->amount;
+    //     Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+    //             $stripee = Stripe\Charge::create ([
+    //                     "amount" => $amount * 100,
+    //                     "currency" => "usd",
+    //                     "source" => $request->stripeToken,
+    //                     "description" => "Your payment is success." 
+    //             ]);
 
 
-        $affected = DB::table('users')
-        ->where('id', auth()->user()->id)
-        ->update(['balance' => auth()->user()->balance + $amount]);
-        return back()->with('success', 'Payment Successfull');
-    }
+    //     $affected = DB::table('users')
+    //     ->where('id', auth()->user()->id)
+    //     ->update(['balance' => auth()->user()->balance + $amount]);
+    //     return back()->with('success', 'Payment Successfull');
+    // }
 
     public function my_wheels()
     {

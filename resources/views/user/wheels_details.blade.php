@@ -189,15 +189,8 @@
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12">
 
-            {{-- model --}}
-
-            <!-- Button trigger modal -->
 
 
-<!-- Modal -->
-
-
- {{-- end --}}
 
         
             <div class="ww-pro-description">
@@ -252,12 +245,106 @@
         </div>
       </div>
 
-
-
-
-
       <input hidden class="cog_price" value="{{$wheel_details->cog_price}}" >
     </section>
+
+
+    {{-- modal for card --}}
+
+
+<div class="modal fade" id="walletpaymentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+    <div class="modal-content" style="border-radius: 45px;">
+        <div class="site_colr" style=" border-radius: 42px 42px 0px 0px;">
+            <h5 class="modal-title" id="staticBackdropLabel"style="text-align: center;padding-top: 15px;padding-bottom: 15px;">Payment</h5>
+            
+        </div>
+        <div class="modal-body">
+                <div class="row" style="justify-content:  center;">
+
+                    <div class="col-6"  style="text-align: center; margin-bottom:10px;">
+                        <div class="form-group">
+                          <label for=""> Amount</label>
+                        <input readonly="readonly"  name="amount"  class=" form-control checkamount append_price">
+                    </div>
+                        <input type="radio" name="pay" id="vcard" value="1" class="paymentmode"><label for="vcard" style="margin-right: 33px;">Pay with card</label>
+                       
+                    </div>
+
+                    <div class="col-md-10 col-md-offset-3 stripe_div d-none">
+                        <div class="panel panel-default credit-card-box">
+                            <div class="panel-body">
+                                <form role="form" action="{{url('stripe_post')}}" method="post"
+                                    class="require-validation" data-cc-on-file="false"
+                                    data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
+                                    @csrf
+
+                                    <input class="append_price" type="hidden" name="amount" >
+                                    <div class='form-row row mt-2'>
+                                        <div class='col-xs-12 form-group required'>
+                                            <label class='control-label'>Name on Card</label> <input
+                                                class='form-control' size='4' type='text'>
+                                        </div>
+                                    </div>
+
+                                    <div class='form-row row mt-2'>
+                                        <div class='col-xs-12 form-group required'>
+                                            <label class='control-label'>Card Number</label> <input
+                                                autocomplete='off' class='form-control card-number' size='20'
+                                                type='text'>
+                                        </div>
+                                    </div>
+
+                                    <div class='form-row row mt-2'>
+                                        <div class='col-xs-12 col-md-4 form-group cvc required'>
+                                            <label class='control-label'>CVC</label> <input autocomplete='off'
+                                                class='form-control card-cvc' placeholder='ex. 311' size='4'
+                                                type='text'>
+                                        </div>
+                                        <div class='col-xs-12 col-md-4 form-group expiration required'>
+                                            <label class='control-label'>Expiration Month</label> <input
+                                                class='form-control card-expiry-month' placeholder='MM' size='2'
+                                                type='text'>
+                                        </div>
+                                        <div class='col-xs-12 col-md-4 form-group expiration required'>
+                                            <label class='control-label'>Expiration Year</label> <input
+                                                class='form-control card-expiry-year' placeholder='YYYY' size='4'
+                                                type='text'>
+                                        </div>
+                                    </div>
+
+                                    <div class='form-row row mt-2'>
+                                        <div class='col-md-12 error form-group hide'>
+                                            <div class='alert-danger alert'>Please correct the errors and try
+                                                again.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-4">
+                                        <div class="col-12 d-flex" style="justify-content: space-between;">
+                                            <button class="col-5 btn btn-primary site_colr" type="submit">Pay Now
+                                                </button>
+                                            <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                 
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+            {{-- modal for card --}}
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script>
