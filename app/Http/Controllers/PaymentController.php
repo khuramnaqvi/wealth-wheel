@@ -38,7 +38,8 @@ class PaymentController extends Controller
     public function charge(Request $request)
     {
       
-        
+      $wheel_id = $request->wheel_id;
+     
         
             try {
                
@@ -77,6 +78,8 @@ class PaymentController extends Controller
             $transaction = $this->gateway->completePurchase(array(
                 'payer_id'             => $request->input('PayerID'),
                 'transactionReference' => $request->input('paymentId'),
+                'wheel_id' => $request->input('paymentId'),
+
             ));
             $response = $transaction->send();
            
@@ -93,7 +96,7 @@ class PaymentController extends Controller
                 $user_percent = $up * $total;
                 $user_payment = new wallet;
                 $user_payment->user_id = Auth::user()->id;
-                $user_payment->wheel_id = "";
+                $user_payment->wheel_id =  "1";
                 $user_payment->amount = $user_percent;
                 $user_payment->save();
 
@@ -101,7 +104,7 @@ class PaymentController extends Controller
                 $ad = 7.5/100;
                 $admin_percent = $ad * $total;
                 $admin_payment = new Adminwallet;
-                $user_payment->wheel_id = "";
+                $user_payment->wheel_id =  "1";
                 $admin_payment->user_id = Auth::user()->id;
                 $admin_payment->amount = $admin_percent;
                 $admin_payment->save();
