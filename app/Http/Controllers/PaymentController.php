@@ -73,7 +73,7 @@ class PaymentController extends Controller
      */
     public function success(Request $request)
     {
-      $whee_id =   Session::get('wheel_id');
+        $wheel_id =   Session::get('wheel_id');
       
         
         // Once the transaction has been approved, we need to complete it.
@@ -100,7 +100,7 @@ class PaymentController extends Controller
                 $user_percent = $up * $total;
                 $user_payment = new wallet;
                 $user_payment->user_id = Auth::user()->id;
-                $user_payment->wheel_id = $whee_id;
+                $user_payment->wheel_id = $wheel_id;
                 $user_payment->amount = $user_percent;
                 $user_payment->save();
 
@@ -138,6 +138,8 @@ class PaymentController extends Controller
 
     public function paypal_deposit_balance(Request $request)
     {
+
+
         if($request->input('submit'))
         {
             try {
@@ -162,6 +164,7 @@ class PaymentController extends Controller
 
     public function paypal_success(Request $request)
     {
+
         // Once the transaction has been approved, we need to complete it.
         if ($request->input('paymentId') && $request->input('PayerID'))
         {

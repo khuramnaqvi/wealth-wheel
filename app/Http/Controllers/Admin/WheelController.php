@@ -60,6 +60,6 @@ class WheelController extends Controller
             'user_id' =>  $user_id,
         ]);
 
-        return redirect()->route('availabe_wealth_wheel')->with('message', 'Wheel Created Successfully!');
+        return redirect()->route('availabe_wealth_wheel')->with('success', 'Wheel Created Successfully!');
     }
 }

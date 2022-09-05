@@ -194,7 +194,7 @@
 </button> --}}
 
 
-<div class="modal fade" id="payment_from_wallet_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+{{-- <div class="modal fade" id="payment_from_wallet_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 aria-labelledby="staticBackdropLabel" aria-hidden="true">
 <div class="modal-dialog modal-lg">
     <div class="modal-content" style="border-radius: 45px;">
@@ -220,12 +220,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <form role="form" action="{{url('pay_from_wallet')}}" method="post">
                                     @csrf
                                     <input class="append_price" type="hidden" name="amount" >
-                                    {{-- <div class='form-row row mt-2'>
-                                        <div class='col-xs-12 form-group required'>
-                                            <label class='control-label'>Name on Card</label> <input
-                                                class='form-control' size='4' type='text'>
-                                        </div>
-                                    </div> --}}
+                                
 
                                     <div class="row mt-4">
                                         <div class="col-12 d-flex" style="justify-content: space-between;">
@@ -244,7 +239,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
         </div>
     </div>
 </div>
-</div>
+</div> --}}
 
 
 
@@ -278,7 +273,6 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 @endif
                   </div>
                   <div class="modal-footer">
-                  
                   </div>
                 </div>
               </div>
