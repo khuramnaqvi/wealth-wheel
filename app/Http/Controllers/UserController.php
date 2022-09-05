@@ -173,11 +173,7 @@ class UserController extends Controller
     }
 
 
-    public function availabe_wealth_wheel()
-    {
-        $wheels = WealthWheel::all();
-        return view('user.availabe_wealth_wheel', compact('wheels'));
-    }
+ 
 
 
     public function wheels_filter(Request $request)
