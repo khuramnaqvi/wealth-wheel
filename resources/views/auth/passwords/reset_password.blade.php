@@ -45,8 +45,8 @@
       <div class="container">
 
         <div class="section-title" data-aos="zoom-out">
-          <h2>Sign Up</h2>
-          <p>Please put your details </p>
+          <h2>Reset Password</h2>
+          <p>Please put your details</p>
         </div>
         <div class="ww-form-wrp" data-aos="fade-right">
         <form method="POST" action="{{ route('reset_form') }}">

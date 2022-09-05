@@ -221,7 +221,7 @@
               </div> -->
               
               <div class="ww-pro-action my-2">
-                @if(count($user_wheels) > 0)
+                @if(count($user_wheels) < 0)
                 <button disabled data-toggle="modal" data-target="#userModal"   type="button" class="btn py-3 text-white ww-pro-action-btn">Buy Now</button>
                 @else
                 <button  data-toggle="modal" data-target="#userModal"   type="button" class="btn py-3 text-white ww-pro-action-btn pasy">Buy Now</button>
@@ -246,6 +246,8 @@
       </div>
 
       <input hidden class="cog_price" value="{{$wheel_details->cog_price}}" >
+      <input hidden class="cog_id" value="{{$wheel_details->id}}">
+
     </section>
 
 
@@ -281,6 +283,9 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                     @csrf
 
                                     <input class="append_price" type="hidden" name="amount" >
+                                    <input hidden value="{{$wheel_details->id}}"  name="wheel_id" >
+
+                                    
                                     <div class='form-row row mt-2'>
                                         <div class='col-xs-12 form-group required'>
                                             <label class='control-label'>Name on Card</label> <input
@@ -361,6 +366,8 @@ $(".pasy").click(function(){
     $("#selectpaymentModal").modal('hide');
     $("#walletpaymentModal").modal('show');
     var priv=$(".cog_price").val();
+    var cog_id=$(".cog_id").val();
+
    
     $('.append_price').val(priv)
   

@@ -25,7 +25,8 @@ class StripePaymentController extends Controller
      */
     public function stripePost(Request $request)
     {
-      
+      $wheel_id = $request->wheel_id;
+       
        $amount = $request->amount;
        $final_amount = $amount * 100;
        
@@ -44,6 +45,7 @@ class StripePaymentController extends Controller
             $user_percent = $up * $amount ;
             $user_payment = new wallet;
             $user_payment->user_id = Auth::user()->id;
+            $user_payment->wheel_id =  $wheel_id;
             $user_payment->amount = $user_percent;
             $user_payment->save(); 
 
@@ -52,6 +54,7 @@ class StripePaymentController extends Controller
             $admin_percent = $ad * $amount ;
             $admin_payment = new Adminwallet;
             $admin_payment->user_id = Auth::user()->id;
+            $user_payment->wheel_id =  $wheel_id;
             $admin_payment->amount = $admin_percent;
             $admin_payment->save();
             return redirect('availabe_wealth_wheel')->with('success', 'Payment successful!');  

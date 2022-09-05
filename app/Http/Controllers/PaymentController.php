@@ -69,6 +69,7 @@ class PaymentController extends Controller
      */
     public function success(Request $request)
     {
+       
         
         // Once the transaction has been approved, we need to complete it.
         if ($request->input('paymentId') && $request->input('PayerID'))
@@ -89,9 +90,10 @@ class PaymentController extends Controller
                 // Insert transaction data into the database
                //for user 
                 $up = 92.5/100;
-                $user_percent = $up * $total ;
+                $user_percent = $up * $total;
                 $user_payment = new wallet;
-                $user_payment->wheel_id = Auth::user()->id;
+                $user_payment->user_id = Auth::user()->id;
+                $user_payment->wheel_id = "";
                 $user_payment->amount = $user_percent;
                 $user_payment->save();
 
@@ -99,6 +101,7 @@ class PaymentController extends Controller
                 $ad = 7.5/100;
                 $admin_percent = $ad * $total;
                 $admin_payment = new Adminwallet;
+                $user_payment->wheel_id = "";
                 $admin_payment->user_id = Auth::user()->id;
                 $admin_payment->amount = $admin_percent;
                 $admin_payment->save();
