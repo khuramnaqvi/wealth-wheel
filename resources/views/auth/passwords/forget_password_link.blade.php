@@ -49,7 +49,7 @@
           <p>Please put your details </p>
         </div>
         <div class="ww-form-wrp" data-aos="fade-right">
-        <form method="POST" action="">
+        <form method="POST" action="{{ route('reset.password.post') }}">
         @csrf
 
             <div class="form-group">

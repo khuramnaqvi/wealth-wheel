@@ -184,12 +184,14 @@ class UserController extends Controller
 
         $wheels = WealthWheel::where('wheel_number', $request->wheel_number)->get();
         return view ('user.filter_wheel',compact('wheels'));
+
+    }
     
-    public function withdraw()
+        public function withdraw()
     {
         // dd('dd');
         // return view('user.withdraw');
-        return view('user.withdraw');
+        return view ('user.withdraw');
 
     }
     public function wihdraw_submit(Request $request)
