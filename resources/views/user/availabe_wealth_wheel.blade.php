@@ -57,6 +57,7 @@
                   <div  class="ww-card-tag">
                     <span>Available Now</span>
                   </div>
+                  
                   <!-- @if ($wheel->image != "")
                  
                   <img style="height: 250px; width:310px" src="{{ asset('images/' .$wheel->image) }}" alt="no img" class="img-fluid">
@@ -64,9 +65,9 @@
                   <img style="height: 250px; width:310px"  src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
                   <!-- @endif -->
                   <div class="card-body">
-                    <h5 class="card-title">{{$wheel->wheel_number}}</h5>
+                    <h5 class="card-title">WW0{{ $wheel->wheel_number }} - 0{{$wheel->wallet->count()}}</h5>
 
-                    <p class="card-text">Cog Number : {{$wheel->wheel_number}}</p>
+                    <p class="card-text">Cog Number : {{$wheel->wallet->count()}}</p>
                     <div class="pro-price">
                       <h4>Cog Price : <span>${{$wheel->cog_price}}</span></h4>
                     </div> 

@@ -56,7 +56,7 @@ class StripePaymentController extends Controller
             $user_payment->wheel_id =  $wheel_id;
             $admin_payment->amount = $admin_percent;
             $admin_payment->save();
-            return redirect('availabe_wealth_wheel')->with('success', 'Payment successful!');  
+            return redirect('availabe_wealth_wheel')->with('cogpurchase', 'Payment successful!');  
 
     }
 }

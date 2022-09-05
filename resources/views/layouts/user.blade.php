@@ -343,7 +343,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                               <label for="">Enter Amount:</label>
                             <input type="number" name="amount" placeholder="Enter Amount To Deposit" class=" form-control checkamount" onkeyup="this.value=this.value.replace(/[^0-9]/g)" style="border-radius: 30px;">
                         </div>
-                            <input type="radio" name="pay" id="vcard" value="1" class="paymentmode"><label for="vcard" style="margin-right: 33px;">Pay with card</label>
+                            <input type="radio" name="pay" id="vcard" value="1" class="paymentmode"><label for="vcard" style="margin-right: 33px;">Pay with Card</label>
                             <input type="radio" name="pay" id="payypal"  value="2" class="paymentmode"><label for="payypal">Pay with Paypal</label>
                         </div>
 
@@ -480,6 +480,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 // @endif
 
 
+
 @if(Session::has('success'))
     toastr.options = {
       "closeButton": true,
@@ -492,10 +493,10 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
       "progressBar": true
     }
     toastr.error('{{ Session::get('error') }}');
-@elseif(Session::has('register'))
+@elseif(Session::has('cogpurchase'))
 Swal.fire(
-     'Good job!',
-     'You clicked the button!',
+     'Congratulations!',
+     'You have successfully purchased your Wealth Wheel Cog!',
      'success'
    )
 @endif
