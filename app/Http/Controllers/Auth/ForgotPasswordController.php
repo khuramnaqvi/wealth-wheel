@@ -33,6 +33,12 @@ class ForgotPasswordController extends Controller
         return view('auth.passwords.reset_password');
     }
 
+    public function forget_password_link(){
+        return view('auth.passwords.forget_password_link');
+    }
+
+
+
     public function submitForgetPasswordForm(Request $request)
       {
           $request->validate([

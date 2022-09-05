@@ -61,6 +61,7 @@ class UserController extends Controller
     }
 
 
+
     public function wheels_details()
     {
         // $wheel_id = decrypt($id);
@@ -109,17 +110,17 @@ class UserController extends Controller
         // dd('dd');
         $amount = $request->amount;
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
-                $stripee = Stripe\Charge::create ([
-                        "amount" => $amount * 100,
-                        "currency" => "usd",
-                        "source" => $request->stripeToken,
-                        "description" => "Your payment is success." 
-                ]);
+        $stripee = Stripe\Charge::create([
+            "amount" => $amount * 100,
+            "currency" => "usd",
+            "source" => $request->stripeToken,
+            "description" => "Your payment is success."
+        ]);
 
 
         $affected = DB::table('users')
-        ->where('id', auth()->user()->id)
-        ->update(['balance' => auth()->user()->balance + $amount]);
+            ->where('id', auth()->user()->id)
+            ->update(['balance' => auth()->user()->balance + $amount]);
         return back()->with('success', 'Payment Successfull');
     }
     // 
@@ -146,17 +147,16 @@ class UserController extends Controller
     {
         $wheels = WealthWheel::all();
         $my_whells = DB::table('wealth_wheels')
-        ->where('user_id', auth()->user()->id)->get();
+            ->where('user_id', auth()->user()->id)->get();
         return view('user.my_wheels', compact('wheels', 'my_whells'));
-
     }
-  
+
 
 
     public function pay_from_wallet(Request $request)
     {
         $amount_to_pay = $request->amount;
-        // dd($request->all());
+
         $user_balance = Auth::user()->balance;
         if ($user_balance = null || $user_balance < $amount_to_pay) {
 
@@ -169,10 +169,31 @@ class UserController extends Controller
             $user->balance = $total_amount;
             $user->save();
             return redirect()->back()->with('success', 'Wheel Purchased Successfully!');
-
         }
     }
 
+
+    public function availabe_wealth_wheel()
+    {
+        $wheels = WealthWheel::all();
+        return view('user.availabe_wealth_wheel', compact('wheels'));
+    }
+
+
+    public function wheels_filter(Request $request)
+    {
+       
+        $wheel = WealthWheel::where('wheel_number', $request->wheel_number)->get();
+        return view ('user.filter_wheel',compact('wheel'));
+        
+    }
+
+    public function wheels_filter_form(Request $request)
+    {
+
+        $wheels = WealthWheel::where('wheel_number', $request->wheel_number)->get();
+        return view ('user.filter_wheel',compact('wheels'));
+    
     public function withdraw()
     {
         // dd('dd');

@@ -93,8 +93,12 @@
               <div class="ww-pro-filter-wrp mb-5">
                 <h6 class="pb-1">Find Wealth Wheel Number</h6>
                 <div>
-                  
-                  <input type="text" name="ww-pro-name" class="w-100 ps-2" placeholder="Enter wheel number">
+                  <form id="filter_form" class="" action="{{route('wheels_filter_form')}}" method="POST">
+                    @csrf
+                  <input type="Number" id="search"  name="wheel_number"  class="w-100 ps-2" placeholder="Enter wheel number">
+                  {{-- <button  type="submit" class="btn btn-primary mt-2 confirmation-message first">Search</button> --}}
+                  </form>
+
                 </div>
               </div>
             </div>
@@ -102,5 +106,18 @@
         </div>
       </div>
     </section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+          
+            $(document).on('keyup', '#search', function() {
+                $("#filter_form").submit();
+            });
+
+        });
+    </script>
 
   @endsection
