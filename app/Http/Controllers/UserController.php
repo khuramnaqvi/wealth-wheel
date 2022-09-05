@@ -52,7 +52,11 @@ class UserController extends Controller
     }
     public function availabe_wealth_wheel()
     {
+
         $wheels = WealthWheel::all();
+        // $cog_num = WealthWheel::where('')->get();
+        // dd($wheels[1]->wallet);
+        
         return view('user.availabe_wealth_wheel', compact('wheels'));
     }
 
