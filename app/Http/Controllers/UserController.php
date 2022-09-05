@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\WealthWheel;
+use App\Models\Withdraw;
 use Illuminate\Http\Request;
 use DB;
 use Stripe;
@@ -13,8 +14,16 @@ class UserController extends Controller
 {
     public function user()
     {
+        // $details = [
+        //     'title' => 'Mail from ItSolutionStuff.com',
+        //     'body' => 'This is for testing email using smtp'
+        // ];
+       
+        // \Mail::to('ansmalik446@gmail.com')->send(new \App\Mail\registerMail($details));
+
         $wheels = WealthWheel::all();
         return view('user.home', compact('wheels'));
+
     }
 
     public function products()
@@ -164,5 +173,27 @@ class UserController extends Controller
             return redirect()->back()->with('success', 'Wheel Purchased Successfully!');
 
         }
+    }
+
+    public function withdraw()
+    {
+        // dd('dd');
+        // return view('user.withdraw');
+        return view('user.withdraw');
+
+    }
+    public function wihdraw_submit(Request $request)
+    {
+        $withdraw = new Withdraw;
+        $withdraw->user_id = auth()->user()->id;
+        $withdraw->withdraw = $request->withdraw;
+        $withdraw->save();
+
+        return redirect()->back()->with('success', 'Amount Withdraw Successfully!');
+
+        // dd($request);
+
+
+
     }
 }

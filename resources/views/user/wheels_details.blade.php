@@ -195,7 +195,6 @@
         
             <div class="ww-pro-description">
               <div class="ww-pro-name">
-                <h2>{{$wheel_details->wheel_name}}</h2>
                 <p class="ww-pro-number">
                   <span>Wheel Number :{{$wheel_details->wheel_number}}</span>
                 </p>
@@ -221,10 +220,10 @@
               </div> -->
               
               <div class="ww-pro-action my-2">
-                @if(count($user_wheels) > 0)
-                <button disabled data-toggle="modal" data-target="#userModal"   type="button" class="btn py-3 text-white ww-pro-action-btn">Buy Now</button>
+                @if($wheel_details->user_id == auth()->user()->id)
+                <button disabled data-toggle="modal" data-target="#userModal"   type="button" class="btn py-3 text-white ww-pro-action-btn">Buy Cog</button>
                 @else
-                <button  data-toggle="modal" data-target="#userModal"   type="button" class="btn py-3 text-white ww-pro-action-btn pasy">Buy Now</button>
+                <button  data-toggle="modal" data-target="#userModal"   type="button" class="btn py-3 text-white ww-pro-action-btn pasy">Buy Cog</button>
 
                 @endif
 

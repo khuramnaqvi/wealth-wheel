@@ -42,7 +42,7 @@ button:hover {
           <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
           @endif
           @else
-          <a href="{{ route ('logout') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">logout</a>
+          <a href="{{ route ('logout') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Logout</a>
           @endguest
           <a href="{{ route ('wealth_wheel') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
           </div>
@@ -76,7 +76,7 @@ button:hover {
 
         <div class="section-title" data-aos="zoom-out">
           <h2>Create Wealth Wheel</h2>
-          <p>Please enter the details</p>
+          <p>ENTER WEALTH WHEEL DETAILS</p>
         </div>
         @if(session()->has('message'))
     <div class="alert alert-success">
@@ -95,19 +95,44 @@ button:hover {
             <input readonly="readonly" type="Number" name="wheel_number" class="form-control" id="wheel-number" value="1"  aria-describedby="wheel-number" placeholder="">
             @endif
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="wheel-name">Wheel Name</label>
               <input name="wheel_name" type="text" class="form-control" id="wheel-name" placeholder="wheel name">
-            </div>
+            </div> -->
             <div class="form-group">
               <label for="cog-price">Cog Price</label>
-              <input name="cog_price" type="number" class="form-control" id="cog-price" placeholder="cog price">
+              <!-- <input name="cog_price" type="number" class="form-control" id="cog-price" placeholder="cog price"> -->
+
+              <select required name="cog_price"  class="form-control" id="cog-price">
+
+                <option value="">--Please Select Price--</option>
+                <option value="100">$100</option>
+                <option value="200">$200</option>
+                <option value="300">$300</option>
+                <option value="400">$400</option>
+                <option value="500">$500</option>
+                <option value="600">$600</option>
+                <option value="700">$700</option>
+                <option value="800">$800</option>
+                <option value="900">$900</option>
+                <option value="1000">$1000</option>
+                <option value="2000">$2000</option>
+                <option value="3000">$3000</option>
+                <option value="4000">$4000</option>
+                <option value="5000">$5000</option>
+                <option value="6000">$6000</option>
+                <option value="7000">$7000</option>
+                <option value="8000">$8000</option>
+                <option value="9000">$9000</option>
+                <option value="10000">$10000</option>
+
+              </select>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="">Image</label>
               <input name="image" type="file" class="form-control" accept="image/*" />
               {{-- <small style="color: gray">please enter the correct image size</small> --}}
-            </div>
+            </div> -->
             <button type="submit" class="btn btn-primary confirmation-message first">Save</button>
           </form>
         </div>

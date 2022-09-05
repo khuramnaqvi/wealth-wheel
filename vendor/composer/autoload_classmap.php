@@ -41,6 +41,7 @@ return array(
     'App\\Models\\Product' => $baseDir . '/app/Models/Product.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\WealthWheel' => $baseDir . '/app/Models/WealthWheel.php',
+    'App\\Models\\Withdraw' => $baseDir . '/app/Models/Withdraw.php',
     'App\\Models\\wallet' => $baseDir . '/app/Models/wallet.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

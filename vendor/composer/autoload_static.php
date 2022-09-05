@@ -443,8 +443,8 @@ class ComposerStaticInit9410f366c6a0115883520aa50aa02bd1
         ),
         'Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
-            1 => __DIR__ . '/..' . '/php-http/message/src',
+            0 => __DIR__ . '/..' . '/php-http/message/src',
+            1 => __DIR__ . '/..' . '/php-http/message-factory/src',
         ),
         'Http\\Discovery\\' => 
         array (
@@ -602,6 +602,7 @@ class ComposerStaticInit9410f366c6a0115883520aa50aa02bd1
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\WealthWheel' => __DIR__ . '/../..' . '/app/Models/WealthWheel.php',
+        'App\\Models\\Withdraw' => __DIR__ . '/../..' . '/app/Models/Withdraw.php',
         'App\\Models\\wallet' => __DIR__ . '/../..' . '/app/Models/wallet.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

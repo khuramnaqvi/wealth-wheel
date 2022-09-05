@@ -58,7 +58,7 @@
 
 
             <div class="form-group">
-              <label for="userName">User name</label>
+              <label for="userName">Username</label>
               <input name="name"  type="text" class="form-control @error('name') is-invalid @enderror" id="name" aria-describedby="userName" placeholder="Enter name">
               @error('name')
     <span class="invalid-feedback" role="alert">

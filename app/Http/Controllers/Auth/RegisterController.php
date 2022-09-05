@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Notifications\WelcomeEmailNotification;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -29,7 +30,22 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected function redirectTo(){
+
+        if(auth()->user()->role == 'admin')
+        {
+            return '/dashboard';
+        }
+        else
+        {
+            return '/register/success';
+        }
+    }
+        
+        
+
+    // return redirect 
 
     /**
      * Create a new controller instance.
@@ -62,15 +78,22 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
+
     protected function create(array $data)
     {
         
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'phone' => $data['phone'],
+            // 'phone' => $data['phone'],
             'balance' => 0.0,
             'password' => Hash::make($data['password']),
         ]);
+
+        $user->notify(new WelcomeEmailNotification());
+
+        return $user;
+
+
     }
 }

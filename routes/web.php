@@ -31,6 +31,7 @@ use Illuminate\Support\Facades\Route;
 
 //Routes For User
 Route::get('/', [App\Http\Controllers\UserController::class, 'user'])->name('user_home');
+Route::get('/register/success', [App\Http\Controllers\UserController::class, 'user']);
 Route::get('/products', [App\Http\Controllers\UserController::class, 'products'])->name('products');
 Route::get('/about', [App\Http\Controllers\UserController::class, 'about'])->name('about');
 Route::get('/faq', [App\Http\Controllers\UserController::class, 'faq'])->name('faq');
@@ -56,6 +57,7 @@ Route::post('reset-password', [App\Http\Controllers\Auth\ForgotPasswordControlle
 //Routes For Admin
 
 Auth::routes();
+
 Route::group(['middleware' => ['auth', 'admin']], function () {
 Route::get('/dashboard', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('dashboard');
 // Routes for user crud
@@ -101,10 +103,12 @@ Route::post('/pay_from_wallet', [App\Http\Controllers\UserController::class, 'pa
 
 // deposite balance 
 Route::post('deposit_balance', [App\Http\Controllers\UserController::class, 'deposit_balance']);
-
-
 Route::post('paypal_deposit_balance', [App\Http\Controllers\PaymentController::class, 'paypal_deposit_balance'])->name('paypal_deposit_balance');
 Route::get('paypal_success', [App\Http\Controllers\PaymentController::class, 'paypal_success'])->name('paypal_success');
+
+// withdraw
+Route::get('withdraw/{id}', [App\Http\Controllers\UserController::class, 'withdraw']);
+Route::post('wihdraw_submit', [App\Http\Controllers\UserController::class, 'wihdraw_submit']);
 
 
 
