@@ -11,9 +11,9 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img//apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img//favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img//apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img//favicon-16x16.png') }}">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -23,17 +23,17 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 </head>
  <style>
     .blink {
@@ -114,6 +114,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="{{('/')}}">Home</a></li>
           <li><a class="nav-link scrollto" href="{{ route('how_it_works') }} ">How it Works</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('contact') }} ">Contact Us</a></li>
           <li><a class="nav-link scrollto" href="{{ route('availabe_wealth_wheel') }}">Available Wealth Wheels</a></li>
 
           @auth
@@ -126,7 +127,7 @@
 
             <div class="dropdown-content" style="padding-top: 13px;padding-bottom: 13px;">
               <a href="#" class="deposit_modelbtn">Deposit</a>
-              <a href="#">Withdraw</a>
+              <a href='{{ url("withdraw") }}/{{auth()->user()->id}}'>Withdraw</a>
               <a href="{{ route ('logout') }}"  onclick="return confirm('Are you sure you want to logout?');">Logout</a>
             </div>
           </div>
@@ -208,9 +209,9 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="col-6"  style="text-align: center; margin-bottom:10px;">
                         <div class="form-group">
                           <label for=""> Amount</label>
-                        <input readonly="readonly"  name="amount"  class=" form-control checkamount append_price">
+                        <input readonly="readonly"  name="amount"  class=" form-control append_price">
                     </div>
-                        <input type="radio" name="pay" id="vcard" value="1" class="paymentmode"><label for="vcard" style="margin-right: 33px;">Pay From Wallet</label>
+                        <input type="radio" name="pay" id="v2card" value="1" class="paymentmode"><label for="v2card" style="margin-right: 33px;">Pay From Wallet</label>
                        
                     </div>
 
@@ -453,9 +454,31 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <script src="{{ asset('assets/js/main.js') }}"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+
 <script>
+  if($(location).attr('href') == 'http://127.0.0.1:8000/register/success')
+    {
+      Swal.fire(
+        'Welcome To Wealth Wheel!',
+        'You have successfully created your account and are now logged in.',
+        'success'
+      )
+    }
+
+//   @if(Session::has('register'))
+  
+//     Swal.fire(
+//     'Good job!',
+//     'You clicked the button!',
+//     'success'
+//   )
+// @endif
+
 
 @if(Session::has('success'))
     toastr.options = {
@@ -469,6 +492,12 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
       "progressBar": true
     }
     toastr.error('{{ Session::get('error') }}');
+@elseif(Session::has('register'))
+Swal.fire(
+     'Good job!',
+     'You clicked the button!',
+     'success'
+   )
 @endif
 
 
@@ -480,11 +509,13 @@ $(document).ready(function() {
 
   });
 
+
+
   $(document).on("click", ".paymentmode", function () {
     var checkamount = $('.checkamount').val();
 
-    // if(checkamount != '')
-    // {
+    if(checkamount != '')
+    {
       $('.amount').val(checkamount)
     
       var a = $('.paymentmode:checked').val();
@@ -496,17 +527,23 @@ $(document).ready(function() {
           $('.paypal_div').removeClass('d-none');
           $('.stripe_div').addClass('d-none');
       }
-    // }else{
-    //   toastr.options = {
-    //     "closeButton": true,
-    //     "progressBar": true
-    //   }
-    //   toastr.error('Please Enter Amoun first');
-    // }
+    }else{
+      toastr.options = {
+        "closeButton": true,
+        "progressBar": true
+      }
+      toastr.error('Please Enter Amoun first');
+    }
 
   });
 
   $('.checkamount').keypress(function(evt) {
+        if (evt.which == "0".charCodeAt(0) && $(this).val().trim() == "") {
+        return false;
+        }
+    });
+
+    $('.checkamount2').keypress(function(evt) {
         if (evt.which == "0".charCodeAt(0) && $(this).val().trim() == "") {
         return false;
         }

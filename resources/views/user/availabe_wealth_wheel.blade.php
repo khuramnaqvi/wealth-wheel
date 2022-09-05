@@ -19,7 +19,7 @@
           <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
           @endif
           @else
-          <a href="{{ route ('logout') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">logout</a>
+          <a href="{{ route ('logout') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Logout</a>
           @endguest
           <a href="{{ route ('wealth_wheel') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
           </div>
@@ -57,19 +57,18 @@
                   <div  class="ww-card-tag">
                     <span>Available Now</span>
                   </div>
-                  @if ($wheel->image != "")
+                  <!-- @if ($wheel->image != "")
                  
                   <img style="height: 250px; width:310px" src="{{ asset('images/' .$wheel->image) }}" alt="no img" class="img-fluid">
-                  @else
+                  @else -->
                   <img style="height: 250px; width:310px"  src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
-                  @endif
+                  <!-- @endif -->
                   <div class="card-body">
-                    <h5 class="card-title">{{$wheel->wheel_name}}</h5>
                     <h5 class="card-title">{{$wheel->wheel_number}}</h5>
 
                     <p class="card-text">Cog Number : {{$wheel->wheel_number}}</p>
                     <div class="pro-price">
-                      <h4>Cog Price : <span>{{$wheel->cog_price}}</span></h4>
+                      <h4>Cog Price : <span>${{$wheel->cog_price}}</span></h4>
                     </div> 
                     <a href="{{url('wheels_details?id=' .$wheel->id) }}" class="pro-dtl-btn">Join Wealth Wheel</a>
 

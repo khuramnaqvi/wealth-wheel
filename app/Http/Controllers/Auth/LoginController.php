@@ -71,6 +71,10 @@ class LoginController extends Controller
            
         }
 
+        
+       
+        // dd("Email is Sent.");
+
     }
 
     public function logout(Request $request) {

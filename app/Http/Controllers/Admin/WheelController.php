@@ -36,27 +36,23 @@ class WheelController extends Controller
 
         $user_id = Auth::user()->id;
         $request->validate([
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
-            'wheel_name' => 'required',
+            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            // 'wheel_name' => 'required',
             'wheel_number' => 'required',
             'cog_price' => 'required',
         ]);
 
         $image = null;
-        if ($request->hasFile('image')) {
+        // if ($request->hasFile('image')) {
 
-            $imageName = time() . '.' . $request->image->extension();
-            $image =   $request->image->move(public_path('images'), $imageName);
-        }
-        else{
-            $imageName = "";
-
-        }
+        //     $imageName = time() . '.' . $request->image->extension();
+        //     $image =   $request->image->move(public_path('images'), $imageName);
+        // }
         WealthWheel::create([
             'wheel_number' => $request->wheel_number,
-            'wheel_name' => $request->wheel_name,
+            // 'wheel_name' => $request->wheel_name,
             'cog_price' => $request->cog_price,
-            'image' =>  $imageName,
+            // 'image' =>  $imageName,
             'user_id' =>  $user_id,
         ]);
 
