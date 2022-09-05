@@ -9,6 +9,7 @@ use App\Models\Payment;
 use App\Models\wallet;
 use DB;
 use Illuminate\Support\Facades\Auth;
+use Session;
 
 class PaymentController extends Controller
 {
@@ -38,8 +39,11 @@ class PaymentController extends Controller
     public function charge(Request $request)
     {
       
-        
-        
+       $wheel_id = $request->wheel_id;
+    //    dd($whee_id);
+       Session::put('wheel_id', $wheel_id);
+
+      
             try {
                
                 $response = $this->gateway->purchase(array(
@@ -69,6 +73,8 @@ class PaymentController extends Controller
      */
     public function success(Request $request)
     {
+        $wheel_id =   Session::get('wheel_id');
+      
         
         // Once the transaction has been approved, we need to complete it.
         if ($request->input('paymentId') && $request->input('PayerID'))
@@ -76,6 +82,8 @@ class PaymentController extends Controller
             $transaction = $this->gateway->completePurchase(array(
                 'payer_id'             => $request->input('PayerID'),
                 'transactionReference' => $request->input('paymentId'),
+                'wheel_id' => $request->input('paymentId'),
+
             ));
             $response = $transaction->send();
            
@@ -89,9 +97,10 @@ class PaymentController extends Controller
                 // Insert transaction data into the database
                //for user 
                 $up = 92.5/100;
-                $user_percent = $up * $total ;
+                $user_percent = $up * $total;
                 $user_payment = new wallet;
-                $user_payment->wheel_id = Auth::user()->id;
+                $user_payment->user_id = Auth::user()->id;
+                $user_payment->wheel_id = $wheel_id;
                 $user_payment->amount = $user_percent;
                 $user_payment->save();
 
@@ -99,6 +108,7 @@ class PaymentController extends Controller
                 $ad = 7.5/100;
                 $admin_percent = $ad * $total;
                 $admin_payment = new Adminwallet;
+                $user_payment->wheel_id = $whee_id;
                 $admin_payment->user_id = Auth::user()->id;
                 $admin_payment->amount = $admin_percent;
                 $admin_payment->save();
@@ -128,6 +138,8 @@ class PaymentController extends Controller
 
     public function paypal_deposit_balance(Request $request)
     {
+
+
         if($request->input('submit'))
         {
             try {
@@ -152,6 +164,7 @@ class PaymentController extends Controller
 
     public function paypal_success(Request $request)
     {
+
         // Once the transaction has been approved, we need to complete it.
         if ($request->input('paymentId') && $request->input('PayerID'))
         {

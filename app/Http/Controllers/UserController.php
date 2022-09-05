@@ -63,7 +63,6 @@ class UserController extends Controller
         $auth_user = Auth::user()->id;
         $user_balance = Auth::user()->balance;
         $user_wheels = WealthWheel::where('user_id', $auth_user)->get();
-
         $wheel_id = $_GET['id'];
         $wheel_details = WealthWheel::where('id', $wheel_id)->first();
         return view('user.wheels_details', compact('wheel_details', 'user_wheels', 'user_balance'));
@@ -145,11 +144,6 @@ class UserController extends Controller
         $my_whells = DB::table('wealth_wheels')
         ->where('user_id', auth()->user()->id)->get();
         return view('user.my_wheels', compact('wheels', 'my_whells'));
-
-
-    
-        
-  
 
     }
   

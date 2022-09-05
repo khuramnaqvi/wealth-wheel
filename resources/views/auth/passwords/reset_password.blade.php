@@ -13,7 +13,7 @@
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
           <div class="d-flex">
-            <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Reset Password</a>
+            <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
             <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
           </div>
         </div>
@@ -45,8 +45,8 @@
       <div class="container">
 
         <div class="section-title" data-aos="zoom-out">
-          <h2>Sign Up</h2>
-          <p>Please put your details </p>
+          <h2>Reset Password</h2>
+          <p>Please put your details</p>
         </div>
         <div class="ww-form-wrp" data-aos="fade-right">
         <form method="POST" action="{{ route('reset_form') }}">
