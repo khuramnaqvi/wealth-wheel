@@ -108,7 +108,7 @@ class PaymentController extends Controller
                 $ad = 7.5/100;
                 $admin_percent = $ad * $total;
                 $admin_payment = new Adminwallet;
-                $user_payment->wheel_id = $whee_id;
+                $user_payment->wheel_id = $wheel_id;
                 $admin_payment->user_id = Auth::user()->id;
                 $admin_payment->amount = $admin_percent;
                 $admin_payment->save();

@@ -198,25 +198,20 @@
                                     <main class="primary" style="background-image:  url('assets/img/ww-pic.png')"></main>
                                 @endif
 
-
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
-
-
-
-
 
                         <div class="ww-pro-description">
                             <div class="ww-pro-name">
                                 <p class="ww-pro-number">
                                     <span>Wheel Number :{{ $wheel_details->wheel_number }}</span>
                                 </p>
+
                             </div>
                             <div class="ww-pro-price my-4">
                                 <h4>Cog Price :${{ $wheel_details->cog_price }} </h4>
-
                                 <div class="ww-pro-price my-4">
                                     @if (count($user_wheels) > 0)
                                         @if (isset($user_balance))
@@ -497,7 +492,6 @@
                 $(".pasy").click(function() {
                     $("#selectpaymentModal").modal('show');
                     var priv = $(".cog_price").val();
-
                     $('.append_price').val(priv)
 
                 });
@@ -507,8 +501,6 @@
                     $("#walletpaymentModal").modal('show');
                     var priv = $(".cog_price").val();
                     var cog_id = $(".cog_id").val();
-
-
                     $('.append_price').val(priv)
 
                 });
@@ -516,7 +508,6 @@
                 $(".payment_from_wallet").click(function() {
                     $("#selectpaymentModal").modal('hide');
                     var priv = $(".cog_price").val();
-
                     $('.append_price').val(priv)
 
                 });
