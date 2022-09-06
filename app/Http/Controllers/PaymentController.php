@@ -73,9 +73,7 @@ class PaymentController extends Controller
      */
     public function success(Request $request)
     {
-        $wheel_id =   Session::get('wheel_id');
-      
-        
+           $wheel_id =   Session::get('wheel_id');
         // Once the transaction has been approved, we need to complete it.
         if ($request->input('paymentId') && $request->input('PayerID'))
         {

@@ -196,7 +196,7 @@ class UserController extends Controller
         public function withdraw()
     {
         $wallets = wallet::where('user_id', Auth::user()->id)->get();
-        $withdraws = Withdraw::all();
+        $withdraws = Withdraw::where('user_id', Auth::user()->id)->get();
         return view ('user.withdraw',compact('withdraws','wallets'));
     }
 
@@ -205,7 +205,6 @@ class UserController extends Controller
         
         $wallet = wallet::find($request->wallet_id);
         if($request->wallet_id > 0 ){
-
             if($wallet->amount >= $request->withdraw){
                 $wallet->amount = $wallet->amount - $request->withdraw;
                 $wallet->update();
@@ -217,7 +216,7 @@ class UserController extends Controller
             }
         }
         else{
-            
+
             $id = Auth::user()->id;
             $user = User::find($id);
     

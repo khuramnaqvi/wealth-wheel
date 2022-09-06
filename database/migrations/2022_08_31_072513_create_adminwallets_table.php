@@ -16,7 +16,7 @@ class CreateAdminwalletsTable extends Migration
         Schema::create('adminwallets', function (Blueprint $table) {
             $table->id();
             $table->string('wheel_id')->nullable();
-            $table->string('user_id');
+            $table->string('user_id')->nullable();
             $table->string('amount');
             $table->timestamps();
         });

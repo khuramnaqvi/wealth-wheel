@@ -111,6 +111,20 @@
                         <div class="col-6" style="text-align: center; margin-bottom:10px;">
                             <form action="{{ url('wihdraw_submit') }}" method="POST">
                                 @csrf
+
+                                <div class="form-group" style="text-align: left;">
+                                  <label for="">Pay Amount From Wallet</label>
+
+                                  <select name="wallet_id" class="form-control" style="border-radius: 30px;">
+                                    <option selected style="border-radius: 30px;" value="">--My Wallets--</option>
+                                   
+                                      @foreach ($wallets as $wallet)
+                                          <option  value="{{$wallet->id}}">{{$wallet->amount}}</option>
+                                      @endforeach
+                                  </select>
+                              </div>
+
+
                                 <div class="form-group" style="text-align: left;">
                                     <label for="">Enter Amount:</label>
                                     <input required min="1" max="{{ auth()->user()->balance }}" type="number"
@@ -118,17 +132,7 @@
                                         class=" form-control checkamount2"
                                         onkeyup="this.value=this.value.replace(/[^0-9]/g)" style="border-radius: 30px;">
                                 </div>
-                                <div class="form-group" style="text-align: left;">
-                                    <label for="">Pay Amount From Wallet</label>
-
-                                    <select name="wallet_id" class="form-control" id="">
-                                      <option value="">--Availabe Wallets--</option>
-                                     
-                                        @foreach ($wallets as $wallet)
-                                            <option value="{{$wallet->id}}">{{$wallet->amount}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                      
 
                                 <div class="col-12 d-flex" style="justify-content: space-between;">
                                     <button type="submit" class=" col-5 btn btn-primary site_colr">Submit</button>
