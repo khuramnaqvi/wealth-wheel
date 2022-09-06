@@ -56,7 +56,6 @@ Route::post('reset-password', [App\Http\Controllers\Auth\ForgotPasswordControlle
 
 //wheel
 Route::get('/availabe_wealth_wheel', [App\Http\Controllers\UserController::class, 'availabe_wealth_wheel'])->name('availabe_wealth_wheel');
-Route::get('/wheels_details', [App\Http\Controllers\UserController::class, 'wheels_details'])->name('wheels_details');
 
 
 //product filter
@@ -89,6 +88,10 @@ Route::get('delete_wheel/{wheel}', [App\Http\Controllers\DashboardController::cl
 Route::get('edit_wheel/{wheel}', [App\Http\Controllers\DashboardController::class, 'edit_wheel'])->name('edit_wheel');
 Route::post('update_wheel/{wheel}', [App\Http\Controllers\DashboardController::class, 'update_wheel'])->name('update_wheel');
 
+// withraw
+Route::get('/withdraw_request', [App\Http\Controllers\DashboardController::class, 'withdraw_request'])->name('withdraw_request');
+
+
 });
 
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
@@ -104,6 +107,8 @@ Route::get('error', [App\Http\Controllers\PaymentController::class, 'error'])->n
 
 //Routes For wheels
 Route::post('/create_wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'create_wealth_wheel'])->name('create_wealth_wheel');
+Route::get('/wheels_details', [App\Http\Controllers\UserController::class, 'wheels_details'])->name('wheels_details');
+
 
 
 Route::get('/my_wheels', [App\Http\Controllers\UserController::class, 'my_wheels']);

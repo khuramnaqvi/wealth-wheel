@@ -7,6 +7,7 @@ use App\Models\WealthWheel;
 
 use Illuminate\Http\Request;
 use App\Interfaces\messasges;
+use App\Models\Withdraw;
 
 class DashboardController extends Controller
 {
@@ -162,6 +163,12 @@ class DashboardController extends Controller
     }
 
 
+    public function  withdraw_request()
+    {
+        $withdraws = Withdraw::all();
+       
+            return view('dashboard.withdraw.index',compact('withdraws'));
+    }
 
 
 

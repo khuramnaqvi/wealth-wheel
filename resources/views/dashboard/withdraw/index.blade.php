@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.main')
-@section('withdraw')
+@section('Withdraw')
     active
 @endsection
 @section('css')
@@ -38,11 +38,8 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>user name</th>
-                                                <th>Amount</th>
-                                                <th>Currency</th>
-                                                <th>Address</th>
-                                                <th>Status</th>
+                                                <th scope="col">Username</th>
+                                                <th scope="col">Amount</th>
                                                 <th>Created AT</th>
                                                 <th>Action</th>
                                             </tr>
@@ -52,13 +49,16 @@
                                             @foreach($withdraws as $withdraw)
                                                 <tr>
                                                     <td>{{$count++}}</td>
-                                                    <td>{{$withdraw->user->username}}</td>
-                                                    <td>{{$withdraw->amount}}</td>
-                                                    <td>{{$withdraw->chanel->curancy->name}}</td>
-                                                    <td>{{$withdraw->chanel->address}}</td>
-                                                    <td><span class="{{$withdraw->status()}}">{{$withdraw->status}}</span></td>
+                                                    <td>{{$withdraw->user_id}}</td>
+                                                    <td>{{$withdraw->withdraw}}</td>
                                                     <td>{{date($withdraw->created_at->format('Y-m-d'))}}</td>
-                                                    <td>
+                                                    <td>Action</td>
+
+
+                                                    {{-- <td>{{$withdraw->chanel->curancy->name}}</td> --}}
+                                                    {{-- <td>{{$withdraw->chanel->address}}</td> --}}
+                                                    {{-- <td><span class="{{$withdraw->status()}}">{{$withdraw->status}}</span></td> --}}
+                                                    {{-- <td>
                                                         @if($withdraw->status=='pending')
 
                                                             <a href="{{route('admin.approve.withdraw',['withdraw'=>$withdraw->id])}}">
@@ -69,7 +69,7 @@
 
                                                         @endif
 
-                                                    </td>
+                                                    </td> --}}
 
                                                 </tr>
 
