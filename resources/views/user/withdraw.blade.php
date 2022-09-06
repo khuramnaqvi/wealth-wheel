@@ -60,7 +60,7 @@
                             <button class="btn btn-primary withdraw_btn site_colr">Withdraw Request</button>
                         </div>
                         <table class="table">
-                            <thead style="background-color: #3DC1EB; color:white;">
+                            <thead style="color:white" class="site_colr">
                                 <tr>
                                     <th scope="col">S. No.</th>
                                     <th scope="col">User id</th>
@@ -107,23 +107,18 @@
                 </div>
                 <div class="modal-body">
                     <div class="row" style="justify-content:  center;">
-
                         <div class="col-6" style="text-align: center; margin-bottom:10px;">
                             <form action="{{ url('wihdraw_submit') }}" method="POST">
                                 @csrf
-
                                 <div class="form-group" style="text-align: left;">
                                   <label for="">Withdraw From Wallet</label>
-
                                   <select name="wallet_id" class="form-control" style="border-radius: 30px;">
                                     <option selected style="border-radius: 30px;" value="">--My Wallets--</option>
-                                   
                                       @foreach ($wallets as $wallet)
                                           <option  value="{{$wallet->id}}">{{$wallet->amount}}</option>
                                       @endforeach
                                   </select>
                               </div>
-
 
                                 <div class="form-group" style="text-align: left;">
                                     <label for="">Enter Amount:</label>

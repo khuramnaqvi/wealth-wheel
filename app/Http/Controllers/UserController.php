@@ -8,6 +8,14 @@ use App\Models\WealthWheel;
 // use App\Models\wallet;
 use App\Models\Withdraw;
 use Illuminate\Http\Request;
+use Mail;
+use App\Models\ContactUs;
+use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Carbon\Carbon; 
+
+
+use Hash;
+use Illuminate\Support\Str;
 
 use DB;
 use Stripe;
@@ -239,7 +247,6 @@ class UserController extends Controller
             $withdraw->save();
     
             return redirect()->back()->with('success', 'Amount Withdraw Successfully!');
-    
             }
             else{
             return redirect()->back()->with('error', 'Sorry you do not have Enough Balance');
@@ -251,5 +258,19 @@ class UserController extends Controller
 
 
 
+    }
+
+
+    public function contact_form(Request $request){
+       
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'required',
+            'message' => 'required'
+        ]);
+  
+        ContactUs::create($request->all());
+        return redirect()->back()->with(['success' => 'Thank you for contact us. we will contact you shortly.']);
     }
 }
