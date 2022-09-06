@@ -15,7 +15,9 @@ class CreateWealthWheelsTable extends Migration
     {
         Schema::create('wealth_wheels', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->string('wheel_number');
             $table->string('wheel_name')->nullable();
             $table->string('cog_price')->nullable();

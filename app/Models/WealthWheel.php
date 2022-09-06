@@ -19,7 +19,7 @@ class WealthWheel extends Model
 
     public function wallet()
     {
-        return $this->hasMany(wallet::class,'wheel_id');
+        return $this->hasMany(wallet::class,'wheel_id', 'id');
     }
 
 }

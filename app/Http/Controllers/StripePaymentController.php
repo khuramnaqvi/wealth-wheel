@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Adminwallet;
 use App\Models\wallet;
+use App\Models\User;
+use App\Notifications\PurchaseCogNotification;
+
 use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,6 +42,9 @@ class StripePaymentController extends Controller
         ]);
 
         
+
+
+        
             //for user 
             $up = 92.5/100;
             $user_percent = $up * $amount ;
@@ -56,6 +62,11 @@ class StripePaymentController extends Controller
             $user_payment->wheel_id =  $wheel_id;
             $admin_payment->amount = $admin_percent;
             $admin_payment->save();
+            
+                    
+        $user = User::where('email', auth()->user()->email)->first();
+        $user->notify(new PurchaseCogNotification($user));
+
             return redirect('availabe_wealth_wheel')->with('cogpurchase', 'Payment successful!');  
 
     }

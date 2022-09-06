@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Adminwallet;
+use App\Models\User;
+use App\Models\WealthWheel;
+use App\Notifications\PurchaseCogNotification;
 use Illuminate\Http\Request;
 use Omnipay\Omnipay;
 use App\Models\Payment;
@@ -40,7 +43,7 @@ class PaymentController extends Controller
     {
       
        $wheel_id = $request->wheel_id;
-    //    dd($whee_id);
+    //    dd($wheel_id);
        Session::put('wheel_id', $wheel_id);
 
       
@@ -73,7 +76,10 @@ class PaymentController extends Controller
      */
     public function success(Request $request)
     {
-           $wheel_id =   Session::get('wheel_id');
+        $wheel_id =   Session::get('wheel_id');
+    //    dd($wheel_id);
+      
+        
         // Once the transaction has been approved, we need to complete it.
         if ($request->input('paymentId') && $request->input('PayerID'))
         {
@@ -94,6 +100,9 @@ class PaymentController extends Controller
 
                 // Insert transaction data into the database
                //for user 
+
+                
+
                 $up = 92.5/100;
                 $user_percent = $up * $total;
                 $user_payment = new wallet;
@@ -102,11 +111,45 @@ class PaymentController extends Controller
                 $user_payment->amount = $user_percent;
                 $user_payment->save();
 
+                // cos percentage
+
+                // $purchased_whells = wallet::where('wheel_id', $wheel_id)->get();
+                // // $total_purchase = $purchased_whells->count();
+                // $total_purchase = 6;
+                // if($total_purchase > 5)
+                // {
+                //     if(($total_purchase+1)%6 != 0)
+                //     {
+                //         // dd(($total_purchase+1)%6);
+                //         // dd('add', $total_purchase);
+                        
+                //         $wheel_amount = WealthWheel::find($wheel_id);
+                //         $cog_110percent = $wheel_amount->cog_price*110/100;
+
+                //         $purchased_whells = wallet::where('wheel_id', $wheel_id)->where('cog_percnt', 'not given')->get();
+
+                        
+                //         dd($cog_110percent, 'greater then five tnum');
+
+                //         dd('greater then five', $wheel_amount->cog_price+4);
+
+                //     }else{
+                //         dd('not add');
+
+                //     }
+                    
+
+                // }else{
+                //     dd($total_purchase,'less then five');
+
+                // }
+
                 //for admin
                 $ad = 7.5/100;
+
                 $admin_percent = $ad * $total;
                 $admin_payment = new Adminwallet;
-                $user_payment->wheel_id = $wheel_id;
+                $admin_payment->wheel_id = $wheel_id;
                 $admin_payment->user_id = Auth::user()->id;
                 $admin_payment->amount = $admin_percent;
                 $admin_payment->save();
@@ -121,8 +164,11 @@ class PaymentController extends Controller
                 $payment->payment_status = $arr_body['state'];
                 $payment->save();
 
-                
-                return redirect('availabe_wealth_wheel')->with('success', 'Payment Successfull');  
+                $user = User::where('email', auth()->user()->email)->first();
+                $user->notify(new PurchaseCogNotification($user));
+
+                return redirect('availabe_wealth_wheel')->with('cogpurchase', 'Payment Successfull');  
+
                 // return "Payment is successful. Your transaction id is: ". $arr_body['id'];
             } else {
                 return $response->getMessage();
@@ -143,7 +189,7 @@ class PaymentController extends Controller
             try {
                 $response = $this->gateway->purchase(array(
                     'amount' => $request->input('amount'),
-                    'currency' => env('PAYPAL_CURRENCY'),
+                    'currency' => env('PAYPAL_CURRENCY', 'USD'),
                     'returnUrl' => url('paypal_success'),
                     'cancelUrl' => url('error'),
                 ))->send();
@@ -184,7 +230,7 @@ class PaymentController extends Controller
                 $payment->payer_email = $arr_body['payer']['payer_info']['email'];
                 $balance = $arr_body['transactions'][0]['amount']['total'];
                 $payment->amount = $balance;
-                $payment->currency = env('PAYPAL_CURRENCY');
+                $payment->currency = env('PAYPAL_CURRENCY', 'USD');
                 $payment->payment_status = $arr_body['state'];
                 $payment->save();
 
@@ -201,10 +247,11 @@ class PaymentController extends Controller
                 return $response->getMessage();
             }
         } else {
-            return 'Transaction is declined';
+            // return 'Transaction is declined';
+        return redirect('availabe_wealth_wheel')->with('error', 'Transaction is declined.');  
+
         }
     }
-
 
 
    
@@ -213,7 +260,8 @@ class PaymentController extends Controller
      */
     public function error()
     {
-        
-        return 'User cancelled the payment.';
+        // return 'User cancelled the payment.';
+        return redirect('availabe_wealth_wheel')->with('error', 'User cancelled the payment.');  
+
     }
 }

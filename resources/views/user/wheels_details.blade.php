@@ -191,12 +191,9 @@
 
 
                                 {{-- <main class="primary" style="background-image: url({{images$wheel_details->image}})"></main> --}}
-                                @if (isset($wheel_details->image))
-                                    <main class="primary"
-                                        style="background-image:  url('images/{{ $wheel_details->image }}')"></main>
-                                @else
-                                    <main class="primary" style="background-image:  url('assets/img/ww-pic.png')"></main>
-                                @endif
+                                <main class="primary"
+                                    style="background-image:  url({{ asset('assets/img/ww-pic.png') }})"></main>
+
 
                             </div>
                         </div>
