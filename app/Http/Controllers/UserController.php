@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\wallet;
+use App\Models\Adminwallet;
 use App\Models\WealthWheel;
 // use App\Models\wallet;
 use App\Models\Withdraw;
 use Illuminate\Http\Request;
+use App\Notifications\PurchaseCogNotification;
 
 use DB;
 use Stripe;
@@ -165,20 +167,74 @@ class UserController extends Controller
 
     public function pay_from_wallet(Request $request)
     {
-        $amount_to_pay = $request->amount;
+        $amount = $request->amount;
+        $wheel_id = $request->wheel_id;
+        // dd($wheel_id);
 
         $user_balance = Auth::user()->balance;
-        if ($user_balance = null || $user_balance < $amount_to_pay) {
+        if ($user_balance = null || $user_balance < $amount) {
 
             return redirect()->back()->with('error', 'Sorry! You Do not have Enough Balance');
         } else {
 
-            $total_amount = Auth::user()->balance - $amount_to_pay;
+            // 
+            $up = 92.5/100;
+            $user_percent = $up * $amount ;
+            $user_payment = new wallet;
+            $user_payment->user_id = Auth::user()->id;
+            $user_payment->wheel_id =  $wheel_id;
+            $user_payment->amount = $user_percent;
+            $user_payment->save();
+
+            // 
+            $purchased_whells = wallet::where('wheel_id', $wheel_id)->get();
+            $total_purchase = $purchased_whells->count();
+            $wheel_amount = WealthWheel::find($wheel_id);
+
+            if($total_purchase > 5)
+            {
+                if(($total_purchase+1)%6 != 0)
+                {
+
+                    $cog_110percent = $wheel_amount->cog_price*110/100;
+                    $cog_notgiven = wallet::where('wheel_id', $wheel_id)->where('cog_percnt', 'not given')->orderBy('id', 'ASC')->first();
+                    $cog_notgiven->cog_percnt = 'given';
+                    $cog_notgiven->update();
+                    $user_id = $cog_notgiven->user_id;
+                    DB::table('users')
+                    ->where('id', $user_id)
+                    ->increment('balance', $cog_110percent);
+
+                }
+                
+
+            }
+
+            //for admin
+            $ad = 7.5/100;
+            $admin_percent = $ad * $amount ;
+            $admin_payment = new Adminwallet;
+            $admin_payment->user_id = Auth::user()->id;
+            $admin_payment->wheel_id =  $wheel_id;
+            $admin_payment->amount = $admin_percent;
+            $admin_payment->save();
+
+            // 
+
+            $total_amount = Auth::user()->balance - $amount;
             $userDetails = Auth::user();  // To get the logged-in user details
             $user = User::find($userDetails->id);  // Find the user using model and hold its reference
             $user->balance = $total_amount;
             $user->save();
-            return redirect()->back()->with('success', 'Wheel Purchased Successfully!');
+
+            $users = User::where('email', auth()->user()->email)->first();
+            $users->notify(new PurchaseCogNotification($users));
+
+            $wheel_number = $wheel_amount->wheel_number;
+            $cogg_num = $wheel_amount->wallet->count();
+            $mes = "WW0$wheel_number-0$cogg_num";
+
+            return redirect()->back()->with('cogpurchase', $mes);
         }
     }
 

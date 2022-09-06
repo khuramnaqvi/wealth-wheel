@@ -227,7 +227,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                         <div class="col-12 d-flex" style="justify-content: space-between;">
                                             <button class="col-5 btn btn-primary site_colr" type="submit">Pay Now
                                                 </button>
-                                            <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
+                                            <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                                         </div>
                                     </div>
 
@@ -401,7 +401,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                             <div class="col-12 d-flex" style="justify-content: space-between;">
                                                 <button class="col-5 btn btn-primary site_colr" type="submit">Pay Now
                                                     </button>
-                                                <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
+                                                <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                                             </div>
                                         </div>
 
@@ -419,7 +419,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                     <div class="row mt-4">
                                       <div class="col-12 d-flex" style="justify-content: space-between;">
                                         <input type="submit" name="submit" class=" col-5 btn btn-primary site_colr" value="Pay Now">
-                                        <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
+                                        <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                                       </div>
                                     </div>
                                   </div>
@@ -463,7 +463,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 <script>
   
   // if($(location).attr('href') == 'http://127.0.0.1:8000/register/success')
-    
+
   if($(location).attr('href') == 'http://wealthwheel.herokuapp.com/public/register/success')
     {
       Swal.fire(
@@ -498,9 +498,11 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
     toastr.error('{{ Session::get('error') }}');
 @elseif(Session::has('cogpurchase'))
 Swal.fire(
-     'Congratulations!',
+     'Congratulations!\n{{ Session::get("cogpurchase") }}',
      'You Have Successfully Purchased Your Wealth Wheel Cog!',
      'success'
+
+     
    )
 @endif
 

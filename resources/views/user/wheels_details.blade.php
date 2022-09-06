@@ -208,11 +208,11 @@
 
                             </div>
                             <div class="ww-pro-price my-4">
-                                <h4>Cog Price :${{ $wheel_details->cog_price }} </h4>
+                                <h4>Cog Price :US${{ $wheel_details->cog_price }} </h4>
                                 <div class="ww-pro-price my-4">
                                     @if (count($user_wheels) > 0)
                                         @if (isset($user_balance))
-                                            <h6>Wallet Balance : <b>${{ $user_balance }}</b></h6>
+                                            <h6>Wallet Balance : <b>US${{ $user_balance }}</b></h6>
                                         @endif
                                     @endif
                                 </div>
@@ -230,10 +230,10 @@
 
                                 @if ($wheel_details->user_id == auth()->user()->id)
                                     <button disabled data-toggle="modal" data-target="#userModal" type="button"
-                                        class="btn py-3 text-white ww-pro-action-btn">Buy Now</button>
+                                        class="btn py-3 text-white ww-pro-action-btn">Buy Cog</button>
                                 @else
                                     <button data-toggle="modal" data-target="#userModal" type="button"
-                                        class="btn py-3 text-white ww-pro-action-btn pasy">Buy Now</button>
+                                        class="btn py-3 text-white ww-pro-action-btn pasy">Buy Cog</button>
                                 @endif
 
 
@@ -293,12 +293,14 @@
                                                 <div class="row">
                                                     <div class="col-3">
                                                         <div class="row col-8">
-                                                            {{-- <button  type="button" class="btn btn-primary">Pay from Walet</button> --}}
+                                                            {{-- <button  type="button" class="btn btn-primary">Pay from Wallet</button> --}}
                                                             <form id="payment_from_wallet_form" role="form"
                                                                 action="{{ url('pay_from_wallet') }}" method="post">
                                                                 @csrf
                                                                 <input class="append_price" type="hidden"
                                                                     name="amount">
+                                                                <input type="hidden" value="{{ $wheel_details->id }}"
+                                                                    name="wheel_id">
                                                                 <a class="payment_from_wallet">
                                                                     <img alt="Qries"
                                                                         src="{{ URL::asset('/assets/img/wallet.png') }}"
@@ -310,7 +312,7 @@
                                                         </div>
                                                         <div class="row text-center">
                                                             <div class="col-12"><b style="color: #3dc1eb">Pay From
-                                                                    Walet</b>
+                                                                    Wallet</b>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -326,7 +328,7 @@
 
                                                     <div class="col-3">
                                                         <div class="row col-8">
-                                                            {{-- <button  type="button" class="btn btn-primary">Pay from Walet</button> --}}
+                                                            {{-- <button  type="button" class="btn btn-primary">Pay from Wallet</button> --}}
                                                             <form id="paypal_form" method="POST"
                                                                 action="{{ route('charge') }}">
                                                                 <input type="hidden" name="price"
@@ -353,7 +355,7 @@
                                                     <div class="vl col-1 ml-4"></div>
                                                     <div class="col-3">
                                                         <div class="row col-8">
-                                                            {{-- <button  type="button" class="btn btn-primary">Pay from Walet</button> --}}
+                                                            {{-- <button  type="button" class="btn btn-primary">Pay from Wallet</button> --}}
                                                             <a class="cardpay">
                                                                 <img alt="Qries"
                                                                     src="{{ URL::asset('/assets/img/card.jpg') }}"
@@ -462,7 +464,7 @@
                                                     <button class="col-5 btn btn-primary site_colr" type="submit">Pay Now
                                                     </button>
                                                     <button type="button" class="col-5 btn btn-secondary "
-                                                        data-bs-dismiss="modal" aria-label="Close">cancel</button>
+                                                        data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                                                 </div>
                                             </div>
 

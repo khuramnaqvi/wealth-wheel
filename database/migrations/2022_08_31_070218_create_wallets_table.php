@@ -21,6 +21,7 @@ class CreateWalletsTable extends Migration
             $table->unsignedBigInteger('wheel_id');
             $table->foreign('wheel_id')->references('id')->on('wealth_wheels');
             $table->string('amount')->nullable();
+            $table->string('cog_percnt')->default('not given');
             $table->timestamps();
         });
     }

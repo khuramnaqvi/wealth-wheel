@@ -69,7 +69,7 @@
 
                     <p class="card-text">Cog Number : {{$wheel->wallet->count()}}</p>
                     <div class="pro-price">
-                      <h4>Cog Price : <span>${{$wheel->cog_price}}</span></h4>
+                      <h4>Cog Price : <span>US${{$wheel->cog_price}}</span></h4>
                     </div> 
                     <a href="{{url('wheels_details?id=' .$wheel->id) }}" class="pro-dtl-btn">Join Wealth Wheel</a>
 

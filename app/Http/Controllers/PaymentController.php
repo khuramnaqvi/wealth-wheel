@@ -111,38 +111,28 @@ class PaymentController extends Controller
                 $user_payment->amount = $user_percent;
                 $user_payment->save();
 
-                // cos percentage
+                $purchased_whells = wallet::where('wheel_id', $wheel_id)->get();
+                $total_purchase = $purchased_whells->count();
+                $wheel_amount = WealthWheel::find($wheel_id);
 
-                // $purchased_whells = wallet::where('wheel_id', $wheel_id)->get();
-                // // $total_purchase = $purchased_whells->count();
-                // $total_purchase = 6;
-                // if($total_purchase > 5)
-                // {
-                //     if(($total_purchase+1)%6 != 0)
-                //     {
-                //         // dd(($total_purchase+1)%6);
-                //         // dd('add', $total_purchase);
-                        
-                //         $wheel_amount = WealthWheel::find($wheel_id);
-                //         $cog_110percent = $wheel_amount->cog_price*110/100;
+                if($total_purchase > 5)
+                {
+                    if(($total_purchase+1)%6 != 0)
+                    {
 
-                //         $purchased_whells = wallet::where('wheel_id', $wheel_id)->where('cog_percnt', 'not given')->get();
+                        $cog_110percent = $wheel_amount->cog_price*110/100;
+                        $cog_notgiven = wallet::where('wheel_id', $wheel_id)->where('cog_percnt', 'not given')->orderBy('id', 'ASC')->first();
+                        $cog_notgiven->cog_percnt = 'given';
+                        $cog_notgiven->update();
+                        $user_id = $cog_notgiven->user_id;
+                        DB::table('users')
+                        ->where('id', $user_id)
+                        ->increment('balance', $cog_110percent);
 
-                        
-                //         dd($cog_110percent, 'greater then five tnum');
-
-                //         dd('greater then five', $wheel_amount->cog_price+4);
-
-                //     }else{
-                //         dd('not add');
-
-                //     }
+                    }
                     
 
-                // }else{
-                //     dd($total_purchase,'less then five');
-
-                // }
+                }
 
                 //for admin
                 $ad = 7.5/100;
@@ -167,7 +157,11 @@ class PaymentController extends Controller
                 $user = User::where('email', auth()->user()->email)->first();
                 $user->notify(new PurchaseCogNotification($user));
 
-                return redirect('availabe_wealth_wheel')->with('cogpurchase', 'Payment Successfull');  
+                $wheel_number = $wheel_amount->wheel_number;
+                $cogg_num = $wheel_amount->wallet->count();
+                $mes = "WW0$wheel_number-0$cogg_num";
+
+                return redirect('availabe_wealth_wheel')->with('cogpurchase', $mes);  
 
                 // return "Payment is successful. Your transaction id is: ". $arr_body['id'];
             } else {

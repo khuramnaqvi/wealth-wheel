@@ -133,7 +133,7 @@
                                 <div class="col-12 d-flex" style="justify-content: space-between;">
                                     <button type="submit" class=" col-5 btn btn-primary site_colr">Submit</button>
                                     <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal"
-                                        aria-label="Close">cancel</button>
+                                        aria-label="Close">Cancel</button>
                                 </div>
                             </form>
 
