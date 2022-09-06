@@ -45,4 +45,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function withdraw()
+{
+    return $this->belongsTo(Withdraw::class, 'id'); // if the column name in your users migration is state_id then you might not need the second param. 
+}
+
+
 }

@@ -28,9 +28,13 @@
             </li>
  
 
-           <li class=" @yield('wheels') "><a href="{{url('/wheels')}}"><i class="fa fa-user-circle"></i><span--}}
+           <li class=" @yield('wheels') "><a href="{{url('/wheels')}}"><i class="fa fa-user-circle"></i><span
                        class="menu-title" data-i18n="Dashboard">Wheels</span></a>
            </li>
+
+           <li class=" @yield('Withdraw') "><a href="{{url('/withdraw_request')}}"><i class="fa fa-user-circle"></i><span
+            class="menu-title" data-i18n="Dashboard">Withdraw</span></a>
+</li>
 
 {{--            <li class=" @yield('plan') "><a href="{{url('/admin/plans')}}"><i class="fa fa-volume-off"></i><span--}}
 {{--                        class="menu-title" data-i18n="Dashboard">Plans</span></a>--}}

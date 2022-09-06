@@ -33,7 +33,7 @@ class WheelController extends Controller
 
     public function create_wealth_wheel(Request $request)
     {
-
+       
         $user_id = Auth::user()->id;
         $request->validate([
             // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
@@ -50,7 +50,7 @@ class WheelController extends Controller
         // }
         WealthWheel::create([
             'wheel_number' => $request->wheel_number,
-            // 'wheel_name' => $request->wheel_name,
+            'wheel_name' => $request->wheel_name,
             'cog_price' => $request->cog_price,
             // 'image' =>  $imageName,
             'user_id' =>  $user_id,

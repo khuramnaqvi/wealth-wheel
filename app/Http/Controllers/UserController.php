@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\wallet;
 use App\Models\WealthWheel;
 use App\Models\wallet;
 use App\Models\Withdraw;
@@ -203,21 +204,51 @@ class UserController extends Controller
     
         public function withdraw()
     {
-        // dd('dd');
-        // return view('user.withdraw');
-        return view ('user.withdraw');
-
+        $wallets = wallet::where('user_id', Auth::user()->id)->get();
+        $withdraws = Withdraw::all();
+        return view ('user.withdraw',compact('withdraws','wallets'));
     }
+
     public function wihdraw_submit(Request $request)
     {
-        $withdraw = new Withdraw;
-        $withdraw->user_id = auth()->user()->id;
-        $withdraw->withdraw = $request->withdraw;
-        $withdraw->save();
+        
+        $wallet = wallet::find($request->wallet_id);
+        if($request->wallet_id > 0 ){
 
-        return redirect()->back()->with('success', 'Amount Withdraw Successfully!');
+            if($wallet->amount >= $request->withdraw){
+                $wallet->amount = $wallet->amount - $request->withdraw;
+                $wallet->update();
+                return redirect()->back()->with('success', 'Amount Withdraw Successfully!');
 
-        // dd($request);
+            }
+            else{
+                return redirect()->back()->with('error', 'Sorry you do not have Enough Balance in Wallet');
+            }
+        }
+        else{
+            
+            $id = Auth::user()->id;
+            $user = User::find($id);
+    
+            if($request->withdraw <= $user->balance ){
+                $user->balance = $user->balance - $request->withdraw;
+                $user->update();
+    
+            $withdraw = new Withdraw;
+            $withdraw->user_id = auth()->user()->id;
+            $withdraw->withdraw = $request->withdraw;
+            $withdraw->save();
+    
+            return redirect()->back()->with('success', 'Amount Withdraw Successfully!');
+    
+            }
+            else{
+            return redirect()->back()->with('error', 'Sorry you do not have Enough Balance');
+            }
+
+        }
+     
+     
 
 
 

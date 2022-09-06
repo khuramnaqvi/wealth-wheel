@@ -91,8 +91,10 @@ button:hover {
               <label for="wheel-number">Wheel Number</label>
               @if(isset($wheel_number))
               <input readonly="readonly" type="Number" name="wheel_number" class="form-control" id="wheel-number" value="{{$wheel_number}}"  aria-describedby="wheel-number" placeholder="">
+              <input hidden type="text" name="wheel_name" class="form-control" id="wheel_name" value="WW0{{$wheel_number}}"  aria-describedby="wheel-number">
             @else
             <input readonly="readonly" type="Number" name="wheel_number" class="form-control" id="wheel-number" value="1"  aria-describedby="wheel-number" placeholder="">
+            <input hidden type="text" name="wheel_name" class="form-control" id="wheel_name" value=""  aria-describedby="wheel-number">
             @endif
             </div>
             <!-- <div class="form-group">

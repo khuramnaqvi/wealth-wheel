@@ -19,7 +19,7 @@ class CreateWealthWheelsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->string('wheel_number');
-            // $table->string('wheel_name');
+            $table->string('wheel_name')->nullable();
             $table->string('cog_price')->nullable();
             // $table->string('image')->nullable();
             $table->timestamps();
