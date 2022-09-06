@@ -352,7 +352,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <div class="panel-body">
                                     <form role="form" action="{{url('/deposit_balance')}}" method="post"
                                         class="require-validation" data-cc-on-file="false"
-                                        data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
+                                        data-stripe-publishable-key="{{ env('STRIPE_KEY','pk_test_51Kh9uAFBFsCMdULhjZvuXtEvn03Dc8oBpZS9VEZf3ZEym3JBm6F8owLE8nzc4o1p7tT2FSqyYjyrpPKgBmU3f4lC00yFeVGFJa') }}" id="payment-form">
                                         @csrf
 
                                         <input type="hidden" name="amount" class="amount">
@@ -496,7 +496,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 @elseif(Session::has('cogpurchase'))
 Swal.fire(
      'Congratulations!',
-     'You have successfully purchased your Wealth Wheel Cog!',
+     'You Have Successfully Purchased Your Wealth Wheel Cog!',
      'success'
    )
 @endif

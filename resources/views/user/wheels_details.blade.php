@@ -191,7 +191,7 @@
 
                                 {{-- <main class="primary" style="background-image: url({{images$wheel_details->image}})"></main> --}}
                                 <main class="primary"
-                                    style="background-image:  url('images/{{ $wheel_details->image }}')"></main>
+                                    style="background-image:  url({{ asset('assets/img/ww-pic.png') }})"></main>
 
 
                             </div>

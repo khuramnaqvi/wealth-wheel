@@ -50,26 +50,23 @@
         <div class="row content" data-aos="fade-up">
           <div class="col-lg-9">
             <div class="row">
-            <h3>My Wheels</h3>
-            @foreach($my_whells as $wheel)
+            <h3>My Wheels:</h3>
+            <hr>
+            @forelse($my_whells as $wheel)
               <div class="ww-avl-card col-md-4 my-2">
                 <div class="card">
                   <div  class="ww-card-tag">
                     <span>Available Now</span>
                   </div>
-                  @if ($wheel->image != "")
-                 
-                  <img style="height: 250px; width:310px" src="{{ asset('images/' .$wheel->image) }}" alt="no img" class="img-fluid">
-                  @else
+                  
                   <img style="height: 250px; width:310px"  src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
-                  @endif
                   <div class="card-body">
-                    <h5 class="card-title">{{$wheel->wheel_name}}</h5>
-                    <h5 class="card-title">{{$wheel->wheel_number}}</h5>
+                    <h5 class="card-title">WW0{{ $wheel->wheel_number }} - 0{{$wheel->wallet->count()}}</h5>
 
-                    <p class="card-text">Cog Number : {{$wheel->wheel_number}}</p>
+
+                    <p class="card-text">Cog Number : {{$wheel->wallet->count()}}</p>
                     <div class="pro-price">
-                      <h4>Cog Price : <span>{{$wheel->cog_price}}</span></h4>
+                      <h4>Cog Price : <span>${{$wheel->cog_price}}</span></h4>
                     </div> 
                     <a href="{{url('wheels_details?id=' .$wheel->id) }}" class="pro-dtl-btn">Join Wealth Wheel</a>
 
@@ -77,36 +74,39 @@
                   </div>
                 </div>
               </div>
-              @endforeach
+              @empty
+              <h4>No wheel available</h4>
+              @endforelse
 
 
-              <h3 class="pt-4 mt-4">Purchased Wheels</h3>
-            <!-- @foreach($wheels as $wheel)
+              <h3 class="pt-4 mt-4">Purchased Wheels:</h3>
+            <hr>
+
+            @forelse($purchased_whells as $wheel)
               <div class="ww-avl-card col-md-4 my-2">
                 <div class="card">
                   <div  class="ww-card-tag">
                     <span>Available Now</span>
                   </div>
-                  @if ($wheel->image != "")
                  
-                  <img style="height: 250px; width:310px" src="{{ asset('images/' .$wheel->image) }}" alt="no img" class="img-fluid">
-                  @else
+                  
                   <img style="height: 250px; width:310px"  src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
-                  @endif
+                  
                   <div class="card-body">
-                    <h5 class="card-title">{{$wheel->wheel_name}}</h5>
-                    <h5 class="card-title">{{$wheel->wheel_number}}</h5>
+                    <h5 class="card-title">WW0{{ $wheel->purchase_wheel->wheel_number }} - 0{{$wheel->purchase_wheel->wallet->count()}}</h5>
 
-                    <p class="card-text">Cog Number : {{$wheel->wheel_number}}</p>
+                    <p class="card-text">Cog Number : {{$wheel->purchase_wheel->wallet->count()}}</p>
                     <div class="pro-price">
-                      <h4>Cog Price : <span>{{$wheel->cog_price}}</span></h4>
+                      <h4>Cog Price : <span>${{$wheel->purchase_wheel->cog_price}}</span></h4>
                     </div> 
-                    <a href="{{url('wheels_details?id=' .$wheel->id) }}" class="pro-dtl-btn">Join Wealth Wheel</a>
+                    <button class="pro-dtl-btn">Join Wealth Wheel</button>
 
                   </div>
                 </div>
               </div>
-              @endforeach -->
+              @empty
+              <h4>No wheel available</h4>
+              @endforelse
              
             
              

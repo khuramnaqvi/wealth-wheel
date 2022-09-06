@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\WealthWheel;
+use App\Models\wallet;
 use App\Models\Withdraw;
 use Illuminate\Http\Request;
+
 use DB;
 use Stripe;
 use Illuminate\Support\Facades\Auth;
@@ -70,6 +72,9 @@ class UserController extends Controller
         $user_wheels = WealthWheel::where('user_id', $auth_user)->get();
         $wheel_id = $_GET['id'];
         $wheel_details = WealthWheel::where('id', $wheel_id)->first();
+
+        
+
         return view('user.wheels_details', compact('wheel_details', 'user_wheels', 'user_balance'));
     }
 
@@ -109,7 +114,7 @@ class UserController extends Controller
     {
         // dd('dd');
         $amount = $request->amount;
-        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET','sk_test_51Kh9uAFBFsCMdULhVtPQxp0NOArxMFzdQ6qroS5jZFettctGfyVPc5WPmT6b1hGimRW09adqa3lndHnywhsbBqYW00K8eyxFsu'));
         $stripee = Stripe\Charge::create([
             "amount" => $amount * 100,
             "currency" => "usd",
@@ -146,9 +151,13 @@ class UserController extends Controller
     public function my_wheels()
     {
         $wheels = WealthWheel::all();
-        $my_whells = DB::table('wealth_wheels')
-            ->where('user_id', auth()->user()->id)->get();
-        return view('user.my_wheels', compact('wheels', 'my_whells'));
+        $my_whells = WealthWheel::where('user_id', auth()->user()->id)->get();
+
+        $purchased_whells = wallet::where('user_id', auth()->user()->id)->get()->unique('wheel_id');
+
+            // dd($purchased_whells);
+
+        return view('user.my_wheels', compact('wheels', 'my_whells','purchased_whells'));
     }
 
 
