@@ -35,8 +35,13 @@ Route::get('/register/success', [App\Http\Controllers\UserController::class, 'us
 Route::get('/products', [App\Http\Controllers\UserController::class, 'products'])->name('products');
 Route::get('/about', [App\Http\Controllers\UserController::class, 'about'])->name('about');
 Route::get('/faq', [App\Http\Controllers\UserController::class, 'faq'])->name('faq');
-Route::get('/contact', [App\Http\Controllers\UserController::class, 'contact'])->name('contact');
 Route::get('/how_it_works', [App\Http\Controllers\UserController::class, 'how_it_works'])->name('how_it_works');
+
+// Contact us
+Route::get('/contact', [App\Http\Controllers\UserController::class, 'contact'])->name('contact');
+Route::post('/contact_form', [App\Http\Controllers\UserController::class, 'contact_form'])->name('contact_form');
+
+
 
 //Term & conditions data Routes
 Route::get('/faq', [App\Http\Controllers\UserController::class, 'faq'])->name('faq');

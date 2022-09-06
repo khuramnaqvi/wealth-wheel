@@ -10,6 +10,14 @@ use App\Models\WealthWheel;
 use App\Models\Withdraw;
 use Illuminate\Http\Request;
 use App\Notifications\PurchaseCogNotification;
+use Mail;
+use App\Models\ContactUs;
+use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Carbon\Carbon; 
+
+
+use Hash;
+use Illuminate\Support\Str;
 
 use DB;
 use Stripe;
@@ -261,7 +269,7 @@ class UserController extends Controller
         public function withdraw()
     {
         $wallets = wallet::where('user_id', Auth::user()->id)->get();
-        $withdraws = Withdraw::all();
+        $withdraws = Withdraw::where('user_id', Auth::user()->id)->get();
         return view ('user.withdraw',compact('withdraws','wallets'));
     }
 
@@ -270,7 +278,6 @@ class UserController extends Controller
         
         $wallet = wallet::find($request->wallet_id);
         if($request->wallet_id > 0 ){
-
             if($wallet->amount >= $request->withdraw){
                 $wallet->amount = $wallet->amount - $request->withdraw;
                 $wallet->update();
@@ -282,7 +289,7 @@ class UserController extends Controller
             }
         }
         else{
-            
+
             $id = Auth::user()->id;
             $user = User::find($id);
     
@@ -296,7 +303,6 @@ class UserController extends Controller
             $withdraw->save();
     
             return redirect()->back()->with('success', 'Amount Withdraw Successfully!');
-    
             }
             else{
             return redirect()->back()->with('error', 'Sorry you do not have Enough Balance');
@@ -308,5 +314,19 @@ class UserController extends Controller
 
 
 
+    }
+
+
+    public function contact_form(Request $request){
+       
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'required',
+            'message' => 'required'
+        ]);
+  
+        ContactUs::create($request->all());
+        return redirect()->back()->with(['success' => 'Thank you for contact us. we will contact you shortly.']);
     }
 }

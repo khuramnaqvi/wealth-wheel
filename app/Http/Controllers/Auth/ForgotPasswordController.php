@@ -10,7 +10,6 @@ use Carbon\Carbon;
 use App\Models\User; 
 use Mail;
 use Hash;
-use Illuminate\Support\Facades\DB as FacadesDB;
 use Illuminate\Support\Str;
 
 
@@ -48,7 +47,7 @@ class ForgotPasswordController extends Controller
   
           $token = Str::random(64);
   
-          FacadesDB::table('password_resets')->insert([
+          DB::table('password_resets')->insert([
               'email' => $request->email, 
               'token' => $token, 
               'created_at' => Carbon::now()

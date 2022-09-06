@@ -57,10 +57,10 @@
                     <div class="row">
                         <div class="d-flex mb-4" style="justify-content: space-between;">
                             <h3>Withdraw Requests</h3>
-                            <button class="btn btn-primary withdraw_btn site_colr">New Withdraw</button>
+                            <button class="btn btn-primary withdraw_btn site_colr">Withdraw Request</button>
                         </div>
                         <table class="table">
-                            <thead style="background-color: #3DC1EB; color:white;">
+                            <thead style="color:white" class="site_colr">
                                 <tr>
                                     <th scope="col">S. No.</th>
                                     <th scope="col">User id</th>
@@ -107,10 +107,19 @@
                 </div>
                 <div class="modal-body">
                     <div class="row" style="justify-content:  center;">
-
                         <div class="col-6" style="text-align: center; margin-bottom:10px;">
                             <form action="{{ url('wihdraw_submit') }}" method="POST">
                                 @csrf
+                                <div class="form-group" style="text-align: left;">
+                                  <label for="">Withdraw From Wallet</label>
+                                  <select name="wallet_id" class="form-control" style="border-radius: 30px;">
+                                    <option selected style="border-radius: 30px;" value="">--My Wallets--</option>
+                                      @foreach ($wallets as $wallet)
+                                          <option  value="{{$wallet->id}}">{{$wallet->amount}}</option>
+                                      @endforeach
+                                  </select>
+                              </div>
+
                                 <div class="form-group" style="text-align: left;">
                                     <label for="">Enter Amount:</label>
                                     <input required min="1" max="{{ auth()->user()->balance }}" type="number"
@@ -118,17 +127,7 @@
                                         class=" form-control checkamount2"
                                         onkeyup="this.value=this.value.replace(/[^0-9]/g)" style="border-radius: 30px;">
                                 </div>
-                                <div class="form-group" style="text-align: left;">
-                                    <label for="">Pay Amount From Wallet</label>
-
-                                    <select name="wallet_id" class="form-control" id="">
-                                      <option value="">--Availabe Wallets--</option>
-                                     
-                                        @foreach ($wallets as $wallet)
-                                            <option value="{{$wallet->id}}">{{$wallet->amount}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                      
 
                                 <div class="col-12 d-flex" style="justify-content: space-between;">
                                     <button type="submit" class=" col-5 btn btn-primary site_colr">Submit</button>
