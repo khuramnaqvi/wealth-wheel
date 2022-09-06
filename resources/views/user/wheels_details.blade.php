@@ -127,12 +127,12 @@
                     <div class="carousel-container carousel-container-detail">
                         <h2 class="animate__animated animate__fadeInDown">Wealth Wheel Details</span></h2>
                         <!-- <p class="animate__animated fanimate__adeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p> -->
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p> -->
                         <!-- <div class="d-flex ww-banner-btn">
-                <a href="signup.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
-                <a href="login.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
-                <a href="createWealthWheel.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
-              </div> -->
+                    <a href="signup.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
+                    <a href="login.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
+                    <a href="createWealthWheel.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
+                  </div> -->
                     </div>
                 </div>
 
@@ -172,26 +172,31 @@
                         <div class="ww-wrapper">
                             <div class="ww-image-gallery">
                                 <!-- <aside class="ww-thumbnails">
-                      <div href="#" class="selected thumbnail" data-big="assets/img/ww-pic.png">
-                        <div class="thumbnail-image" style="background-image: url(assets/img/ww-pic.png)"></div>
-                      </div>
-                      <div href="#" class="thumbnail" data-big="assets/img/testimonials/testimonials-1.jpg">
-                        <div class="thumbnail-image" style="background-image: url(assets/img/testimonials/testimonials-1.jpg)"></div>
-                      </div>
-                      <div href="#" class="thumbnail" data-big="assets/img/testimonials/testimonials-4.jpg">
-                        <div class="thumbnail-image" style="background-image: url(assets/img/testimonials/testimonials-4.jpg)"></div>
-                      </div>
-                      <div href="#" class="thumbnail" data-big="assets/img/testimonials/testimonials-4.jpg">
-                        <div class="thumbnail-image" style="background-image: url(assets/img/testimonials/testimonials-4.jpg)"></div>
-                      </div>
-                      <div href="#" class="thumbnail" data-big="assets/img/testimonials/testimonials-4.jpg">
-                        <div class="thumbnail-image" style="background-image: url(assets/img/testimonials/testimonials-4.jpg)"></div>
-                      </div>
-                    </aside> -->
+                          <div href="#" class="selected thumbnail" data-big="assets/img/ww-pic.png">
+                            <div class="thumbnail-image" style="background-image: url(assets/img/ww-pic.png)"></div>
+                          </div>
+                          <div href="#" class="thumbnail" data-big="assets/img/testimonials/testimonials-1.jpg">
+                            <div class="thumbnail-image" style="background-image: url(assets/img/testimonials/testimonials-1.jpg)"></div>
+                          </div>
+                          <div href="#" class="thumbnail" data-big="assets/img/testimonials/testimonials-4.jpg">
+                            <div class="thumbnail-image" style="background-image: url(assets/img/testimonials/testimonials-4.jpg)"></div>
+                          </div>
+                          <div href="#" class="thumbnail" data-big="assets/img/testimonials/testimonials-4.jpg">
+                            <div class="thumbnail-image" style="background-image: url(assets/img/testimonials/testimonials-4.jpg)"></div>
+                          </div>
+                          <div href="#" class="thumbnail" data-big="assets/img/testimonials/testimonials-4.jpg">
+                            <div class="thumbnail-image" style="background-image: url(assets/img/testimonials/testimonials-4.jpg)"></div>
+                          </div>
+                        </aside> -->
+
 
                                 {{-- <main class="primary" style="background-image: url({{images$wheel_details->image}})"></main> --}}
-                                <main class="primary"
-                                    style="background-image:  url('images/{{ $wheel_details->image }}')"></main>
+                                @if (isset($wheel_details->image))
+                                    <main class="primary"
+                                        style="background-image:  url('images/{{ $wheel_details->image }}')"></main>
+                                @else
+                                    <main class="primary" style="background-image:  url('assets/img/ww-pic.png')"></main>
+                                @endif
 
 
                             </div>
@@ -221,17 +226,17 @@
                                 </div>
                             </div>
                             <!-- <div class="ww-pro-quantity my-4">
-                      <div id="ww-quantity">
-                          <span>Quantity</span>
-                          <button type="button" id="sub" class="sub ww-plus-minus">-</button>
-                          <input type="number" id="1" value="1" min="1" max="100" class="ww-quantity-input" />
-                          <button type="button" id="add" class="add ww-plus-minus">+</button>
-                      </div>
-                  </div> -->
+                          <div id="ww-quantity">
+                              <span>Quantity</span>
+                              <button type="button" id="sub" class="sub ww-plus-minus">-</button>
+                              <input type="number" id="1" value="1" min="1" max="100" class="ww-quantity-input" />
+                              <button type="button" id="add" class="add ww-plus-minus">+</button>
+                          </div>
+                      </div> -->
 
                             <div class="ww-pro-action my-2">
 
-                                @if($wheel_details->user_id == auth()->user()->id)
+                                @if ($wheel_details->user_id == auth()->user()->id)
                                     <button disabled data-toggle="modal" data-target="#userModal" type="button"
                                         class="btn py-3 text-white ww-pro-action-btn">Buy Now</button>
                                 @else
@@ -297,20 +302,23 @@
                                                     <div class="col-3">
                                                         <div class="row col-8">
                                                             {{-- <button  type="button" class="btn btn-primary">Pay from Walet</button> --}}
-                                                            <form id="payment_from_wallet_form" role="form" action="{{url('pay_from_wallet')}}" method="post">
-                                                              @csrf
-                                                              <input class="append_price" type="hidden" name="amount" >
-                                                              <a class="payment_from_wallet">
-                                                                <img alt="Qries"
-                                                                    src="{{ URL::asset('/assets/img/wallet.png') }}"
-                                                                    width="100" height="100">
-                                                            </a>
-                                                          </form>
-                                                         
+                                                            <form id="payment_from_wallet_form" role="form"
+                                                                action="{{ url('pay_from_wallet') }}" method="post">
+                                                                @csrf
+                                                                <input class="append_price" type="hidden"
+                                                                    name="amount">
+                                                                <a class="payment_from_wallet">
+                                                                    <img alt="Qries"
+                                                                        src="{{ URL::asset('/assets/img/wallet.png') }}"
+                                                                        width="100" height="100">
+                                                                </a>
+                                                            </form>
+
 
                                                         </div>
                                                         <div class="row text-center">
-                                                            <div class="col-12"><b style="color: #3dc1eb" >Pay From Walet</b>
+                                                            <div class="col-12"><b style="color: #3dc1eb">Pay From
+                                                                    Walet</b>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -325,44 +333,49 @@
                                                     <div class="vl col-1"></div>
 
                                                     <div class="col-3">
-                                                      <div class="row col-8">
-                                                          {{-- <button  type="button" class="btn btn-primary">Pay from Walet</button> --}}
-                                                          <form id="paypal_form" method="POST" action="{{ route('charge') }}">
-                                                            <input type="hidden"  name="price" class="append_price">
-                                                            <input hidden value="{{$wheel_details->id}}"  name="wheel_id" >
-                                                        
-                                                            {{ csrf_field() }}
-                                                            {{-- <input type="submit" class="btn btn-primary" name="submit" value="Paypal"> --}}
-                                                          <a class="paypal_form" type="submit">
-                                                          <img alt="Qries" src="{{URL::asset('/assets/img/paypal.jpg')}}"
-                                                          width="100" height="100">
-                                                        </a>
-                                                      </form>
+                                                        <div class="row col-8">
+                                                            {{-- <button  type="button" class="btn btn-primary">Pay from Walet</button> --}}
+                                                            <form id="paypal_form" method="POST"
+                                                                action="{{ route('charge') }}">
+                                                                <input type="hidden" name="price"
+                                                                    class="append_price">
+                                                                <input hidden value="{{ $wheel_details->id }}"
+                                                                    name="wheel_id">
 
-                                                      </div>
-                                                      <div class="row">
-                                                          <div class="col text-center">
-                                                            <b style="color: #3dc1eb" >Paypal</b>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                                  <div class="vl col-1 ml-4"></div>
-                                                  <div class="col-3">
-                                                    <div class="row col-8">
-                                                        {{-- <button  type="button" class="btn btn-primary">Pay from Walet</button> --}}
-                                                        <a class="cardpay">
-                                                          <img alt="Qries" src="{{URL::asset('/assets/img/card.jpg')}}"
-                                                          width="100" height="100">
-                                                        </a>
+                                                                {{ csrf_field() }}
+                                                                {{-- <input type="submit" class="btn btn-primary" name="submit" value="Paypal"> --}}
+                                                                <a class="paypal_form" type="submit">
+                                                                    <img alt="Qries"
+                                                                        src="{{ URL::asset('/assets/img/paypal.jpg') }}"
+                                                                        width="100" height="100">
+                                                                </a>
+                                                            </form>
 
-                                                    </div>
-                                                    <div class="row text-center">
-                                                        <div style="color: #3dc1eb" class="col"><b >Card Pay</b>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col text-center">
+                                                                <b style="color: #3dc1eb">Paypal</b>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                    <div class="vl col-1 ml-4"></div>
+                                                    <div class="col-3">
+                                                        <div class="row col-8">
+                                                            {{-- <button  type="button" class="btn btn-primary">Pay from Walet</button> --}}
+                                                            <a class="cardpay">
+                                                                <img alt="Qries"
+                                                                    src="{{ URL::asset('/assets/img/card.jpg') }}"
+                                                                    width="100" height="100">
+                                                            </a>
 
-                                                    
+                                                        </div>
+                                                        <div class="row text-center">
+                                                            <div style="color: #3dc1eb" class="col"><b>Card Pay</b>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
                                                 </div>
                                             </div>
                                         </div>
@@ -370,8 +383,9 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary close_btn" data-dismiss="modal">Close</button>
-  
+                                    <button type="button" class="btn btn-secondary close_btn"
+                                        data-dismiss="modal">Close</button>
+
                                 </div>
                             </div>
 
