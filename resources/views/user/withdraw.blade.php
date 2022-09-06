@@ -57,7 +57,7 @@
                     <div class="row">
                         <div class="d-flex mb-4" style="justify-content: space-between;">
                             <h3>Withdraw Requests</h3>
-                            <button class="btn btn-primary withdraw_btn site_colr">New Withdraw</button>
+                            <button class="btn btn-primary withdraw_btn site_colr">Withdraw Request</button>
                         </div>
                         <table class="table">
                             <thead style="background-color: #3DC1EB; color:white;">
@@ -113,7 +113,7 @@
                                 @csrf
 
                                 <div class="form-group" style="text-align: left;">
-                                  <label for="">Pay Amount From Wallet</label>
+                                  <label for="">Withdraw From Wallet</label>
 
                                   <select name="wallet_id" class="form-control" style="border-radius: 30px;">
                                     <option selected style="border-radius: 30px;" value="">--My Wallets--</option>
