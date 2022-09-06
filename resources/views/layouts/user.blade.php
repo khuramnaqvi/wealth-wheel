@@ -461,7 +461,10 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
 
 <script>
-  if($(location).attr('href') == 'http://127.0.0.1:8000/register/success')
+  
+  // if($(location).attr('href') == 'http://127.0.0.1:8000/register/success')
+    
+  if($(location).attr('href') == 'http://wealthwheel.herokuapp.com/public/register/success')
     {
       Swal.fire(
         'Welcome To Wealth Wheel!',
