@@ -208,12 +208,12 @@
 
                             </div>
                             <div class="ww-pro-price my-4">
-                                <h4>Cog Price test :US${{ $wheel_details->cog_price }} </h4>
+                                <h4>Cog Price :US${{ $wheel_details->cog_price }} </h4>
                                 <div class="ww-pro-price my-4">
                                     @if ($wheel_details->user_id == auth()->user()->id)
 
                                         <!-- @if (isset($user_balance)) -->
-                                            <h6>Wallet Balance : <b>testUS${{ $wallet_balance }}</b></h6>
+                                            <h6>Wallet Balance : <b>US${{ $wallet_balance }}</b></h6>
                                         <!-- @endif -->
                                     @endif
                                 </div>
@@ -226,7 +226,6 @@
                                         <button type="button" id="add" class="add ww-plus-minus">+</button>
                                     </div>
                                 </div> -->
-                                <button>test button</button>
 
                             <div class="ww-pro-action my-2">
 
