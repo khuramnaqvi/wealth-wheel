@@ -85,12 +85,14 @@ class UserController extends Controller
         $wheel_id = $_GET['id'];
         $wheel_details = WealthWheel::where('id', $wheel_id)->first();
 
-        $user_wallet = wallet::where('wheel_id', $wheel_id)->get();
-        $wallet_balance = 0;
-        for($i = 0;$i<count($user_wallet);$i++)
-        {
-            $wallet_balance = $wallet_balance + $user_wallet[$i]->amount;
-        }
+        // $user_wallet = wallet::where('wheel_id', $wheel_id)->get();
+        // $wallet_balance = 0;
+        // for($i = 0;$i<count($user_wallet);$i++)
+        // {
+        // }
+
+        $wallet_balance = $wheel_details->user_wallet->amount;
+        // dd($wallet_balance);
 
         return view('user.wheels_details', compact('wheel_details', 'user_wheels', 'user_balance', 'wallet_balance'));
     }
@@ -291,12 +293,10 @@ class UserController extends Controller
 
     public function wihdraw_submit(Request $request)
     {
-        
-        $wallet = wallet::find($request->wallet_id);
-        if($request->wallet_id > 0 ){
-            if($wallet->amount >= $request->withdraw){
-                $wallet->amount = $wallet->amount - $request->withdraw;
-                $wallet->update();
+
+                $us = DB::table('user_wallets')
+                ->where('id', $request->wellet_id)
+                ->decrement('amount', $request->withdraw);
 
                 $withdraw = new Withdraw;
                 $withdraw->user_id = auth()->user()->id;
@@ -304,35 +304,6 @@ class UserController extends Controller
                 $withdraw->save();
 
                 return redirect()->back()->with('success', 'Amount Withdraw Successfully!');
-
-            }
-            else{
-                return redirect()->back()->with('error', 'Sorry you do not have Enough Balance in Wallet');
-            }
-        }
-        else{
-
-            $id = Auth::user()->id;
-            $user = User::find($id);
-    
-            if($request->withdraw <= $user->balance ){
-                $user->balance = $user->balance - $request->withdraw;
-                $user->update();
-    
-            $withdraw = new Withdraw;
-            $withdraw->user_id = auth()->user()->id;
-            $withdraw->withdraw = $request->withdraw;
-            $withdraw->save();
-    
-            return redirect()->back()->with('success', 'Amount Withdraw Successfully!');
-            }
-            else{
-            return redirect()->back()->with('error', 'Sorry you do not have Enough Balance');
-            }
-
-        }
-     
-     
 
 
 

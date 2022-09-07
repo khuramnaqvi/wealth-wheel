@@ -116,13 +116,14 @@
                                 @csrf
                                 <div class="form-group" style="text-align: left;">
                                   <label for="">Withdraw From Wallet</label>
-                                  <select id="dropDownId" required name="wallet_id" class="form-control" style="border-radius: 30px;">
+                                  <select id="dropDownId" required name="wallet_amount" class="form-control" style="border-radius: 30px;">
                                     <option  style="border-radius: 30px;" value="">--My Wallet--</option>
                                       @foreach ($user_wallets as $wallet)
-                                          <option  value="{{$wallet->amount}}">{{$wallet->wallet_name}} {{$wallet->amount}}</option>
+                                          <option att="{{$wallet->id}}"  value="{{$wallet->amount}}">{{$wallet->wallet_name}}</option>
                                       @endforeach
                                   </select>
                               </div>
+                              <input type="hidden" name="wellet_id" class="wellet_amount">
 
                                 <div class="form-group" style="text-align: left;">
                                     <label for="">Enter Amount:</label>
@@ -158,7 +159,10 @@
             // alert('aaa');
             $(document).on("click", "#dropDownId", function() {
             var value = $('select#dropDownId option:selected').val();
-            console.log(value);
+            var att = $('select#dropDownId option:selected').attr('att');
+            // console.log(value);
+            $('.wellet_amount').val(att);
+            $('.checkamount2').attr('max', value);
 
 
             });

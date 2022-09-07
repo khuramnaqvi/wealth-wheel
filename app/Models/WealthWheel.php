@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\wallet;
+use App\Models\UserWallet;
 
 class WealthWheel extends Model
 {
@@ -20,6 +21,10 @@ class WealthWheel extends Model
     public function wallet()
     {
         return $this->hasMany(wallet::class,'wheel_id', 'id');
+    }
+    public function user_wallet()
+    {
+        return $this->belongsTo(UserWallet::class, 'id' ,'wheel_id');
     }
 
 }
