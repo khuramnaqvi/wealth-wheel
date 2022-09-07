@@ -119,7 +119,6 @@ Route::get('/wheels_details', [App\Http\Controllers\UserController::class, 'whee
 Route::get('/my_wheels', [App\Http\Controllers\UserController::class, 'my_wheels']);
 
 // Routes for Stripe
-Route::get('stripe/{amount}', [App\Http\Controllers\StripePaymentController::class, 'stripe'])->name('stripe');
 Route::post('stripe_post', [App\Http\Controllers\StripePaymentController::class, 'stripePost'])->name('stripe_post');
 
 

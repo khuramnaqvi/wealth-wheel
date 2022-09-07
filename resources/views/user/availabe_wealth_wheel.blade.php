@@ -49,7 +49,7 @@
       <div class="container">
         <div class="row content" data-aos="fade-up">
           <div class="col-lg-9">
-            <div class="row">
+            <div id="product_div" class="row">
 
             @foreach($wheels as $wheel)
               <div class="ww-avl-card col-md-4 my-2">
@@ -78,15 +78,10 @@
                 </div>
               </div>
               @endforeach
-             
-            
-             
-             
-             
-              
-              
             </div>
+
           </div>
+          
           <div class="col-lg-3">
             <div class="ww-pro-filter-main">
               <h4 class="fw-bold mb-4">Apply Filter</h4>
@@ -95,8 +90,9 @@
                 <div>
                   <form id="filter_form" class="" action="{{route('wheels_filter_form')}}" method="POST">
                     @csrf
-                  <input type="Number" id="search"  name="wheel_number"  class="w-100 ps-2" placeholder="Enter wheel number">
-                  {{-- <button  type="submit" class="btn btn-primary mt-2 confirmation-message first">Search</button> --}}
+                    <input id="txtSearch" class=" ps-2" type="text" placeholder="Enter wheel number" name="wheel_number">
+                    <button id="Searchbtn" class="btn btn-info site_colr" type="button"><i style="color: white" class="fa fa-search "></i></button>
+                  
                   </form>
 
                 </div>
@@ -109,15 +105,55 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+      });
+      </script>
 
     <script>
-        $(document).ready(function() {
-          
-            $(document).on('keyup', '#search', function() {
-                $("#filter_form").submit();
-            });
 
-        });
+        // $(document).ready(function() {
+          
+        //     $(document).on('click', '#search', function() {
+        //       $("#product_div").empty();
+        //         // $("#filter_form").submit();
+
+        //     });
+
+            //for filter
+
+ $(document).ready(function(){
+
+$('#Searchbtn').on('click', function(){
+// $("#product_div").empty();
+
+   var text = $('#txtSearch').val();
+
+    $.ajax({
+        type:"POST",
+        url: '{{url('wheels_filter_form')}}',
+        data: {text: $('#txtSearch').val()},
+        success: function(response) {
+          console.log(response);
+             response = JSON.parse(response);
+             console.log(response.cog_price);
+             for (var patient of response) {
+                 console.log(patient);
+             }
+         }
+
+
+
+    });
+
+});
+
+});
+
+        // });
     </script>
 
   @endsection

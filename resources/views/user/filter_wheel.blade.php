@@ -54,7 +54,7 @@
         <div class="container">
             <div class="row content" data-aos="fade-up">
                 <div class="col-lg-9">
-                    <div class="row">
+                    {{-- <div class="row">
 
                         @foreach ($wheels as $wheel)
                             <div class="ww-avl-card col-md-4 my-2">
@@ -85,9 +85,38 @@
                                 </div>
                             </div>
                         @endforeach
+                    </div> --}}
 
 
-                    </div>
+                    <div class="row">
+
+                        @foreach($wheels as $wheel)
+                          <div class="ww-avl-card col-md-4 my-2">
+                            <div class="card">
+                              <div  class="ww-card-tag">
+                                <span>Available Now</span>
+                              </div>
+                        
+                              {{-- <img style="height: 250px; width:310px" src="{{ asset('images/' .$wheel->image) }}" alt="no img" class="img-fluid"> --}}
+                            
+                              <img style="height: 250px; width:310px"  src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
+                            
+                              <div class="card-body">
+                                <h5 class="card-title">WW0{{ $wheel->wheel_number }} - 0{{$wheel->wallet->count()}}</h5>
+            
+                                <p class="card-text">Cog Number : {{$wheel->wallet->count()}}</p>
+                                <div class="pro-price">
+                                  <h4>Cog Price : <span>US${{$wheel->cog_price}}</span></h4>
+                                </div> 
+                                <a href="{{url('wheels_details?id=' .$wheel->id) }}" class="pro-dtl-btn">Join Wealth Wheel</a>
+                              </div>
+                            </div>
+                          </div>
+                          @endforeach
+                        </div>
+
+
+
                 </div>
                 <div class="col-lg-3">
                     <div class="ww-pro-filter-main">
@@ -95,13 +124,11 @@
                         <div class="ww-pro-filter-wrp mb-5">
                             <h6 class="pb-1">Find Wealth Wheel Number</h6>
                             <div>
-                                <form id="filter_form" action="{{ route('wheels_filter_form') }}" method="POST">
+                                <form id="filter_form" class="" action="{{route('wheels_filter_form')}}" method="POST">
                                     @csrf
-                                    <input type="Number" id="search" name="wheel_number" class="w-100 ps-2"
-                                        placeholder="Enter wheel number">
-                                    {{-- <button type="submit" class="btn btn-primary confirmation-message first mt-2">Search</button> --}}
-                                </form>
-
+                                    <input class=" ps-2" type="text" placeholder="Enter wheel number" name="wheel_number">
+                                    <button id="search" class="btn btn-info site_colr" type="submit"><i style="color: white" class="fa fa-search "></i></button>
+                                  </form>
                             </div>
                         </div>
                     </div>
@@ -116,7 +143,7 @@
 
     <script>
         $(document).ready(function() {
-            $(document).on('keyup', '#search', function() {
+            $(document).on('click', '#search', function() {
                 $("#filter_form").submit();
             });
 

@@ -417,7 +417,7 @@
 
                                             <input class="append_price" type="hidden" name="amount">
                                             <input hidden value="{{ $wheel_details->id }}" name="wheel_id">
-
+                                            <input hidden value="{{ $wheel_details->wheel_name }}" name="wheel_name">
 
                                             <div class='form-row row mt-2'>
                                                 <div class='col-xs-12 form-group required'>

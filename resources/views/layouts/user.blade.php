@@ -5,6 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
 
   <title>Wealth Wheel - Index</title>
   <meta content="" name="description">
@@ -111,8 +112,8 @@
          <a href="{{route('user_home')}}"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
       </div>
       <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="{{('/')}}">Home</a></li>
+        <ul id="myDIV">
+          <li><a class="nav-link scrollto  active" href="{{('/')}}">Home</a></li>
           <li><a class="nav-link scrollto" href="{{ route('how_it_works') }} ">How it Works</a></li>
           <li><a class="nav-link scrollto" href="{{ route('contact') }} ">Contact Us</a></li>
           <li><a class="nav-link scrollto" href="{{ route('availabe_wealth_wheel') }}">Available Wealth Wheels</a></li>
@@ -227,7 +228,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                         <div class="col-12 d-flex" style="justify-content: space-between;">
                                             <button class="col-5 btn btn-primary site_colr" type="submit">Pay Now
                                                 </button>
-                                            <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                                            <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
                                         </div>
                                     </div>
 
@@ -401,7 +402,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                             <div class="col-12 d-flex" style="justify-content: space-between;">
                                                 <button class="col-5 btn btn-primary site_colr" type="submit">Pay Now
                                                     </button>
-                                                <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                                                <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
                                             </div>
                                         </div>
 
@@ -419,7 +420,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                     <div class="row mt-4">
                                       <div class="col-12 d-flex" style="justify-content: space-between;">
                                         <input type="submit" name="submit" class=" col-5 btn btn-primary site_colr" value="Pay Now">
-                                        <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                                        <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
                                       </div>
                                     </div>
                                   </div>
@@ -460,10 +461,17 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
 
+  <script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    </script>
 <script>
   
   // if($(location).attr('href') == 'http://127.0.0.1:8000/register/success')
-
+    
   if($(location).attr('href') == 'http://wealthwheel.herokuapp.com/public/register/success')
     {
       Swal.fire(
@@ -498,11 +506,9 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
     toastr.error('{{ Session::get('error') }}');
 @elseif(Session::has('cogpurchase'))
 Swal.fire(
-     'Congratulations!\n{{ Session::get("cogpurchase") }}',
+     'Congratulations!',
      'You Have Successfully Purchased Your Wealth Wheel Cog!',
      'success'
-
-     
    )
 @endif
 
@@ -514,6 +520,17 @@ $(document).ready(function() {
       $('#paymentmodel').modal('show');
 
   });
+
+ 
+    $('.nav li a').click(function(e) {
+
+        $('.nav li a.active').removeClass('active');
+
+        var $parent = $(this).parent();
+        $parent.addClass('active');
+        e.preventDefault();
+    });
+
 
 
 
@@ -653,6 +670,7 @@ $(function() {
             $form.get(0).submit();
         }
     }
+    
    
 });
 </script>
