@@ -159,7 +159,7 @@ $('.product_div').empty().append(
                     <div class="pro-price">
                       <h4>Cog Price : `+response[0]['cog_price']+`<span>US$</span></h4>
                     </div>
-                    <a href="{{url('wheels_details?id='.`+wheel_id+`) }}" class="pro-dtl-btn">Join Wealth Wheel</a>
+                    <a href="{{url('wheels_details?id=`+wheel_id+`') }}" class="pro-dtl-btn">Join Wealth Wheel</a>
                   </div>
                 </div>
               </div>`);

@@ -232,6 +232,8 @@
                                 <!-- @if ($wheel_details->user_id == auth()->user()->id) -->
                                     <button data-toggle="modal" data-target="#userModal" type="button"
                                         class="btn py-3 text-white ww-pro-action-btn pasy">Buy Cog</button>
+                                        <button>test button</button>
+
                                 <!-- @else
                                     <button data-toggle="modal" data-target="#userModal" type="button"
                                         class="btn py-3 text-white ww-pro-action-btn pasy">Buy Cog</button>
