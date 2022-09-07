@@ -77,7 +77,7 @@ class PaymentController extends Controller
     public function success(Request $request)
     {
         $wheel_id =   Session::get('wheel_id');
-    //    dd($wheel_id);
+        //    dd($wheel_id);
       
         
         // Once the transaction has been approved, we need to complete it.
@@ -111,6 +111,10 @@ class PaymentController extends Controller
                 $user_payment->amount = $user_percent;
                 $user_payment->save();
 
+                DB::table('user_wallets')
+                ->where('wheel_id', $wheel_id)
+                ->increment('amount', $user_percent);
+
                 $purchased_whells = wallet::where('wheel_id', $wheel_id)->get();
                 $total_purchase = $purchased_whells->count();
                 $wheel_amount = WealthWheel::find($wheel_id);
@@ -119,7 +123,6 @@ class PaymentController extends Controller
                 {
                     if(($total_purchase+1)%6 != 0)
                     {
-
                         $cog_110percent = $wheel_amount->cog_price*110/100;
                         $cog_notgiven = wallet::where('wheel_id', $wheel_id)->where('cog_percnt', 'not given')->orderBy('id', 'ASC')->first();
                         $cog_notgiven->cog_percnt = 'given';
@@ -128,9 +131,7 @@ class PaymentController extends Controller
                         DB::table('users')
                         ->where('id', $user_id)
                         ->increment('balance', $cog_110percent);
-
                     }
-                    
 
                 }
 

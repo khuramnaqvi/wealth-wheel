@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\wallet;
 use App\Models\Adminwallet;
 use App\Models\WealthWheel;
+use App\Models\UserWallet;
 // use App\Models\wallet;
 use App\Models\Withdraw;
 use Illuminate\Http\Request;
@@ -199,6 +200,10 @@ class UserController extends Controller
             $user_payment->amount = $user_percent;
             $user_payment->save();
 
+            DB::table('user_wallets')
+                ->where('wheel_id', $wheel_id)
+                ->increment('amount', $user_percent);
+
             // 
             $purchased_whells = wallet::where('wheel_id', $wheel_id)->get();
             $total_purchase = $purchased_whells->count();
@@ -267,6 +272,11 @@ class UserController extends Controller
     {
 
         $wheels = WealthWheel::where('wheel_number', $request->text)->get();
+
+        // $cogss = $wheels[0]->wallet->count();
+        // $cogss = wallet::where('wheel_id', $wheels[0])->count();
+        // dd($cogss);
+        
         return response()->json($wheels);
         // return view ('user.filter_wheel',compact('wheels'));
 
@@ -274,9 +284,9 @@ class UserController extends Controller
     
         public function withdraw()
     {
-        $wallets = wallet::where('user_id', Auth::user()->id)->get();
+        $user_wallets = UserWallet::where('user_id', Auth::user()->id)->get();
         $withdraws = Withdraw::where('user_id', Auth::user()->id)->get();
-        return view ('user.withdraw',compact('withdraws','wallets'));
+        return view ('user.withdraw',compact('withdraws','user_wallets'));
     }
 
     public function wihdraw_submit(Request $request)

@@ -63,6 +63,10 @@ class StripePaymentController extends Controller
             $user_payment->save(); 
 
             // 
+            DB::table('user_wallets')
+                ->where('wheel_id', $wheel_id)
+                ->increment('amount', $user_percent);
+                
             $purchased_whells = wallet::where('wheel_id', $wheel_id)->get();
                 $total_purchase = $purchased_whells->count();
                 $wheel_amount = WealthWheel::find($wheel_id);

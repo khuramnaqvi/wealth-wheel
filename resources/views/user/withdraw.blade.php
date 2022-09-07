@@ -116,17 +116,17 @@
                                 @csrf
                                 <div class="form-group" style="text-align: left;">
                                   <label for="">Withdraw From Wallet</label>
-                                  <select name="wallet_id" class="form-control" style="border-radius: 30px;">
-                                    <option selected style="border-radius: 30px;" value="">--My Wallet--</option>
-                                      @foreach ($wallets as $wallet)
-                                          <option  value="{{$wallet->id}}">{{$wallet->amount}}</option>
+                                  <select id="dropDownId" required name="wallet_id" class="form-control" style="border-radius: 30px;">
+                                    <option  style="border-radius: 30px;" value="">--My Wallet--</option>
+                                      @foreach ($user_wallets as $wallet)
+                                          <option  value="{{$wallet->amount}}">{{$wallet->wallet_name}} {{$wallet->amount}}</option>
                                       @endforeach
                                   </select>
                               </div>
 
                                 <div class="form-group" style="text-align: left;">
                                     <label for="">Enter Amount:</label>
-                                    <input required min="1" max="{{ auth()->user()->balance }}" type="number"
+                                    <input required min="1" max="" type="number"
                                         name="withdraw" placeholder="Enter Amount To Withdraw"
                                         class=" form-control checkamount2"
                                         onkeyup="this.value=this.value.replace(/[^0-9]/g)" style="border-radius: 30px;">
@@ -156,6 +156,12 @@
     <script>
         $(document).ready(function() {
             // alert('aaa');
+            $(document).on("click", "#dropDownId", function() {
+            var value = $('select#dropDownId option:selected').val();
+            console.log(value);
+
+
+            });
 
             $(document).on("click", ".withdraw_btn", function() {
                 $('#withdrawmodel').modal('show');

@@ -61,10 +61,10 @@
                   
                   <img style="height: 250px; width:310px"  src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
                   <div class="card-body">
-                    <h5 class="card-title">WW0{{ $wheel->wheel_number }} - 0{{$wheel->wallet->count()}}</h5>
+                    <h5 class="card-title">WW0{{ $wheel->wheel_number }}</h5>
 
 
-                    <p class="card-text">Cog Number : {{$wheel->wallet->count()}}</p>
+                    <p class="card-text">Last Cog Number: {{$wheel->wallet->count()}}</p>
                     <div class="pro-price">
                       <h4>Cog Price : <span>US${{$wheel->cog_price}}</span></h4>
                     </div> 
@@ -93,9 +93,9 @@
                   <img style="height: 250px; width:310px"  src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
                   
                   <div class="card-body">
-                    <h5 class="card-title">WW0{{ $wheel->purchase_wheel->wheel_number }} - 0{{$wheel->purchase_wheel->wallet->count()}}</h5>
+                    <h5 class="card-title">WW0{{ $wheel->purchase_wheel->wheel_number }}</h5>
 
-                    <p class="card-text">Cog Number : {{$wheel->purchase_wheel->wallet->count()}}</p>
+                    <p class="card-text">Last Cog Number: {{$wheel->purchase_wheel->wallet->count()}}</p>
                     <div class="pro-price">
                       <h4>Cog Price : <span>US${{$wheel->purchase_wheel->cog_price}}</span></h4>
                     </div> 

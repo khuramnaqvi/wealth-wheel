@@ -67,7 +67,7 @@
                   <div class="card-body">
                     <h5 class="card-title">WW0{{ $wheel->wheel_number }}</h5>
 
-                    <p class="card-text">Cog Number : {{$wheel->wallet->count()}}</p>
+                    <p class="card-text">Last Cog Number: {{$wheel->wallet->count()}}</p>
                     <div class="pro-price">
                       <h4>Cog Price : <span>US${{$wheel->cog_price}}</span></h4>
                     </div> 
@@ -141,7 +141,8 @@ $('#Searchbtn').on('click', function(){
         success: function(response) {
           console.log(response);
           var wheel_id = response[0]['id'];
-          console.log(wheel_id);
+          // comsole.log(response.wheels['id']);
+          // console.log(wheel_id);
           
          
 $('.product_div').empty().append(
@@ -155,9 +156,9 @@ $('.product_div').empty().append(
                   <div class="card-body">
                     <h5 class="card-title">`+response[0]['wheel_name']+`</h5>
 
-                    <p class="card-text">Cog Number : `+response[0]['wheel_number']+`</p>
+                    <p class="card-text">Last Cog Number: `+response[0]['wheel_number']+`</p>
                     <div class="pro-price">
-                      <h4>Cog Price : `+response[0]['cog_price']+`<span>US$</span></h4>
+                      <h4>Cog Price : <span>US$`+response[0]['cog_price']+`</span></h4>
                     </div>
                     <a href="{{url('wheels_details?id=`+wheel_id+`') }}" class="pro-dtl-btn">Join Wealth Wheel</a>
                   </div>
