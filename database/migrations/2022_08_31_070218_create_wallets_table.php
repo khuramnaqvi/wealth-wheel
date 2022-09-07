@@ -17,10 +17,10 @@ class CreateWalletsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            
             $table->unsignedBigInteger('wheel_id');
             $table->foreign('wheel_id')->references('id')->on('wealth_wheels');
             $table->string('amount')->nullable();
+            $table->string('wheel_name')->nullable();
             $table->string('cog_percnt')->default('not given');
             $table->timestamps();
         });

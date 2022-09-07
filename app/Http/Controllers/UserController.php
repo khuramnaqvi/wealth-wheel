@@ -266,8 +266,10 @@ class UserController extends Controller
     public function wheels_filter_form(Request $request)
     {
 
-        $wheels = WealthWheel::where('wheel_number', $request->wheel_number)->get();
-        return view ('user.filter_wheel',compact('wheels'));
+        $wheels = WealthWheel::where('wheel_number', $request->text)->get();
+        dd($wheels); 
+        // return response()->json($wheels);
+        // return view ('user.filter_wheel',compact('wheels'));
 
     }
     
@@ -286,6 +288,12 @@ class UserController extends Controller
             if($wallet->amount >= $request->withdraw){
                 $wallet->amount = $wallet->amount - $request->withdraw;
                 $wallet->update();
+
+                $withdraw = new Withdraw;
+                $withdraw->user_id = auth()->user()->id;
+                $withdraw->withdraw = $request->withdraw;
+                $withdraw->save();
+
                 return redirect()->back()->with('success', 'Amount Withdraw Successfully!');
 
             }

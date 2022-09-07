@@ -63,8 +63,10 @@
                             <thead style="color:white" class="site_colr">
                                 <tr>
                                     <th scope="col">S. No.</th>
-                                    <th scope="col">User id</th>
+                                    <th scope="col">UserName</th>
                                     <th scope="col">Withdraw</th>
+                                    <th scope="col">Date</th>
+
 
                                 </tr>
                             </thead>
@@ -73,8 +75,10 @@
                                 @foreach ($withdraws as $withdraw)
                                     <tr>
                                         <td scope="row">{{ $count++ }}</td>
-                                        <td>{{ $withdraw->user_id }}</td>
+                                        <td>{{ auth()->user()->name }}</td>
                                         <td>{{ $withdraw->withdraw }}</td>
+                                        <td>{{ $withdraw->created_at }}</td>
+
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -113,7 +117,7 @@
                                 <div class="form-group" style="text-align: left;">
                                   <label for="">Withdraw From Wallet</label>
                                   <select name="wallet_id" class="form-control" style="border-radius: 30px;">
-                                    <option selected style="border-radius: 30px;" value="">--My Wallets--</option>
+                                    <option selected style="border-radius: 30px;" value="">--My Wallet--</option>
                                       @foreach ($wallets as $wallet)
                                           <option  value="{{$wallet->id}}">{{$wallet->amount}}</option>
                                       @endforeach
