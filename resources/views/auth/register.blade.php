@@ -54,7 +54,7 @@
 
             <div class="form-group">
               <label for="name">Username</label>
-              <input name="name"  type="text" class="form-control @error('name') is-invalid @enderror" id="name" aria-describedby="userName" placeholder="Enter name">
+              <input name="name"  type="text" class="form-control @error('name') is-invalid @enderror" id="name" aria-describedby="userName" placeholder="Enter Username">
               @error('name')
     <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>

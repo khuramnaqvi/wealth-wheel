@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class PurchaseCogNotification extends Notification
+class WelcomeToWealthWheel extends Notification
 {
     use Queueable;
 
@@ -41,9 +41,9 @@ class PurchaseCogNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('Wheel Puchased Successfully.')
-                    ->action('Visit site', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->line('Welcome to Wealth Wheel, the continuous global income generator platform.')
+                    ->action('Wealth Wheel', url('/'))
+                    ->line('We look forward to you generating profit on all of your wheel entries.');
     }
 
     /**

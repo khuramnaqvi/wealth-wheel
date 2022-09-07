@@ -119,7 +119,7 @@
           <li><a class="nav-link scrollto" href="{{ route('availabe_wealth_wheel') }}">Available Wealth Wheels</a></li>
 
           @auth
-          <li><a class="nav-link scrollto" href="{{ url('my_wheels') }}">My Wheels</a></li>
+          <li><a class="nav-link scrollto" href="{{ url('my_wheels') }}">My Account</a></li>
           <li><a class="nav-link scrollto">${{auth()->user()->balance}}</a></li>
           {{-- <li><a class="nav-link scrollto">${{auth()->user()->balance}}</a></li> --}}
 
@@ -471,7 +471,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 <script>
   
   // if($(location).attr('href') == 'http://127.0.0.1:8000/register/success')
-    
+
   if($(location).attr('href') == 'http://wealthwheel.herokuapp.com/public/register/success')
     {
       Swal.fire(
@@ -506,13 +506,11 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
     toastr.error('{{ Session::get('error') }}');
 @elseif(Session::has('cogpurchase'))
 Swal.fire(
-     'Congratulations!',
-     'You Have Successfully Purchased Your Wealth Wheel Cog!',
+     'Congratulations!\n{{ Session::get("cogpurchase") }}',
+     'You have successfully purchased your wealth wheel cog.',
      'success'
    )
 @endif
-
-
 
 $(document).ready(function() {
 

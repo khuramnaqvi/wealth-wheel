@@ -42,7 +42,7 @@ class WelcomeEmailNotification extends Notification
     {
         return (new MailMessage)
                     ->line('Wellcome To The Application.')
-                    ->action('Visite Site', url('/'))
+                    ->action('Visit Site', url('/'))
                     ->line('Thank you for using our application!');
     }
 

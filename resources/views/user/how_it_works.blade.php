@@ -45,7 +45,7 @@
           <div class="d-flex ww-banner-btn">
           @guest
           @if (Route::has('login')) 
-          <a href="{{ route ('register') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
+          <a href="{{ route ('register') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Sign Up</a>
           @endif
           @if (Route::has('login'))
           <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>

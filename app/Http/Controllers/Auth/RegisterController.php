@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Notifications\WelcomeEmailNotification;
+use App\Notifications\WelcomeToWealthWheel;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -90,7 +90,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        $user->notify(new WelcomeEmailNotification());
+        $user->notify(new WelcomeToWealthWheel());
 
         return $user;
 
