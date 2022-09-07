@@ -140,7 +140,29 @@ $('#Searchbtn').on('click', function(){
 
         success: function(response) {
           console.log(response);
-          // $('.product_div').empty().append(`<div>abccc</div>`);
+          var wheel_id = response[0]['id'];
+          console.log(wheel_id);
+          
+         
+$('.product_div').empty().append(
+  `<div class="ww-avl-card col-md-4 my-2">
+                <div class="card">
+                  <div  class="ww-card-tag">
+                    <span>Available Now</span>
+                  </div>
+                  <img style="height: 250px; width:310px"  src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
+                
+                  <div class="card-body">
+                    <h5 class="card-title">`+response[0]['wheel_name']+`</h5>
+
+                    <p class="card-text">Cog Number : `+response[0]['wheel_number']+`</p>
+                    <div class="pro-price">
+                      <h4>Cog Price : `+response[0]['cog_price']+`<span>US$</span></h4>
+                    </div>
+                    <a href="{{url('wheels_details?id='.`+wheel_id+`) }}" class="pro-dtl-btn">Join Wealth Wheel</a>
+                  </div>
+                </div>
+              </div>`);
 
             //  response = JSON.parse(response);
             //  console.log(response.cog_price);
