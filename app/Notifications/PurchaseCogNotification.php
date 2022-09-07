@@ -42,7 +42,7 @@ class PurchaseCogNotification extends Notification
     {
         return (new MailMessage)
                     ->line('Wheel Puchased Successfully.')
-                    ->action('Visit site', url('/'))
+                    ->action('wealth wheel', url('/'))
                     ->line('Thank you for using our application!');
     }
 
