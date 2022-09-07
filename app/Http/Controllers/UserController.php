@@ -261,8 +261,8 @@ class UserController extends Controller
     public function wheels_filter_form(Request $request)
     {
 
-        $wheels = WealthWheel::where('wheel_number', $request->wheel_number)->get();
-        dd($wheels);
+        $wheels = WealthWheel::where('wheel_number', $request->text)->get();
+        dd($wheels); 
         // return response()->json($wheels);
         // return view ('user.filter_wheel',compact('wheels'));
 

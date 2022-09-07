@@ -49,7 +49,7 @@
       <div class="container">
         <div class="row content" data-aos="fade-up">
           <div class="col-lg-9">
-            <div id="product_div" class="row">
+            <div id="product_div" class="row product_div">
 
             @foreach($wheels as $wheel)
               <div class="ww-avl-card col-md-4 my-2">
@@ -88,12 +88,12 @@
               <div class="ww-pro-filter-wrp mb-5">
                 <h6 class="pb-1">Find Wealth Wheel Number</h6>
                 <div>
-                  <form id="filter_form" class="" action="{{route('wheels_filter_form')}}" method="POST">
-                    @csrf
+                  {{-- <form id="filter_form" class="" action="{{route('wheels_filter_form')}}" method="POST"> --}}
+                    {{-- @csrf --}}
                     <input id="txtSearch" class=" ps-2" type="text" placeholder="Enter wheel number" name="wheel_number">
                     <button id="Searchbtn" class="btn btn-info site_colr" type="button"><i style="color: white" class="fa fa-search "></i></button>
                   
-                  </form>
+                  {{-- </form> --}}
 
                 </div>
               </div>
@@ -136,13 +136,17 @@ $('#Searchbtn').on('click', function(){
         type:"POST",
         url: '{{url('wheels_filter_form')}}',
         data: {text: $('#txtSearch').val()},
+       
+
         success: function(response) {
           console.log(response);
-             response = JSON.parse(response);
-             console.log(response.cog_price);
-             for (var patient of response) {
-                 console.log(patient);
-             }
+          // $('.product_div').empty().append(`<div>abccc</div>`);
+
+            //  response = JSON.parse(response);
+            //  console.log(response.cog_price);
+            //  for (var patient of response) {
+            //      console.log(patient);
+            //  }
          }
 
 
