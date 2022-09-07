@@ -218,40 +218,36 @@
                                     @endif
                                 </div>
                             </div>
-                            <!-- <div class="ww-pro-quantity my-4">
-                          <div id="ww-quantity">
-                              <span>Quantity</span>
-                              <button type="button" id="sub" class="sub ww-plus-minus">-</button>
-                              <input type="number" id="1" value="1" min="1" max="100" class="ww-quantity-input" />
-                              <button type="button" id="add" class="add ww-plus-minus">+</button>
-                          </div>
-                      </div> -->
+                                        <!-- <div class="ww-pro-quantity my-4">
+                                    <div id="ww-quantity">
+                                        <span>Quantity</span>
+                                        <button type="button" id="sub" class="sub ww-plus-minus">-</button>
+                                        <input type="number" id="1" value="1" min="1" max="100" class="ww-quantity-input" />
+                                        <button type="button" id="add" class="add ww-plus-minus">+</button>
+                                    </div>
+                                </div> -->
+                                <button>test button</button>
 
                             <div class="ww-pro-action my-2">
 
-                                <!-- @if ($wheel_details->user_id == auth()->user()->id) -->
                                     <button data-toggle="modal" data-target="#userModal" type="button"
                                         class="btn py-3 text-white ww-pro-action-btn pasy">Buy Cog</button>
-                                        <button>test button</button>
 
 
-                                <!-- @else
-                                    <button data-toggle="modal" data-target="#userModal" type="button"
-                                        class="btn py-3 text-white ww-pro-action-btn pasy">Buy Cog</button>
-                                @endif -->
+                                
 
 
 
                                 {{-- <form method="POST" action="{{ route('charge') }}">
-                        <input type="hidden" value="{{$wheel_details->cog_price}}" name="price">
-                        <input type="hidden" value="{{$wheel_details->wheel_number}}" name="wheel_number">
-                        <input type="hidden" value="{{$wheel_details->wheel_name}}" name="name">
-                        <input type="hidden" value="{{$wheel_details->id}}" name="wheel_id">
+                                    <input type="hidden" value="{{$wheel_details->cog_price}}" name="price">
+                                    <input type="hidden" value="{{$wheel_details->wheel_number}}" name="wheel_number">
+                                    <input type="hidden" value="{{$wheel_details->wheel_name}}" name="name">
+                                    <input type="hidden" value="{{$wheel_details->id}}" name="wheel_id">
 
-                
-                {{ csrf_field() }}
-                <input type="submit" class="btn py-3 text-white ww-pro-action-btn" name="submit" value="Pay Now">
-                </form> --}}
+                                
+                                {{ csrf_field() }}
+                                <input type="submit" class="btn py-3 text-white ww-pro-action-btn" name="submit" value="Pay Now">
+                                </form> --}}
                                 {{-- <a style="background-color: blue" href="{{route('stripe')}}" class="btn py-3 text-white ww-pro-action-btn">Card pay</a> --}}
                             </div>
                         </div>
