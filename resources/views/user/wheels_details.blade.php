@@ -203,17 +203,18 @@
                         <div class="ww-pro-description">
                             <div class="ww-pro-name">
                                 <p class="ww-pro-number">
-                                    <span>Wheel Number :{{ $wheel_details->wheel_number }}</span>
+                                    <span>Wheel Number :WW0{{ $wheel_details->wheel_number }}</span>
                                 </p>
 
                             </div>
                             <div class="ww-pro-price my-4">
                                 <h4>Cog Price :US${{ $wheel_details->cog_price }} </h4>
                                 <div class="ww-pro-price my-4">
-                                    @if (count($user_wheels) > 0)
-                                        @if (isset($user_balance))
-                                            <h6>Wallet Balance : <b>US${{ $user_balance }}</b></h6>
-                                        @endif
+                                    @if ($wheel_details->user_id == auth()->user()->id)
+
+                                        <!-- @if (isset($user_balance)) -->
+                                            <h6>Wallet Balance : <b>US${{ $wallet_balance }}</b></h6>
+                                        <!-- @endif -->
                                     @endif
                                 </div>
                             </div>

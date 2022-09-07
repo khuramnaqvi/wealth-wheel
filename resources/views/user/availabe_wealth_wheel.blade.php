@@ -13,7 +13,7 @@
           <div class="d-flex ww-banner-btn">
           @guest
           @if (Route::has('login')) 
-          <a href="{{ route ('register') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Signup</a>
+          <a href="{{ route ('register') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Sign Up</a>
           @endif
           @if (Route::has('login'))
           <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
@@ -65,7 +65,7 @@
                   <img style="height: 250px; width:310px"  src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
                 
                   <div class="card-body">
-                    <h5 class="card-title">WW0{{ $wheel->wheel_number }} - 0{{$wheel->wallet->count()}}</h5>
+                    <h5 class="card-title">WW0{{ $wheel->wheel_number }}</h5>
 
                     <p class="card-text">Cog Number : {{$wheel->wallet->count()}}</p>
                     <div class="pro-price">
@@ -89,7 +89,7 @@
           </div>
           <div class="col-lg-3">
             <div class="ww-pro-filter-main">
-              <h4 class="fw-bold mb-4">Apply Filter</h4>
+              <h4 class="fw-bold mb-4">Search Wealth Wheel</h4>
               <div class="ww-pro-filter-wrp mb-5">
                 <h6 class="pb-1">Find Wealth Wheel Number</h6>
                 <div>

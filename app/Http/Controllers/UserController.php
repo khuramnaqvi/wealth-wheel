@@ -84,9 +84,14 @@ class UserController extends Controller
         $wheel_id = $_GET['id'];
         $wheel_details = WealthWheel::where('id', $wheel_id)->first();
 
-        
+        $user_wallet = wallet::where('wheel_id', $wheel_id)->get();
+        $wallet_balance = 0;
+        for($i = 0;$i<count($user_wallet);$i++)
+        {
+            $wallet_balance = $wallet_balance + $user_wallet[$i]->amount;
+        }
 
-        return view('user.wheels_details', compact('wheel_details', 'user_wheels', 'user_balance'));
+        return view('user.wheels_details', compact('wheel_details', 'user_wheels', 'user_balance', 'wallet_balance'));
     }
 
     public function signup()
