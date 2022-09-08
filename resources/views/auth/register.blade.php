@@ -62,8 +62,8 @@
 @enderror
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+              <label for="exampleInputEmail1">Email Address</label>
+              <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
               @error('email')
     <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>

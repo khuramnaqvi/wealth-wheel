@@ -100,9 +100,43 @@
 .dropdown:hover .dropdown-content {display: block;}
 
 </style>
+    
 
 <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+  <script>
+    // toastr.success('rr');
+
+    @if(Session::has('success'))
+        toastr.options = {
+          "closeButton": true,
+          "progressBar": true
+        }
+        toastr.success('{{ Session::get('success') }}');
+    @elseif(Session::has('error'))
+        toastr.options = {
+          "closeButton": true,
+          "progressBar": true
+        }
+        toastr.error('{{ Session::get('error') }}');
+    @elseif(Session::has('cogpurchase'))
+    Swal.fire(
+        'Congratulations!\n{{ Session::get("cogpurchase") }}',
+        'You have successfully purchased your wealth wheel cog.',
+        'success'
+        )
+      
+    @endif
+    
+  </script>
+
+    
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
     <div class="container d-flex align-items-center justify-content-between">
@@ -453,14 +487,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
-
+  
   <script type="text/javascript">
     $.ajaxSetup({
         headers: {
@@ -468,7 +495,10 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
         }
     });
     </script>
+    
+    
 <script>
+  
   
   // if($(location).attr('href') == 'http://127.0.0.1:8000/register/success')
 
@@ -492,25 +522,8 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
 
 
-@if(Session::has('success'))
-    toastr.options = {
-      "closeButton": true,
-      "progressBar": true
-    }
-    toastr.success('{{ Session::get('success') }}');
-@elseif(Session::has('error'))
-    toastr.options = {
-      "closeButton": true,
-      "progressBar": true
-    }
-    toastr.error('{{ Session::get('error') }}');
-@elseif(Session::has('cogpurchase'))
-Swal.fire(
-     'Congratulations!\n{{ Session::get("cogpurchase") }}',
-     'You have successfully purchased your wealth wheel cog.',
-     'success'
-   )
-@endif
+    
+
 
 $(document).ready(function() {
 
@@ -573,6 +586,7 @@ $(document).ready(function() {
 });
 
 </script>
+    
 <script>
    function initPayPalButton() {
     paypal.Buttons({
@@ -676,5 +690,6 @@ $(function() {
 
   @yield('js')
 </body>
+
 
 </html>
