@@ -40,6 +40,7 @@
                                                 <th>#</th>
                                                 <th scope="col">Username</th>
                                                 <th scope="col">Amount</th>
+                                                <th scope="col">Status</th>
                                                 <th>Created AT</th>
                                                 <th>Action</th>
                                             </tr>
@@ -49,28 +50,24 @@
                                             @foreach($withdraws as $withdraw)
                                                 <tr>
                                                     <td>{{$count++}}</td>
-                                                    <td>{{$withdraw->user_id}}</td>
+                                                    <td>{{$withdraw->userr->name}}</td>
                                                     <td>{{$withdraw->withdraw}}</td>
+                                                    <td>{{$withdraw->status}}</td>
                                                     <td>{{date($withdraw->created_at->format('Y-m-d'))}}</td>
-                                                    <td>Action</td>
-
 
                                                     {{-- <td>{{$withdraw->chanel->curancy->name}}</td> --}}
                                                     {{-- <td>{{$withdraw->chanel->address}}</td> --}}
                                                     {{-- <td><span class="{{$withdraw->status()}}">{{$withdraw->status}}</span></td> --}}
-                                                    {{-- <td>
+                                                     
+                                                    <td>
                                                         @if($withdraw->status=='pending')
-
-                                                            <a href="{{route('admin.approve.withdraw',['withdraw'=>$withdraw->id])}}">
+                                                            <a href="{{url('aprove_withdraw')}}/{{$withdraw->id}}">
                                                                 <button class="btn btn-primary">Approve</button>
                                                             </a>
-                                                        @else
-                                                            <button class="btn btn-success">Approved</button>
-
+                                                            @else
+                                                                <button class="btn btn-success">Approved</button>
                                                         @endif
-
-                                                    </td> --}}
-
+                                                    </td> 
                                                 </tr>
 
                                             @endforeach

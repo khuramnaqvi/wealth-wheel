@@ -96,6 +96,8 @@ Route::post('update_wheel/{wheel}', [App\Http\Controllers\DashboardController::c
 // withraw
 Route::get('/withdraw_request', [App\Http\Controllers\DashboardController::class, 'withdraw_request'])->name('withdraw_request');
 
+Route::get('/aprove_withdraw/{id}', [App\Http\Controllers\DashboardController::class, 'aprove_withdraw']);
+
 
 });
 

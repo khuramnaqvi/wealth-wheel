@@ -57,15 +57,13 @@
                   <div  class="ww-card-tag">
                     <span>Available Now</span>
                   </div>
-                  
-                 
                  
                   {{-- <img style="height: 250px; width:310px" src="{{ asset('images/' .$wheel->image) }}" alt="no img" class="img-fluid"> --}}
                 
                   <img style="height: 250px; width:310px"  src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
                 
                   <div class="card-body">
-                    <h5 class="card-title">WW0{{ $wheel->wheel_number }}</h5>
+                    <h5 class="card-title">{{ $wheel->wheel_name }}</h5>
 
                     <p class="card-text">Last Cog Number: {{$wheel->wallet->count()}}</p>
                     <div class="pro-price">
@@ -137,39 +135,9 @@ $('#Searchbtn').on('click', function(){
         url: '{{url('wheels_filter_form')}}',
         data: {text: $('#txtSearch').val()},
        
-
         success: function(response) {
-          console.log(response);
-          var wheel_id = response[0]['id'];
-          // comsole.log(response.wheels['id']);
-          // console.log(wheel_id);
-          
-         
-$('.product_div').empty().append(
-  `<div class="ww-avl-card col-md-4 my-2">
-                <div class="card">
-                  <div  class="ww-card-tag">
-                    <span>Available Now</span>
-                  </div>
-                  <img style="height: 250px; width:310px"  src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
-                
-                  <div class="card-body">
-                    <h5 class="card-title">`+response[0]['wheel_name']+`</h5>
+          $('.product_div').empty().append(response);
 
-                    <p class="card-text">Last Cog Number: `+response[0]['wheel_number']+`</p>
-                    <div class="pro-price">
-                      <h4>Cog Price : <span>US$`+response[0]['cog_price']+`</span></h4>
-                    </div>
-                    <a href="{{url('wheels_details?id=`+wheel_id+`') }}" class="pro-dtl-btn">Join Wealth Wheel</a>
-                  </div>
-                </div>
-              </div>`);
-
-            //  response = JSON.parse(response);
-            //  console.log(response.cog_price);
-            //  for (var patient of response) {
-            //      console.log(patient);
-            //  }
          }
 
 

@@ -46,8 +46,8 @@
                                         <i class="feather icon-credit-card text-success font-medium-5"></i>
                                     </div>
                                 </div>
-                                <h2 class="text-bold-700 mt-1"></h2>
-                                <p class="mb-0">Total orders</p>
+                                <h2 class="text-bold-700 mt-1">{{$wheel}}</h2>
+                                <p class="mb-0">Total wheels</p>
                             </div>
                             <div class="card-content">
                                 <div id="line-area-chart-2"></div>
@@ -62,8 +62,8 @@
                                         <i class="feather icon-shopping-cart text-danger font-medium-5"></i>
                                     </div>
                                 </div>
-                                <h2 class="text-bold-700 mt-1"></h2>
-                                <p class="mb-0">Total plans</p>
+                                <h2 class="text-bold-700 mt-1">{{$total}}</h2>
+                                <p class="mb-0">Admin wallet amount</p>
                             </div>
                             <div class="card-content">
                                 <div id="line-area-chart-3"></div>
@@ -78,8 +78,8 @@
                                         <i class="feather icon-package text-warning font-medium-5"></i>
                                     </div>
                                 </div>
-                                <h2 class="text-bold-700 mt-1"></h2>
-                                <p class="mb-0">Total Products</p>
+                                <h2 class="text-bold-700 mt-1">{{$pending}}</h2>
+                                <p class="mb-0">Pending withdraws</p>
                             </div>
                             <div class="card-content">
                                 <div id="line-area-chart-4"></div>

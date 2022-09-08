@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\WealthWheel;
-
+use DB;
 use Illuminate\Http\Request;
 use App\Interfaces\messasges;
 use App\Models\Withdraw;
@@ -31,14 +31,17 @@ class DashboardController extends Controller
     {
      
         $request->validate([
-            'name' => 'required|min:3|unique:users',
-            'password' => 'required|min:6',
+            'name' => ['required', 'min:3'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8'],
+
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
+            'balance' => 0,
             'password' => bcrypt($request->password),
         ]);
         if ($user) {
@@ -165,9 +168,19 @@ class DashboardController extends Controller
 
     public function  withdraw_request()
     {
-        $withdraws = Withdraw::all();
+        $withdraws = Withdraw::orderBy('status', 'DESC')->get();
+        // dd($withdraws[0]->userr);
        
             return view('dashboard.withdraw.index',compact('withdraws'));
+    }
+
+    public function aprove_withdraw(Request $request)
+    {
+        // dd($request->id);
+        $affecte = DB::table('withdraws')
+            ->where('id', $request->id)
+            ->update(['status' => 'Approved']);
+            return back()->with('success', 'Status change successfully!');
     }
 
 

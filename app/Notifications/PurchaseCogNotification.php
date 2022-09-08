@@ -41,7 +41,7 @@ class PurchaseCogNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('Wheel Puchased Successfully.')
+                    ->line('Wheel Purchased Successfully.')
                     ->action('wealth wheel', url('/'))
                     ->line('Thank you for using our application!');
     }
