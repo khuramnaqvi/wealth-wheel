@@ -173,6 +173,8 @@ class UserController extends Controller
         $my_whells = WealthWheel::where('user_id', auth()->user()->id)->get();
 
         $purchased_whells = wallet::where('user_id', auth()->user()->id)->get()->unique('wheel_id');
+        
+        $payout_count = wallet::where('user_id', auth()->user()->id)->get();
 
             // dd($purchased_whells);
 
@@ -190,7 +192,7 @@ class UserController extends Controller
         $user_balance = Auth::user()->balance;
         if ($user_balance = null || $user_balance < $amount) {
 
-            return redirect()->back()->with('error', 'Sorry! You Do not have Enough Balance');
+            return redirect()->back()->with('error', 'Sorry! You Do Not Have Enough Balance.');
         } else {
 
             // 
@@ -297,9 +299,20 @@ class UserController extends Controller
     public function wihdraw_submit(Request $request)
     {
 
-                $us = DB::table('user_wallets')
-                ->where('id', $request->wellet_id)
-                ->decrement('amount', $request->withdraw);
+        if($request->typee == 'balance')
+        {
+            $us = DB::table('users')
+            ->where('id', auth()->user()->id)
+            ->decrement('balance', $request->withdraw);
+
+        }else{
+            $us = DB::table('user_wallets')
+            ->where('id', $request->wellet_id)
+            ->decrement('amount', $request->withdraw);
+        }
+
+                
+
 
                 $withdraw = new Withdraw;
                 $withdraw->user_id = auth()->user()->id;

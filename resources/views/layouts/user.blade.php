@@ -103,38 +103,6 @@
     
 
 <body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
-  <script>
-    // toastr.success('rr');
-
-    @if(Session::has('success'))
-        toastr.options = {
-          "closeButton": true,
-          "progressBar": true
-        }
-        toastr.success('{{ Session::get('success') }}');
-    @elseif(Session::has('error'))
-        toastr.options = {
-          "closeButton": true,
-          "progressBar": true
-        }
-        toastr.error('{{ Session::get('error') }}');
-    @elseif(Session::has('cogpurchase'))
-    Swal.fire(
-        'Congratulations!\n{{ Session::get("cogpurchase") }}',
-        'You have successfully purchased your wealth wheel cog.',
-        'success'
-        )
-      
-    @endif
-    
-  </script>
 
     
   <!-- ======= Header ======= -->
@@ -147,13 +115,13 @@
       </div>
       <nav id="navbar" class="navbar">
         <ul id="myDIV">
-          <li><a class="nav-link scrollto  active" href="{{('/')}}">Home</a></li>
-          <li><a class="nav-link scrollto" href="{{ route('how_it_works') }} ">How it Works</a></li>
-          <li><a class="nav-link scrollto" href="{{ route('contact') }} ">Contact Us</a></li>
-          <li><a class="nav-link scrollto" href="{{ route('availabe_wealth_wheel') }}">Available Wealth Wheels</a></li>
+          <li><a class="nav-link scrollto {{ Request::is('/')? 'active' : '' }} " href="{{('/')}}">Home</a></li>
+          <li><a class="nav-link scrollto {{ Request::is('how_it_works')? 'active' : '' }} " href="{{ route('how_it_works') }} ">How it Works</a></li>
+          <li><a class="nav-link scrollto {{ Request::is('contact')? 'active' : '' }} " href="{{ route('contact') }} ">Contact Us</a></li>
+          <li><a class="nav-link scrollto {{ Request::is('availabe_wealth_wheel')? 'active' : '' }} " href="{{ route('availabe_wealth_wheel') }}">Available Wealth Wheels</a></li>
 
           @auth
-          <li><a class="nav-link scrollto" href="{{ url('my_wheels') }}">My Account</a></li>
+          <li><a class="nav-link scrollto {{ Request::is('my_wheels')? 'active' : '' }}" href="{{ url('my_wheels') }}">My Account</a></li>
           <li><a class="nav-link scrollto">${{auth()->user()->balance}}</a></li>
           {{-- <li><a class="nav-link scrollto">${{auth()->user()->balance}}</a></li> --}}
 
@@ -484,6 +452,15 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <script src=" {{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
   <script src=" {{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
   <script src=" {{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+  
 
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
@@ -502,7 +479,8 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
   
   // if($(location).attr('href') == 'http://127.0.0.1:8000/register/success')
 
-  if($(location).attr('href') == 'http://wealthwheel.herokuapp.com/public/register/success')
+//   if($(location).attr('href') == 'http://wealthwheel.herokuapp.com/public/register/success')
+  if($(location).attr('href') == 'http://wealth-wheel.com/register/success')
     {
       Swal.fire(
         'Welcome To Wealth Wheel!',
@@ -520,7 +498,26 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 //   )
 // @endif
 
-
+    @if(Session::has('success'))
+        toastr.options = {
+          "closeButton": true,
+          "progressBar": true
+        }
+        toastr.success('{{ Session::get('success') }}');
+    @elseif(Session::has('error'))
+        toastr.options = {
+          "closeButton": true,
+          "progressBar": true
+        }
+        toastr.error('{{ Session::get('error') }}');
+    @elseif(Session::has('cogpurchase'))
+    Swal.fire(
+        'Congratulations!\n{{ Session::get("cogpurchase") }}',
+        'You have successfully purchased your wealth wheel cog.',
+        'success'
+        )
+      
+    @endif
 
     
 

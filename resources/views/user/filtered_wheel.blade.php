@@ -19,6 +19,7 @@
             </div>
         </div>
     </div>
+    
     @empty
-    <h3>No record found!</h3>
+    <h3>Wheel number not found.</h3>
 @endforelse

@@ -304,7 +304,7 @@
                                                                 <input type="hidden" value="{{ $wheel_details->id }}"
                                                                     name="wheel_id">
                                                                 <a class="payment_from_wallet">
-                                                                    <img alt="Qries"
+                                                                    <img alt="Qries" style="cursor: pointer;"
                                                                         src="{{ URL::asset('/assets/img/wallet.png') }}"
                                                                         width="100" height="100">
                                                                 </a>
@@ -350,7 +350,7 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col text-center">
-                                                                <b style="color: #3dc1eb">Paypal</b>
+                                                                <b style="color: #3dc1eb">PayPal</b>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -359,7 +359,7 @@
                                                         <div class="row col-8">
                                                             {{-- <button  type="button" class="btn btn-primary">Pay from Wallet</button> --}}
                                                             <a class="cardpay">
-                                                                <img alt="Qries"
+                                                                <img alt="Qries" style="cursor: pointer;"
                                                                     src="{{ URL::asset('/assets/img/card.jpg') }}"
                                                                     width="100" height="100">
                                                             </a>
@@ -370,6 +370,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
 
 
                                                 </div>
@@ -414,7 +415,7 @@
                                     <div class="panel-body">
                                         <form role="form" action="{{ url('stripe_post') }}" method="post"
                                             class="require-validation2" data-cc-on-file="false"
-                                            data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
+                                            data-stripe-publishable-key="{{ env('STRIPE_KEY','pk_test_51Kh9uAFBFsCMdULhjZvuXtEvn03Dc8oBpZS9VEZf3ZEym3JBm6F8owLE8nzc4o1p7tT2FSqyYjyrpPKgBmU3f4lC00yFeVGFJa') }}" id="payment-form">
                                             @csrf
 
                                             <input class="append_price" type="hidden" name="amount">

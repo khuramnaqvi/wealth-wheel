@@ -22,6 +22,11 @@ class WealthWheel extends Model
     {
         return $this->hasMany(wallet::class,'wheel_id', 'id');
     }
+
+    public function payout_wheel()
+    {
+        return $this->hasMany(wallet::class,'wheel_id', 'id');
+    }
     public function user_wallet()
     {
         return $this->belongsTo(UserWallet::class, 'id' ,'wheel_id');

@@ -117,13 +117,15 @@
                                 <div class="form-group" style="text-align: left;">
                                   <label for="">Withdraw From Wallet</label>
                                   <select id="dropDownId" required name="wallet_amount" class="form-control" style="border-radius: 30px;">
-                                    <option  style="border-radius: 30px;" value="">--My Wallet--</option>
+                                    <option  style="border-radius: 30px;" value="">--Select Wallet--</option>
+                                    <option  style="border-radius: 30px;" tyype="balance" value="{{auth()->user()->balance}}">My Wallet</option>
                                       @foreach ($user_wallets as $wallet)
-                                          <option att="{{$wallet->id}}"  value="{{$wallet->amount}}">{{$wallet->wallet_name}}</option>
+                                          <option att="{{$wallet->id}}" tyype="wallet" value="{{$wallet->amount}}">{{$wallet->wallet_name}}</option>
                                       @endforeach
                                   </select>
                               </div>
                               <input type="hidden" name="wellet_id" class="wellet_amount">
+                              <input type="hidden" name="typee" class="typeee">
 
                                 <div class="form-group" style="text-align: left;">
                                     <label for="">Enter Amount:</label>
@@ -160,9 +162,12 @@
             $(document).on("click", "#dropDownId", function() {
             var value = $('select#dropDownId option:selected').val();
             var att = $('select#dropDownId option:selected').attr('att');
+            var tyype = $('select#dropDownId option:selected').attr('tyype');
+            
             // console.log(value);
             $('.wellet_amount').val(att);
             $('.checkamount2').attr('max', value);
+            $('.typeee').val(tyype);
 
 
             });

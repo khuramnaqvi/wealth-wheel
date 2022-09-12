@@ -17,7 +17,20 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/migratefresh/seed', function () {
+    $run = Artisan::call('migrate:fresh --seed');
+    return 'Completedd';
+});
 
+
+Route::get('/cls', function() {
+    $run = Artisan::call('config:clear');
+    $run = Artisan::call('cache:clear');
+    $run = Artisan::call('config:cache');
+    $run = Artisan::call('view:clear');
+    Session::flush();
+    return 'FINISHED';
+});
 
 
 

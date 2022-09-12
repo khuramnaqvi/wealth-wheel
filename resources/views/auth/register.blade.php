@@ -46,7 +46,7 @@
 
         <div class="section-title" data-aos="zoom-out">
           <h2>Sign Up</h2>
-          <p>Please put your details </p>
+          <p>PLEASE ENTER YOUR DETAILS </p>
         </div>
         <div class="ww-form-wrp" data-aos="fade-right">
         <form method="POST" action="{{ route('register') }}">
