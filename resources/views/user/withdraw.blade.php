@@ -7,9 +7,7 @@
             <div class="carousel-item active">
                 <div class="carousel-container">
                     <h2 class="animate__animated animate__fadeInDown">Withdraw Requests</span></h2>
-                    <p class="animate__animated fanimate__adeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    
                     <div class="d-flex ww-banner-btn">
                         @guest
                             @if (Route::has('login'))

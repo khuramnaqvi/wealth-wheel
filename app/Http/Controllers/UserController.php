@@ -338,4 +338,26 @@ class UserController extends Controller
         ContactUs::create($request->all());
         return redirect()->back()->with(['success' => 'Thank you for contact us. we will contact you shortly.']);
     }
+    public function update_profile(Request $request)
+    {
+        if($request->password == $request->confirm)
+        {
+            $user = user::find(auth()->user()->id);
+            $user->name = $request->name;
+            
+            if(isset($request->password))
+            {
+                $user->password = Hash::make($request->password);
+            }
+
+            $user->update();
+
+            return back()->with('success', 'Account Updated Successfully');
+        }
+        else
+        {
+            return back()->with('error', 'Password And Confrim Password Does Not Match.');
+        }
+
+    }
 }
