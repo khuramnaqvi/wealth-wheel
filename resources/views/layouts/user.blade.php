@@ -222,7 +222,7 @@ body {
       </div>
       <nav id="navbar" class="navbar">
         <ul id="myDIV">
-          <li><a class="nav-link scrollto {{ Request::is('/')? 'active' : '' }} " href="{{('/')}}">Home</a></li>
+          <li><a class="nav-link scrollto {{ Request::is('/')? 'active' : '' }} " href="{{ url('/')}}">Home</a></li>
           <li><a class="nav-link scrollto {{ Request::is('how_it_works')? 'active' : '' }} " href="{{ route('how_it_works') }} ">How it Works</a></li>
           <li><a class="nav-link scrollto {{ Request::is('contact')? 'active' : '' }} " href="{{ route('contact') }} ">Contact Us</a></li>
           <li><a class="nav-link scrollto {{ Request::is('availabe_wealth_wheel')? 'active' : '' }} " href="{{ route('availabe_wealth_wheel') }}">Available Wealth Wheels</a></li>
