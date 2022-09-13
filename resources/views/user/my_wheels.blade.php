@@ -18,7 +18,7 @@
                 <!--  -->
 
                 <!--  -->
-                <h2 class="animate__animated animate__fadeInDown">My Accounts</span></h2>
+                <h2 class="animate__animated animate__fadeInDown">My Account</span></h2>
                 
                 <div class="d-flex ww-banner-btn">
                     @guest

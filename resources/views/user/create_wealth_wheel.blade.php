@@ -136,7 +136,7 @@ button:hover {
               <input name="image" type="file" class="form-control" accept="image/*" />
               {{-- <small style="color: gray">please enter the correct image size</small> --}}
             </div> -->
-            <button type="submit" class="btn btn-primary confirmation-message first">Save</button>
+            <button type="submit" class="btn btn-primary confirmation-message first" style="text-transform: capitalize;">Save</button>
           </form>
         </div>
 

@@ -454,7 +454,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <input type="number" name="amount" placeholder="Enter Amount To Deposit" class=" form-control checkamount" onkeyup="this.value=this.value.replace(/[^0-9]/g)" style="border-radius: 30px;">
                         </div>
                             <input type="radio" name="pay" id="vcard" value="1" class="paymentmode"><label for="vcard" style="margin-right: 33px;">Pay with Card</label>
-                            <input type="radio" name="pay" id="payypal"  value="2" class="paymentmode"><label for="payypal">Pay with Paypal</label>
+                            <input type="radio" name="pay" id="payypal"  value="2" class="paymentmode"><label for="payypal">Pay with PayPal</label>
                         </div>
 
                         <div class="col-md-10 col-md-offset-3 stripe_div d-none">
@@ -511,7 +511,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                             <div class="col-12 d-flex" style="justify-content: space-between;">
                                                 <button class="col-5 btn btn-primary site_colr" type="submit">Pay Now
                                                     </button>
-                                                <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
+                                                <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                                             </div>
                                         </div>
 
@@ -529,7 +529,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                     <div class="row mt-4">
                                       <div class="col-12 d-flex" style="justify-content: space-between;">
                                         <input type="submit" name="submit" class=" col-5 btn btn-primary site_colr" value="Pay Now">
-                                        <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
+                                        <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                                       </div>
                                     </div>
                                   </div>
@@ -586,8 +586,8 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
   
   // if($(location).attr('href') == 'http://127.0.0.1:8000/register/success')
 
-//   if($(location).attr('href') == 'http://wealthwheel.herokuapp.com/public/register/success')
-  if($(location).attr('href') == 'http://wealth-wheel.com/register/success')
+  if($(location).attr('href') == 'http://wealthwheel.herokuapp.com/public/register/success')
+  // if($(location).attr('href') == 'http://wealth-wheel.com/register/success')
     {
       Swal.fire(
         'Welcome To Wealth Wheel!',
@@ -670,7 +670,7 @@ $(document).ready(function() {
         "closeButton": true,
         "progressBar": true
       }
-      toastr.error('Please Enter Amoun first');
+      toastr.error('Please Enter Amount First');
     }
 
   });
