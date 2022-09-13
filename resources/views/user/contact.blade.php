@@ -91,7 +91,7 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <button style="color: white" class="btn btn-info" type="submit">submit</button>
+              <button style="color: white" class="btn btn-info" type="submit">Submit</button>
               {{-- <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
