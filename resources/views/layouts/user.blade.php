@@ -199,9 +199,6 @@ body {
     box-sizing: border-box;
 }
 
-body {
-    padding: 30px;
-}
 
 .tabset {
     max-width: 65em;
