@@ -69,10 +69,12 @@
         <label for="tab1">My Wealth Wheels</label>
         <!-- Tab 2 -->
         <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
-        <label for="tab2">My Wallet</label>
+        <label for="tab2">My Cogs</label>
         <!-- Tab 3 -->
         <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
         <label for="tab3">My Details</label>
+        <input type="radio" name="tabset" id="tab4" aria-controls="wallet">
+        <label for="tab4">My Wallet</label>
 
     
 
@@ -86,6 +88,8 @@
                     <div class="row content" data-aos="fade-up">
                         <div class="col-lg-12">
                             <div class="row">
+                                <h3>Owned Wealth Wheels</h3>
+                                <hr>
                                 
                                 @forelse($my_whells as $wheel)
                                 <div class="ww-avl-card col-md-4 my-2">
@@ -112,7 +116,7 @@
                                     </div>
                                 </div>
                                 @empty
-                                <h4>No wheel available</h4>
+                                <h4>No wheels created</h4>
                                 @endforelse
                             </div>
                         </div>
@@ -127,37 +131,39 @@
                     <div class="row content" data-aos="fade-up">
                         <div class="col-lg-12">
                             <div class="row">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Wheel No</th>
+                                            <th scope="col">Cog No</th>
+                                            <th scope="col">Cog Price</th>
+                                            <th scope="col">payout Amount</th>
+                                            <th scope="col">Purchase Date</th>
+                                            <th scope="col">Payout Cog No</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    @forelse($purchased_whells as $wheel)
+
+                                        <tr>
+                                            <td>{{ $wheel->purchase_wheel->wheel_name }}</td>
+                                            <td>{{ $wheel->purchase_wheel->wheel_name }} - 0{{$wheel->purchase_wheel->wallet->count()}}</td>
+                                            <td>US${{$wheel->purchase_wheel->cog_price}}</td>
+                                            <td>US${{$wheel->purchase_wheel->cog_price*110/100}}</td>
+                                            <td>{{$wheel->created_at}}</td>
+                                            <td>{{ $wheel->purchase_wheel->payout_wheel->count() }}</td>
+                                            <td>Paid</td>
+                                        </tr>
+                                        @empty
+                                        <tr>
+                                            <td><h4>No cogs purchased</h4></td>
+                                        </tr>
+                                    @endforelse
+                                        
+                                    </tbody>
+                                </table>
                             
-                            @forelse($purchased_whells as $wheel)
-                            <div class="ww-avl-card col-md-4 my-2">
-                                <div class="card">
-                                    <div class="ww-card-tag">
-                                        <span>Available Now</span>
-                                    </div>
-
-                                    <img style="height: 250px; width:310px" src="{{ asset('assets/img/ww-pic.png') }}"
-                                        alt="no img" class="img-fluid">
-
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $wheel->purchase_wheel->wheel_name }}</h5>
-
-                                        <p class="card-text">Last Cog Number:
-                                        {{ $wheel->purchase_wheel->wheel_name }} - 0{{$wheel->purchase_wheel->wallet->count()}}</p>
-                                        <div class="pro-price">
-                                            <p>Cog Price : US${{$wheel->purchase_wheel->cog_price}}</p>
-                                        </div>
-                                        <p>Purchase Date : {{$wheel->created_at}}</p>
-                                        <p>Payout Cog Number : {{ $wheel->purchase_wheel->payout_wheel->count() }}</p>
-                                        <p>Payout Amount : US${{$wheel->purchase_wheel->cog_price*110/100}}</p>
-                                        <p>Status : Paid</p>
-                                        <a href="{{url('/withdraw') }}/{{auth()->user()->id}}" class="pro-dtl-btn">Withdraw</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            @empty
-                            <h4>No wheel available</h4>
-                            @endforelse
                             </div>
                         </div>
                     </div>
@@ -166,7 +172,7 @@
     </section>
     
     <section id="dunkles" class="tab-panel">
-        <h2>Edit your details</h2>
+        <h2>Account details</h2>
         <form method="post" action="{{url('/update_profile')}}">
             @csrf
 
@@ -193,6 +199,22 @@
 
         <form>
         
+    </section>
+    <section id="wallet" class="tab-panel">
+        <section id="our-products" class="our-products avl-wealthWheel">
+            <div class="container">
+                <div class="row content " data-aos="fade-up" style="justify-content: center;">
+                    <div class="col-lg-6 site_colr pt-4 pb-4 rounded-4 text-center">
+                        <div class="row">
+                            <h4>Balance : <span>US${{auth()->user()->balance}}</span></h4>
+                        </div>
+
+                        <a href="#" class="btn btn-primary deposit_modelbtn">Deposit</a>
+                            <a href="{{url('withdraw')}}/{{auth()->user()->id}}" class="btn btn-primary">Withdraw</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
 </div>
 <!-- tabs end -->

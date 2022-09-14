@@ -69,8 +69,8 @@
             </div>
             <div class="form-group">
               <label for="log-exampleInputPassword1">Password</label>
-              <input value="{{ old('email') }}" id="password" name="password" type="password" class="form-control @error('password') is-invalid @enderror"  placeholder="Password">
-              @error('email')
+              <input value="" id="password" name="password" type="password" class="form-control @error('password') is-invalid @enderror"  placeholder="Password">
+              @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

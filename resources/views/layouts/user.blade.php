@@ -438,8 +438,12 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content" style="border-radius: 45px; margin-top: 123px;">
+        
+
             <div class="site_colr" style=" border-radius: 42px 42px 0px 0px;">
                 <h5 class="modal-title" id="staticBackdropLabel"style="text-align: center;padding-top: 15px;padding-bottom: 15px;">Payment</h5>
+                
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" style="margin-top: -40px;margin-right: 16px;"><i class="fa fa-close"></i></button>
                 
             </div>
             <div class="modal-body">
@@ -448,8 +452,14 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="col-6"  style="text-align: center; margin-bottom:10px;">
                             <div class="form-group" style="text-align: left;">
                               <label for="">Enter Amount:</label>
-                            <input type="number" name="amount" placeholder="Enter Amount To Deposit" class=" form-control checkamount" onkeyup="this.value=this.value.replace(/[^0-9]/g)" style="border-radius: 30px;">
-                        </div>
+                              <div class="input-group" >
+
+                                <span class="input-group-text">US$</span>
+                                <input type="number" name="amount" placeholder="Enter Amount To Deposit" class=" form-control checkamount" onkeyup="this.value=this.value.replace(/[^0-9]/g)" >
+
+                              </div>
+                              
+                          </div>
                             <input type="radio" name="pay" id="vcard" value="1" class="paymentmode"><label for="vcard" style="margin-right: 33px;">Pay with Card</label>
                             <input type="radio" name="pay" id="payypal"  value="2" class="paymentmode"><label for="payypal">Pay with PayPal</label>
                         </div>
@@ -581,9 +591,9 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 <script>
   
   
-  // if($(location).attr('href') == 'http://127.0.0.1:8000/register/success')
+  if($(location).attr('href') == 'http://127.0.0.1:8000/register/success')
 
-  if($(location).attr('href') == 'http://wealthwheel.herokuapp.com/public/register/success')
+  // if($(location).attr('href') == 'http://wealthwheel.herokuapp.com/public/register/success')
   // if($(location).attr('href') == 'http://wealth-wheel.com/register/success')
     {
       Swal.fire(
