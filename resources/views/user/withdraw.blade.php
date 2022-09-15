@@ -106,6 +106,7 @@
                     <h5 class="modal-title"
                         id="staticBackdropLabel"style="text-align: center;padding-top: 15px;padding-bottom: 15px;">Withdraw
                     </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" style="margin-top: -40px;margin-right: 16px;"><i class="fa fa-close"></i></button>
 
                 </div>
                 <div class="modal-body">
