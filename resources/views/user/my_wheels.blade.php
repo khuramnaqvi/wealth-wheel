@@ -139,7 +139,7 @@
                                             <th scope="col">Cog Price</th>
                                             <th scope="col">Payout Amount</th>
                                             <th scope="col">Purchase Date</th>
-                                            <th scope="col">Payout Cog No</th>
+                                            <th scope="col">Payout Cog No.</th>
                                             <th scope="col">Status</th>
                                         </tr>
                                     </thead>
