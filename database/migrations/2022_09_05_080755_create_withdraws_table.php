@@ -18,6 +18,13 @@ class CreateWithdrawsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->bigInteger('withdraw');
+
+            $table->string('type')->nullable();
+            $table->string('bank_name')->nullable();
+            $table->string('account_title')->nullable();
+            $table->string('account_number')->nullable();
+            $table->string('paypal_email')->nullable();
+            
             $table->string('status')->default('pending');
             $table->timestamps();
         });

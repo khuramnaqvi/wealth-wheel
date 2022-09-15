@@ -134,10 +134,10 @@
                                 <table class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Wheel No</th>
-                                            <th scope="col">Cog No</th>
+                                            <th scope="col">Wheel No.</th>
+                                            <th scope="col">Cog No.</th>
                                             <th scope="col">Cog Price</th>
-                                            <th scope="col">payout Amount</th>
+                                            <th scope="col">Payout Amount</th>
                                             <th scope="col">Purchase Date</th>
                                             <th scope="col">Payout Cog No</th>
                                             <th scope="col">Status</th>

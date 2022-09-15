@@ -249,12 +249,22 @@ class UserController extends Controller
             $user->balance = $total_amount;
             $user->save();
 
-            $users = User::where('email', auth()->user()->email)->first();
-            $users->notify(new PurchaseCogNotification($users));
+
+            
 
             $wheel_number = $wheel_amount->wheel_number;
             $cogg_num = $wheel_amount->wallet->count();
             $mes = "WW0$wheel_number-0$cogg_num";
+
+            $cog_no = "WW0$wheel_number";
+            $date = $user_payment->created_at->format('d/m/y');
+            
+
+            $users = User::where('email', auth()->user()->email)->first();
+            
+            $arr = [ 'cog_no' => $mes,'date' => $date, 'amount' => $amount, 'payment' => 'Wallet'];
+
+            $users->notify(new PurchaseCogNotification($arr));
 
             return redirect()->back()->with('cogpurchase', $mes);
         }
@@ -298,7 +308,37 @@ class UserController extends Controller
 
     public function wihdraw_submit(Request $request)
     {
+        // dd($request);
+        if($request->pay == 1)
+        {
+            $request->validate([
+                'bank_name' => ['required'],
+                'account_title' => ['required'],
+                'account_number' => ['required'],
+            ]);
 
+            $withdraw = new Withdraw;
+            $withdraw->user_id = auth()->user()->id;
+            $withdraw->withdraw = $request->withdraw;
+            $withdraw->type = $request->withdraw_type;
+            $withdraw->bank_name = $request->bank_name;
+            $withdraw->account_title = $request->account_title;
+            $withdraw->account_number = $request->account_number;
+            $withdraw->save();
+
+
+        }else{
+            $request->validate([
+                'paypal_email' => ['required'],
+            ]);
+            $withdraw = new Withdraw;
+            $withdraw->user_id = auth()->user()->id;
+            $withdraw->withdraw = $request->withdraw;
+            $withdraw->type = $request->withdraw_type;
+            $withdraw->paypal_email = $request->paypal_email;
+            $withdraw->save();
+
+        }
         if($request->typee == 'balance')
         {
             $us = DB::table('users')
@@ -311,17 +351,7 @@ class UserController extends Controller
             ->decrement('amount', $request->withdraw);
         }
 
-                
-
-
-                $withdraw = new Withdraw;
-                $withdraw->user_id = auth()->user()->id;
-                $withdraw->withdraw = $request->withdraw;
-                $withdraw->save();
-
-                return redirect()->back()->with('success', 'Amount Withdraw Successfully!');
-
-
+        return redirect()->back()->with('success', 'Amount Withdraw Successfully!');
 
     }
 

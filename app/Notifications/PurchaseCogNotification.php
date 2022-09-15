@@ -16,9 +16,10 @@ class PurchaseCogNotification extends Notification
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(array $arr)
     {
         //
+        $this->arr = $arr;
     }
 
     /**
@@ -40,10 +41,17 @@ class PurchaseCogNotification extends Notification
      */
     public function toMail($notifiable)
     {
+        // dd($this->arr);
+
+        $cog_no = $this->arr['cog_no'];
+        $date = $this->arr['date'];
+        $amount = $this->arr['amount'];
+        $payment = $this->arr['payment'];
+        // dd($cog_no,$date,$amount,$payment);
         return (new MailMessage)
-                    ->line('Wheel Purchased Successfully.')
-                    ->action('wealth wheel', url('/'))
-                    ->line('Thank you for using our application!');
+            ->subject('Cog Order Confirmation')
+            // ->view( 'email.cog_purchase', ['wheel_number' => $wheel_number]);
+            ->view( 'email.cog_purchase', ['cog_no' => $cog_no,'date' => $date,'amount' => $amount,'payment' => $payment]);
     }
 
     /**

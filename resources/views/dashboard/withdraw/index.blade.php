@@ -40,8 +40,10 @@
                                                 <th>#</th>
                                                 <th scope="col">Username</th>
                                                 <th scope="col">Amount</th>
+                                                <th scope="col">Payment Type</th>
+                                                <th scope="col">PayPal Email / Card Inforamtion</th>
                                                 <th scope="col">Status</th>
-                                                <th>Created AT</th>
+                                                <th>Withdraw Date</th>
                                                 <th>Action</th>
                                             </tr>
                                             </thead>
@@ -52,6 +54,18 @@
                                                     <td>{{$count++}}</td>
                                                     <td>{{$withdraw->userr->name}}</td>
                                                     <td>{{$withdraw->withdraw}}</td>
+                                                    <td>{{$withdraw->type}}</td>
+
+                                                    @if($withdraw->type == 'paypal')
+                                                    <td> <p>PayPal Email : <br>{{ $withdraw->paypal_email  }}</p></td>
+                                                    @else
+                                                    <td>
+                                                        <p>Bank Name : {{ $withdraw->bank_name }}</p>
+                                                        <p>Account Title : {{ $withdraw->account_title }}</p>
+                                                        <p>Account Number : <br>{{ $withdraw->account_number }}</p>
+                                                    </td>
+
+                                                    @endif
                                                     <td>{{$withdraw->status}}</td>
                                                     <td>{{date($withdraw->created_at->format('Y-m-d'))}}</td>
 

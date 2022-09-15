@@ -7,6 +7,7 @@ use App\Models\WealthWheel;
 use App\Models\User;
 use App\Models\UserWallet;
 use App\Notifications\WealthWheelCreationConfirmation;
+use App\Notifications\PurchaseCogNotification;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,6 +38,15 @@ class WheelController extends Controller
 
     public function create_wealth_wheel(Request $request)
     {
+        // 
+
+//         $users = User::where('email', auth()->user()->email)->first();
+//         // $wheel_name = 'domuy text';
+//         $arr = [ 'wheel' => $request->wheel_name,'sdf' => $request->wheel_name  ];
+
+//         $users->notify(new PurchaseCogNotification($arr));
+// dd('dddd');
+        // 
         
         $user_id = Auth::user()->id;
         $request->validate([

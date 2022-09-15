@@ -591,9 +591,9 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 <script>
   
   
-  if($(location).attr('href') == 'http://127.0.0.1:8000/register/success')
+  // if($(location).attr('href') == 'http://127.0.0.1:8000/register/success')
 
-  // if($(location).attr('href') == 'http://wealthwheel.herokuapp.com/public/register/success')
+  if($(location).attr('href') == 'http://wealthwheel.herokuapp.com/public/register/success')
   // if($(location).attr('href') == 'http://wealth-wheel.com/register/success')
     {
       Swal.fire(
@@ -631,6 +631,17 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
         'success'
         )
       
+    @endif
+
+    @if ($errors->any())
+     @foreach ($errors->all() as $error)
+         toastr.options = {
+          "closeButton": true,
+          "progressBar": true
+        }
+        toastr.error('{{$error}}');
+     @endforeach
+
     @endif
 
     

@@ -100,13 +100,20 @@ class StripePaymentController extends Controller
             $admin_payment->save();
             
                     
-        $user = User::where('email', auth()->user()->email)->first();
-        $user->notify(new PurchaseCogNotification($user));
+    
 
-        $wheel_number = $wheel_amount->wheel_number;
+            $wheel_number = $wheel_amount->wheel_number;
             $cogg_num = $wheel_amount->wallet->count();
             $mes = "WW0$wheel_number-0$cogg_num";
+            $cog_no = "WW0$wheel_number";
+            $date = $user_payment->created_at->format('d/m/y');
+            
 
+            $users = User::where('email', auth()->user()->email)->first();
+            
+            $arr = [ 'cog_no' => $mes,'date' => $date, 'amount' => $amount, 'payment' => 'Credit/Debit Card'];
+            // dd($arr);
+            $users->notify(new PurchaseCogNotification($arr));
             return redirect('availabe_wealth_wheel')->with('cogpurchase', $mes);  
 
     }
