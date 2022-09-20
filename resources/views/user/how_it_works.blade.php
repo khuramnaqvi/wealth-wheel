@@ -30,18 +30,17 @@
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">How it Works</h2>
           <p class="animate__animated fanimate__adeInUp">
-            Wealth Wheels are a continuous generation of individual profit.
-            Picture a wheel and the cogs that make up the wheel, spinning as the wheel 
-            rotates. That is the concept of a Wealth Wheel.
+          Every cog purchase for a Wealth Wheel contributes to accumulating the wheel’s ‘bank’, from where each user is sent their payouts. 
+          As subsequent cogs are purchased they trigger the wheel bank to pay the earlier cog owners 110% of the cog price.
           </p>
           <p>
-            Each cog purchased becomes part of wheel, and as more and more cogs are 
-              purchased, the wheel returns the cog payment made to the earlier cog 
-              purchasers, with an additional 10%.
-              For example, if you purchase a Wealth Wheel Cog for $100, the wheel will return 
-              you $110.
+          For example, if a wheel’s cog price is $100, when cog number 6 is purchased, $110 is paid to the user who purchased cog number 1.
 
           </p>
+          <p>
+          Each user has a Wallet in their account from which they can withdraw their funds to their preferred destination (eg, PayPal or Bank).
+          </p>
+
           <div class="d-flex ww-banner-btn">
           @guest
           @if (Route::has('login')) 
@@ -86,17 +85,42 @@
       <div class="container">
         <div class="section-title" data-aos="zoom-out">
           <h2>Cog payouts</h2>
-          <p>Below is how the Wealth Wheel cog payouts work</p>
+          <p>WEALTH WHEEL COG PAYOUTS</p>
         </div>
         <div class="row portfolio-container weWork-child" data-aos="fade-up"> 
           <table class="table">
             <thead>
               <tr>
                 <th scope="col"  class="table-active">Cog Number Purchased</th>
-                <th scope="col"  class="table-active">Cog Number Payouts</th>
+                <th scope="col"  class="table-active">Cog Number Paid</th>
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td class="table-active" style="visibility: hidden;">d</td>
+                <td class="table-active"></td>
+              </tr>
+              <tr>
+                <td>Cog 1</td>
+                <td class="table-active"></td>
+              </tr>
+              <tr>
+                <td>Cog 2</td>
+                <td class="table-active"></td>
+              </tr>
+              <tr>
+                <td>Cog 3</td>
+                <td class="table-active"></td>
+              </tr>
+              <tr>
+                <td>Cog 4</td>
+                <td class="table-active"></td>
+              </tr>
+              <tr>
+                <td>Cog 5</td>
+                <td class="table-active"></td>
+              </tr>
+
               <tr>
                 <td>Cog 6</td>
                 <td>Cog 1</td>

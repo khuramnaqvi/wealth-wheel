@@ -153,7 +153,7 @@
                                             <td>US${{$wheel->purchase_wheel->cog_price*110/100}}</td>
                                             <td>{{$wheel->created_at}}</td>
                                             <td>{{ $wheel->purchase_wheel->payout_wheel->count() }}</td>
-                                            <td>Paid</td>
+                                            <td>{{$wheel->cog_percnt == 'given' ? 'Paid' : 'Pending'}}</td>
                                         </tr>
                                         @empty
                                         <tr>

@@ -1,6 +1,14 @@
   @extends('layouts.user')
 @section('content')
 
+<style>
+  .shadow-sm svg {
+    height: 2px !important;
+  }
+  .justify-between .hidden {
+    margin-top: 12px !important;
+  }
+</style>
   <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
     <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="">
 
@@ -78,6 +86,8 @@
             </div>
 
           </div>
+            
+          
           
           <div class="col-lg-3">
             <div class="ww-pro-filter-main">
@@ -96,6 +106,8 @@
               </div>
             </div>
           </div>
+        <span style="margin-top: 39px;"> {!! $wheels->links() !!}</span>
+
         </div>
       </div>
     </section>

@@ -52,7 +52,7 @@
 
         <div class="section-title" data-aos="zoom-out">
           <h2>Log In</h2>
-          <p>Please enter your name and password</p>
+          <p>Please enter email and password</p>
         </div>
         <div class="ww-form-wrp" data-aos="fade-right">
         <form method="POST" action="{{ route('login') }}">

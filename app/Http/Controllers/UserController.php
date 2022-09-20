@@ -67,9 +67,9 @@ class UserController extends Controller
     public function availabe_wealth_wheel()
     {
 
-        $wheels = WealthWheel::all();
+        $wheels = WealthWheel::paginate(12);
         // $cog_num = WealthWheel::where('')->get();
-        // dd($wheels[1]->wallet);
+        // dd($wheels);
         
         return view('user.availabe_wealth_wheel', compact('wheels'));
     }
@@ -172,7 +172,7 @@ class UserController extends Controller
         $wheels = WealthWheel::all();
         $my_whells = WealthWheel::where('user_id', auth()->user()->id)->get();
 
-        $purchased_whells = wallet::where('user_id', auth()->user()->id)->get()->unique('wheel_id');
+        $purchased_whells = wallet::where('user_id', auth()->user()->id)->get();
         
         $payout_count = wallet::where('user_id', auth()->user()->id)->get();
 

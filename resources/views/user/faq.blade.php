@@ -11,10 +11,7 @@
       <div class="carousel-item active">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Feel free to ask question</span></h2>
-          <p class="animate__animated fanimate__adeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+          
           <div class="d-flex">
             <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
             <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
@@ -48,62 +45,125 @@
       <div class="container">
 
         <div class="section-title" data-aos="zoom-out">
-          <h2>F.A.Q</h2>
+          <h2>FAQs</h2>
           <p>Frequently Asked Questions</p>
         </div>
 
         <ul class="faq-list">
 
           <li>
-            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">What is a Wealth Wheel? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq1" class="collapse" data-bs-parent=".faq-list">
               <p>
-                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+              A Wealth Wheel is a continuous income-generator that gives every user 10% 
+              profit on their entries, providing a simple way of accumulating additional income.
+              The concept is of a wheel and the cogs within it. Users purchase cogs for their 
+              chosen wheel, and as more cogs are purchased the wheel returns 110% of the 
+              cog price to the earlier users (ie, users receive their initial cog payment PLUS an 
+              additional 10%).
               </p>
             </div>
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">How Do They Work? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq2" class="collapse" data-bs-parent=".faq-list">
               <p>
-                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+              Every cog purchase for a Wealth Wheel contributes to accumulating the wheel's 
+              'bank', from where each user is sent their payouts. As subsequent cogs are 
+              purchased they trigger the wheel bank to pay the earlier cog owners 110% of the
+              cog price.
+              For example, if a wheel's cog price is $100, when cog number 6 is purchased, 
+              $110 is paid to the user who purchased cog number 1.
+              Each user has a Wallet in their account from which they can withdraw their funds
+              to their preferred destination (eg, PayPal or Bank).
               </p>
             </div>
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">How Much Can I Make From A Wealth Wheel? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq3" class="collapse" data-bs-parent=".faq-list">
               <p>
-                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+              There is no limit to how much profit can be accumulated as there is no limit to 
+              how many wheel entries you can have, and every cog purchase returns an 
+              additional 10% to the user.
+              Each cog purchased for a wheel with a cog price of $100 will generate $10 profit,
+              similarly every cog purchased for a wheel with a $500 cog price will generate 
+              $50 profit.
               </p>
             </div>
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">How Do I Join A Wealth Wheel? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq4" class="collapse" data-bs-parent=".faq-list">
               <p>
-                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+              The ‘Available Wealth Wheels’ page contains all wealth wheels. Simply click ‘Join 
+              Wealth Wheel’ to purchase a cog.  
               </p>
             </div>
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">When Do I Receive My Profit? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq5" class="collapse" data-bs-parent=".faq-list">
               <p>
-                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+              Each user’s cogs are purchase triggers the wheel’s bank to pay the earlier cog 
+              owners their 110% of the cog price.
+              For example, when cog number 6 is purchased, the user who purchased cog 
+              number 1 is paid. When cog number 7 is purchased, the user who purchased cog
+              number 2 is paid.
+              For a longer list of payout cog numbers visit the ‘How It Works’ page. 
               </p>
             </div>
           </li>
 
           <li>
-            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Can I Create A Wealth Wheel? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
             <div id="faq6" class="collapse" data-bs-parent=".faq-list">
               <p>
-                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+              Yes. Any user can create a wheel by clicking ‘Create Wealth Wheel’ and selecting
+              the cog price. It will immediately be available on the ‘Available Wealth Wheels’ 
+              for anybody to join.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq7" class="collapsed question">How Do I Withdraw My Profits? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq7" class="collapse" data-bs-parent=".faq-list">
+              <p>
+              When logged in, within My Account every user has a Wallet from where you can 
+              withdraw funds to your preferred destination (eg, PayPal or Bank).
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq8" class="collapsed question">Is There A Limit To How Many Cogs I Can Have? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq8" class="collapse" data-bs-parent=".faq-list">
+              <p>
+              No. You can have as many cogs as you like.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq9" class="collapsed question">Can I Have More Than One Cog In The Same Wheel? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq9" class="collapse" data-bs-parent=".faq-list">
+              <p>
+              Yes. There is no restriction on how many cogs you can have, even within the 
+            same wheels.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq10" class="collapsed question">Is There A Limit To How Many Wealth Wheels I Can Join? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq10" class="collapse" data-bs-parent=".faq-list">
+              <p>
+              No. You can join as many Wealth Wheels as you like.
               </p>
             </div>
           </li>

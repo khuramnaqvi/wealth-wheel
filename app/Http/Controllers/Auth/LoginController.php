@@ -62,7 +62,7 @@ class LoginController extends Controller
             }else{
              
                 
-                return redirect()->route('user_home')->with('success','Login Successfull!');
+                return redirect()->route('user_home')->with('success','Login Successful!');
                 // return back()->with('success', 'Success! User created');
             }
         }else{

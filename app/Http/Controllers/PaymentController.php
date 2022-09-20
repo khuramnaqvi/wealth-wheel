@@ -246,7 +246,7 @@ class PaymentController extends Controller
                 // dd($arr_body);
                 // return "Payment is successful. Your transaction id is: ". $arr_body['id'];
 
-                return back()->with('success', 'Payment Successfull');
+                return redirect('my_wheels')->with('success', 'Payment Successful');
             } else {
                 return $response->getMessage();
             }
