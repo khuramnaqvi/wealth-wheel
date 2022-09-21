@@ -11,6 +11,7 @@ use App\Models\UserWallet;
 use App\Models\Withdraw;
 use Illuminate\Http\Request;
 use App\Notifications\PurchaseCogNotification;
+use App\Notifications\WealthWheelClose;
 use Mail;
 use App\Models\ContactUs;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
@@ -145,27 +146,8 @@ class UserController extends Controller
         $affected = DB::table('users')
             ->where('id', auth()->user()->id)
             ->update(['balance' => auth()->user()->balance + $amount]);
-        return back()->with('success', 'Payment Successfull');
+        return back()->with('success', 'Payment Successful');
     }
-    // 
-    // public function deposit_balance(Request $request)
-    // {
-    //     // dd('dd');
-    //     $amount = $request->amount;
-    //     Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
-    //             $stripee = Stripe\Charge::create ([
-    //                     "amount" => $amount * 100,
-    //                     "currency" => "usd",
-    //                     "source" => $request->stripeToken,
-    //                     "description" => "Your payment is success." 
-    //             ]);
-
-
-    //     $affected = DB::table('users')
-    //     ->where('id', auth()->user()->id)
-    //     ->update(['balance' => auth()->user()->balance + $amount]);
-    //     return back()->with('success', 'Payment Successfull');
-    // }
 
     public function my_wheels()
     {
@@ -389,5 +371,34 @@ class UserController extends Controller
             return back()->with('error', 'Password And Confrim Password Does Not Match.');
         }
 
+    }
+    public function close_wheel(Request $request)
+    {
+        // dd('dddd');
+        $wealth_wheels = DB::table('wealth_wheels')
+            ->where('id', $request->id)
+            ->update(['available' => 'unavailable']);
+
+        $wheels = WealthWheel::find($request->id);
+        for ($i = 0; $i < count($wheels->payout_not_given); $i++) {
+            $user_id = $wheels->payout_not_given[$i]->user_id;
+            $wallet_id = $wheels->payout_not_given[$i]->id;
+            $walletts = DB::table('wallets')->where('id', $wallet_id)->update(['cog_percnt' => 'returned']);
+            $useers = DB::table('users')->where('id', $user_id)->increment('balance', $wheels->cog_price);
+        }
+        // dd('hh');
+
+        for ($j = 0; $j < count($wheels->wallet); $j++) {
+
+            $users_id = $wheels->wallet[$j]->user_id;
+            $usr = User::find($users_id);
+            $arr = [ 'wheel_name' => $wheels->wheel_name];
+
+            $usr->notify(new WealthWheelClose($arr));
+
+        }
+        
+
+        return back()->with('success', 'Wheel Close Successfully');
     }
 }

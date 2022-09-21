@@ -10,7 +10,7 @@
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Feel free to ask question</span></h2>
+          <h2 class="animate__animated animate__fadeInDown">FAQs</span></h2>
           
           <div class="d-flex">
             <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
@@ -45,7 +45,7 @@
       <div class="container">
 
         <div class="section-title" data-aos="zoom-out">
-          <h2>FAQs</h2>
+          <h2>FAQ<span style="text-transform: lowercase;">s</span></h2>
           <p>Frequently Asked Questions</p>
         </div>
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,23 +44,23 @@ Route::get('/cls', function() {
 // Route::get('payment/success', [App\Http\Controllers\PayPalController::class, 'success'])->name('payment.success');
 
 //Routes For User
-Route::get('/', [App\Http\Controllers\UserController::class, 'user'])->name('user_home');
-Route::get('/register/success', [App\Http\Controllers\UserController::class, 'user']);
-Route::get('/products', [App\Http\Controllers\UserController::class, 'products'])->name('products');
-Route::get('/about', [App\Http\Controllers\UserController::class, 'about'])->name('about');
-Route::get('/faq', [App\Http\Controllers\UserController::class, 'faq'])->name('faq');
-Route::get('/how_it_works', [App\Http\Controllers\UserController::class, 'how_it_works'])->name('how_it_works');
+Route::get('/', [UserController::class, 'user'])->name('user_home');
+Route::get('/register/success', [UserController::class, 'user']);
+Route::get('/products', [UserController::class, 'products'])->name('products');
+Route::get('/about', [UserController::class, 'about'])->name('about');
+Route::get('/faq', [UserController::class, 'faq'])->name('faq');
+Route::get('/how_it_works', [UserController::class, 'how_it_works'])->name('how_it_works');
 
 // Contact us
-Route::get('/contact', [App\Http\Controllers\UserController::class, 'contact'])->name('contact');
-Route::post('/contact_form', [App\Http\Controllers\UserController::class, 'contact_form'])->name('contact_form');
+Route::get('/contact', [UserController::class, 'contact'])->name('contact');
+Route::post('/contact_form', [UserController::class, 'contact_form'])->name('contact_form');
 
 
 
 //Term & conditions data Routes
-Route::get('/faq', [App\Http\Controllers\UserController::class, 'faq'])->name('faq');
-Route::get('/privacy_policy', [App\Http\Controllers\UserController::class, 'privacy_policy'])->name('privacy_policy');
-Route::get('/term_and_conditions', [App\Http\Controllers\UserController::class, 'term_and_conditions'])->name('term_and_conditions');
+Route::get('/faq', [UserController::class, 'faq'])->name('faq');
+Route::get('/privacy_policy', [UserController::class, 'privacy_policy'])->name('privacy_policy');
+Route::get('/term_and_conditions', [UserController::class, 'term_and_conditions'])->name('term_and_conditions');
 
 // reset password
 Route::get('/reset', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'reset'])->name('reset');
@@ -73,13 +74,13 @@ Route::post('reset-password', [App\Http\Controllers\Auth\ForgotPasswordControlle
 
 
 //wheel
-Route::get('/availabe_wealth_wheel', [App\Http\Controllers\UserController::class, 'availabe_wealth_wheel'])->name('availabe_wealth_wheel');
+Route::get('/availabe_wealth_wheel', [UserController::class, 'availabe_wealth_wheel'])->name('availabe_wealth_wheel');
 
 
 //product filter
-Route::post('wheels_filter_form', [App\Http\Controllers\UserController::class, 'wheels_filter_form'])->name('wheels_filter_form');
+Route::post('wheels_filter_form', [UserController::class, 'wheels_filter_form'])->name('wheels_filter_form');
 
-Route::get('wheels_filter', [App\Http\Controllers\UserController::class, 'wheels_filter'])->name('wheels_filter');
+Route::get('wheels_filter', [UserController::class, 'wheels_filter'])->name('wheels_filter');
 
 
 
@@ -118,7 +119,7 @@ Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout
 //user routes
 Route::group(['middleware' => ['auth', 'user']], function () {  
  Route::get('/wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'wealth_wheel'])->name('wealth_wheel');
-Route::post('/add_user_balance', [App\Http\Controllers\UserController::class, 'add_user_balance'])->name('add_user_balance');
+Route::post('/add_user_balance', [UserController::class, 'add_user_balance'])->name('add_user_balance');
 
 // Routes for paypal
 Route::post('charge', [App\Http\Controllers\PaymentController::class, 'charge'])->name('charge');
@@ -127,29 +128,31 @@ Route::get('error', [App\Http\Controllers\PaymentController::class, 'error'])->n
 
 //Routes For wheels
 Route::post('/create_wealth_wheel', [App\Http\Controllers\Admin\WheelController::class, 'create_wealth_wheel'])->name('create_wealth_wheel');
-Route::get('/wheels_details', [App\Http\Controllers\UserController::class, 'wheels_details'])->name('wheels_details');
+Route::get('/wheels_details', [UserController::class, 'wheels_details'])->name('wheels_details');
 
 
 
-Route::get('/my_wheels', [App\Http\Controllers\UserController::class, 'my_wheels']);
+Route::get('/my_wheels', [UserController::class, 'my_wheels']);
 
 // Routes for Stripe
 Route::post('stripe_post', [App\Http\Controllers\StripePaymentController::class, 'stripePost'])->name('stripe_post');
 
 
 // Routes for payment from wallet
-Route::post('/pay_from_wallet', [App\Http\Controllers\UserController::class, 'pay_from_wallet'])->name('pay_from_wallet');
+Route::post('/pay_from_wallet', [UserController::class, 'pay_from_wallet'])->name('pay_from_wallet');
 
 // deposite balance 
-Route::post('deposit_balance', [App\Http\Controllers\UserController::class, 'deposit_balance']);
+Route::post('deposit_balance', [UserController::class, 'deposit_balance']);
 Route::post('paypal_deposit_balance', [App\Http\Controllers\PaymentController::class, 'paypal_deposit_balance'])->name('paypal_deposit_balance');
 Route::get('paypal_success', [App\Http\Controllers\PaymentController::class, 'paypal_success'])->name('paypal_success');
 
 // withdraw
-Route::get('withdraw/{id}', [App\Http\Controllers\UserController::class, 'withdraw']);
-Route::post('wihdraw_submit', [App\Http\Controllers\UserController::class, 'wihdraw_submit']);
-Route::post('update_profile', [App\Http\Controllers\UserController::class, 'update_profile']);
+Route::get('withdraw/{id}', [UserController::class, 'withdraw']);
+Route::post('wihdraw_submit', [UserController::class, 'wihdraw_submit']);
+Route::post('update_profile', [UserController::class, 'update_profile']);
 
+// close wheel
+Route::post('close_wheel/{id}', [UserController::class, 'close_wheel']);
 
 
 

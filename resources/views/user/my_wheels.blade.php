@@ -66,10 +66,10 @@
 <div class="tabset pt-4 mt-4" style="margin: auto;">
         <!-- Tab 1 -->
         <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
-        <label for="tab1">My Wealth Wheels</label>
+        <label for="tab1">My Cogs</label>
         <!-- Tab 2 -->
         <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
-        <label for="tab2">My Cogs</label>
+        <label for="tab2">My Wealth Wheels</label>
         <!-- Tab 3 -->
         <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
         <label for="tab3">My Details</label>
@@ -83,50 +83,7 @@
 
         <section id="marzen" class="tab-panel">
 
-            <section id="our-products" class="our-products avl-wealthWheel">
-                <div class="container">
-                    <div class="row content" data-aos="fade-up">
-                        <div class="col-lg-12">
-                            <div class="row">
-                                <h3>Owned Wealth Wheels</h3>
-                                <hr>
-                                
-                                @forelse($my_whells as $wheel)
-                                <div class="ww-avl-card col-md-4 my-2">
-                                    <div class="card">
-                                        <div class="ww-card-tag">
-                                            <span>Available Now</span>
-                                        </div>
-
-                                        <img style="height: 250px; width:310px"
-                                            src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
-                                        <div class="card-body">
-                                            <h5 class="card-title">WW0{{ $wheel->wheel_number }}</h5>
-
-
-                                            <p class="card-text">Last Cog Number: {{$wheel->wallet->count()}}</p>
-                                            <div class="pro-price">
-                                                <h4>Cog Price : <span>US${{$wheel->cog_price}}</span></h4>
-                                            </div>
-                                            <a href="{{url('wheels_details?id=' .$wheel->id) }}"
-                                                class="pro-dtl-btn">Join Wealth Wheel</a>
-
-                                            <!-- <a href="{{route('wheels_details', ['id' =>encrypt($wheel->id)])}}"  class="pro-dtl-btn">Join Wealth Wheel</a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                @empty
-                                <h4>No wheels created</h4>
-                                @endforelse
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </section>
-
-        <section id="rauchbier" class="tab-panel">
-            <section id="our-products" class="our-products avl-wealthWheel">
+        <section id="our-products" class="our-products avl-wealthWheel">
                 <div class="container">
                     <div class="row content" data-aos="fade-up">
                         <div class="col-lg-12">
@@ -143,7 +100,7 @@
                                             <th scope="col">Status</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody> 
                                     @forelse($purchased_whells as $wheel)
 
                                         <tr>
@@ -153,7 +110,13 @@
                                             <td>US${{$wheel->purchase_wheel->cog_price*110/100}}</td>
                                             <td>{{$wheel->created_at}}</td>
                                             <td>{{ $wheel->purchase_wheel->payout_wheel->count() }}</td>
-                                            <td>{{$wheel->cog_percnt == 'given' ? 'Paid' : 'Pending'}}</td>
+                                            @if($wheel->cog_percnt== 'given')
+                                            <td>Paid</td>
+                                            @elseif($wheel->cog_percnt== 'not given')
+                                            <td>Pending</td>
+                                            @else
+                                            <td>Returned</td>
+                                            @endif
                                         </tr>
                                         @empty
                                         <tr>
@@ -164,6 +127,70 @@
                                     </tbody>
                                 </table>
                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="rauchbier" class="tab-panel">
+            
+
+            <!--  -->
+            <section id="our-products" class="our-products avl-wealthWheel">
+                <div class="container">
+                    <div class="row content" data-aos="fade-up">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <h3>Owned Wealth Wheels</h3>
+                                <hr>
+                                
+                                @forelse($my_whells as $wheel)
+                                <div class="ww-avl-card col-md-4 my-2">
+                                    <div class="card">
+                                        <div class="ww-card-tag">
+                                        @if($wheel->available == 'available')
+                                            <span>Available Now</span>
+                                        @else
+                                            <span style="background: red;">Unavailable</span>
+                                        @endif
+                                        </div>
+
+                                        <img style="height: 250px; width:310px"
+                                            src="{{ asset('assets/img/ww-pic.png') }}" alt="no img" class="img-fluid">
+                                        <div class="card-body">
+                                            <h5 class="card-title">WW0{{ $wheel->wheel_number }}</h5>
+
+
+                                            <p class="card-text">Last Cog Number: {{$wheel->wallet->count()}}</p>
+                                            <div class="pro-price">
+                                                <h4>Cog Price : <span>US${{$wheel->cog_price}}</span></h4>
+                                            </div>
+                                            @if($wheel->available == 'available')
+                                            <a href="{{url('wheels_details?id=' .$wheel->id) }}"
+                                                class="pro-dtl-btn">Join Wealth Wheel</a>
+                                                @if($wheel->wallet->count() >= 20)
+                                                <form action="{{url('close_wheel')}}/{{$wheel->id}}" method="post">
+                                                    @csrf
+                                                    <button type="submit" class="pro-dtl-btn show_confirm">Close Wheel</button>
+                                                </form>
+                                                @else
+                                                <button type="submit" class="pro-dtl-btn">Close Wheel</button>
+
+                                                @endif
+                                            @else
+                                            <button type="button"
+                                                class="pro-dtl-btn">Wheel Closed</button>
+                                            @endif
+
+                                            <!-- <a href="{{route('wheels_details', ['id' =>encrypt($wheel->id)])}}"  class="pro-dtl-btn">Join Wealth Wheel</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                @empty
+                                <h4>No wheels created</h4>
+                                @endforelse
                             </div>
                         </div>
                     </div>
@@ -220,7 +247,38 @@
 <!-- tabs end -->
 
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
+
+<script type="text/javascript">
+    // Swal.fire(
+    //     'Welcome To Wealth Wheel!',
+    //     'You have successfully created your account and are now logged in.',
+    //     'success'
+    //   )
+        $('.show_confirm').click(function(event) {
+
+             var form =  $(this).closest("form");
+             var name = $(this).data("name");
+             event.preventDefault();
+             new swal({
+                 title: `The Wealth Wheel has cogs awaiting payout.`,
+                 text: "Are you sure you want to close the wheel?",
+                 icon: "warning",
+                 buttons: true,
+                 dangerMode: true,
+             })
+             .then((willDelete) => {
+               if (willDelete) {
+                 form.submit();
+               }
+             });
+         });
+
+   </script>
 
 
 @endsection

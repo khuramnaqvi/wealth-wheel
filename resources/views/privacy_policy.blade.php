@@ -160,6 +160,9 @@
               Using financial information (Financial Information) to process orders and detect and prevent fraud;
               </p>
               <p>
+              Providing users with information regarding updates, promotions and recommendations;
+              </p>
+              <p>
               Using automatic information to maintain and improve the Site and notifying users of any changes to the Site
               </p>
               <p>

@@ -200,7 +200,8 @@
               EXCLUSIONS OF LIABILITY
               </p>
               <p>
-              We use reasonable endeavours to ensure that the data on the Website is accurate and to correct any errors or omissions as soon as practicable after being notified of them. We do not monitor, verify or endorse information submitted by third parties including Fundraisers for posting on the Website. To the extent permitted by applicable law, we disclaim all warranties and representations (whether express or implied) as to the accuracy of any information contained on the Website. We do not guarantee that the Website will be fault free and do not accept liability for any errors or omissions
+              We use reasonable endeavours to ensure that the data on the Website is accurate and to correct any errors or omissions as soon as practicable after being notified of them. We do not monitor, verify or endorse information submitted by third parties including Fundraisers for posting on the Website. To the extent permitted by applicable law, we disclaim all warranties and representations (whether express or implied) as to the accuracy of any information contained on the Website. We do not guarantee that the Website will be fault free and do not accept liability for any errors or omissions.</p>
+              <p>
               Due to the nature of electronic transmission of data over the Internet, any liability we may have for any losses or claims arising from an inability to access the Website, or from any use of the Website or reliance on the data transmitted using the Website, is excluded to the fullest extent permissible by law. In no event shall we be liable for any indirect loss, consequential loss, loss of profit, data, revenue, business opportunity, anticipated savings, goodwill or reputation whether in contract, tort or otherwise arising out of or in connection with this agreement or use of the Website save where such liability cannot be excluded by law.
               We do not give any warranty that the Website is free from viruses or anything else which may have a harmful effect on any technology and you should take your own safeguards in this area.
               </p>
@@ -272,28 +273,29 @@
               If any provision of any of the terms and conditions on the Website is held to be unlawful, invalid or unenforceable, that provision shall be deemed severed and the validity and enforceability of the remaining provisions of the terms and conditions shall not be affected.
               These terms and conditions set out the entire agreement and understanding between the parties in respect of the subject matter of the terms and conditions.
               English Law governs all of these terms and conditions and each party submits to the exclusive jurisdiction of the English courts in respect of any dispute arising under these terms and conditions. All disclaimers, indemnities and exclusions in these terms and conditions shall survive termination of the agreement between us for any reason.
-              Neither party shall be liable to the other to the extent that any liability.
+              Neither party shall be liable to the other to the extent that any liability relates to an event over which that party has no control.
             </p>
             <p>
-            relates to an event over which that party has no control.
+            
             The parties shall not assign these terms and conditions to any other party without the other's consent. However, you are deemed to consent to an assignment if there is a trade sale or group reorganisation of Commerce Global Ventures Ltd.
             No part of these terms and conditions is enforceable by anyone who is not a party to it, pursuant to the Contracts (Rights of Third Parties) Act 1999
             </p>
             <p style="font-weight:bold;">
             CONTACT DETAILS
             </p>
+            <div style="line-height: 12px;">
             <p>
-            We can be contacted via our registered office:
-            Commerce Global Ventures Ltd
-            Grosvenor House
-            St. Paul’s Square
-            Birmingham
-            B3 1RB
-            UK
-            Company Registration Number: 10521270
-            VAT Registration Number: 331 3257 36
-            Email: hello@wealth-wheel.com
-            </p>
+            We can be contacted via our registered office:</p>
+            <p>Commerce Global Ventures Ltd</p>
+            <p>Grosvenor House</p>
+            <p>St. Paul’s Square</p>
+            <p>Birmingham</p>
+            <p>B3 1RB</p>
+            <p>UK</p>
+            <p>Company Registration Number: 10521270</p>
+            <p>VAT Registration Number: 331 3257 36</p>
+            <p>Email: hello@wealth-wheel.com</p>
+            </div>
             </div>
           </li>
           <!--  -->

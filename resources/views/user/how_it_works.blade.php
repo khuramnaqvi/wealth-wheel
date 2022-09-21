@@ -223,7 +223,7 @@
     <section id="marquee" class="ww-marquee ww-howitwork marquee">
       <div class="container">
         <div class="row">
-          <marquee class="blink">The Wealth Wheel continues to return these cog user profit payouts.</marquee>
+          <p style="animation: none;" class="blink">The Wealth Wheel continues to return these cog user profit payouts.</p>
         </div>
       </div>
     </section>

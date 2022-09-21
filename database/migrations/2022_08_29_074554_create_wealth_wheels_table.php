@@ -21,6 +21,7 @@ class CreateWealthWheelsTable extends Migration
             $table->string('wheel_number');
             $table->string('wheel_name')->nullable();
             $table->string('cog_price')->nullable();
+            $table->string('available')->default('available');
             // $table->string('image')->nullable();
             $table->timestamps();
         });

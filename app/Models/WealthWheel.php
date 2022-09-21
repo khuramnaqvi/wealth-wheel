@@ -27,6 +27,12 @@ class WealthWheel extends Model
     {
         return $this->hasMany(wallet::class,'wheel_id', 'id')->where('cog_percnt', 'given');
     }
+
+    public function payout_not_given()
+    {
+        return $this->hasMany(wallet::class,'wheel_id', 'id')->where('cog_percnt', 'not given');
+    }
+
     public function user_wallet()
     {
         return $this->belongsTo(UserWallet::class, 'id' ,'wheel_id');

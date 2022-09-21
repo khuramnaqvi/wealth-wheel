@@ -62,7 +62,11 @@
               <div class="ww-avl-card col-md-4 my-2">
                 <div class="card">
                   <div  class="ww-card-tag">
-                    <span>Available Now</span>
+                  @if($wheel->available == 'available')
+                      <span>Available Now</span>
+                  @else
+                      <span style="background: red;">Unavailable</span>
+                  @endif
                   </div>
                  
                   {{-- <img style="height: 250px; width:310px" src="{{ asset('images/' .$wheel->image) }}" alt="no img" class="img-fluid"> --}}
@@ -76,8 +80,11 @@
                     <div class="pro-price">
                       <h4>Cog Price : <span>US${{$wheel->cog_price}}</span></h4>
                     </div> 
+                  @if($wheel->available == 'available')
                     <a href="{{url('wheels_details?id=' .$wheel->id) }}" class="pro-dtl-btn">Join Wealth Wheel</a>
-
+                  @else
+                    <button type="button" class="pro-dtl-btn">Wheel Closed</button>
+                  @endif
                     <!-- <a href="{{route('wheels_details', ['id' =>encrypt($wheel->id)])}}"  class="pro-dtl-btn">Join Wealth Wheel</a> -->
                   </div>
                 </div>

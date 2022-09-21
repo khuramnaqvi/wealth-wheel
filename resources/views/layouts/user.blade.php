@@ -570,6 +570,9 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
+
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -602,6 +605,12 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
         'success'
       )
     }
+    // swal({
+    //              title: `Welcome To Wealth Wheel!`,
+    //              text: "You have successfully created your account and are now logged in.",
+    //              icon: "success",
+                 
+    //          })
 
 //   @if(Session::has('register'))
   
