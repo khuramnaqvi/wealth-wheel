@@ -167,6 +167,8 @@ class UserController extends Controller
 
     public function pay_from_wallet(Request $request)
     {
+        
+
         $amount = $request->amount;
         $wheel_id = $request->wheel_id;
         // dd($wheel_id);
@@ -177,6 +179,9 @@ class UserController extends Controller
             return redirect()->back()->with('error', 'Sorry! You Do Not Have Enough Balance.');
         } else {
 
+            $walt = wallet::where('wheel_id', $request->wheel_id)->get();
+            // dd($walt->count());
+
             // 
             $up = 92.5/100;
             $user_percent = $up * $amount ;
@@ -184,6 +189,7 @@ class UserController extends Controller
             $user_payment->user_id = Auth::user()->id;
             $user_payment->wheel_id =  $wheel_id;
             $user_payment->amount = $user_percent;
+            $user_payment->purchase_number = $walt->count()+1;
             $user_payment->save();
 
             DB::table('user_wallets')

@@ -136,11 +136,11 @@
                                 </div>
                                 <label class="mt-4" for="" style="text-align: left;font-weight: bold;">Select Withdraw Option</label>
                                 <br>
-                                <input type="radio" name="pay" id="vcard3" value="1" class="paymentmode3" required><label for="vcard3" style="margin-right: 33px;">Withdraw with Card</label>
+                                <input disabled type="radio" name="pay" id="vcard3" value="1" class="paymentmode3" required><label for="vcard3" style="margin-right: 33px;">Withdraw with Card</label>
                                 <input type="radio" name="pay" id="payypal3"  value="2" class="paymentmode3"><label for="payypal3">Withdraw with PayPal</label>
                                 
                                 <input type="hidden" name="withdraw_amount" class="withdraw_amount">
-                                <input type="hidden" name="withdraw_type" class="withdraw_type">
+                                <input type="hidden" name="withdraw_type" class="withdraw_type" value="paypal">
                                 <div class="col-md-12 col-md-offset-3 stripe_div2 d-none">
                                     <div class="panel panel-default credit-card-box">
                                         <div class="panel-body">
@@ -166,13 +166,13 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-12 col-md-offset-3 paypal_div2 d-none">
+                                <div class="col-md-12 col-md-offset-3 paypal_div2">
                                     <div class="panel panel-default credit-card-box">
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="form-group col-12 text-left">
                                                     <label for="">PayPal Email:</label>
-                                                    <input type="email" name="paypal_email" class="form-control" style="border-radius: 30px;">
+                                                    <input type="email" name="paypal_email" class="form-control" placeholder="Enter Your PayPal Email" style="border-radius: 30px;">
                                                 </div>
                                                 
                                             </div>
@@ -218,16 +218,20 @@
 
             });
 
+
             $(document).on("click", ".withdraw_btn", function() {
                 $('#withdrawmodel').modal('show');
 
             });
 
+            // $(".paymentmode3").click( function() {
+            $('.paymentmode3').trigger("click");
+
             $(document).on("click", ".paymentmode3", function () {
                 var checkamount = $('.checkamount2').val();
 
-                if(checkamount != '')
-                {
+                // if(checkamount != '')
+                // {
                     $('.withdraw_amount').val(checkamount);
                     var a = $('.paymentmode3:checked').val();
                     if(a ==1)
@@ -240,13 +244,13 @@
                         $('.paypal_div2').removeClass('d-none');
                         $('.stripe_div2').addClass('d-none');
                     }
-                }else{
-                    toastr.options = {
-                    "closeButton": true,
-                    "progressBar": true
-                    }
-                    toastr.error('Please Enter Amount First');
-                }
+                // }else{
+                //     toastr.options = {
+                //     "closeButton": true,
+                //     "progressBar": true
+                //     }
+                //     toastr.error('Please Enter Amount First');
+                // }
 
             });
         });

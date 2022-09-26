@@ -105,7 +105,7 @@
 
                                         <tr>
                                             <td>{{ $wheel->purchase_wheel->wheel_name }}</td>
-                                            <td>{{ $wheel->purchase_wheel->wheel_name }} - 0{{$wheel->purchase_wheel->wallet->count()}}</td>
+                                            <td>{{ $wheel->purchase_wheel->wheel_name }} - 0{{$wheel->purchase_number}}</td>
                                             <td>US${{$wheel->purchase_wheel->cog_price}}</td>
                                             <td>US${{$wheel->purchase_wheel->cog_price*110/100}}</td>
                                             <td>{{$wheel->created_at}}</td>

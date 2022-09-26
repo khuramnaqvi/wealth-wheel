@@ -101,7 +101,7 @@ class PaymentController extends Controller
 
                 // Insert transaction data into the database
                //for user 
-
+               $walt = wallet::where('wheel_id', $wheel_id)->get();
                 
 
                 $up = 92.5/100;
@@ -110,6 +110,7 @@ class PaymentController extends Controller
                 $user_payment->user_id = Auth::user()->id;
                 $user_payment->wheel_id = $wheel_id;
                 $user_payment->amount = $user_percent;
+                $user_payment->purchase_number = $walt->count()+1;
                 $user_payment->save();
 
                 DB::table('user_wallets')

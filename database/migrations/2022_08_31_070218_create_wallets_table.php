@@ -22,6 +22,7 @@ class CreateWalletsTable extends Migration
             $table->string('amount')->nullable();
             $table->string('wheel_name')->nullable();
             $table->string('cog_percnt')->default('not given');
+            $table->string('purchase_number')->nullable();
             $table->timestamps();
         });
     }

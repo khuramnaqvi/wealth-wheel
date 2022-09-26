@@ -112,6 +112,7 @@ and (max-device-width : 768px)
   display: block;
 }
 
+
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
@@ -235,7 +236,10 @@ body {
             <div class="dropdown-content" style="padding-top: 13px;padding-bottom: 13px;">
               <a href="#" class="deposit_modelbtn">Deposit</a>
               <a href='{{ url("withdraw") }}/{{auth()->user()->id}}'>Withdraw</a>
-              <a href="{{ route ('logout') }}"  onclick="return confirm('Are you sure you want to logout?');">Logout</a>
+              <form action="{{route('logout') }}" method="get">
+                @csrf
+                <button type="submit" class="show_confirm2" style="border: none;padding-left: 23px;padding-top: 9px;">Logout</button>
+              </form >  
             </div>
           </div>
           @endauth
@@ -816,6 +820,25 @@ $(function() {
     
    
 });
+
+    $('.show_confirm2').click(function(event) {
+
+        var form =  $(this).closest("form");
+        var name = $(this).data("name");
+        event.preventDefault();
+        new swal({
+            title: `The Wealth Wheel has cogs awaiting payout.`,
+            text: "Are you sure you want to close the wheel?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            form.submit();
+          }
+        });
+    });
 </script>
  
 

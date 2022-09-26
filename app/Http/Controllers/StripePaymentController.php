@@ -49,7 +49,7 @@ class StripePaymentController extends Controller
         ]);
 
         
-
+            $walt = wallet::where('wheel_id', $wheel_id)->get();
 
         
             //for user 
@@ -60,6 +60,7 @@ class StripePaymentController extends Controller
             $user_payment->wheel_id =  $wheel_id;
             $user_payment->wheel_name =  $wheel_name;
             $user_payment->amount = $user_percent;
+            $user_payment->purchase_number = $walt->count()+1;
             $user_payment->save(); 
 
             // 
