@@ -166,13 +166,13 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-12 col-md-offset-3 paypal_div2">
+                                <div class="col-md-12 col-md-offset-3 paypal_div2 d-none" style="display:none">
                                     <div class="panel panel-default credit-card-box">
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="form-group col-12 text-left">
                                                     <label for="">PayPal Email:</label>
-                                                    <input type="email" name="paypal_email" class="form-control" placeholder="Enter Your PayPal Email" style="border-radius: 30px;">
+                                                    <input type="email" name="paypal_email" class="form-control" placeholder="Enter Your PayPal Email" style="border-radius: 30px;" value="{{ auth()->user()->paypal_email }}">
                                                 </div>
                                                 
                                             </div>

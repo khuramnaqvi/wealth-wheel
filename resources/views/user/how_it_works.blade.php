@@ -91,128 +91,95 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col"  class="table-active">Cog Number Purchased</th>
-                <th scope="col"  class="table-active">Cog Number Paid</th>
+                <th scope="col"  class="table-active">Cog Number</th>
+                <th scope="col"  class="table-active">Payout Cog No.</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="table-active" style="visibility: hidden;">d</td>
-                <td class="table-active"></td>
-              </tr>
+              
               <tr>
                 <td>Cog 1</td>
-                <td class="table-active"></td>
+                <td>Cog 6</td>
+
               </tr>
               <tr>
                 <td>Cog 2</td>
-                <td class="table-active"></td>
+                <td>Cog 7</td>
               </tr>
               <tr>
                 <td>Cog 3</td>
-                <td class="table-active"></td>
+                <td>Cog 8</td>
               </tr>
               <tr>
                 <td>Cog 4</td>
-                <td class="table-active"></td>
+                <td>Cog 9</td>
               </tr>
               <tr>
                 <td>Cog 5</td>
-                <td class="table-active"></td>
+                <td>Cog 10</td>
               </tr>
 
               <tr>
                 <td>Cog 6</td>
-                <td>Cog 1</td>
+                <td>Cog 12</td>
               </tr>
               <tr>
                 <td>Cog 7</td>
-                <td>Cog 2</td>
+                <td>Cog 13</td>
               </tr>
               <tr>
                 <td>Cog 8</td>
-                <td>Cog 3</td>
+                <td>Cog 14</td>
               </tr>
               <tr>
                 <td>Cog 9</td>
-                <td>Cog 4</td>
+                <td>Cog 15</td>
               </tr>
               <tr>
                 <td>Cog 10</td>
-                <td>Cog 5</td>
+                <td>Cog 16</td>
               </tr>
               <tr>
                 <td>Cog 11</td>
-                <td class="table-active"></td>
+                <td>Cog 18</td>
               </tr>
               <tr>
                 <td>Cog 12</td>
-                <td>Cog 6</td>
+                <td>Cog 19</td>
               </tr>
               <tr>
                 <td>Cog 13</td>
-                <td>Cog 7</td>
+                <td>Cog 20</td>
               </tr>
               <tr>
                 <td>Cog 14</td>
-                <td>Cog 8</td>
-              </tr>
-              <tr>
-                <td>Cog 15</td>
-                <td>Cog 9</td>
-              </tr>
-              <tr>
-                <td>Cog 16</td>
-                <td>Cog 10</td>
-              </tr>
-              <tr>
-                <td>Cog 17</td>
-                <td class="table-active"></td>
-              </tr>
-              <tr>
-                <td>Cog 18</td>
-                <td>Cog 11</td>
-              </tr>
-              <tr>
-                <td>Cog 19</td>
-                <td>Cog 12</td>
-              </tr>
-              <tr>
-                <td>Cog 20</td>
-                <td>Cog 13</td>
-              </tr>
-              <tr>
                 <td>Cog 21</td>
-                <td>Cog 14</td>
               </tr>
               <tr>
-                <td>Cog 22</td>
                 <td>Cog 15</td>
+                <td>Cog 22</td>
               </tr>
               <tr>
-                <td>Cog 23</td>
-                <td class="table-active"></td>
-              </tr>
-              <tr>
-                <td>Cog 24</td>
                 <td>Cog 16</td>
+                <td>Cog 24</td>
               </tr>
               <tr>
-                <td>Cog 25</td>
                 <td>Cog 17</td>
+                <td>Cog 25</td>
               </tr>
               <tr>
-                <td>Cog 26</td>
                 <td>Cog 18</td>
+                <td>Cog 26</td>
               </tr>
               <tr>
-                <td>Cog 27</td>
                 <td>Cog 19</td>
+                <td>Cog 27</td>
               </tr>
               <tr>
-                <td>Cog 28</td>
                 <td>Cog 20</td>
+                <td>Cog 28</td>
               </tr>
+              
             </tbody>
           </table>
         </div>

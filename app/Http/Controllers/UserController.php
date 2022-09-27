@@ -12,6 +12,7 @@ use App\Models\Withdraw;
 use Illuminate\Http\Request;
 use App\Notifications\PurchaseCogNotification;
 use App\Notifications\WealthWheelClose;
+use App\Notifications\WithdrawRequest;
 use Mail;
 use App\Models\ContactUs;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
@@ -326,6 +327,10 @@ class UserController extends Controller
             $withdraw->paypal_email = $request->paypal_email;
             $withdraw->save();
 
+            $arr = [ 'withdraw' => $request->withdraw, 'user_name' => auth()->user()->name, 'paypal_email' => $request->paypal_email];
+
+            \Notification::route('mail', 'ansmalik446@gmail.com')->notify(new WithdrawRequest($arr));
+
         }
         if($request->typee == 'balance')
         {
@@ -376,6 +381,14 @@ class UserController extends Controller
         {
             return back()->with('error', 'Password And Confrim Password Does Not Match.');
         }
+
+    }
+    public function update_withdraw(Request $req)
+    {
+        // dd($req->paypal_email);
+        DB::table('users')->where('id',auth()->user()->id)->update(['paypal_email' => $req->paypal_email]);
+        return back()->with('success', 'Account Updated Successfully');
+
 
     }
     public function close_wheel(Request $request)

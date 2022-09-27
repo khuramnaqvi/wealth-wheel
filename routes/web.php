@@ -150,6 +150,7 @@ Route::get('paypal_success', [App\Http\Controllers\PaymentController::class, 'pa
 Route::get('withdraw/{id}', [UserController::class, 'withdraw']);
 Route::post('wihdraw_submit', [UserController::class, 'wihdraw_submit']);
 Route::post('update_profile', [UserController::class, 'update_profile']);
+Route::post('update_withdraw', [UserController::class, 'update_withdraw']);
 
 // close wheel
 Route::post('close_wheel/{id}', [UserController::class, 'close_wheel']);

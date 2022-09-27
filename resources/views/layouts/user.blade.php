@@ -822,13 +822,11 @@ $(function() {
 });
 
     $('.show_confirm2').click(function(event) {
-
         var form =  $(this).closest("form");
         var name = $(this).data("name");
         event.preventDefault();
         new swal({
-            title: `The Wealth Wheel has cogs awaiting payout.`,
-            text: "Are you sure you want to close the wheel?",
+            title: `Are you sure you want to logout?`,
             icon: "warning",
             buttons: true,
             dangerMode: true,

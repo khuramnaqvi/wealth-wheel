@@ -73,8 +73,12 @@
         <!-- Tab 3 -->
         <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
         <label for="tab3">My Details</label>
+
         <input type="radio" name="tabset" id="tab4" aria-controls="wallet">
         <label for="tab4">My Wallet</label>
+
+        <input type="radio" name="tabset" id="tab5" aria-controls="detail">
+        <label for="tab5">Withdrawal Details</label>
 
     
 
@@ -224,7 +228,7 @@
             </div>
             <button style="color: white" type="submit" class="btn btn-info mt-4">Submit</button>
 
-        <form>
+        </form>
         
     </section>
     <section id="wallet" class="tab-panel">
@@ -242,6 +246,22 @@
                 </div>
             </div>
         </section>
+    </section>
+
+    <section id="detail" class="tab-panel">
+        <form method="post" action="{{url('/update_withdraw')}}">
+            @csrf
+
+            <div class="row">
+                <div class="col-12 mt-4 form-group">
+                    <label for="">PayPal Email</label>
+                    <input required type="email" class="form-control" name="paypal_email" placeholder="Enter Your PayPal Email" value="{{auth()->user()->paypal_email}}">
+                </div>
+
+            </div>
+            <button style="color: white" type="submit" class="btn btn-info mt-4">Submit</button>
+
+        </form>
     </section>
 </div>
 <!-- tabs end -->

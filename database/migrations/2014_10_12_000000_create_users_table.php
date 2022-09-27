@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->enum('role',['admin','user'])->default('user');
             $table->string('level')->nullable();
             $table->float('balance')->nullable();
+            $table->string('paypal_email')->nullable();
+
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
