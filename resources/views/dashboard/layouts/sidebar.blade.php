@@ -2,7 +2,7 @@
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item mr-auto"><a class="navbar-brand"
-                                            href="{{url('admin/')}}">
+                                            href="{{url('dashboard/')}}">
                     <div class=""></div>
 
                     DASHBOARD
@@ -32,9 +32,13 @@
                        class="menu-title" data-i18n="Dashboard">Wheels</span></a>
            </li>
 
+           <li class=" @yield('purchase_wheels') "><a href="{{url('/purchase_wheels')}}"><i class="fa fa-user-circle"></i><span
+                       class="menu-title" data-i18n="Dashboard">Purchased Cogs</span></a>
+           </li>
+
            <li class=" @yield('Withdraw') "><a href="{{url('/withdraw_request')}}"><i class="fa fa-user-circle"></i><span
             class="menu-title" data-i18n="Dashboard">Withdraw</span></a>
-</li>
+            </li>
 
 {{--            <li class=" @yield('plan') "><a href="{{url('/admin/plans')}}"><i class="fa fa-volume-off"></i><span--}}
 {{--                        class="menu-title" data-i18n="Dashboard">Plans</span></a>--}}

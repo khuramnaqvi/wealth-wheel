@@ -329,7 +329,7 @@ class UserController extends Controller
 
             $arr = [ 'withdraw' => $request->withdraw, 'user_name' => auth()->user()->name, 'paypal_email' => $request->paypal_email];
 
-            \Notification::route('mail', 'ansmalik446@gmail.com')->notify(new WithdrawRequest($arr));
+            \Notification::route('mail', 'withdrawals@wealth-wheel.com')->notify(new WithdrawRequest($arr));
 
         }
         if($request->typee == 'balance')

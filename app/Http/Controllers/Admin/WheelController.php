@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\WealthWheel;
 use App\Models\User;
 use App\Models\UserWallet;
+use App\Models\wallet;
 use App\Notifications\WealthWheelCreationConfirmation;
 use App\Notifications\PurchaseCogNotification;
 
@@ -34,6 +35,14 @@ class WheelController extends Controller
 
         $wheels = WealthWheel::all();
         return view('dashboard.wheel.index', compact('wheels'));
+    }
+
+    public function purchase_wheels()
+    {
+        // dd('dd');
+
+        $wheels = wallet::all();
+        return view('dashboard.wheel.purchase_wheel', compact('wheels'));
     }
 
     public function create_wealth_wheel(Request $request)

@@ -103,6 +103,7 @@ Route::post('update/{user}', [App\Http\Controllers\DashboardController::class, '
 Route::get('delete/{user}', [App\Http\Controllers\DashboardController::class, 'delete'])->name('delete'); 
 // Routes for wheel
 Route::get('/wheels', [App\Http\Controllers\Admin\WheelController::class, 'wheels'])->name('wheels');
+Route::get('/purchase_wheels', [App\Http\Controllers\Admin\WheelController::class, 'purchase_wheels'])->name('purchase_wheels');
 Route::get('delete_wheel/{wheel}', [App\Http\Controllers\DashboardController::class, 'delete_wheel']);
 Route::get('edit_wheel/{wheel}', [App\Http\Controllers\DashboardController::class, 'edit_wheel'])->name('edit_wheel');
 Route::post('update_wheel/{wheel}', [App\Http\Controllers\DashboardController::class, 'update_wheel'])->name('update_wheel');
