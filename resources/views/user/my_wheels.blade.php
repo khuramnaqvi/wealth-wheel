@@ -113,18 +113,18 @@
                                             <td>US${{$wheel->purchase_wheel->cog_price}}</td>
                                             <td>US${{$wheel->purchase_wheel->cog_price*110/100}}</td>
                                             <td>{{$wheel->created_at}}</td>
-                                            <td>
+                                            <td>{{ $wheel->purchase_wheel->wheel_name }}-
                                                 @php
                                                     $whel_count = $wheel->purchase_wheel->wallet->count();
                                                 @endphp
                                                 @if($whel_count <= 5)
-                                                    6
+                                                    06
                                                 @else
                                                     @if(($whel_count+2)%6 != 0)
 
-                                                        {{ $whel_count+1 }}
+                                                        0{{ $whel_count+1 }}
                                                     @else
-                                                        {{ $whel_count+2 }}
+                                                        0{{ $whel_count+2 }}
                                                     @endif
                                                 @endif
                                             </td>
