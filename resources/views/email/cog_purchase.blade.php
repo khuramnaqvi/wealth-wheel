@@ -18,7 +18,7 @@
         <tr>
             <td style="padding: 0 30px;">
                 <p style="margin:10px 0 10px 0;color:#565a5c;font-size:18px">Hi {{auth()->user()->name}}!</p>
-                <p style="margin:10px 0 10px 0;color:#565a5c;font-size:18px">We have finished processing your order</p>
+                <p style="margin:10px 0 10px 0;color:#565a5c;font-size:18px">We have finished processing your order.</p>
             </td>
         </tr>
         <tr>

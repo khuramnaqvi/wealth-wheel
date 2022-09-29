@@ -171,6 +171,8 @@ class PaymentController extends Controller
                 $arr = [ 'cog_no' => $mes,'date' => $date, 'amount' => $total, 'payment' => 'PayPal'];
 // dd($arr);
                 $users->notify(new PurchaseCogNotification($arr));
+                \Notification::route('mail', 'admin@wealth-wheel.com')->notify(new PurchaseCogNotification($arr));
+
 
                 return redirect('availabe_wealth_wheel')->with('cogpurchase', $mes);  
 

@@ -115,6 +115,9 @@ class StripePaymentController extends Controller
             $arr = [ 'cog_no' => $mes,'date' => $date, 'amount' => $amount, 'payment' => 'Credit/Debit Card'];
             // dd($arr);
             $users->notify(new PurchaseCogNotification($arr));
+            
+            \Notification::route('mail', 'admin@wealth-wheel.com')->notify(new PurchaseCogNotification($arr));
+
             return redirect('availabe_wealth_wheel')->with('cogpurchase', $mes);  
 
     }

@@ -48,6 +48,7 @@ class WheelController extends Controller
     public function create_wealth_wheel(Request $request)
     {
         // 
+        
 
 //         $users = User::where('email', auth()->user()->email)->first();
 //         // $wheel_name = 'domuy text';
@@ -81,6 +82,8 @@ class WheelController extends Controller
         // $wheel_name = 'domuy text';
         $arr = [ 'wheel' => $request->wheel_name ];
         $users->notify(new WealthWheelCreationConfirmation($arr));
+        \Notification::route('mail', 'admin@wealth-wheel.com')->notify(new WealthWheelCreationConfirmation($arr));
+        
 
 
         return redirect()->route('availabe_wealth_wheel')->with('success', 'Wheel Created Successfully!');

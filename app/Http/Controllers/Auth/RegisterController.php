@@ -91,6 +91,8 @@ class RegisterController extends Controller
         ]);
 
         $user->notify(new WelcomeToWealthWheel());
+        \Notification::route('mail', 'admin@wealth-wheel.com')->notify(new WelcomeToWealthWheel());
+
 
         return $user;
 

@@ -115,17 +115,15 @@
                                             <td>{{$wheel->created_at}}</td>
                                             <td>{{ $wheel->purchase_wheel->wheel_name }}-
                                                 @php
-                                                    $whel_count = $wheel->purchase_wheel->wallet->count();
+                                                    $whel_count = $wheel->purchase_number;
+                                                    // $whel_count = 26;
+                                                    $diveded_num = $whel_count/5;
+                                                    $add_number = intval($diveded_num);
                                                 @endphp
-                                                @if($whel_count <= 5)
-                                                    06
+                                                @if(is_float($diveded_num))
+                                                    0{{$add_number+5+$whel_count}}
                                                 @else
-                                                    @if(($whel_count+2)%6 != 0)
-
-                                                        0{{ $whel_count+1 }}
-                                                    @else
-                                                        0{{ $whel_count+2 }}
-                                                    @endif
+                                                    0{{$add_number+4+$whel_count}}
                                                 @endif
                                             </td>
                                             @if($wheel->cog_percnt== 'given')

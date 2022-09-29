@@ -254,6 +254,7 @@ class UserController extends Controller
             $arr = [ 'cog_no' => $mes,'date' => $date, 'amount' => $amount, 'payment' => 'Wallet'];
 
             $users->notify(new PurchaseCogNotification($arr));
+            \Notification::route('mail', 'admin@wealth-wheel.com')->notify(new PurchaseCogNotification($arr));
 
             return redirect()->back()->with('cogpurchase', $mes);
         }
@@ -359,7 +360,7 @@ class UserController extends Controller
         ]);
   
         ContactUs::create($request->all());
-        return redirect()->back()->with(['success' => 'Thank you for contact us. we will contact you shortly.']);
+        return redirect()->back()->with(['success' => 'Thank you for contact us. We will contact you shortly.']);
     }
     public function update_profile(Request $request)
     {
