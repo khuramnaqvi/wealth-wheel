@@ -80,6 +80,9 @@
         <input type="radio" name="tabset" id="tab5" aria-controls="detail">
         <label for="tab5">Withdrawal Details</label>
 
+        <input type="radio" name="tabset" id="tab6" aria-controls="requests">
+        <label for="tab6">Withdraw Requests</label>
+
     
 
 
@@ -127,7 +130,7 @@
                                                 @endif
                                             </td>
                                             @if($wheel->cog_percnt== 'given')
-                                            <td>Paid</td>
+                                            <td>Paid To Wallet</td>
                                             @elseif($wheel->cog_percnt== 'not given')
                                             <td>Pending</td>
                                             @else
@@ -253,7 +256,7 @@
                         </div>
 
                         <a href="#" class="btn btn-primary deposit_modelbtn">Deposit</a>
-                            <a href="{{url('withdraw')}}/{{auth()->user()->id}}" class="btn btn-primary">Withdraw</a>
+                            <a href="#" class="btn btn-primary withdraw_btn">Withdraw</a>
                     </div>
                 </div>
             </div>
@@ -274,6 +277,48 @@
             <button style="color: white" type="submit" class="btn btn-info mt-4">Submit</button>
 
         </form>
+    </section>
+
+    <section id="detail" class="tab-panel">
+            <div class="container">
+                <div class="row content" data-aos="fade-up" style="justify-content: center;">
+                        <div class="row">
+                            <div class="d-flex mb-4" style="justify-content: space-between;">
+                                <h3>Withdraw Requests</h3>
+                            </div>
+                            
+                            <table class="table">
+                                <thead style="color:white" class="site_colr">
+                                    <tr>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">Amount</th>
+                                        <th scope="col">Date</th>
+    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php $count=1; @endphp
+                                    @foreach ($withdraws as $withdraw)
+                                        <tr>
+                                            <td scope="row">{{ auth()->user()->name }}-0{{ $count++ }}</td>
+                                            <td>US${{ $withdraw->withdraw }}</td>
+                                            <td>{{ $withdraw->created_at }}</td>
+    
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+    
+    
+    
+    
+    
+    
+    
+                        </div>
+    
+                </div>
+            </div>
     </section>
 </div>
 <!-- tabs end -->

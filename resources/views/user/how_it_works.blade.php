@@ -88,7 +88,7 @@
           <p>WEALTH WHEEL COG PAYOUTS</p>
         </div>
         <div class="row portfolio-container weWork-child" data-aos="fade-up"> 
-          <table class="table">
+          <table class="table" style="width: 30%;">
             <thead>
               <tr>
                 <th scope="col"  class="table-active">Cog Number</th>

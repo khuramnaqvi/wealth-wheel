@@ -234,7 +234,7 @@ body {
 
             <div class="dropdown-content" style="padding-top: 13px;padding-bottom: 13px;">
               <a href="#" class="deposit_modelbtn">Deposit</a>
-              <a href='{{ url("withdraw") }}/{{auth()->user()->id}}'>Withdraw</a>
+              <a class="withdraw_btn" href='#'>Withdraw</a>
               <form action="{{route('logout') }}" method="get">
                 @csrf
                 <button type="submit" class="show_confirm2" style="border: none;padding-left: 23px;padding-top: 9px;">Logout</button>
@@ -274,83 +274,7 @@ body {
   @yield('content')
     {{-- model --}}
 
-<!-- Button trigger modal -->
-  {{-- model start --}}
 
-            {{-- user modal --}}
-
-            {{-- <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title text-center" id="exampleModalLabel">Chose Payment Options</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body text-center">
-                    <button  type="button" class="btn btn-primary">Pay from Walet</button>
-                    <button  type="button" class="btn btn-primary m-2 pasy">Direct Payment</button>
-                  </div>
-                  <div class="modal-footer">
-                  
-                  </div>
-                </div>
-              </div>
-            </div> --}}
-
-            <!-- Button trigger modal -->
-{{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button> --}}
-
-
-{{-- <div class="modal fade" id="payment_from_wallet_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-aria-labelledby="staticBackdropLabel" aria-hidden="true">
-<div class="modal-dialog modal-lg">
-    <div class="modal-content" style="border-radius: 45px;">
-        <div class="site_colr" style=" border-radius: 42px 42px 0px 0px;">
-            <h5 class="modal-title" id="staticBackdropLabel"style="text-align: center;padding-top: 15px;padding-bottom: 15px;">Payment</h5>
-            
-        </div>
-        <div class="modal-body">
-                <div class="row" style="justify-content:  center;">
-
-                    <div class="col-6"  style="text-align: center; margin-bottom:10px;">
-                        <div class="form-group">
-                          <label for=""> Amount</label>
-                        <input readonly="readonly"  name="amount"  class=" form-control append_price">
-                    </div>
-                        <input type="radio" name="pay" id="v2card" value="1" class="paymentmode"><label for="v2card" style="margin-right: 33px;">Pay From Wallet</label>
-                       
-                    </div>
-
-                    <div class="col-md-10 col-md-offset-3 stripe_div d-none">
-                        <div class="panel panel-default credit-card-box">
-                            <div class="panel-body">
-                                <form role="form" action="{{url('pay_from_wallet')}}" method="post">
-                                    @csrf
-                                    <input class="append_price" type="hidden" name="amount" >
-                                
-
-                                    <div class="row mt-4">
-                                        <div class="col-12 d-flex" style="justify-content: space-between;">
-                                            <button class="col-5 btn btn-primary site_colr" type="submit">Pay Now
-                                                </button>
-                                            <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal" aria-label="Close">cancel</button>
-                                        </div>
-                                    </div>
-
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                 
-                </div>
-        </div>
-    </div>
-</div>
-</div> --}}
 
 
 
@@ -368,14 +292,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div class="modal-body text-center">
                       <form method="POST" action="{{ route('charge') }}">
                         <input type="hidden"  name="price" class="append_price">
-                        {{-- <input type="hidden" value="{{$wheel_details->wheel_number}}" name="wheel_number">
-                        <input type="hidden" value="{{$wheel_details->wheel_name}}" name="name">
-                        <input type="hidden" value="{{$wheel_details->id}}" name="wheel_id"> --}}
 
-                        {{ csrf_field() }}
-                        <input type="submit" class="btn btn-primary" name="submit" value="Paypal">
-                      
-                {{-- <input type="submit" class="btn py-3 text-white ww-pro-action-btn" name="submit" value="Pay Now"> --}}
                 </form>
 
                     {{-- <button type="button" class="btn btn-primary">Paypal</button> --}}
@@ -554,6 +471,117 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
 
   <!--  -->
+
+      <!-- withdraw model -->
+  <div class="modal fade" id="withdrawmodel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content" style="border-radius: 45px; margin-top: 123px;">
+              <div class="site_colr" style=" border-radius: 42px 42px 0px 0px;">
+                  <h5 class="modal-title"
+                      id="staticBackdropLabel"style="text-align: center;padding-top: 15px;padding-bottom: 15px;">Withdraw
+                  </h5>
+                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" style="margin-top: -40px;margin-right: 16px;"><i class="fa fa-close"></i></button>
+
+              </div>
+              <div class="modal-body">
+                  <div class="row" style="justify-content:  center;">
+                      <div class="col-6" style="text-align: center; margin-bottom:10px;">
+                          <form action="{{ url('wihdraw_submit') }}" method="POST">
+                              @csrf
+                              <div class="form-group d-none" style="text-align: left;">
+                                <label for="">Withdraw From Wallet</label>
+                                <select id="dropDownId" required name="wallet_amount" class="form-control" style="border-radius: 30px;">
+                                  <option  style="border-radius: 30px;" tyype="balance" value="{{auth()->user()->balance}}">My Wallet</option>
+                                    {{-- @foreach ($user_wallets as $wallet)
+                                        <option att="{{$wallet->id}}" tyype="wallet" value="{{$wallet->amount}}">{{$wallet->wallet_name}}</option>
+                                    @endforeach --}}
+                                </select>
+                            </div>
+                            <input type="hidden" name="wellet_id" class="wellet_amount">
+                            <input type="hidden" name="typee" class="typeee" value="balance">
+
+                              <div class="form-group" style="text-align: left;">
+                                  <label for="">Enter Amount:</label>
+
+                                  <div class="input-group" >
+                                      <span class="input-group-text">US$</span>
+                                      <input required min="1" max="{{auth()->user()->balance}}" type="number"
+                                      name="withdraw" placeholder="Enter Amount To Withdraw"
+                                      class=" form-control checkamount2"
+                                      onkeyup="this.value=this.value.replace(/[^0-9]/g)" style="">
+                                  </div>
+
+                              </div>
+
+
+                                
+
+
+
+                              <label class="mt-4" for="" style="text-align: left;font-weight: bold;">Withdraw To PayPal</label>
+                              <br>
+                              <input disabled type="radio" name="pay" id="vcard3" value="1" class="paymentmode3 d-none" required><label for="vcard3" style="margin-right: 33px;display:none;">Withdraw with Card</label>
+                              <input type="radio" name="pay" id="payypal3"  value="2" class="paymentmode3 d-none"><label for="payypal3" class="d-none">Withdraw with PayPal</label>
+                              
+                              <input type="hidden" name="withdraw_amount" class="withdraw_amount">
+                              <input type="hidden" name="withdraw_type" class="withdraw_type" value="paypal">
+                              <div class="col-md-12 col-md-offset-3 stripe_div2 d-none">
+                                  <div class="panel panel-default credit-card-box">
+                                      <div class="panel-body">
+                                          <div class="row">
+
+                                              <div class="form-group col-12 text-left">
+                                                  <label for="">Bank Name:</label>
+                                                  <input type="text" name="bank_name" class="form-control" style="border-radius: 30px;">
+                                              </div>
+                                              
+                                              <div class="form-group col-12 text-left">
+                                                  <label for="">Account Title:</label>
+                                                  <input type="text" name="account_title" class="form-control" style="border-radius: 30px;">
+                                              </div>
+
+                                              <div class="form-group col-12 text-left">
+                                                  <label for="">Account Number:</label>
+                                                  <input type="text" name="account_number" class="form-control" style="border-radius: 30px;">
+                                              </div>
+
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="col-md-12 col-md-offset-3 paypal_div2 d-none" style="display:none">
+                                  <div class="panel panel-default credit-card-box">
+                                      <div class="panel-body">
+                                          <div class="row">
+                                              <div class="form-group col-12 text-left">
+                                                  <label for="">PayPal Email:</label>
+                                                  <input type="email" name="paypal_email" class="form-control" placeholder="Enter Your PayPal Email" style="border-radius: 30px;" value="{{ auth()->user()->paypal_email }}">
+                                              </div>
+                                              
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+
+                              <div class="col-12 d-flex" style="justify-content: space-between;">
+                                  <button type="submit" class=" col-5 btn btn-primary site_colr">Submit</button>
+                                  <button type="button" class="col-5 btn btn-secondary " data-bs-dismiss="modal"
+                                      aria-label="Close">Cancel</button>
+                              </div>
+
+                          </form>
+
+
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
  
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -608,21 +636,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
         'success'
       )
     }
-    // swal({
-    //              title: `Welcome To Wealth Wheel!`,
-    //              text: "You have successfully created your account and are now logged in.",
-    //              icon: "success",
-                 
-    //          })
-
-//   @if(Session::has('register'))
-  
-//     Swal.fire(
-//     'Good job!',
-//     'You clicked the button!',
-//     'success'
-//   )
-// @endif
+    
 
     @if(Session::has('success'))
         toastr.options = {
@@ -660,6 +674,34 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
 
 $(document).ready(function() {
+
+  $(document).on("click", ".withdraw_btn", function() {
+      $('#withdrawmodel').modal('show');
+
+  });
+
+  $('.paymentmode3').trigger("click");
+
+    $(document).on("click", ".paymentmode3", function () {
+        var checkamount = $('.checkamount2').val();
+
+        // if(checkamount != '')
+        // {
+            $('.withdraw_amount').val(checkamount);
+            var a = $('.paymentmode3:checked').val();
+            if(a ==1)
+            {
+                $('.withdraw_type').val('card');
+                $('.stripe_div2').removeClass('d-none');
+                $('.paypal_div2').addClass('d-none');
+            }else{
+                $('.withdraw_type').val('paypal');
+                $('.paypal_div2').removeClass('d-none');
+                $('.stripe_div2').addClass('d-none');
+            }
+    });
+
+
 
   $(document).on("click", ".deposit_modelbtn", function() {
       $('#paymentmodel').modal('show');

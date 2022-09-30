@@ -158,10 +158,11 @@ class UserController extends Controller
         $purchased_whells = wallet::where('user_id', auth()->user()->id)->get();
         
         $payout_count = wallet::where('user_id', auth()->user()->id)->get();
+        $withdraws = Withdraw::where('user_id', Auth::user()->id)->get();
 
             // dd($purchased_whells);
 
-        return view('user.my_wheels', compact('wheels', 'my_whells','purchased_whells'));
+        return view('user.my_wheels', compact('wheels', 'my_whells','purchased_whells','withdraws'));
     }
 
 
@@ -327,7 +328,7 @@ class UserController extends Controller
             $withdraw->type = $request->withdraw_type;
             $withdraw->paypal_email = $request->paypal_email;
             $withdraw->save();
-
+ 
             $arr = [ 'withdraw' => $request->withdraw, 'user_name' => auth()->user()->name, 'paypal_email' => $request->paypal_email];
 
             \Notification::route('mail', 'withdrawals@wealth-wheel.com')->notify(new WithdrawRequest($arr));
@@ -360,7 +361,7 @@ class UserController extends Controller
         ]);
   
         ContactUs::create($request->all());
-        return redirect()->back()->with(['success' => 'Thank you for contact us. We will contact you shortly.']);
+        return redirect()->back()->with(['success' => 'Thank you for contacting us. We will contact you shortly.']);
     }
     public function update_profile(Request $request)
     {
