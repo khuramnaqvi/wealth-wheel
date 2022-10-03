@@ -473,6 +473,7 @@ body {
   <!--  -->
 
       <!-- withdraw model -->
+      @if(auth()->user())
   <div class="modal fade" id="withdrawmodel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
@@ -491,6 +492,7 @@ body {
                               @csrf
                               <div class="form-group d-none" style="text-align: left;">
                                 <label for="">Withdraw From Wallet</label>
+                                
                                 <select id="dropDownId" required name="wallet_amount" class="form-control" style="border-radius: 30px;">
                                   <option  style="border-radius: 30px;" tyype="balance" value="{{auth()->user()->balance}}">My Wallet</option>
                                     {{-- @foreach ($user_wallets as $wallet)
@@ -582,6 +584,7 @@ body {
           </div>
       </div>
   </div>
+  @endif
  
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
