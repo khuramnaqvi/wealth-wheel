@@ -24,7 +24,6 @@
           <div class="d-flex ww-banner-btn">
          
 
-          @if(auth()->user())
             @if (Route::has('login'))
             <a href="{{ route ('register') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Sign Up</a>
             @endif
@@ -33,7 +32,6 @@
             @endif
           @else
             <a href="{{ route ('logout') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Logout</a>
-          @endif
           <a href="{{ route ('wealth_wheel') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
 
         </div>
