@@ -473,7 +473,6 @@ body {
   <!--  -->
 
       <!-- withdraw model -->
-      @if(auth()->user())
   <div class="modal fade" id="withdrawmodel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
@@ -584,7 +583,6 @@ body {
           </div>
       </div>
   </div>
-  @endif
  
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
