@@ -22,9 +22,18 @@
               choose, from small to large profits.
             </p>
           <div class="d-flex ww-banner-btn">
-          
+         
 
-          
+          @guest
+          @if (Route::has('login'))
+          <a href="{{ route ('register') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Sign Up</a>
+          @endif
+          @if (Route::has('login'))
+          <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
+          @endif
+          @else
+          <a href="{{ route ('logout') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Logout</a>
+          @endguest
           <a href="{{ route ('wealth_wheel') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
 
         </div>
