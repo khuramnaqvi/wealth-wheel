@@ -67,7 +67,7 @@ class LoginController extends Controller
             }
         }else{
 
-            return redirect()->back()->with('error', 'Email-Address or Password is Wrong!');
+            return redirect()->back()->with('error', 'Incorrect Email or Password.');
            
         }
 

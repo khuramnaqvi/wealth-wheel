@@ -45,11 +45,10 @@ class WithdrawRequest extends Notification
         $user_name = $this->arr['user_name'];
         $paypal_email = $this->arr['paypal_email'];
         return (new MailMessage)
-                    ->line("The username $user_name has request withdraw with the following information.")
+                    ->line("The username $user_name has request a withdrawal.")
                     // ->action('Notification Action', url('/'))
                     ->line("Withdrawal Amount : $$amount")
-                    ->line("PayPal Email : $paypal_email")
-                    ->line("Thank you for using our application!");
+                    ->line("PayPal Email : $paypal_email");
                     
     }
 

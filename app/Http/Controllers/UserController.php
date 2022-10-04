@@ -14,6 +14,7 @@ use App\Notifications\PurchaseCogNotification;
 use App\Notifications\WealthWheelClose;
 use App\Notifications\WithdrawRequest;
 use Mail;
+use App\Rules\Recaptcha;
 use App\Models\ContactUs;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Carbon\Carbon; 
@@ -346,7 +347,7 @@ class UserController extends Controller
             ->decrement('amount', $request->withdraw);
         }
 
-        return redirect()->back()->with('success', 'Amount Withdraw Successfully!');
+        return redirect()->back()->with('success', 'Withdrawal Requested Successfully!');
 
     }
 
@@ -357,8 +358,11 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
-            'message' => 'required'
+            'message' => 'required',
+            'g-recaptcha-response' => ['required', new Recaptcha()],
         ]);
+        dd($request);
+
   
         ContactUs::create($request->all());
         return redirect()->back()->with(['success' => 'Thank you for contacting us. We will contact you shortly.']);
@@ -395,7 +399,6 @@ class UserController extends Controller
     }
     public function close_wheel(Request $request)
     {
-        // dd('dddd');
         $wealth_wheels = DB::table('wealth_wheels')
             ->where('id', $request->id)
             ->update(['available' => 'unavailable']);
@@ -407,18 +410,15 @@ class UserController extends Controller
             $walletts = DB::table('wallets')->where('id', $wallet_id)->update(['cog_percnt' => 'returned']);
             $useers = DB::table('users')->where('id', $user_id)->increment('balance', $wheels->cog_price);
         }
-        // dd('hh');
 
-        for ($j = 0; $j < count($wheels->wallet); $j++) {
+            $looop = $wheels->wallet->unique('user_id');
+            foreach($looop as $whelll) {
+                $users_id = $whelll->user_id;
+                $usr = User::find($users_id);
+                $arr = [ 'wheel_name' => $wheels->wheel_name];
 
-            $users_id = $wheels->wallet[$j]->user_id;
-            $usr = User::find($users_id);
-            $arr = [ 'wheel_name' => $wheels->wheel_name];
-
-            $usr->notify(new WealthWheelClose($arr));
-
-        }
-        
+                $usr->notify(new WealthWheelClose($arr));
+            }
 
         return back()->with('success', 'Wheel Close Successfully');
     }

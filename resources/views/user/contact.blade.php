@@ -2,6 +2,8 @@
   @extends('layouts.user')
 @section('content')
   
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
     <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="">
@@ -91,6 +93,15 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
+
+              {{--  --}}
+              <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+              
+                    <div class="g-recaptcha" id="feedback-recaptcha" 
+                         data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}">
+                    </div>
+
+              {{--  --}}
               <button style="color: white" class="btn btn-info" type="submit">Submit</button>
               {{-- <div class="my-3">
                 <div class="loading">Loading</div>
