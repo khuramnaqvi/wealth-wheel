@@ -39,6 +39,7 @@ class UserController extends Controller
         // \Mail::to('ansmalik446@gmail.com')->send(new \App\Mail\registerMail($details));
 
         $wheels = WealthWheel::all();
+        dd($wheels);
         return view('user.home', compact('wheels'));
 
     }
