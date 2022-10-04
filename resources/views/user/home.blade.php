@@ -1,5 +1,6 @@
 
-
+    @extends('layouts.user')
+    @section('content')
 
  <!-- ======= Hero Section ======= -->
  <section id="hero" class="d-flex flex-column justify-content-end align-items-center carousel-home">
@@ -22,15 +23,18 @@
               choose, from small to large profits.
             </p>
           <div class="d-flex ww-banner-btn">
-         
+          
 
-            @if (Route::has('login'))
-            <a href="{{ route ('register') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Sign Up</a>
-            @endif
-            @if (Route::has('login'))
-            <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
-            @endif
-            <a href="{{ route ('logout') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Logout</a>
+          @guest
+          @if (Route::has('login'))
+          <a href="{{ route ('register') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Sign Up</a>
+          @endif
+          @if (Route::has('login'))
+          <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
+          @endif
+          @else
+          <a href="{{ route ('logout') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Logout</a>
+          @endguest
           <a href="{{ route ('wealth_wheel') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
 
         </div>
@@ -62,7 +66,7 @@
     <div class="alert alert-success">
         {{ session()->get('message') }}
     </div>
-  @endif
+@endif
 
     <!-- ======= Marquee Section ======= -->
     <section id="marquee" class="ww-marquee">
@@ -136,4 +140,5 @@
  
 
    
+    @endsection
   
