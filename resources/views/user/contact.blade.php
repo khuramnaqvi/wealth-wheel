@@ -16,15 +16,7 @@
             For any enquiries, complete the below contact form or email us at hello@wealth-wheel.com.
           </p>
           <div class="d-flex ww-banner-btn">
-          <a href="{{ route ('logout') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Logout</a>
-          
-            @if (Route::has('login')) 
-            <a href="{{ route ('register') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Sign Up</a>
-            @endif
-            @if (Route::has('login'))
-            <a href="{{ route ('login') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
-            @endif
-          
+         
           <a href="{{ route ('wealth_wheel') }}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Create Wealth Wheel</a>
           </div>
         </div>
